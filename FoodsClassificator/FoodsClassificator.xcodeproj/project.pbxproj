@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A4834EA2B91028100CA409D /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */; };
+		4A4834EC2B91068A00CA409D /* ObjectDetectFoods.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */; };
 		9B9BA4862B8E16A2002A76AC /* AlimentosClassificator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B9BA4852B8E16A2002A76AC /* AlimentosClassificator.mlmodel */; };
 		9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetector.mlmodel; path = "../../../../../../Downloads/RecognizingObjectsInLiveCapture-2/BreakfastFinder/ObjectDetector.mlmodel"; sourceTree = "<group>"; };
+		4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetectFoods.mlmodel; path = ../../../../../../Downloads/ObjectDetectFoods.mlmodel; sourceTree = "<group>"; };
 		9B9BA4852B8E16A2002A76AC /* AlimentosClassificator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AlimentosClassificator.mlmodel; sourceTree = "<group>"; };
 		9BE1799C2B8A567C0086877C /* FoodsClassificator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsClassificator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsClassificatorApp.swift; sourceTree = "<group>"; };
@@ -71,7 +75,9 @@
 		9BE179A52B8A567D0086877C /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */,
 				9BE179A62B8A567D0086877C /* Preview Assets.xcassets */,
+				4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -173,7 +179,9 @@
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
 				9B9BA4862B8E16A2002A76AC /* AlimentosClassificator.mlmodel in Sources */,
 				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
+				4A4834EA2B91028100CA409D /* ObjectDetector.mlmodel in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
+				4A4834EC2B91068A00CA409D /* ObjectDetectFoods.mlmodel in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = K559Z2V9Q2;
+				DEVELOPMENT_TEAM = 2GNPFRN684;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
@@ -338,7 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = K559Z2V9Q2;
+				DEVELOPMENT_TEAM = 2GNPFRN684;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";

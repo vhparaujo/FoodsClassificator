@@ -85,7 +85,7 @@ class ImagePredictor {
         let defaultConfig = MLModelConfiguration()
         
         // My CreateML Model
-        let imageClassifierWrapper = try? AlimentosClassificator(configuration: defaultConfig)
+        let imageClassifierWrapper = try? ObjectDetectFoods(configuration: defaultConfig)
 
         guard let imageClassifier = imageClassifierWrapper else {
             fatalError("App failed to create an image classifier model instance.")
@@ -125,33 +125,54 @@ class ImagePredictor {
     private var predictionHandlers = [VNRequest: ImagePredictionHandler]()
 
     /// Generates a new request instance that uses the Image Predictor's image classifier model.
+
+    
     private func createImageClassificationRequest() -> VNImageBasedRequest {
-        // Create an image classification request with an image classifier model.
-
-        let imageClassificationRequest = VNCoreMLRequest(model: ImagePredictor.imageClassifier,
-                                                         completionHandler: visionRequestHandler)
-
+        let imageClassificationRequest = VNCoreMLRequest(model: ImagePredictor.imageClassifier, completionHandler: visionRequestHandler)
+        // Se seu modelo suporta detecção de objetos, isso é suficiente. Caso contrário, você precisaria de um request específico para isso.
         imageClassificationRequest.imageCropAndScaleOption = .centerCrop
         return imageClassificationRequest
     }
-
+//-----------
     /// Generates an image classification prediction for a photo.
     /// - Parameter photo: An image, typically of an object or a scene.
     /// - Tag: makePredictions
-    func makePredictions(for photo: UIImage, completionHandler: @escaping ImagePredictionHandler) throws {
+    /// 
+    func makePredictions(for photo: UIImage, completionHandler: @escaping ([Prediction]?, [VNRecognizedObjectObservation]?) -> Void) throws {
+        // Converte UIImage para CGImage e prepara o handler de requisição de imagem
+        guard let photoCGImage = photo.cgImage else {
+            print("Não foi possível converter UIImage em CGImage.")
+            return
+        }
         let orientation = CGImagePropertyOrientation(rawValue: UInt32(photo.imageOrientation.rawValue))!
+        let handler = VNImageRequestHandler(cgImage: photoCGImage, orientation: orientation)
 
-        guard let photoImage = photo.cgImage else {
-            fatalError("Photo doesn't have underlying CGImage.")
+        // Prepara a requisição VNCoreMLRequest para o modelo que suporta detecção de objetos
+        let request = VNCoreMLRequest(model: ImagePredictor.imageClassifier) { request, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("Erro ao processar a requisição: \(error.localizedDescription)")
+                    completionHandler(nil, nil)
+                    return
+                }
+
+                // Extrai as observações do tipo VNRecognizedObjectObservation
+                let objectObservations = request.results as? [VNRecognizedObjectObservation]
+
+                // Aqui você pode processar as classificações das observações, se necessário
+                let predictions = objectObservations?.map { observation -> Prediction in
+                    // Assumindo que você tem uma maneira de extrair a classificação mais provável
+                    let topClassification = observation.labels.first!.identifier
+                    let confidence = observation.labels.first!.confidence
+                    return Prediction(classification: topClassification, confidencePercentage: String(format: "%.2f%", confidence * 100))
+                }
+
+                completionHandler(predictions, objectObservations)
+            }
         }
 
-        let imageClassificationRequest = createImageClassificationRequest()
-        predictionHandlers[imageClassificationRequest] = completionHandler
-
-        let handler = VNImageRequestHandler(cgImage: photoImage, orientation: orientation)
-        let requests: [VNRequest] = [imageClassificationRequest]
-        // Start the image classification request.
-        try handler.perform(requests)
+        // Executa a requisição
+        try handler.perform([request])
     }
 
     /// The completion handler method that Vision calls when it completes a request.
