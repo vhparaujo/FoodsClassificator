@@ -9,7 +9,14 @@ import SwiftUI
 import CoreML
 import PhotosUI
 
+struct NutritionData: Identifiable {
+    var id: UUID = UUID()
+    var nutrients: [Nutrient]
+    var properties: [Property]
+}
+
 struct ContentView: View {
+    @ObservedObject private var viewModel: ContentViewModel = ContentViewModel()
     
     @State private var showPicker = false
     @State private var showTrue = false
@@ -20,10 +27,13 @@ struct ContentView: View {
     
     @State private var predictionText: String = "Nenhuma previsão ainda."
     
+    @State private var findingIngredients: [String] = ["apple", "banana"]
+    let buttonsColor: [Color] = [.blue, .red, .green, .yellow, .orange, .purple, .pink, .gray, .black, .white]
+    
     let predictsQTD = 3
     
     var body: some View {
-        
+
         NavigationStack {
             
             ScrollView {
@@ -73,6 +83,18 @@ struct ContentView: View {
                     .background(.green)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     
+                    #warning("Posicionar um botao dentro de cada BoundingBox")
+                    // 1. Pegar a posicao central de cada bounding box e salvar num array para posicionar o botao
+                    ForEach(findingIngredients, id: \.self) { ingredient in
+                        Button(ingredient) {
+                            print("Button Pressed: Search Ingredients")
+                            viewModel.getIngredientID(query: ingredient)
+                        }
+                        .padding(10)
+                        .foregroundStyle(.white)
+                        .background(buttonsColor.randomElement() ?? .blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    }
                 }
                 
                 .navigationTitle("Foods")
@@ -93,11 +115,11 @@ struct ContentView: View {
                         }
                     }
                 }
-                
             }
-            
         }
-        
+        .sheet(item: $viewModel.nutritionDataToShow) { nutritionData in
+            NutritionModalView(nutrients: nutritionData.nutrients, properties: nutritionData.properties)
+        }
     }
     
     
