@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		4A4834EA2B91028100CA409D /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */; };
 		4A4834EC2B91068A00CA409D /* ObjectDetectFoods.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */; };
+		0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */; };
+		0B7F9CFC2B9107600037B09B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7F9CFB2B9107600037B09B /* Alamofire */; };
+		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
+		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
+		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
 		9B9BA4862B8E16A2002A76AC /* AlimentosClassificator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B9BA4852B8E16A2002A76AC /* AlimentosClassificator.mlmodel */; };
 		9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
@@ -21,6 +26,10 @@
 /* Begin PBXFileReference section */
 		4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetector.mlmodel; path = "../../../../../../Downloads/RecognizingObjectsInLiveCapture-2/BreakfastFinder/ObjectDetector.mlmodel"; sourceTree = "<group>"; };
 		4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetectFoods.mlmodel; path = ../../../../../../Downloads/ObjectDetectFoods.mlmodel; sourceTree = "<group>"; };
+		0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAPIManager.swift; sourceTree = "<group>"; };
+		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
+		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
+		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
 		9B9BA4852B8E16A2002A76AC /* AlimentosClassificator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AlimentosClassificator.mlmodel; sourceTree = "<group>"; };
 		9BE1799C2B8A567C0086877C /* FoodsClassificator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsClassificator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsClassificatorApp.swift; sourceTree = "<group>"; };
@@ -36,12 +45,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B7F9CFC2B9107600037B09B /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B7F9CFD2B9173FF0037B09B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9BE179932B8A567C0086877C = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +80,8 @@
 		9BE1799E2B8A567C0086877C /* FoodsClassificator */ = {
 			isa = PBXGroup;
 			children = (
+				0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */,
+				0B7F9CFD2B9173FF0037B09B /* Models */,
 				9BFB9ED12B8ADB0400BF3028 /* ViewModels */,
 				9BFB9ED02B8AD9DD00BF3028 /* Views */,
 				9BFB9ECF2B8AD94C00BF3028 /* CreateMLModel */,
@@ -95,6 +115,7 @@
 			children = (
 				9BE179A12B8A567C0086877C /* ContentView.swift */,
 				9BFB9ECD2B8AC9DB00BF3028 /* CameraView.swift */,
+				0B7F9D002B9179640037B09B /* NutritionModalView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,6 +123,7 @@
 		9BFB9ED12B8ADB0400BF3028 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -122,6 +144,9 @@
 			dependencies = (
 			);
 			name = FoodsClassificator;
+			packageProductDependencies = (
+				0B7F9CFB2B9107600037B09B /* Alamofire */,
+			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
 			productType = "com.apple.product-type.application";
@@ -150,6 +175,9 @@
 				Base,
 			);
 			mainGroup = 9BE179932B8A567C0086877C;
+			packageReferences = (
+				0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 9BE1799D2B8A567C0086877C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,9 +208,13 @@
 				9B9BA4862B8E16A2002A76AC /* AlimentosClassificator.mlmodel in Sources */,
 				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
 				4A4834EA2B91028100CA409D /* ObjectDetector.mlmodel in Sources */,
+				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
 				4A4834EC2B91068A00CA409D /* ObjectDetectFoods.mlmodel in Sources */,
+				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
+				0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
+				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,6 +422,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B7F9CFB2B9107600037B09B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BE179942B8A567C0086877C /* Project object */;
 }
