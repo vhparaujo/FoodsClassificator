@@ -85,7 +85,7 @@ class ImagePredictor {
         let defaultConfig = MLModelConfiguration()
         
         // My CreateML Model
-        let imageClassifierWrapper = try? ObjectDetectFoods(configuration: defaultConfig)
+        let imageClassifierWrapper = try? FoodDetection(configuration: defaultConfig)
 
         guard let imageClassifier = imageClassifierWrapper else {
             fatalError("App failed to create an image classifier model instance.")
