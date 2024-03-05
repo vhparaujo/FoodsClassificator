@@ -1,13 +1,11 @@
 //
 //  ContentView.swift
-//  FoodsClassificator
+//  ClassificacaoFrutasTeste
 //
-//  Created by Victor Hugo Pacheco Araujo on 24/02/24.
+//  Created by Gabriel Ribeiro Noronha on 01/03/24.
 //
 
 import SwiftUI
-import CoreML
-import PhotosUI
 import Vision
 
 struct NutritionData: Identifiable {
@@ -19,205 +17,99 @@ struct NutritionData: Identifiable {
 struct ContentView: View {
     @ObservedObject private var viewModel: ContentViewModel = ContentViewModel()
     
-    @State private var showPicker = false
-    @State private var showTrue = false
-    @State private var showCamera = false
-    @State private var photoPicker: PhotosPickerItem?
-    @State private var imageSelected: UIImage?
-    @State private var imagePredictor = ImagePredictor()
-    
-    @State private var predictionText: String = "Nenhuma previsão ainda."
-    
-    @State private var findingIngredients: [String] = ["apple", "banana"]
+    @State private var showImagePicker = false
+    @State private var image: UIImage?
+    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @State private var observations: [VNRecognizedObjectObservation] = []
     let buttonsColor: [Color] = [.blue, .red, .green, .yellow, .orange, .purple, .pink, .gray, .black, .white]
-    
-    let predictsQTD = 3
+    @State private var findingIngredients: [String] = []
     
     var body: some View {
-
-        NavigationStack {
-            
-            ScrollView {
+        NavigationStack{
+            VStack(spacing: 20) {
+                if let image = image {
+                    BoundingBoxesView(image: image, observations: observations)
+                        .frame(width: 300, height: 300) // Ajuste conforme necessário
+                }
                 
-                VStack {
-                    
-                    if let image = imageSelected {
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFit()
-                            .padding()
-                    } else {
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundStyle(.gray)
-                            .scaledToFit()
-                            .padding()
+                // Lista que mostra a confiança
+                List(observations, id: \.uuid) { observation in
+                    ForEach(observation.labels.filter { $0.confidence > 0.5 }, id: \.identifier) { label in
+                        Text("Alimento: \(label.identifier), Confiança: \(label.confidence)")
                     }
-                    
-                    Text(predictionText)
+                }
+                
+                #warning("Posicionar um botao dentro de cada BoundingBox")
+                // 1. Pegar a posicao central de cada bounding box e salvar num array para posicionar o botao
+                List(findingIngredients, id: \.self) { ingredient in
+                    Button(ingredient) {
+                        print("Button Pressed: Search Ingredients")
+                        viewModel.getIngredientID(query: ingredient)
+                    }
+                    .padding(10)
+                    .foregroundStyle(.white)
+                    .background(buttonsColor.randomElement() ?? .blue)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                }
+                
+                
+                
+                // Botão para escolher da biblioteca
+                Button(action: {
+                    self.sourceType = .photoLibrary
+                    self.showImagePicker = true
+                }) {
+                    Text("Escolher da Biblioteca")
+                        .foregroundColor(.white)
+                        .frame(minWidth: 0, maxWidth: .infinity)
                         .padding()
-                        .font(.title2)
-                    
-                    Button("Select Image") {
-                        showTrue.toggle()
-                    }
-                    .padding(10)
-                    .foregroundStyle(.white)
-                    .background(.blue)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    
-                    .confirmationDialog("Select", isPresented: $showTrue, titleVisibility: .visible) {
-                        Button("Camera") {
-                            self.showCamera.toggle()
-                        }
-                        Button("Gallery") {
-                            self.showPicker.toggle()
-                        }
-                        
-                    }.photosPicker(isPresented: $showPicker, selection: $photoPicker)
-                    
-                    Button("Classify Image"){
-                        if let image = imageSelected{
-                            classifyImage(image)
-                        }
-                    }
-                    .padding(10)
-                    .foregroundStyle(.white)
-                    .background(.green)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    
-                    #warning("Posicionar um botao dentro de cada BoundingBox")
-                    // 1. Pegar a posicao central de cada bounding box e salvar num array para posicionar o botao
-                    ForEach(findingIngredients, id: \.self) { ingredient in
-                        Button(ingredient) {
-                            print("Button Pressed: Search Ingredients")
-                            viewModel.getIngredientID(query: ingredient)
-                        }
-                        .padding(10)
-                        .foregroundStyle(.white)
-                        .background(buttonsColor.randomElement() ?? .blue)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                    }
+                        .background(Color.blue)
+                        .cornerRadius(10)
                 }
+                .buttonStyle(PlainButtonStyle()) // Remove o estilo padrão do botão para iOS
                 
-                .navigationTitle("Foods")
-                
-                .fullScreenCover(isPresented: self.$showCamera) {
-                    CameraView(selectedImage: self.$imageSelected, isPresented: $showCamera, sourceType: .camera)
+                // Botão para usar a câmera
+                Button(action: {
+                    self.sourceType = .camera
+                    self.showImagePicker = true
+                }) {
+                    Text("Usar Câmera")
+                        .foregroundColor(.white)
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(10)
                 }
-                
-                .onChange(of: photoPicker) { _, newImage in
-                    Task {
-                        do {
-                            if let imageData = try await newImage?.loadTransferable(type: Data.self), let loadedImage = UIImage(data: imageData) {
-                                imageSelected = loadedImage
-                                predictionText = ""
-                            }
-                        } catch {
-                            print("Error loading image: \(error.localizedDescription)")
-                        }
-                    }
-                }
+                .buttonStyle(PlainButtonStyle()) // Remove o estilo padrão do botão para iOS
             }
+        }
+        .padding() // Adiciona padding em torno da VStack para dar mais espaço
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(selectedImage: self.$image, sourceType: self.sourceType, completion: { results in
+                DispatchQueue.main.async {
+                    // Filtra os resultados para incluir apenas aqueles com confiança > 50%
+                    let filteredResults = results.filter { observation in
+                        observation.labels.contains(where: { $0.confidence > 0.5 })
+                    }
+                    // Atualiza o estado para as bounding boxes
+                    self.observations = filteredResults
+                    
+                    // Limpa o array para evitar duplicatas caso esta função seja chamada múltiplas vezes
+                    self.findingIngredients.removeAll()
+                    
+                    // Itera sobre cada observação e seus labels para extrair os identificadores
+                    for observation in filteredResults {
+                        for label in observation.labels where label.confidence > 0.5 {
+                            self.findingIngredients.append(label.identifier)
+                        }
+                    }
+                }
+            })
         }
         .sheet(item: $viewModel.nutritionDataToShow) { nutritionData in
             NutritionModalView(nutrients: nutritionData.nutrients, properties: nutritionData.properties)
         }
     }
-    
-    private func classifyImage(_ image: UIImage) {
-        do {
-            try imagePredictor.makePredictions(for: image) { predictions, observations in
-                self.imagePredictionHandler(predictions, observations: observations!)
-            }
-        } catch {
-            DispatchQueue.main.async {
-                self.predictionText = "Erro ao fazer previsões: \(error.localizedDescription)"
-            }
-        }
-    }
-    
-    private func imagePredictionHandler(_ predictions: [ImagePredictor.Prediction]?, observations: [VNRecognizedObjectObservation]) {
-        DispatchQueue.main.async {
-            // Verifica se há previsões
-            guard let predictions = predictions, !predictions.isEmpty else {
-                self.predictionText = "Sem previsões."
-                return
-            }
-            
-            // Utiliza a função `formatPredictions` para formatar todas as previsões desejadas
-            let formattedPredictions = self.formatPredictions(predictions)
-            
-            // Atualiza o texto de previsão com os resultados da classificação
-            self.predictionText = formattedPredictions.joined(separator: "\n")
-            
-            // Assume-se que `imageSelected` é a imagem atual selecionada pelo usuário
-            if let imageWithBoundingBoxes = self.drawBoundingBoxes(on: self.imageSelected!, for: observations) {
-                self.imageSelected = imageWithBoundingBoxes
-            }
-        }
-    }
-    
-    private func formatPredictions(_ predictions: [ImagePredictor.Prediction]) -> [String] {
-        return predictions.map { "\($0.classification) - \($0.confidencePercentage)%" }
-    }
-    
-    func drawBoundingBoxes(on image: UIImage, for observations: [VNRecognizedObjectObservation]) -> UIImage? {
-        let renderer = UIGraphicsImageRenderer(size: image.size)
-        let newImage = renderer.image { context in
-            // Desenha a imagem original
-            image.draw(at: CGPoint.zero)
-            
-            // Configurações para o retângulo
-            let strokeColor = UIColor.red
-            strokeColor.setStroke()
-            
-            for observation in observations {
-                let boundingBox = observation.boundingBox
-                let width = boundingBox.width * image.size.width
-                let height = boundingBox.height * image.size.height
-                let size = CGSize(width: width, height: height)
-                let origin = CGPoint(x: boundingBox.minX * image.size.width, y: (1 - boundingBox.minY - boundingBox.height) * image.size.height)
-                let rectangle = CGRect(origin: origin, size: size)
-                
-                // Calcula a área do boundingBox
-                let area = width * height
-                print("Área do BoundingBox: \(area) pixels quadrados")
-                
-                // Desenha o retângulo
-                let path = UIBezierPath(rect: rectangle)
-                path.lineWidth = 2
-                path.stroke()
-            }
-        }
-        return newImage
-    }
-
-//    func drawBoundingBoxes(on image: UIImage, for observations: [VNRecognizedObjectObservation]) -> UIImage? {
-//        let renderer = UIGraphicsImageRenderer(size: image.size)
-//        let newImage = renderer.image { context in
-//            // Desenha a imagem original
-//            image.draw(at: CGPoint.zero)
-//            
-//            // Configurações para o retângulo
-//            let strokeColor = UIColor.red
-//            strokeColor.setStroke()
-//            
-//            for observation in observations {
-//                let boundingBox = observation.boundingBox
-//                let size = CGSize(width: boundingBox.width * image.size.width, height: boundingBox.height * image.size.height)
-//                let origin = CGPoint(x: boundingBox.minX * image.size.width, y: (1 - boundingBox.minY - boundingBox.height) * image.size.height)
-//                let rectangle = CGRect(origin: origin, size: size)
-//                
-//                // Desenha o retângulo
-//                let path = UIBezierPath(rect: rectangle)
-//                path.lineWidth = 2
-//                path.stroke()
-//            }
-//        }
-//        return newImage
-//    }
-    
-    
 }
 
 

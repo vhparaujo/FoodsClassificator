@@ -33,8 +33,8 @@ class ContentViewModel: ObservableObject {
                 print("Ingredient Info Success")
                 DispatchQueue.main.async {
                     print("Atualizando estados para apresentar modal.")
-//                            print("Nutrients atualizados: \(ingredientInfo.nutrition.nutrients.map { $0.name })")
-//                            print("Properties atualizadas: \(ingredientInfo.nutrition.properties.map { $0.name })")
+                    //                            print("Nutrients atualizados: \(ingredientInfo.nutrition.nutrients.map { $0.name })")
+                    //                            print("Properties atualizadas: \(ingredientInfo.nutrition.properties.map { $0.name })")
                     
                     let newNutritionData = NutritionData(nutrients: ingredientInfo.nutrition.nutrients, properties: ingredientInfo.nutrition.properties)
                     self.nutritionDataToShow = newNutritionData

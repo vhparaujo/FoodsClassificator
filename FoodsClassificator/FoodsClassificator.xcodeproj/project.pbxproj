@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A4834EA2B91028100CA409D /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */; };
-		4A4834EC2B91068A00CA409D /* ObjectDetectFoods.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */; };
 		0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */; };
 		0B7F9CFC2B9107600037B09B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7F9CFB2B9107600037B09B /* Alamofire */; };
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
+		4A4834EA2B91028100CA409D /* ObjectDetector.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */; };
+		4A4834EC2B91068A00CA409D /* ObjectDetectFoods.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */; };
+		4AB0627D2B9799CE00403B32 /* BoundingBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0627C2B9799CE00403B32 /* BoundingBoxView.swift */; };
+		4AB0627F2B979A2600403B32 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB0627E2B979A2600403B32 /* ImagePicker.swift */; };
+		4AB062812B979BD900403B32 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AB062802B979BD900403B32 /* FoodDetection.mlmodel */; };
 		9B9BA4862B8E16A2002A76AC /* AlimentosClassificator.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9B9BA4852B8E16A2002A76AC /* AlimentosClassificator.mlmodel */; };
 		9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
@@ -24,12 +27,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetector.mlmodel; path = "../../../../../../Downloads/RecognizingObjectsInLiveCapture-2/BreakfastFinder/ObjectDetector.mlmodel"; sourceTree = "<group>"; };
-		4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetectFoods.mlmodel; path = ../../../../../../Downloads/ObjectDetectFoods.mlmodel; sourceTree = "<group>"; };
 		0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAPIManager.swift; sourceTree = "<group>"; };
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
 		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetector.mlmodel; path = "../../../../../../Downloads/RecognizingObjectsInLiveCapture-2/BreakfastFinder/ObjectDetector.mlmodel"; sourceTree = "<group>"; };
+		4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = ObjectDetectFoods.mlmodel; path = ../../../../../../Downloads/ObjectDetectFoods.mlmodel; sourceTree = "<group>"; };
+		4AB0627C2B9799CE00403B32 /* BoundingBoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BoundingBoxView.swift; path = ../../../../ClassificacaoFrutasTeste/ClassificacaoFrutasTeste/BoundingBoxView.swift; sourceTree = "<group>"; };
+		4AB0627E2B979A2600403B32 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePicker.swift; path = ../../../../ClassificacaoFrutasTeste/ClassificacaoFrutasTeste/ImagePicker.swift; sourceTree = "<group>"; };
+		4AB062802B979BD900403B32 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FoodDetection.mlmodel; path = ../../../../../../Downloads/FoodDetection.mlmodel; sourceTree = "<group>"; };
 		9B9BA4852B8E16A2002A76AC /* AlimentosClassificator.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AlimentosClassificator.mlmodel; sourceTree = "<group>"; };
 		9BE1799C2B8A567C0086877C /* FoodsClassificator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsClassificator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsClassificatorApp.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */,
+				4AB0627E2B979A2600403B32 /* ImagePicker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 				4A4834E92B91028100CA409D /* ObjectDetector.mlmodel */,
 				9BE179A62B8A567D0086877C /* Preview Assets.xcassets */,
 				4A4834EB2B91068A00CA409D /* ObjectDetectFoods.mlmodel */,
+				4AB062802B979BD900403B32 /* FoodDetection.mlmodel */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -116,6 +124,7 @@
 				9BE179A12B8A567C0086877C /* ContentView.swift */,
 				9BFB9ECD2B8AC9DB00BF3028 /* CameraView.swift */,
 				0B7F9D002B9179640037B09B /* NutritionModalView.swift */,
+				4AB0627C2B9799CE00403B32 /* BoundingBoxView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,8 +213,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB0627F2B979A2600403B32 /* ImagePicker.swift in Sources */,
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
+				4AB062812B979BD900403B32 /* FoodDetection.mlmodel in Sources */,
 				9B9BA4862B8E16A2002A76AC /* AlimentosClassificator.mlmodel in Sources */,
+				4AB0627D2B9799CE00403B32 /* BoundingBoxView.swift in Sources */,
 				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
 				4A4834EA2B91028100CA409D /* ObjectDetector.mlmodel in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
