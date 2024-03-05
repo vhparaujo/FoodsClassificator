@@ -28,7 +28,7 @@ struct ContentView: View {
         NavigationStack{
             VStack(spacing: 20) {
                 if let image = image {
-                    BoundingBoxesView(image: image, observations: observations)
+                    NewBoundingBoxesView(image: image, observations: observations)
                         .frame(width: 300, height: 300) // Ajuste conforme necessário
                 }
                 
@@ -39,7 +39,7 @@ struct ContentView: View {
                     }
                 }
                 
-                #warning("Posicionar um botao dentro de cada BoundingBox")
+                #warning("Posicionar um botao dentro de cada BoundingBoxfnd fd dfdfd")
                 // 1. Pegar a posicao central de cada bounding box e salvar num array para posicionar o botao
                 List(findingIngredients, id: \.self) { ingredient in
                     Button(ingredient) {
@@ -85,7 +85,7 @@ struct ContentView: View {
         }
         .padding() // Adiciona padding em torno da VStack para dar mais espaço
         .sheet(isPresented: $showImagePicker) {
-            ImagePicker(selectedImage: self.$image, sourceType: self.sourceType, completion: { results in
+            NewImagePicker(selectedImage: self.$image, sourceType: self.sourceType, completion: { results in
                 DispatchQueue.main.async {
                     // Filtra os resultados para incluir apenas aqueles com confiança > 50%
                     let filteredResults = results.filter { observation in
