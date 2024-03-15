@@ -15,7 +15,7 @@ struct NutritionData: Identifiable {
 }
 
 struct ContentView: View {
-    @ObservedObject private var viewModel: ContentViewModel = ContentViewModel()
+    @State private var viewModel = ViewModel()
     
     @State private var showImagePicker = false
     @State private var image: UIImage?
@@ -36,6 +36,7 @@ struct ContentView: View {
                 List(observations, id: \.uuid) { observation in
                     ForEach(observation.labels.filter { $0.confidence > 0.5 }, id: \.identifier) { label in
                         Text("Alimento: \(label.identifier), Confiança: \(label.confidence)")
+                        
                     }
                 }
                 

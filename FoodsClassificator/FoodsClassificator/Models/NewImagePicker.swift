@@ -16,7 +16,6 @@ struct NewImagePicker: UIViewControllerRepresentable {
     @Binding var selectedImage: UIImage?
     var sourceType: UIImagePickerController.SourceType
     var completion: ([VNRecognizedObjectObservation]) -> Void
-
     
     func makeUIViewController(context: UIViewControllerRepresentableContext<NewImagePicker>) -> UIImagePickerController {
         let imagePicker = UIImagePickerController()
