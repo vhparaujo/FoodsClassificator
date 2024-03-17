@@ -15,7 +15,7 @@ struct NutritionData: Identifiable {
 }
 
 struct ContentView: View {
-    @State private var viewModel = ViewModel()
+    @StateObject private var viewModel = ContentViewModel()
     
     @State private var showImagePicker = false
     @State private var image: UIImage?

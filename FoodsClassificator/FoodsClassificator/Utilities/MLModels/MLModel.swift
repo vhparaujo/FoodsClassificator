@@ -1,5 +1,5 @@
 //
-//  ViewModel.swift
+//  ContentViewModel.swift
 //  FoodsClassificator
 //
 //  Created by Victor Hugo Pacheco Araujo on 24/02/24.
@@ -10,7 +10,7 @@ import Combine
 import Vision
 import VisionKit
 
-//class ViewModel: ObservableObject {
+//class ContentViewModel: ObservableObject {
 //    
 //    func classifyImage(image: UIImage) {
 //        
