@@ -26,6 +26,10 @@
 		9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12552BAB7950000C0CB5 /* Model.swift */; };
 		9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12582BAB79A8000C0CB5 /* JsonDecoder.swift */; };
 		9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA125B2BAB7B5C000C0CB5 /* Errors.swift */; };
+		9BFA12612BAB7EA4000C0CB5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12602BAB7EA4000C0CB5 /* HomeView.swift */; };
+		9BFA12632BAB7EB3000C0CB5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12622BAB7EB3000C0CB5 /* HomeViewModel.swift */; };
+		9BFA12662BAB7F1F000C0CB5 /* MacrosComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12652BAB7F1F000C0CB5 /* MacrosComponent.swift */; };
+		9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12682BAB8395000C0CB5 /* ColorExtension.swift */; };
 		9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB9ECB2B8AA84F00BF3028 /* MLModel.swift */; };
 		9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB9ECD2B8AC9DB00BF3028 /* CameraView.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +54,10 @@
 		9BFA12552BAB7950000C0CB5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9BFA12582BAB79A8000C0CB5 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
 		9BFA125B2BAB7B5C000C0CB5 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		9BFA12602BAB7EA4000C0CB5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		9BFA12622BAB7EB3000C0CB5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9BFA12652BAB7F1F000C0CB5 /* MacrosComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacrosComponent.swift; sourceTree = "<group>"; };
+		9BFA12682BAB8395000C0CB5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		9BFB9ECB2B8AA84F00BF3028 /* MLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLModel.swift; sourceTree = "<group>"; };
 		9BFB9ECD2B8AC9DB00BF3028 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +126,8 @@
 		9BE1799E2B8A567C0086877C /* FoodsClassificator */ = {
 			isa = PBXGroup;
 			children = (
+				9BFA12672BAB8383000C0CB5 /* Extensions */,
+				9BE179A32B8A567D0086877C /* Assets.xcassets */,
 				9BEBDF812BA760310077632C /* System */,
 				9BEBDF7F2BA75FEE0077632C /* App */,
 				0B7F9CFD2B9173FF0037B09B /* Models */,
@@ -197,7 +207,6 @@
 		9BEBDF7F2BA75FEE0077632C /* App */ = {
 			isa = PBXGroup;
 			children = (
-				9BE179A32B8A567D0086877C /* Assets.xcassets */,
 				9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */,
 			);
 			path = App;
@@ -279,6 +288,48 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		9BFA125D2BAB7E3B000C0CB5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9BFA12642BAB7F07000C0CB5 /* Components */,
+				9BFA125F2BAB7E46000C0CB5 /* View */,
+				9BFA125E2BAB7E40000C0CB5 /* ViewModel */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9BFA125E2BAB7E40000C0CB5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9BFA12622BAB7EB3000C0CB5 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9BFA125F2BAB7E46000C0CB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BFA12602BAB7EA4000C0CB5 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BFA12642BAB7F07000C0CB5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9BFA12652BAB7F1F000C0CB5 /* MacrosComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9BFA12672BAB8383000C0CB5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9BFA12682BAB8395000C0CB5 /* ColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9BFB9ECF2B8AD94C00BF3028 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,6 +343,7 @@
 		9BFB9ED02B8AD9DD00BF3028 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9BFA125D2BAB7E3B000C0CB5 /* Home */,
 				9BFA124E2BAB6397000C0CB5 /* TesteLeituraJSON */,
 				9BEBDF842BA760C10077632C /* ExampleView */,
 				9BEBDF832BA760720077632C /* ImagePicker */,
@@ -378,15 +430,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFA12662BAB7F1F000C0CB5 /* MacrosComponent.swift in Sources */,
+				9BFA12632BAB7EB3000C0CB5 /* HomeViewModel.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
 				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
+				9BFA12612BAB7EA4000C0CB5 /* HomeView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
 				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
+				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
 				9BFA12512BAB63B1000C0CB5 /* TesteLeituraJSON.swift in Sources */,
 				0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
