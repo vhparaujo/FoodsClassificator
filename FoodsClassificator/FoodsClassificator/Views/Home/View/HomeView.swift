@@ -9,10 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @Bindable private var viewModel = HomeViewModel()
+    @State private var viewModel = HomeViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            
+            HStack {
+                UserNameComponentHomeView()
+                Spacer()
+                
+                UserPhotoComponentHomeView()
+            }.padding()
+            
+            MacrosComponentHomeView(macroType: "Fibras")
+            
+        }
     }
 }
 

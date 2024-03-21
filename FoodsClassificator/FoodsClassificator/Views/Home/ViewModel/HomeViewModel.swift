@@ -9,6 +9,10 @@ import SwiftUI
 
 @Observable class HomeViewModel {
     
-    var macrosValue: Int = 100
     
+    var userName: String = "Olá, Fulano"
+    var userPhoto: String = "labelImage"
+    var macrosValue: Int = 100
+    var streakNumber: Int = 20
+
 }

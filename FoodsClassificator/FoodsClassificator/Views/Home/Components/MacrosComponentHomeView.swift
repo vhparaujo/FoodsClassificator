@@ -1,5 +1,5 @@
 //
-//  MacrosComponent.swift
+//  MacrosComponentHomeView.swift
 //  FoodsClassificator
 //
 //  Created by Victor Hugo Pacheco Araujo on 20/03/24.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct MacrosComponent: View {
+struct MacrosComponentHomeView: View {
     
-    @Bindable private var viewModel = HomeViewModel()
+    @State private var viewModel = HomeViewModel()
     
     @State var macroType: String = ""
     
@@ -29,5 +29,5 @@ struct MacrosComponent: View {
 }
 
 #Preview {
-    MacrosComponent(macroType: "Teste")
+    MacrosComponentHomeView(macroType: "Teste")
 }
