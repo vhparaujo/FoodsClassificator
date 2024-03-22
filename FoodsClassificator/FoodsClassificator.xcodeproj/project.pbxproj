@@ -16,8 +16,10 @@
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
 		9B3C00152BACA4C2000B55B9 /* UserNameComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */; };
-		9B3C00182BACA7FB000B55B9 /* UserPhotoComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00172BACA7FB000B55B9 /* UserPhotoComponentHomeView.swift */; };
-		9B3C001A2BACABAB000B55B9 /* StreakComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00192BACABAB000B55B9 /* StreakComponentHomeView.swift */; };
+		9B3C00182BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00172BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift */; };
+		9B3C001C2BACC903000B55B9 /* ProgressBarComponentViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */; };
+		9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
+		9B3C00212BAD202D000B55B9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00202BAD202D000B55B9 /* HeaderView.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
 		9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
@@ -46,8 +48,10 @@
 		4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoundingBoxesView.swift; sourceTree = "<group>"; };
 		4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodDetection.mlmodel; sourceTree = "<group>"; };
 		9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameComponentHomeView.swift; sourceTree = "<group>"; };
-		9B3C00172BACA7FB000B55B9 /* UserPhotoComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoComponentHomeView.swift; sourceTree = "<group>"; };
-		9B3C00192BACABAB000B55B9 /* StreakComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakComponentHomeView.swift; sourceTree = "<group>"; };
+		9B3C00172BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoAndStreakComponentHomeView.swift; sourceTree = "<group>"; };
+		9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponentViewHome.swift; sourceTree = "<group>"; };
+		9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		9B3C00202BAD202D000B55B9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
 		9BE1799C2B8A567C0086877C /* FoodsClassificator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsClassificator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsClassificatorApp.swift; sourceTree = "<group>"; };
@@ -86,6 +90,18 @@
 				0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9B3C001F2BAD2012000B55B9 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				9BFA12652BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift */,
+				9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */,
+				9B3C00172BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift */,
+				9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */,
+				9B3C00202BAD202D000B55B9 /* HeaderView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 		9B452DE42BA4B5C500C75803 /* ContentView */ = {
@@ -132,10 +148,10 @@
 		9BE1799E2B8A567C0086877C /* FoodsClassificator */ = {
 			isa = PBXGroup;
 			children = (
-				9BFA12672BAB8383000C0CB5 /* Extensions */,
+				9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */,
 				9BE179A32B8A567D0086877C /* Assets.xcassets */,
+				9BFA12672BAB8383000C0CB5 /* Extensions */,
 				9BEBDF812BA760310077632C /* System */,
-				9BEBDF7F2BA75FEE0077632C /* App */,
 				0B7F9CFD2B9173FF0037B09B /* Models */,
 				9BEBDF772BA75EAD0077632C /* Camera */,
 				9BFB9ED02B8AD9DD00BF3028 /* Views */,
@@ -208,14 +224,6 @@
 				9BFB9ECB2B8AA84F00BF3028 /* MLModel.swift */,
 			);
 			path = MLModels;
-			sourceTree = "<group>";
-		};
-		9BEBDF7F2BA75FEE0077632C /* App */ = {
-			isa = PBXGroup;
-			children = (
-				9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		9BEBDF802BA760050077632C /* CreateMLModel */ = {
@@ -323,10 +331,7 @@
 		9BFA12642BAB7F07000C0CB5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9BFA12652BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift */,
-				9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */,
-				9B3C00172BACA7FB000B55B9 /* UserPhotoComponentHomeView.swift */,
-				9B3C00192BACABAB000B55B9 /* StreakComponentHomeView.swift */,
+				9B3C001F2BAD2012000B55B9 /* Header */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -345,6 +350,7 @@
 				9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */,
 				9BEBDF802BA760050077632C /* CreateMLModel */,
 				9BEBDF7E2BA75FDB0077632C /* MLModels */,
+				9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 9BE179932B8A567C0086877C;
 			packageReferences = (
@@ -428,6 +435,7 @@
 			files = (
 				9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */,
 				9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */,
+				9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */,
 				9BE179A42B8A567D0086877C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,17 +453,18 @@
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
+				9B3C001C2BACC903000B55B9 /* ProgressBarComponentViewHome.swift in Sources */,
 				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
 				9BFA12612BAB7EA4000C0CB5 /* HomeView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
-				9B3C001A2BACABAB000B55B9 /* StreakComponentHomeView.swift in Sources */,
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
 				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
 				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
+				9B3C00212BAD202D000B55B9 /* HeaderView.swift in Sources */,
 				9BFA12512BAB63B1000C0CB5 /* TesteLeituraJSON.swift in Sources */,
-				9B3C00182BACA7FB000B55B9 /* UserPhotoComponentHomeView.swift in Sources */,
+				9B3C00182BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift in Sources */,
 				0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
 				9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */,
@@ -521,7 +530,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -578,7 +587,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -603,8 +612,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -612,9 +621,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = VictorHugo.FoodsClassificator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -633,8 +646,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -642,9 +655,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = VictorHugo.FoodsClassificator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

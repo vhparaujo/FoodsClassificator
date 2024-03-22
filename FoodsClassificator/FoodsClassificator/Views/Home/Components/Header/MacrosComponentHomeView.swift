@@ -12,16 +12,23 @@ struct MacrosComponentHomeView: View {
     @State private var viewModel = HomeViewModel()
     
     @State var macroType: String = ""
+    @State var backgroundColor: Color = .clear
     
     var body: some View {
         VStack {
             Text(macroType)
+                .font(.subheadline)
+                .foregroundStyle(.white)
             Text("\(viewModel.macrosValue)")
                 //.font(.system(size: 15))
-                .foregroundStyle(.white)
+                .foregroundStyle(.black)
                 .font(.callout)
                 .frame(width: 75, height: 35)
-                .background(Color.myOrange)
+                .background(backgroundColor)
+                .overlay (
+                    RoundedRectangle(cornerRadius: 17)
+                        .stroke(Color.white, lineWidth: 3.5)
+                )
                 .clipShape(RoundedRectangle(cornerRadius: 17))
                 
         }

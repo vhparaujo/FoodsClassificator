@@ -8,22 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    @State private var viewModel = HomeViewModel()
-    
+        
     var body: some View {
         VStack {
             
-            HStack {
-                UserNameComponentHomeView()
-                Spacer()
-                
-                UserPhotoComponentHomeView()
-            }.padding()
+            HeaderView()
             
-            MacrosComponentHomeView(macroType: "Fibras")
+            Spacer()
             
         }
+        
     }
 }
 
