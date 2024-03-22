@@ -16,6 +16,7 @@
 		4A1A93972BACB97A00B642FA /* DatePickerComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A93962BACB97A00B642FA /* DatePickerComponentHomeView.swift */; };
 		4A1A939A2BACC82400B642FA /* MealCircleComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A93992BACC82400B642FA /* MealCircleComponentHomeView.swift */; };
 		4A1A939C2BACD75D00B642FA /* MealsCarrouselHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A939B2BACD75D00B642FA /* MealsCarrouselHomeView.swift */; };
+		4A2AF8322BAE052200FC2C2B /* WaterRectangleComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A2AF8312BAE052200FC2C2B /* WaterRectangleComponentHomeView.swift */; };
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
@@ -50,6 +51,7 @@
 		4A1A93962BACB97A00B642FA /* DatePickerComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerComponentHomeView.swift; sourceTree = "<group>"; };
 		4A1A93992BACC82400B642FA /* MealCircleComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCircleComponentHomeView.swift; sourceTree = "<group>"; };
 		4A1A939B2BACD75D00B642FA /* MealsCarrouselHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCarrouselHomeView.swift; sourceTree = "<group>"; };
+		4A2AF8312BAE052200FC2C2B /* WaterRectangleComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRectangleComponentHomeView.swift; sourceTree = "<group>"; };
 		4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImagePicker.swift; sourceTree = "<group>"; };
 		4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoundingBoxesView.swift; sourceTree = "<group>"; };
 		4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodDetection.mlmodel; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 				4A1A93962BACB97A00B642FA /* DatePickerComponentHomeView.swift */,
 				4A1A93992BACC82400B642FA /* MealCircleComponentHomeView.swift */,
 				4A1A939B2BACD75D00B642FA /* MealsCarrouselHomeView.swift */,
+				4A2AF8312BAE052200FC2C2B /* WaterRectangleComponentHomeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			files = (
 				9BFA12662BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift in Sources */,
 				9BFA12632BAB7EB3000C0CB5 /* HomeViewModel.swift in Sources */,
+				4A2AF8322BAE052200FC2C2B /* WaterRectangleComponentHomeView.swift in Sources */,
 				9B3C00152BACA4C2000B55B9 /* UserNameComponentHomeView.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
