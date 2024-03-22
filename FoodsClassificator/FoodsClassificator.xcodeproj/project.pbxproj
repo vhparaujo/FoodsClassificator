@@ -21,6 +21,10 @@
 		9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
 		9B3C00212BAD202D000B55B9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00202BAD202D000B55B9 /* HeaderView.swift */; };
 		9B5E50D22BADC22600D734C8 /* HomeTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D12BADC22600D734C8 /* HomeTexts.swift */; };
+		9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */; };
+		9B5E50D72BAE05AC00D734C8 /* DatePickerComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D62BAE05AC00D734C8 /* DatePickerComponentHomeView.swift */; };
+		9B5E50D92BAE05CE00D734C8 /* MealCircleComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D82BAE05CD00D734C8 /* MealCircleComponentHomeView.swift */; };
+		9B5E50DB2BAE05F500D734C8 /* MealsCarrouselHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50DA2BAE05F500D734C8 /* MealsCarrouselHomeView.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
 		9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
@@ -54,6 +58,10 @@
 		9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9B3C00202BAD202D000B55B9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		9B5E50D12BADC22600D734C8 /* HomeTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTexts.swift; sourceTree = "<group>"; };
+		9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		9B5E50D62BAE05AC00D734C8 /* DatePickerComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerComponentHomeView.swift; sourceTree = "<group>"; };
+		9B5E50D82BAE05CD00D734C8 /* MealCircleComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCircleComponentHomeView.swift; sourceTree = "<group>"; };
+		9B5E50DA2BAE05F500D734C8 /* MealsCarrouselHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCarrouselHomeView.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
 		9BE1799C2B8A567C0086877C /* FoodsClassificator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsClassificator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsClassificatorApp.swift; sourceTree = "<group>"; };
@@ -137,6 +145,14 @@
 				9B5E50D12BADC22600D734C8 /* HomeTexts.swift */,
 			);
 			path = Texts;
+			sourceTree = "<group>";
+		};
+		9B5E50D32BAE056500D734C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9BE179932B8A567C0086877C = {
@@ -342,6 +358,9 @@
 			isa = PBXGroup;
 			children = (
 				9B3C001F2BAD2012000B55B9 /* Header */,
+				9B5E50D62BAE05AC00D734C8 /* DatePickerComponentHomeView.swift */,
+				9B5E50D82BAE05CD00D734C8 /* MealCircleComponentHomeView.swift */,
+				9B5E50DA2BAE05F500D734C8 /* MealsCarrouselHomeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -357,6 +376,7 @@
 		9BFB9ECF2B8AD94C00BF3028 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9B5E50D32BAE056500D734C8 /* Extensions */,
 				9B5E50D02BADC21500D734C8 /* Texts */,
 				9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */,
 				9BEBDF802BA760050077632C /* CreateMLModel */,
@@ -460,6 +480,7 @@
 			files = (
 				9BFA12662BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift in Sources */,
 				9BFA12632BAB7EB3000C0CB5 /* HomeViewModel.swift in Sources */,
+				9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */,
 				9B3C00152BACA4C2000B55B9 /* UserNameComponentHomeView.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
@@ -471,6 +492,8 @@
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
+				9B5E50D92BAE05CE00D734C8 /* MealCircleComponentHomeView.swift in Sources */,
+				9B5E50DB2BAE05F500D734C8 /* MealsCarrouselHomeView.swift in Sources */,
 				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
 				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
 				9B3C00212BAD202D000B55B9 /* HeaderView.swift in Sources */,
@@ -482,6 +505,7 @@
 				9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */,
 				9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */,
 				9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */,
+				9B5E50D72BAE05AC00D734C8 /* DatePickerComponentHomeView.swift in Sources */,
 				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
 				9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */,
 			);
