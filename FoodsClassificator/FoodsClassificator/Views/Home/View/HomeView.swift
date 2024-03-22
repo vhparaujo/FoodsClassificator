@@ -8,22 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    @State private var viewModel = HomeViewModel()
-    
+        
     var body: some View {
         VStack {
             
-            HStack {
-                UserNameComponentHomeView()
-                Spacer()
-                
-                UserPhotoComponentHomeView()
-            }.padding()
-            
-            MacrosComponentHomeView(macroType: "Fibras")
-            
-            
+            HeaderView()
+         
+            Spacer()
+  
             HStack {
                 Spacer()
                 DatePickerComponentHomeView()
@@ -32,8 +24,8 @@ struct HomeView: View {
             MealsCarrouselHomeView()
             
             Spacer()
-            
         }
+        
     }
 }
 
