@@ -20,6 +20,7 @@
 		9B3C001C2BACC903000B55B9 /* ProgressBarComponentViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */; };
 		9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
 		9B3C00212BAD202D000B55B9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00202BAD202D000B55B9 /* HeaderView.swift */; };
+		9B5E50D22BADC22600D734C8 /* HomeTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D12BADC22600D734C8 /* HomeTexts.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
 		9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
@@ -52,6 +53,7 @@
 		9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponentViewHome.swift; sourceTree = "<group>"; };
 		9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9B3C00202BAD202D000B55B9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		9B5E50D12BADC22600D734C8 /* HomeTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTexts.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
 		9BE1799C2B8A567C0086877C /* FoodsClassificator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsClassificator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsClassificatorApp.swift; sourceTree = "<group>"; };
@@ -127,6 +129,14 @@
 				0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9B5E50D02BADC21500D734C8 /* Texts */ = {
+			isa = PBXGroup;
+			children = (
+				9B5E50D12BADC22600D734C8 /* HomeTexts.swift */,
+			);
+			path = Texts;
 			sourceTree = "<group>";
 		};
 		9BE179932B8A567C0086877C = {
@@ -347,6 +357,7 @@
 		9BFB9ECF2B8AD94C00BF3028 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				9B5E50D02BADC21500D734C8 /* Texts */,
 				9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */,
 				9BEBDF802BA760050077632C /* CreateMLModel */,
 				9BEBDF7E2BA75FDB0077632C /* MLModels */,
@@ -466,6 +477,7 @@
 				9BFA12512BAB63B1000C0CB5 /* TesteLeituraJSON.swift in Sources */,
 				9B3C00182BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift in Sources */,
 				0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */,
+				9B5E50D22BADC22600D734C8 /* HomeTexts.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
 				9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */,
 				9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */,

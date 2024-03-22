@@ -13,7 +13,22 @@ import SwiftUI
     var userPhoto: String = "labelImage"
     var macrosValue: Int = 100
     var streakNumber: Int = 20
-    var calories: Double = 400
-    var progressBarValue: Double = 0.4
+    var calories: Int = 2896
+    
+    var progressBarValue: Double = 0.7
+    
+    var maxProgressBarValue: Double = 0.88
+    var initialProgressBarValue: Double = 0.12
+    
+    init() {
+        maxProgressBarValueFunc()
+    }
+    
+    func maxProgressBarValueFunc() {
+        if self.progressBarValue > maxProgressBarValue {
+            self.progressBarValue = initialProgressBarValue
+        }
+    }
 
+    
 }

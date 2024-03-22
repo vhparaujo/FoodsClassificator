@@ -15,7 +15,7 @@ struct HomeView: View {
             HeaderView()
             
             Spacer()
-            
+ 
         }
         
     }

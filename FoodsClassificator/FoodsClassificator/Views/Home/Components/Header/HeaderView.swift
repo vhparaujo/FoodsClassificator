@@ -21,8 +21,10 @@ struct HeaderView: View {
             HStack {
                 VStack {
                     MacrosComponentHomeView(macroType: "Fibras", backgroundColor: Color.amareloFibras)
+                        .padding(.vertical)
                     
                     MacrosComponentHomeView(macroType: "Gorduras", backgroundColor: Color.rosaGorduras)
+                        .padding(.vertical)
                 }
                 
                 Spacer()
@@ -34,12 +36,15 @@ struct HeaderView: View {
                 
                 VStack {
                     MacrosComponentHomeView(macroType: "Proteínas", backgroundColor: Color.rosaProteinas)
-                    
+                        .padding(.vertical)
+
                     MacrosComponentHomeView(macroType: "Carboibratos", backgroundColor: Color.verdeCarboidratos)
+                        .padding(.vertical)
                 }
                 
-            }.padding(.bottom)
-                .padding(.horizontal)
+            }
+            .padding(.bottom)
+            .padding(.horizontal)
 
         }.background(Color.laranjaFundoHome)
 
