@@ -13,13 +13,42 @@ struct DatePickerComponentHomeView: View {
     
     var body: some View {
         
-        DatePicker("", selection: $selectedDate, in: Date()...,
-                   displayedComponents: .date)
-        .datePickerStyle(.compact).background(Color.orange)
-        .labelsHidden()
-        .padding()
+        // Put your own design here
+        HStack(spacing: 2) {
+            Image(systemName: "calendar")
+            Text(dateString)
+                .font(.system(size: 13, weight: .semibold))
+        }
+        .padding(8)
+        .foregroundColor(.white)
+        .background(RoundedRectangle(cornerRadius: 15, style: .continuous).foregroundColor(.laranjaMacros))
+        
+        // Put the actual DataPicker here with overlay
+        .overlay {
+            DatePicker(selection: $selectedDate, displayedComponents: .date) {}
+                .labelsHidden()
+                .contentShape(Rectangle())
+                .opacity(0.011)             // <<< here
+        }
+        
+    }
+    
+    private var dateString: String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        
+        let currentDate = Date()
+        
+        if Calendar.current.isDate(selectedDate, inSameDayAs: currentDate) {
+            return "Hoje"
+        } else {
+            return selectedDate.formatted(.dateTime.day().month())
+
+        }
     }
 }
+
 
 #Preview {
     DatePickerComponentHomeView()

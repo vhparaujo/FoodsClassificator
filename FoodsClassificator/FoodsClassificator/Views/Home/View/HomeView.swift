@@ -30,6 +30,7 @@ struct HomeView: View {
             }
             
             MealsCarrouselHomeView()
+            
             WaterRectangleComponentHomeView()
             Spacer()
             
