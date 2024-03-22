@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */; };
+		0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */; };
 		0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */; };
 		0B7F9CFC2B9107600037B09B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7F9CFB2B9107600037B09B /* Alamofire */; };
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeSeachResponse.swift; sourceTree = "<group>"; };
+		0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeAPIManager.swift; sourceTree = "<group>"; };
 		0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAPIManager.swift; sourceTree = "<group>"; };
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */,
+				0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				9BFA125A2BAB7B50000C0CB5 /* Errors */,
 				9BFA12522BAB7919000C0CB5 /* JsonNutricionalDecoder */,
 				0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */,
+				0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -438,10 +444,12 @@
 				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
 				9BFA12612BAB7EA4000C0CB5 /* HomeView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
+				0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */,
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
 				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
+				0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */,
 				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
 				9BFA12512BAB63B1000C0CB5 /* TesteLeituraJSON.swift in Sources */,
 				0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */,
