@@ -29,6 +29,5 @@ import SwiftUI
             self.progressBarValue = initialProgressBarValue
         }
     }
-
     
 }

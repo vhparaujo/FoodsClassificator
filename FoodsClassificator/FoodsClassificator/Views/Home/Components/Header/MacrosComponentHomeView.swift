@@ -20,8 +20,6 @@ struct MacrosComponentHomeView: View {
                 .font(.footnote)
                 .foregroundStyle(.white)
                 .lineLimit(1)
-                .minimumScaleFactor(0.75)
-                .frame(alignment: .leading)
                 
             Text("\(viewModel.macrosValue)")
                 .foregroundStyle(.black)
@@ -41,5 +39,9 @@ struct MacrosComponentHomeView: View {
 }
 
 #Preview {
-    MacrosComponentHomeView(macroType: "Teste")
+   HeaderView()
+}
+
+#Preview{
+    MacrosComponentHomeView(macroType: "Carboidrafhjufehuejfujcutos", backgroundColor: .blue)
 }

@@ -19,32 +19,35 @@ struct HeaderView: View {
             }.padding(.horizontal)
             
             HStack {
-                VStack {
-                    MacrosComponentHomeView(macroType: "Fibras", backgroundColor: Color.amareloFibras)
-                        .padding(.vertical)
+                ZStack {
+                    HStack{
+                        VStack {
+                            MacrosComponentHomeView(macroType: "Fibras", backgroundColor: Color.amareloFibras)
+                                .padding(.vertical)
+                            
+                            MacrosComponentHomeView(macroType: "Gorduras", backgroundColor: Color.rosaGorduras)
+                                .padding(.vertical)
+                        }
+                        
+                        Spacer()
+                        
+                        VStack {
+                            MacrosComponentHomeView(macroType: "Proteínas", backgroundColor: Color.rosaProteinas)
+                                .padding(.vertical)
+                            
+                            MacrosComponentHomeView(macroType: "Carboidratos", backgroundColor: Color.verdeCarboidratos)
+                                .padding(.vertical)
+                        }
+                    }
                     
-                    MacrosComponentHomeView(macroType: "Gorduras", backgroundColor: Color.rosaGorduras)
-                        .padding(.vertical)
+                    ProgressBarComponentHomeView()
+                        .offset(y: 50)
                 }
-                
-                Spacer()
-                
-                ProgressBarComponentHomeView()
-                    .offset(y: 50)
-                
-                Spacer()
-                
-                VStack {
-                    MacrosComponentHomeView(macroType: "Proteínas", backgroundColor: Color.rosaProteinas)
-                        .padding(.vertical)
-
-                    MacrosComponentHomeView(macroType: "Carboibratos", backgroundColor: Color.verdeCarboidratos)
-                        .padding(.vertical)
-                }
-                
             }
             .padding(.bottom)
             .padding(.horizontal)
+            
+            
 
         }.background(Color.laranjaFundoHome)
 
