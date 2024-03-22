@@ -12,6 +12,10 @@
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
+		4A1A93932BACB8BD00B642FA /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A93922BACB8BD00B642FA /* DateFormatterExtension.swift */; };
+		4A1A93972BACB97A00B642FA /* DatePickerComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A93962BACB97A00B642FA /* DatePickerComponentHomeView.swift */; };
+		4A1A939A2BACC82400B642FA /* MealCircleComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A93992BACC82400B642FA /* MealCircleComponentHomeView.swift */; };
+		4A1A939C2BACD75D00B642FA /* MealsCarrouselHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1A939B2BACD75D00B642FA /* MealsCarrouselHomeView.swift */; };
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
@@ -42,6 +46,10 @@
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
 		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentView/ViewModel/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4A1A93922BACB8BD00B642FA /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		4A1A93962BACB97A00B642FA /* DatePickerComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerComponentHomeView.swift; sourceTree = "<group>"; };
+		4A1A93992BACC82400B642FA /* MealCircleComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCircleComponentHomeView.swift; sourceTree = "<group>"; };
+		4A1A939B2BACD75D00B642FA /* MealsCarrouselHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCarrouselHomeView.swift; sourceTree = "<group>"; };
 		4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImagePicker.swift; sourceTree = "<group>"; };
 		4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoundingBoxesView.swift; sourceTree = "<group>"; };
 		4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodDetection.mlmodel; sourceTree = "<group>"; };
@@ -86,6 +94,14 @@
 				0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4A1A93912BACB89B00B642FA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A1A93922BACB8BD00B642FA /* DateFormatterExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		9B452DE42BA4B5C500C75803 /* ContentView */ = {
@@ -327,6 +343,9 @@
 				9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */,
 				9B3C00172BACA7FB000B55B9 /* UserPhotoComponentHomeView.swift */,
 				9B3C00192BACABAB000B55B9 /* StreakComponentHomeView.swift */,
+				4A1A93962BACB97A00B642FA /* DatePickerComponentHomeView.swift */,
+				4A1A93992BACC82400B642FA /* MealCircleComponentHomeView.swift */,
+				4A1A939B2BACD75D00B642FA /* MealsCarrouselHomeView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -342,6 +361,7 @@
 		9BFB9ECF2B8AD94C00BF3028 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4A1A93912BACB89B00B642FA /* Extensions */,
 				9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */,
 				9BEBDF802BA760050077632C /* CreateMLModel */,
 				9BEBDF7E2BA75FDB0077632C /* MLModels */,
@@ -444,8 +464,10 @@
 				9B3C00152BACA4C2000B55B9 /* UserNameComponentHomeView.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
+				4A1A939C2BACD75D00B642FA /* MealsCarrouselHomeView.swift in Sources */,
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
 				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
+				4A1A93932BACB8BD00B642FA /* DateFormatterExtension.swift in Sources */,
 				9BFA12612BAB7EA4000C0CB5 /* HomeView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
 				9B3C001A2BACABAB000B55B9 /* StreakComponentHomeView.swift in Sources */,
@@ -461,8 +483,10 @@
 				9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */,
 				9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */,
 				9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */,
+				4A1A93972BACB97A00B642FA /* DatePickerComponentHomeView.swift in Sources */,
 				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
 				9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */,
+				4A1A939A2BACC82400B642FA /* MealCircleComponentHomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

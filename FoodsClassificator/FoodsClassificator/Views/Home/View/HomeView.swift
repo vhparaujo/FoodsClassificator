@@ -23,6 +23,16 @@ struct HomeView: View {
             
             MacrosComponentHomeView(macroType: "Fibras")
             
+            
+            HStack {
+                Spacer()
+                DatePickerComponentHomeView()
+            }
+            
+            MealsCarrouselHomeView()
+            
+            Spacer()
+            
         }
     }
 }

@@ -12,7 +12,7 @@ struct MealCircleComponentHomeView: View {
     let buttonAction: () -> Void // Ação a ser executada quando o botão é pressionado
     
     var body: some View {
-    
+        
         ZStack {
             Circle()
                 .stroke()
@@ -43,7 +43,6 @@ struct MealCircleComponentHomeView: View {
                 })
                 .frame(width: 200)
         }
-
     }
 }
 
