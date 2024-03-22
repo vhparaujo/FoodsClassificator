@@ -13,9 +13,17 @@ struct HomeView: View {
         VStack {
             
             HeaderView()
+         
+            Spacer()
+  
+            HStack {
+                Spacer()
+                DatePickerComponentHomeView()
+            }
+            
+            MealsCarrouselHomeView()
             
             Spacer()
- 
         }
         
     }
