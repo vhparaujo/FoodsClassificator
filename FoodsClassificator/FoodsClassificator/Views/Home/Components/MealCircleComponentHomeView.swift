@@ -16,17 +16,17 @@ struct MealCircleComponentHomeView: View {
         ZStack {
             Circle()
                 .stroke()
-                .foregroundStyle(.orange)
+                .foregroundStyle(.laranjaMacros)
                 .frame(width: 220)
             
             Circle()
-                .foregroundStyle(.orange)
+                .foregroundStyle(.laranjaMacros)
                 .overlay(content: {
                     VStack {
                         Spacer()
                         Text(mealText)
                             .foregroundStyle(.white)
-                            .font(.system(size: 40))
+                            .font(.system(size: 35))
                             .multilineTextAlignment(.center) // Alinhamento do texto ao centro
                             .padding(.horizontal) // Adiciona um preenchimento horizontal
                         
@@ -39,6 +39,8 @@ struct MealCircleComponentHomeView: View {
                         Spacer()
                     }
                     .padding()
+                    .frame(width: 200)
+
                     
                 })
                 .frame(width: 200)

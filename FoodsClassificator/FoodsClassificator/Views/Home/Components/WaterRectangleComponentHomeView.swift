@@ -18,21 +18,21 @@ struct WaterRectangleComponentHomeView: View {
             VStack {
                 HStack {
                     Text("Água")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
                         .foregroundStyle(Color.white)
                         .padding(.horizontal)
 
                     Spacer()
                     
                     Text("0/2L")
-                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .font(.title)
                         .foregroundStyle(Color.white)
 
                     Button(action: {
                         print("EDITAR")
                     }, label: {
                         Image(systemName: "pencil")
-                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                            .font(.title)
                             .foregroundStyle(Color.white)
                             .padding(.horizontal)
                     })

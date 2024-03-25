@@ -12,22 +12,36 @@ struct MacrosComponentHomeView: View {
     @State private var viewModel = HomeViewModel()
     
     @State var macroType: String = ""
+    @State var backgroundColor: Color = .clear
     
     var body: some View {
         VStack {
             Text(macroType)
-            Text("\(viewModel.macrosValue)")
-                //.font(.system(size: 15))
+                .font(.footnote)
                 .foregroundStyle(.white)
-                .font(.callout)
-                .frame(width: 75, height: 35)
-                .background(Color.myOrange)
-                .clipShape(RoundedRectangle(cornerRadius: 17))
+                .lineLimit(1)
                 
+            Text("\(viewModel.macrosValue)")
+                .foregroundStyle(.black)
+                .font(.subheadline)
+                .lineLimit(1)
+                .minimumScaleFactor(0.75)
+                .frame(width: 75, height: 35)
+                .background(backgroundColor)
+                .overlay (
+                    RoundedRectangle(cornerRadius: 17)
+                        .stroke(Color.white, lineWidth: 3.5)
+                )
+                .clipShape(RoundedRectangle(cornerRadius: 17))
+               
         }
     }
 }
 
 #Preview {
-    MacrosComponentHomeView(macroType: "Teste")
+   HeaderView()
+}
+
+#Preview{
+    MacrosComponentHomeView(macroType: "Carboidrafhjufehuejfujcutos", backgroundColor: .blue)
 }
