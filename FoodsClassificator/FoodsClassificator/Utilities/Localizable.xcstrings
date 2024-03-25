@@ -1,7 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
+    " %@" : {
 
     },
     "%.2f" : {
@@ -33,7 +33,13 @@
     "%lld" : {
 
     },
+    "0/2L" : {
+
+    },
     "100g" : {
+
+    },
+    "Água" : {
 
     },
     "Alimento: %@, Confiança: %f" : {
@@ -52,16 +58,28 @@
     "Escolher da Biblioteca" : {
 
     },
+    "Litros" : {
+
+    },
+    "Meta Diária" : {
+
+    },
     "Nutrition Information" : {
 
     },
     "Properties" : {
 
     },
+    "Recipiente" : {
+
+    },
     "Type something here..." : {
 
     },
     "Usar Câmera" : {
+
+    },
+    "Você escolheu %@." : {
 
     }
   },
