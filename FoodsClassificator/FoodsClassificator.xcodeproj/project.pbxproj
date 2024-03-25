@@ -17,8 +17,9 @@
 		0B73E8672BAF60F500C6F91D /* MacroNutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8662BAF60F500C6F91D /* MacroNutrientsView.swift */; };
 		0B73E8692BAF627000C6F91D /* RecentMealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8682BAF627000C6F91D /* RecentMealCard.swift */; };
 		0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E86A2BAF62B800C6F91D /* Meal.swift */; };
+		0B73E86E2BAF703500C6F91D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B73E86D2BAF703500C6F91D /* Alamofire */; };
+		0B73E8702BAFAC0E00C6F91D /* SemiCircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E86F2BAFAC0E00C6F91D /* SemiCircularProgressBar.swift */; };
 		0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */; };
-		0B7F9CFC2B9107600037B09B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7F9CFB2B9107600037B09B /* Alamofire */; };
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
@@ -55,6 +56,7 @@
 		0B73E8662BAF60F500C6F91D /* MacroNutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroNutrientsView.swift; sourceTree = "<group>"; };
 		0B73E8682BAF627000C6F91D /* RecentMealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMealCard.swift; sourceTree = "<group>"; };
 		0B73E86A2BAF62B800C6F91D /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		0B73E86F2BAFAC0E00C6F91D /* SemiCircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiCircularProgressBar.swift; sourceTree = "<group>"; };
 		0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAPIManager.swift; sourceTree = "<group>"; };
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
@@ -87,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7F9CFC2B9107600037B09B /* Alamofire in Frameworks */,
+				0B73E86E2BAF703500C6F91D /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +114,7 @@
 				0B73E8642BAF609000C6F91D /* MacroCircle.swift */,
 				0B73E8662BAF60F500C6F91D /* MacroNutrientsView.swift */,
 				0B73E8682BAF627000C6F91D /* RecentMealCard.swift */,
+				0B73E86F2BAFAC0E00C6F91D /* SemiCircularProgressBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -130,6 +133,13 @@
 				0B73E85E2BAF5FEB00C6F91D /* RecentMealsViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0B73E86C2BAF701A00C6F91D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		0B7F9CFD2B9173FF0037B09B /* Models */ = {
@@ -172,6 +182,7 @@
 			children = (
 				9BE1799E2B8A567C0086877C /* FoodsClassificator */,
 				9BE1799D2B8A567C0086877C /* Products */,
+				0B73E86C2BAF701A00C6F91D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -432,7 +443,7 @@
 			);
 			name = FoodsClassificator;
 			packageProductDependencies = (
-				0B7F9CFB2B9107600037B09B /* Alamofire */,
+				0B73E86D2BAF703500C6F91D /* Alamofire */,
 			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
@@ -497,6 +508,7 @@
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
+				0B73E8702BAFAC0E00C6F91D /* SemiCircularProgressBar.swift in Sources */,
 				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
 				0B73E8632BAF605B00C6F91D /* ProgressBar.swift in Sources */,
 				9BFA12612BAB7EA4000C0CB5 /* HomeView.swift in Sources */,
@@ -743,7 +755,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B7F9CFB2B9107600037B09B /* Alamofire */ = {
+		0B73E86D2BAF703500C6F91D /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;

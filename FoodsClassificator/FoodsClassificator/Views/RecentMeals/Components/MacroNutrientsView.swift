@@ -12,10 +12,10 @@ struct MacroNutrientsView: View {
     
     var body: some View {
         HStack {
-            MacroCircle(label: "Gorduras", value: macros.fats)
-            MacroCircle(label: "Fibras", value: macros.fibers)
-            MacroCircle(label: "Carboidratos", value: macros.carbohydrates)
-            MacroCircle(label: "Proteínas", value: macros.proteins)
+            MacroCircle(label: "Gorduras", value: macros.fats, color: .blue)
+            MacroCircle(label: "Fibras", value: macros.fibers, color: .purple)
+            MacroCircle(label: "Carboidratos", value: macros.carbohydrates, color: .yellow)
+            MacroCircle(label: "Proteínas", value: macros.proteins, color: .pink)
         }
     }
 }

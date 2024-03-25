@@ -13,18 +13,40 @@ struct HeaderView: View {
     @Binding var isExpanded: Bool
     
     var body: some View {
-        VStack {
-            Text(title)
-                .font(isExpanded ? .title : .title2)
-                .frame(maxWidth: .infinity, alignment: .center)
-            
-            ProgressBar(value: Double(meal.totalCalories / 2000)) // Asume um valor máximo de calorias
-            
-            if isExpanded {
-                MacroNutrientsView(macros: meal.macros)
+        GeometryReader { geometry in
+            VStack {
+                Text(title)
+                    .font(.largeTitle)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .foregroundStyle(.white)
+                    .bold()
+                    .padding()
+                
+                if isExpanded {
+                    SemiCircularProgressBar(value: Double(meal.totalCalories / 2000))
+                } else {
+                    ProgressBar(value: Double(meal.totalCalories / 2000))
+                        .padding(.horizontal, geometry.size.width * 0.3)
+                }
+                
+                Text("\(meal.totalCalories) calorias")
+                    .font(.headline)
+                    .frame(maxWidth: .infinity, alignment: .center)
+                    .foregroundStyle(.white)
+                    .padding(.top, isExpanded ? -geometry.size.height * 0.06 : -geometry.size.height * 0.07)
+                
+                if isExpanded {
+                    MacroNutrientsView(macros: meal.macros)
+                        .padding(.top, -geometry.size.height * 0.02)
+                }
+                
+                Spacer()
             }
+            .animation(.easeInOut, value: isExpanded)
+            .background(Color.myOrange)
+            .frame(height: isExpanded ? geometry.size.height * 0.37 : geometry.size.height * 0.2)
+            .padding(.top, -geometry.size.height * 0.02)
         }
-        .animation(.easeInOut, value: isExpanded)
-        .padding()
     }
 }

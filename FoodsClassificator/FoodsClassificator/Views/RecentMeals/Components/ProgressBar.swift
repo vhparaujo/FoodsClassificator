@@ -12,13 +12,13 @@ struct ProgressBar: View {
     
     var body: some View {
         GeometryReader { geometry in
-            RoundedRectangle(cornerRadius: 45)
-                .fill(Color.gray.opacity(0.5))
-                .frame(height: 20)
+            RoundedRectangle(cornerRadius: 21)
+                .fill(Color.white)
+                .frame(height: 10)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 45)
+                    RoundedRectangle(cornerRadius: 21)
                         .fill(Color.green)
-                        .frame(width: geometry.size.width * value, height: 20)
+                        .frame(width: geometry.size.width * value, height: 10)
                 )
         }
     }

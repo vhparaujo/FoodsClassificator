@@ -24,50 +24,59 @@ struct RecentMealsView: View {
             ZStack(alignment: .bottom) {
                 // Seu conteúdo principal aqui...
                 let cafe1 = Meal(mealName: "Cafe 1", image: "", totalCalories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30), foodDetails: ["arroz":FoodDetail(calories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30))])
+                
+                VStack {
+                    HeaderView(meal: viewModel.currentMeal ?? cafe1, title: title, isExpanded: $isExpanded)
+                }
+                
                 // Modal de sobreposição
                 VStack {
-                    if isExpanded {
-                        // Cabeçalho com mais detalhes
-                        HeaderView(meal: viewModel.currentMeal ?? cafe1, title: title, isExpanded: $isExpanded)
-                            .transition(.move(edge: .top))
-                    } else {
-                        // Cabeçalho compacto
-                        HeaderView(meal: viewModel.recentMeals.last!, title: title, isExpanded: $isExpanded)
-                    }
+                    RoundedRectangle(cornerRadius: 2.5)
+                        .frame(width: geometry.size.width * 0.09, height: geometry.size.height * 0.006)
+                        .padding(.top, geometry.size.height * 0.013)
+                    
+                    Text("Refeições recentes")
+                        .font(.title2)
+                        .frame(maxWidth: .infinity, alignment: .center)
+//                        .padding()
                     
                     Button("Adicionar nova refeição") {
                         onAddMeal()
                     }
-                    .padding()
                     
-                    List {
-                        ForEach(viewModel.recentMeals) { meal in
-                            RecentMealCard(meal: meal) {
-                                viewModel.setCurrentMeal(meal)
+                    .buttonStyle(.borderedProminent)
+                    
+                    VStack {
+                        ScrollView {
+                            ForEach(viewModel.recentMeals) { meal in
+                                RecentMealCard(meal: meal) {
+                                    viewModel.setCurrentMeal(meal)
+                                }
+                                .padding()
                             }
                         }
                     }
                 }
                 .frame(width: geometry.size.width)
                 .background(Color.white)
-                .cornerRadius(10)
-                .frame(height: isExpanded ? geometry.size.height * 0.6 : geometry.size.height * 0.1)
+                .cornerRadius(30)
+                .frame(height: isExpanded ? geometry.size.height * 0.72 : geometry.size.height * 0.9)
                 .animation(.spring(), value: isExpanded)
                 .gesture(
                     DragGesture().onEnded { value in
                         if value.translation.height > 50 { // Arraste para baixo
                             withAnimation {
-                                isExpanded = false
+                                isExpanded = true
                             }
                         } else if value.translation.height < -50 { // Arraste para cima
                             withAnimation {
-                                isExpanded = true
+                                isExpanded = false
                             }
                         }
                     }
                 )
             }
-            .edgesIgnoringSafeArea(.all)
+            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }
