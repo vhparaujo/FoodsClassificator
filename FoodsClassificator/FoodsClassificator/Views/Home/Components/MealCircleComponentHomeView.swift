@@ -16,11 +16,11 @@ struct MealCircleComponentHomeView: View {
         ZStack {
             Circle()
                 .stroke()
-                .foregroundStyle(.laranjaMacros)
-                .frame(width: 220)
+                .foregroundStyle(.laranjaFundoHome)
+                .frame(width: 280)
             
             Circle()
-                .foregroundStyle(.laranjaMacros)
+                .foregroundStyle(.laranjaFundoHome)
                 .overlay(content: {
                     VStack {
                         Spacer()
@@ -39,17 +39,18 @@ struct MealCircleComponentHomeView: View {
                         Spacer()
                     }
                     .padding()
-                    .frame(width: 200)
-
                     
                 })
-                .frame(width: 200)
+                .frame(width: 260)
         }
     }
 }
 
+//#Preview {
+//    MealCircleComponentHomeView(mealText: "Café da Manhã") {
+//        print("Adicionar alimento")
+//    }
+//}
 #Preview {
-    MealCircleComponentHomeView(mealText: "Café da Manhã") {
-        print("Adicionar alimento")
-    }
+    HomeView()
 }
