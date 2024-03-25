@@ -51,31 +51,10 @@ struct MealsCarrouselHomeView: View {
                 )
             }
         }
+        
     }
+    
 }
-
-
-//MARK: esse aqui é com a logica de IndexCircular
-//let adjustedIndex = (currentIndex + index) % mealViews.count // Índice ajustado para ser circular
-//
-//                       MealCircleComponentHomeView(mealText: mealViews[adjustedIndex].0,
-//                                                   buttonAction: mealViews[adjustedIndex].1)
-//               .gesture(
-//                   DragGesture()
-//                       .onEnded({ value in
-//                           let threshhold: CGFloat = 50
-//                           if value.translation.width > threshhold {
-//                               withAnimation {
-//                                   self.currentIndex = (self.currentIndex - 1 + mealViews.count) % mealViews.count // Atualiza o índice para o anterior
-//                               }
-//                           } else if value.translation.width < -threshhold{
-//                               withAnimation {
-//                                   self.currentIndex = (self.currentIndex + 1) % mealViews.count // Atualiza o índice para o próximo
-//                               }
-//                           }
-//                       })
-//               )
-
 
 #Preview {
     MealsCarrouselHomeView()
