@@ -16,12 +16,13 @@ struct DatePickerComponentHomeView: View {
         // Put your own design here
         HStack(spacing: 2) {
             Image(systemName: "calendar")
-            Text(dateString)
+            Text(" \(dateString)")
                 .font(.system(size: 13, weight: .semibold))
         }
-        .padding(8)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
         .foregroundColor(.white)
-        .background(RoundedRectangle(cornerRadius: 15, style: .continuous).foregroundColor(.laranjaMacros))
+        .background(RoundedRectangle(cornerRadius: 15, style: .continuous).foregroundColor(.laranjaFundoHome))
         
         // Put the actual DataPicker here with overlay
         .overlay {
@@ -30,6 +31,7 @@ struct DatePickerComponentHomeView: View {
                 .contentShape(Rectangle())
                 .opacity(0.011)             // <<< here
         }
+        .padding(.trailing)
         
     }
     

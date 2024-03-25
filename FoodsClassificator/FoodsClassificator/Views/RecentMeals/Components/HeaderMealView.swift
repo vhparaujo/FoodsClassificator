@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HeaderView: View {
+struct HeaderMealView: View {
     var meal: Meal
     var title: String
     @Binding var isExpanded: Bool
@@ -44,7 +44,7 @@ struct HeaderView: View {
                 Spacer()
             }
             .animation(.easeInOut, value: isExpanded)
-            .background(Color.myOrange)
+            .background(Color.laranjaMacros)
             .frame(height: isExpanded ? geometry.size.height * 0.37 : geometry.size.height * 0.2)
             .padding(.top, -geometry.size.height * 0.02)
         }

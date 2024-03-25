@@ -11,7 +11,7 @@ struct RecentMealsView: View {
     @State private var isExpanded = false
     @ObservedObject var viewModel: RecentMealsViewModel
     var title: String
-    var onAddMeal: () -> Void // Closure que será chamada para adicionar nova refeição
+    var onAddMeal: () -> Void 
     
     init(title: String, viewModel: RecentMealsViewModel, onAddMeal: @escaping () -> Void) {
         self.title = title
@@ -26,7 +26,7 @@ struct RecentMealsView: View {
                 let cafe1 = Meal(mealName: "Cafe 1", image: "", totalCalories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30), foodDetails: ["arroz":FoodDetail(calories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30))])
                 
                 VStack {
-                    HeaderView(meal: viewModel.currentMeal ?? cafe1, title: title, isExpanded: $isExpanded)
+                    HeaderMealView(meal: viewModel.currentMeal ?? cafe1, title: title, isExpanded: $isExpanded)
                 }
                 
                 // Modal de sobreposição

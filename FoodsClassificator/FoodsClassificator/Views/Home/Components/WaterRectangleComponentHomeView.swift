@@ -11,22 +11,23 @@ struct WaterRectangleComponentHomeView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 25)
-                .foregroundStyle(Color.laranjaMacros)
-                .frame(width: .infinity, height: 150)
+                .foregroundStyle(Color.laranjaFundoHome)
+                .frame(width: 300, height: 100)
             .padding()
             
             VStack {
                 HStack {
                     Text("Água")
-                        .font(.title)
+                        .font(.system(size: 20))
+                        .bold()
                         .foregroundStyle(Color.white)
                         .padding(.horizontal)
 
                     Spacer()
                     
                     Text("0/2L")
-                        .font(.title)
-                        .foregroundStyle(Color.white)
+                        .font(.system(size: 20))
+                        .bold()                    .foregroundStyle(Color.white)
 
                     Button(action: {
                         print("EDITAR")
@@ -37,12 +38,14 @@ struct WaterRectangleComponentHomeView: View {
                             .padding(.horizontal)
                     })
                 }
+                .padding(.horizontal, 50)
                 
                 HStack{
                     Button(action: {
                         print("Agua foi adicionada")
                     }, label: {
                         Image("waterbottle")
+                            .resizable().frame(width: 20, height: 50)
                     })
                     .padding(.horizontal)
 
@@ -50,6 +53,8 @@ struct WaterRectangleComponentHomeView: View {
                         print("Agua foi adicionada")
                     }, label: {
                         Image("waterbottle")
+                            .resizable().frame(width: 20, height: 50)
+
                     })
                     .padding(.horizontal)
 
@@ -57,6 +62,8 @@ struct WaterRectangleComponentHomeView: View {
                         print("Agua foi adicionada")
                     }, label: {
                         Image("waterbottle")
+                            .resizable().frame(width: 20, height: 50)
+
                     })
                     .padding(.horizontal)
 
@@ -64,6 +71,8 @@ struct WaterRectangleComponentHomeView: View {
                         print("Agua foi adicionada")
                     }, label: {
                         Image("waterbottle")
+                            .resizable().frame(width: 20, height: 50)
+
                     })
                     .padding(.horizontal)
                     
@@ -75,5 +84,5 @@ struct WaterRectangleComponentHomeView: View {
 }
 
 #Preview {
-    WaterRectangleComponentHomeView()
+    HomeView()
 }

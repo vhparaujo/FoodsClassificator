@@ -11,7 +11,8 @@ import SwiftUI
 struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView().preferredColorScheme(.light)
+            HomeView()
+                .preferredColorScheme(.light)
         }
     }
 }
