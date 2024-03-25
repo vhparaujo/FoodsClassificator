@@ -1,0 +1,69 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%.2f" : {
+
+    },
+    "%.2f %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$.2f %2$@"
+          }
+        }
+      }
+    },
+    "%@" : {
+
+    },
+    "%@(%@)" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@(%2$@)"
+          }
+        }
+      }
+    },
+    "%lld" : {
+
+    },
+    "100g" : {
+
+    },
+    "Alimento: %@, Confiança: %f" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Alimento: %1$@, Confiança: %2$f"
+          }
+        }
+      }
+    },
+    "Done" : {
+
+    },
+    "Escolher da Biblioteca" : {
+
+    },
+    "Nutrition Information" : {
+
+    },
+    "Properties" : {
+
+    },
+    "Type something here..." : {
+
+    },
+    "Usar Câmera" : {
+
+    }
+  },
+  "version" : "1.0"
+}
