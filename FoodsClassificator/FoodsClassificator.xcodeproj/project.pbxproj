@@ -26,22 +26,11 @@
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
-		9B3C00152BACA4C2000B55B9 /* UserNameComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */; };
-		9B3C00182BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00172BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift */; };
-		9B3C001C2BACC903000B55B9 /* ProgressBarComponentViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */; };
-		9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
-		9B3C00212BAD202D000B55B9 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00202BAD202D000B55B9 /* HeaderView.swift */; };
-		9B5E50D22BADC22600D734C8 /* HomeTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D12BADC22600D734C8 /* HomeTexts.swift */; };
-		9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */; };
-		9B5E50D72BAE05AC00D734C8 /* DatePickerComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D62BAE05AC00D734C8 /* DatePickerComponentHomeView.swift */; };
-		9B5E50D92BAE05CE00D734C8 /* MealCircleComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D82BAE05CD00D734C8 /* MealCircleComponentHomeView.swift */; };
-		9B5E50DB2BAE05F500D734C8 /* MealsCarrouselHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50DA2BAE05F500D734C8 /* MealsCarrouselHomeView.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
 		9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
 		9BE179A42B8A567D0086877C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE179A32B8A567D0086877C /* Assets.xcassets */; };
 		9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE179A62B8A567D0086877C /* Preview Assets.xcassets */; };
-		9BE8627E2BB1EFF8001C37CB /* WaterRectangleComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE8627D2BB1EFF8001C37CB /* WaterRectangleComponentHomeView.swift */; };
 		9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEBDF872BA760EA0077632C /* ExampleView.swift */; };
 		9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEBDF8A2BA7611E0077632C /* ExampleViewModel.swift */; };
 		9BFA12512BAB63B1000C0CB5 /* TesteLeituraJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12502BAB63B1000C0CB5 /* TesteLeituraJSON.swift */; };
@@ -50,7 +39,7 @@
 		9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA125B2BAB7B5C000C0CB5 /* Errors.swift */; };
 		9BFA12612BAB7EA4000C0CB5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12602BAB7EA4000C0CB5 /* HomeView.swift */; };
 		9BFA12632BAB7EB3000C0CB5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12622BAB7EB3000C0CB5 /* HomeViewModel.swift */; };
-		9BFA12662BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12652BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift */; };
+		9BFA12662BAB7F1F000C0CB5 /* MacrosComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12652BAB7F1F000C0CB5 /* MacrosComponent.swift */; };
 		9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12682BAB8395000C0CB5 /* ColorExtension.swift */; };
 		9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB9ECB2B8AA84F00BF3028 /* MLModel.swift */; };
 		9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB9ECD2B8AC9DB00BF3028 /* CameraView.swift */; };
@@ -75,23 +64,12 @@
 		4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImagePicker.swift; sourceTree = "<group>"; };
 		4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoundingBoxesView.swift; sourceTree = "<group>"; };
 		4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodDetection.mlmodel; sourceTree = "<group>"; };
-		9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameComponentHomeView.swift; sourceTree = "<group>"; };
-		9B3C00172BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPhotoAndStreakComponentHomeView.swift; sourceTree = "<group>"; };
-		9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponentViewHome.swift; sourceTree = "<group>"; };
-		9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		9B3C00202BAD202D000B55B9 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		9B5E50D12BADC22600D734C8 /* HomeTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTexts.swift; sourceTree = "<group>"; };
-		9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
-		9B5E50D62BAE05AC00D734C8 /* DatePickerComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerComponentHomeView.swift; sourceTree = "<group>"; };
-		9B5E50D82BAE05CD00D734C8 /* MealCircleComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCircleComponentHomeView.swift; sourceTree = "<group>"; };
-		9B5E50DA2BAE05F500D734C8 /* MealsCarrouselHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCarrouselHomeView.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
 		9BE1799C2B8A567C0086877C /* FoodsClassificator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsClassificator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsClassificatorApp.swift; sourceTree = "<group>"; };
 		9BE179A12B8A567C0086877C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9BE179A32B8A567D0086877C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BE179A62B8A567D0086877C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		9BE8627D2BB1EFF8001C37CB /* WaterRectangleComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterRectangleComponentHomeView.swift; sourceTree = "<group>"; };
 		9BEBDF872BA760EA0077632C /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		9BEBDF8A2BA7611E0077632C /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
 		9BFA12502BAB63B1000C0CB5 /* TesteLeituraJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteLeituraJSON.swift; sourceTree = "<group>"; };
@@ -100,7 +78,7 @@
 		9BFA125B2BAB7B5C000C0CB5 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		9BFA12602BAB7EA4000C0CB5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		9BFA12622BAB7EB3000C0CB5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		9BFA12652BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacrosComponentHomeView.swift; sourceTree = "<group>"; };
+		9BFA12652BAB7F1F000C0CB5 /* MacrosComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacrosComponent.swift; sourceTree = "<group>"; };
 		9BFA12682BAB8395000C0CB5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		9BFB9ECB2B8AA84F00BF3028 /* MLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLModel.swift; sourceTree = "<group>"; };
 		9BFB9ECD2B8AC9DB00BF3028 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -174,18 +152,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9B3C001F2BAD2012000B55B9 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				9BFA12652BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift */,
-				9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */,
-				9B3C00172BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift */,
-				9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */,
-				9B3C00202BAD202D000B55B9 /* HeaderView.swift */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
 		9B452DE42BA4B5C500C75803 /* ContentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,22 +177,6 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		9B5E50D02BADC21500D734C8 /* Texts */ = {
-			isa = PBXGroup;
-			children = (
-				9B5E50D12BADC22600D734C8 /* HomeTexts.swift */,
-			);
-			path = Texts;
-			sourceTree = "<group>";
-		};
-		9B5E50D32BAE056500D734C8 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 		9BE179932B8A567C0086877C = {
 			isa = PBXGroup;
 			children = (
@@ -247,10 +197,10 @@
 		9BE1799E2B8A567C0086877C /* FoodsClassificator */ = {
 			isa = PBXGroup;
 			children = (
-				9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */,
-				9BE179A32B8A567D0086877C /* Assets.xcassets */,
 				9BFA12672BAB8383000C0CB5 /* Extensions */,
+				9BE179A32B8A567D0086877C /* Assets.xcassets */,
 				9BEBDF812BA760310077632C /* System */,
+				9BEBDF7F2BA75FEE0077632C /* App */,
 				0B7F9CFD2B9173FF0037B09B /* Models */,
 				9BEBDF772BA75EAD0077632C /* Camera */,
 				9BFB9ED02B8AD9DD00BF3028 /* Views */,
@@ -323,6 +273,14 @@
 				9BFB9ECB2B8AA84F00BF3028 /* MLModel.swift */,
 			);
 			path = MLModels;
+			sourceTree = "<group>";
+		};
+		9BEBDF7F2BA75FEE0077632C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9BE1799F2B8A567C0086877C /* FoodsClassificatorApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 		9BEBDF802BA760050077632C /* CreateMLModel */ = {
@@ -431,11 +389,7 @@
 		9BFA12642BAB7F07000C0CB5 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9B3C001F2BAD2012000B55B9 /* Header */,
-				9B5E50D62BAE05AC00D734C8 /* DatePickerComponentHomeView.swift */,
-				9B5E50D82BAE05CD00D734C8 /* MealCircleComponentHomeView.swift */,
-				9B5E50DA2BAE05F500D734C8 /* MealsCarrouselHomeView.swift */,
-				9BE8627D2BB1EFF8001C37CB /* WaterRectangleComponentHomeView.swift */,
+				9BFA12652BAB7F1F000C0CB5 /* MacrosComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -451,12 +405,9 @@
 		9BFB9ECF2B8AD94C00BF3028 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				9B5E50D32BAE056500D734C8 /* Extensions */,
-				9B5E50D02BADC21500D734C8 /* Texts */,
 				9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */,
 				9BEBDF802BA760050077632C /* CreateMLModel */,
 				9BEBDF7E2BA75FDB0077632C /* MLModels */,
-				9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -520,7 +471,6 @@
 			knownRegions = (
 				en,
 				Base,
-				"pt-BR",
 			);
 			mainGroup = 9BE179932B8A567C0086877C;
 			packageReferences = (
@@ -542,7 +492,6 @@
 			files = (
 				9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */,
 				9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */,
-				9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */,
 				9BE179A42B8A567D0086877C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,14 +503,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BFA12662BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift in Sources */,
+				9BFA12662BAB7F1F000C0CB5 /* MacrosComponent.swift in Sources */,
 				9BFA12632BAB7EB3000C0CB5 /* HomeViewModel.swift in Sources */,
-				9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */,
-				9B3C00152BACA4C2000B55B9 /* UserNameComponentHomeView.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
-				9B3C001C2BACC903000B55B9 /* ProgressBarComponentViewHome.swift in Sources */,
 				0B73E8702BAFAC0E00C6F91D /* SemiCircularProgressBar.swift in Sources */,
 				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
 				0B73E8632BAF605B00C6F91D /* ProgressBar.swift in Sources */,
@@ -574,29 +520,19 @@
 				0B73E8672BAF60F500C6F91D /* MacroNutrientsView.swift in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
-				9B5E50D92BAE05CE00D734C8 /* MealCircleComponentHomeView.swift in Sources */,
-				9B5E50DB2BAE05F500D734C8 /* MealsCarrouselHomeView.swift in Sources */,
-				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
-				0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */,
-				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
-				9B3C00212BAD202D000B55B9 /* HeaderView.swift in Sources */,
 				0B73E8652BAF609000C6F91D /* MacroCircle.swift in Sources */,
 				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
 				0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */,
 				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
 				0B73E85F2BAF5FEB00C6F91D /* RecentMealsViewModel.swift in Sources */,
 				9BFA12512BAB63B1000C0CB5 /* TesteLeituraJSON.swift in Sources */,
-				9B3C00182BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift in Sources */,
 				0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */,
-				9B5E50D22BADC22600D734C8 /* HomeTexts.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
 				9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */,
 				0B73E8692BAF627000C6F91D /* RecentMealCard.swift in Sources */,
 				9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */,
 				9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */,
-				9B5E50D72BAE05AC00D734C8 /* DatePickerComponentHomeView.swift in Sources */,
 				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
-				9BE8627E2BB1EFF8001C37CB /* WaterRectangleComponentHomeView.swift in Sources */,
 				9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */,
 				0B73E8572BAF55DD00C6F91D /* RecentMealsView.swift in Sources */,
 			);
@@ -657,7 +593,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -714,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -739,8 +675,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -748,13 +684,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = VictorHugo.FoodsClassificator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -773,8 +705,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -782,13 +714,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = VictorHugo.FoodsClassificator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
