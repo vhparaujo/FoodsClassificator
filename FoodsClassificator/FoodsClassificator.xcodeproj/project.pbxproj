@@ -10,7 +10,6 @@
 		0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */; };
 		0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */; };
 		0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */; };
-		0B7F9CFC2B9107600037B09B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B7F9CFB2B9107600037B09B /* Alamofire */; };
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
@@ -19,6 +18,8 @@
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
+		4ADFA4152BB352F2007BCE1C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADFA4142BB352F2007BCE1C /* Alamofire */; };
+		4ADFA4172BB352F2007BCE1C /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADFA4162BB352F2007BCE1C /* AlamofireDynamic */; };
 		9B3C00152BACA4C2000B55B9 /* UserNameComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */; };
 		9B3C00182BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00172BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift */; };
 		9B3C001C2BACC903000B55B9 /* ProgressBarComponentViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */; };
@@ -97,7 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B7F9CFC2B9107600037B09B /* Alamofire in Frameworks */,
+				4ADFA4152BB352F2007BCE1C /* Alamofire in Frameworks */,
+				4ADFA4172BB352F2007BCE1C /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,7 +441,8 @@
 			);
 			name = FoodsClassificator;
 			packageProductDependencies = (
-				0B7F9CFB2B9107600037B09B /* Alamofire */,
+				4ADFA4142BB352F2007BCE1C /* Alamofire */,
+				4ADFA4162BB352F2007BCE1C /* AlamofireDynamic */,
 			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
@@ -471,7 +474,7 @@
 			);
 			mainGroup = 9BE179932B8A567C0086877C;
 			packageReferences = (
-				0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4ADFA4132BB352F2007BCE1C /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 9BE1799D2B8A567C0086877C /* Products */;
 			projectDirPath = "";
@@ -669,7 +672,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = K559Z2V9Q2;
+				DEVELOPMENT_TEAM = 2GNPFRN684;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
@@ -703,7 +706,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = K559Z2V9Q2;
+				DEVELOPMENT_TEAM = 2GNPFRN684;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
@@ -753,21 +756,26 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		4ADFA4132BB352F2007BCE1C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.1;
+				minimumVersion = 5.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B7F9CFB2B9107600037B09B /* Alamofire */ = {
+		4ADFA4142BB352F2007BCE1C /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 4ADFA4132BB352F2007BCE1C /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		4ADFA4162BB352F2007BCE1C /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4ADFA4132BB352F2007BCE1C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
