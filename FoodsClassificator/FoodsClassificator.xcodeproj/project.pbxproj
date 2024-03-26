@@ -15,11 +15,11 @@
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
 		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
 		4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */; };
+		4ABD547D2BB354ED00565E1B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABD547C2BB354ED00565E1B /* Alamofire */; };
+		4ABD547F2BB354ED00565E1B /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABD547E2BB354ED00565E1B /* AlamofireDynamic */; };
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
-		4ADFA4152BB352F2007BCE1C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADFA4142BB352F2007BCE1C /* Alamofire */; };
-		4ADFA4172BB352F2007BCE1C /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4ADFA4162BB352F2007BCE1C /* AlamofireDynamic */; };
 		9B3C00152BACA4C2000B55B9 /* UserNameComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */; };
 		9B3C00182BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C00172BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift */; };
 		9B3C001C2BACC903000B55B9 /* ProgressBarComponentViewHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */; };
@@ -98,8 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ADFA4152BB352F2007BCE1C /* Alamofire in Frameworks */,
-				4ADFA4172BB352F2007BCE1C /* AlamofireDynamic in Frameworks */,
+				4ABD547D2BB354ED00565E1B /* Alamofire in Frameworks */,
+				4ABD547F2BB354ED00565E1B /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,8 +441,8 @@
 			);
 			name = FoodsClassificator;
 			packageProductDependencies = (
-				4ADFA4142BB352F2007BCE1C /* Alamofire */,
-				4ADFA4162BB352F2007BCE1C /* AlamofireDynamic */,
+				4ABD547C2BB354ED00565E1B /* Alamofire */,
+				4ABD547E2BB354ED00565E1B /* AlamofireDynamic */,
 			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
@@ -474,7 +474,7 @@
 			);
 			mainGroup = 9BE179932B8A567C0086877C;
 			packageReferences = (
-				4ADFA4132BB352F2007BCE1C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4ABD547B2BB354ED00565E1B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 9BE1799D2B8A567C0086877C /* Products */;
 			projectDirPath = "";
@@ -756,7 +756,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4ADFA4132BB352F2007BCE1C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		4ABD547B2BB354ED00565E1B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -767,14 +767,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4ADFA4142BB352F2007BCE1C /* Alamofire */ = {
+		4ABD547C2BB354ED00565E1B /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4ADFA4132BB352F2007BCE1C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 4ABD547B2BB354ED00565E1B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		4ADFA4162BB352F2007BCE1C /* AlamofireDynamic */ = {
+		4ABD547E2BB354ED00565E1B /* AlamofireDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4ADFA4132BB352F2007BCE1C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 4ABD547B2BB354ED00565E1B /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */
