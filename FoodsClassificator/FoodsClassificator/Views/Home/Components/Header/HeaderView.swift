@@ -22,20 +22,20 @@ struct HeaderView: View {
                 ZStack {
                     HStack{
                         VStack {
-                            MacrosComponentHomeView(macroType: "Fibras", backgroundColor: Color.amareloFibras)
+                            MacrosComponentHomeView(macroType: HomeTexts.proteinas, backgroundColor: Color.amareloFibras)
                                 .padding(.vertical)
                             
-                            MacrosComponentHomeView(macroType: "Gorduras", backgroundColor: Color.rosaGorduras)
+                            MacrosComponentHomeView(macroType: HomeTexts.gorduras, backgroundColor: Color.rosaGorduras)
                                 .padding(.vertical)
                         }
                         
                         Spacer()
                         
                         VStack {
-                            MacrosComponentHomeView(macroType: "Proteínas", backgroundColor: Color.rosaProteinas)
+                            MacrosComponentHomeView(macroType: HomeTexts.carboidratos, backgroundColor: Color.rosaProteinas)
                                 .padding(.vertical)
                             
-                            MacrosComponentHomeView(macroType: "Carboidratos", backgroundColor: Color.verdeCarboidratos)
+                            MacrosComponentHomeView(macroType: HomeTexts.fibras, backgroundColor: Color.verdeCarboidratos)
                                 .padding(.vertical)
                         }
                     }

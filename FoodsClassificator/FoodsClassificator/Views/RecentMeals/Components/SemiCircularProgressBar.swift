@@ -43,7 +43,7 @@ struct SemiCircularProgressBar: View {
                     .position(x: geometry.size.width / 2, y: geometry.size.height - 30)
 
                 // Posiciona o texto 'Calorias' na base do semicírculo
-                Text("Calorias")
+                Text(HomeTexts.calorias)
                     .font(.caption)
                     .foregroundColor(Color.white)
                     .position(x: geometry.size.width / 2, y: geometry.size.height + 10)
