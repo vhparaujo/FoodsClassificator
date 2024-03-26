@@ -1,7 +1,7 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "" : {
+    " %@" : {
 
     },
     "%.2f" : {
@@ -33,7 +33,22 @@
     "%lld" : {
 
     },
+    "%lld Cal" : {
+
+    },
+    "%lld calorias" : {
+
+    },
+    "0/2L" : {
+
+    },
     "100g" : {
+
+    },
+    "Adicionar nova refeição" : {
+
+    },
+    "Água" : {
 
     },
     "Alimento: %@, Confiança: %f" : {
@@ -46,6 +61,9 @@
         }
       }
     },
+    "Calorias" : {
+
+    },
     "Done" : {
 
     },
@@ -56,6 +74,9 @@
 
     },
     "Properties" : {
+
+    },
+    "Refeições recentes" : {
 
     },
     "Type something here..." : {

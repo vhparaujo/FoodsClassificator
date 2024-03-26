@@ -9,6 +9,6 @@ import SwiftUI
 
 extension Color {
     
-    static let myOrange = Color("laranjaMacros")
+//    static let myOrange = Color("laranjaMacros")
     
 }

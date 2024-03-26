@@ -28,7 +28,7 @@ struct MealsCarrouselHomeView: View {
                         .frame(width: 300, height: 300)
                         .opacity(currentIndex == index ? 1.0 : 0.5)
                         .scaleEffect(currentIndex == index ? 1.0 : 0.5)
-                        .offset(x: CGFloat(index - currentIndex) * 200 + dragOffset , y: 0)
+                        .offset(x: CGFloat(index - currentIndex) * 220 + dragOffset , y: 0)
                         
                     }
                 }
