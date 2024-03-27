@@ -9,104 +9,130 @@ import SwiftUI
 
 struct WaterModalComponentHomeView: View {
     @State private var selectedLitersIndex = 0
-    let litersOptions = stride(from: 1, through: 10, by: 1).map { "\($0) - Litros" }
+    let litersOptions = stride(from: 1, through: 10, by: 1).map { $0 }
+    @Binding  var litrosSelecionados:Int
     
-    @State private var isCupSelected = false
-    @State private var isBottleSelected = true
+    @Binding  var isCupSelected:Bool
+    @Binding  var isBottleSelected:Bool
+    
     
     @State private var selectedCapacityIndex = 0
-    let capacityOptions = stride(from: 50, through: 2000, by: 50).map { "\($0) ml" }
+    let capacityOptions = stride(from: 50, through: 2000, by: 50).map { $0 }
+    @Binding  var capacidadeSelecionada:Int
     
     
+    @Binding var isPresented: Bool
+    
+    init(litrosSelecionados: Binding<Int>, capacidadeSelecionada: Binding<Int> ,isCupSelected: Binding<Bool>, isBottleSelected: Binding<Bool>, isPresented: Binding<Bool>) {
+        self._litrosSelecionados = litrosSelecionados
+        self._capacidadeSelecionada = capacidadeSelecionada
+        self._isCupSelected = isCupSelected
+        self._isBottleSelected = isBottleSelected
+        self._isPresented = isPresented
+        // Inicializa selectedLitersIndex com o valor atual de litrosSelecionados
+        _selectedLitersIndex = State(initialValue: litrosSelecionados.wrappedValue - 1)
+        _selectedCapacityIndex = State(initialValue: capacidadeSelecionada.wrappedValue)
+    }
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack {
-                HStack {
-                    Text("Meta Diária")
-                    Spacer()
-                }
-                .padding(.horizontal)
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.orange)
-                    .frame(height: 50)
-                    .padding()
-                    .overlay(
-                        VStack {
-                            Picker("Litros", selection: $selectedLitersIndex) {
-                                ForEach(0..<litersOptions.count, id: \.self) { index in
-                                    Text(litersOptions[index])
+        NavigationStack {
+            GeometryReader { geometry in
+                VStack {
+                    HStack {
+                        Text("Meta Diária")
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.orange)
+                        .frame(height: 50)
+                        .padding()
+                        .overlay(
+                            VStack {
+                                Picker("Litros", selection: $selectedLitersIndex) {
+                                    ForEach(0..<litersOptions.count, id: \.self) { index in
+                                        Text("\(litersOptions[index]) - Litros")
+                                    }
+                                }
+                                .pickerStyle(WheelPickerStyle())
+                                .padding()
+                                .onChange(of: selectedLitersIndex) { _, newValue in
+                                    litrosSelecionados = litersOptions[newValue]
                                 }
                             }
-                            .pickerStyle(WheelPickerStyle())
-                            .padding()
-                        }
-                    )
-                
-                HStack {
-                    Text("Recipiente")
-                        .padding(.horizontal)
-                    Spacer()
-                }
-                
-                HStack(spacing: geometry.size.width * 0.1) {
-                    Circle()
-                        .foregroundStyle(Color.orange)
-                        .opacity(isCupSelected ? 1 : 0.4)
-                        .overlay {
-                            Button(action: {
-                                isCupSelected = true
-                                isBottleSelected = false
-                                print("Copo selecionado")
-                            }, label: {
-                                Image("cup")
-                            })
-                            .padding(.horizontal)
-                        }
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
+                        )
                     
-                    
-                    Circle()
-                        .foregroundStyle(Color.orange)
-                        .opacity(isBottleSelected ? 1 : 0.5)
-                        .overlay {
-                            Button(action: {
-                                isCupSelected = false
-                                isBottleSelected = true
-                                print("Garrafa selecionado")
-                            }, label: {
-                                Image("waterbottle")
-                            })
+                    HStack {
+                        Text("Recipiente")
                             .padding(.horizontal)
-                        }
-                        .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
-                }
-                
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(Color.orange)
-                    .frame(height: 50)
-                    .padding()
-                    .overlay(
-                        HStack {
-                            Text("Capacidade")
+                        Spacer()
+                    }
+                    
+                    HStack(spacing: geometry.size.width * 0.1) {
+                        Circle()
+                            .foregroundStyle(Color.orange)
+                            .opacity(isCupSelected ? 1 : 0.4)
+                            .overlay {
+                                Button(action: {
+                                    isCupSelected = true
+                                    isBottleSelected = false
+                                    print("Copo selecionado")
+                                }, label: {
+                                    Image("cup")
+                                })
+                                .padding(.horizontal)
+                            }
+                            .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
+                        
+                        Circle()
+                            .foregroundStyle(Color.orange)
+                            .opacity(isBottleSelected ? 1 : 0.5)
+                            .overlay {
+                                Button(action: {
+                                    isCupSelected = false
+                                    isBottleSelected = true
+                                    print("Garrafa selecionado")
+                                }, label: {
+                                    Image("waterbottle")
+                                })
+                                .padding(.horizontal)
+                            }
+                            .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
+                    }
+                    
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(Color.orange)
+                        .frame(height: 50)
+                        .padding()
+                        .overlay(
+                            HStack {
+                                Text("Capacidade")
+                                    .padding()
+                                
+                                Picker("ml", selection: $selectedCapacityIndex) {
+                                    ForEach(0..<capacityOptions.count, id: \.self) { index in
+                                        Text("\(capacityOptions[index]) ml")
+                                    }
+                                }
+                                .pickerStyle(WheelPickerStyle())
+                                .onChange(of: selectedCapacityIndex) { _, newValue in
+                                    capacidadeSelecionada = capacityOptions[newValue]
+                                }
+                            }
                                 .padding()
                             
-                            Picker("Litros", selection: $selectedCapacityIndex) {
-                                ForEach(0..<capacityOptions.count, id: \.self) { index in
-                                    Text(capacityOptions[index])
-                                }
-                            }
-                            .pickerStyle(WheelPickerStyle())
-                        }
-                            .padding()
-                        
-                    )
+                        )
+                }
+                .padding()
             }
+        }
+        Button("Done") {
+            isPresented = false
         }
     }
 }
 
 
 #Preview {
-    WaterModalComponentHomeView()
+    HomeView()
 }

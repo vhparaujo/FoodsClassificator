@@ -33,8 +33,21 @@
     "%lld" : {
 
     },
-    "0/2L" : {
+    "%lld - Litros" : {
 
+    },
+    "%lld ml" : {
+
+    },
+    "%lld/%lldL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lldL"
+          }
+        }
+      }
     },
     "100g" : {
 
@@ -86,6 +99,9 @@
 
     },
     "Meta Diária" : {
+
+    },
+    "ml" : {
 
     },
     "Nutrition Information" : {
