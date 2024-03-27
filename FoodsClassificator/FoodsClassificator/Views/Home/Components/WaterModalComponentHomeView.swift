@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct WaterModalComponentHomeView: View {
-    @State private var selectedLitersIndex = 0
-    let litersOptions = stride(from: 1, through: 10, by: 1).map { $0 }
+    @State  var selectedLitersIndex = 0
+    let litersOptions = stride(from: 1, through: 15, by: 1).map { $0 }
     @Binding  var litrosSelecionados:Int
     
     @Binding  var isCupSelected:Bool
     @Binding  var isBottleSelected:Bool
     
     
-    @State private var selectedCapacityIndex = 0
+    @State  var selectedCapacityIndex = 0
     let capacityOptions = stride(from: 50, through: 2000, by: 50).map { $0 }
     @Binding  var capacidadeSelecionada:Int
     
@@ -29,9 +29,12 @@ struct WaterModalComponentHomeView: View {
         self._isCupSelected = isCupSelected
         self._isBottleSelected = isBottleSelected
         self._isPresented = isPresented
+        
         // Inicializa selectedLitersIndex com o valor atual de litrosSelecionados
-        _selectedLitersIndex = State(initialValue: litrosSelecionados.wrappedValue - 1)
-        _selectedCapacityIndex = State(initialValue: capacidadeSelecionada.wrappedValue)
+        _selectedLitersIndex = State(initialValue: litersOptions.firstIndex(of: litrosSelecionados.wrappedValue) ?? 0 )
+//        _selectedCapacityIndex = State(initialValue: capacidadeSelecionada.wrappedValue)
+        _selectedCapacityIndex = State(initialValue: capacityOptions.firstIndex(of: capacidadeSelecionada.wrappedValue) ?? 0)
+
     }
     
     var body: some View {
@@ -51,7 +54,8 @@ struct WaterModalComponentHomeView: View {
                             VStack {
                                 Picker("Litros", selection: $selectedLitersIndex) {
                                     ForEach(0..<litersOptions.count, id: \.self) { index in
-                                        Text("\(litersOptions[index]) - Litros")
+                                        let litroText = litersOptions[index] > 1 ? "Litros" : "Litro"
+                                                Text("\(litersOptions[index]) \(litroText)")
                                     }
                                 }
                                 .pickerStyle(WheelPickerStyle())

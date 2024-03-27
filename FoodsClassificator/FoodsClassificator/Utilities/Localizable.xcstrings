@@ -20,6 +20,16 @@
     "%@" : {
 
     },
+    "%@ / %lldL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ / %2$lldL"
+          }
+        }
+      }
+    },
     "%@(%@)" : {
       "localizations" : {
         "en" : {
@@ -33,21 +43,18 @@
     "%lld" : {
 
     },
-    "%lld - Litros" : {
-
-    },
-    "%lld ml" : {
-
-    },
-    "%lld/%lldL" : {
+    "%lld %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$lld/%2$lldL"
+            "value" : "%1$lld %2$@"
           }
         }
       }
+    },
+    "%lld ml" : {
+
     },
     "100g" : {
 
