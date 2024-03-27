@@ -1,18 +1,18 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     " %@" : {
 
     },
-    "%.2f" : {
-
-    },
-    "%.2f %@" : {
+    " %@: %f" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$.2f %2$@"
+            "value" : " %1$@: %2$f"
           }
         }
       }
@@ -33,16 +33,20 @@
     "%lld" : {
 
     },
+    "%lld %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld %2$@"
+          }
+        }
+      }
+    },
     "%lld Cal" : {
 
     },
-    "%lld calorias" : {
-
-    },
     "0/2L" : {
-
-    },
-    "100g" : {
 
     },
     "Adicionar nova refeição" : {
@@ -51,39 +55,127 @@
     "Água" : {
 
     },
-    "Alimento: %@, Confiança: %f" : {
+    "calorias" : {
+      "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
-            "state" : "new",
-            "value" : "Alimento: %1$@, Confiança: %2$f"
+            "state" : "translated",
+            "value" : "Calories"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calorias"
           }
         }
       }
     },
-    "Calorias" : {
-
+    "caloriasMinusculo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "calories"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "calorias"
+          }
+        }
+      }
     },
-    "Done" : {
-
+    "carboidratos" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carbohydrates"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carboidratos"
+          }
+        }
+      }
     },
-    "Escolher da Biblioteca" : {
-
+    "fibras" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fibers"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fibras"
+          }
+        }
+      }
     },
-    "Nutrition Information" : {
-
+    "gorduras" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fats"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gorduras"
+          }
+        }
+      }
     },
-    "Properties" : {
-
+    "proteinas" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proteins"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proteínas"
+          }
+        }
+      }
     },
     "Refeições recentes" : {
 
     },
-    "Type something here..." : {
-
-    },
-    "Usar Câmera" : {
-
+    "restam" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remain"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restam"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"
