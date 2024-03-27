@@ -19,6 +19,7 @@ struct ProgressBarComponentHomeView: View {
       
             Image("mamaoHome")
                 .resizable()
+                .imageScale(.medium)
                 .scaledToFit()
                 .offset(y: -69)
     
@@ -57,7 +58,7 @@ struct ProgressBarComponentHomeView: View {
                     .foregroundStyle(.white)
                     .bold()
                     .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.5)
                     .offset(y: 15)
                 
                 Text("\(viewModel.calories)")
@@ -65,7 +66,7 @@ struct ProgressBarComponentHomeView: View {
                     .foregroundStyle(.white)
                     .bold()
                     .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.5)
                     .offset(y: 10)
                 
                 Text(HomeTexts.calorias)
@@ -73,7 +74,7 @@ struct ProgressBarComponentHomeView: View {
                     .foregroundStyle(.white)
                     .bold()
                     .lineLimit(1)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.5)
                     .offset(y: 30)
             }
             

@@ -47,8 +47,6 @@ struct HeaderView: View {
             .padding(.bottom)
             .padding(.horizontal)
             
-            
-
         }.background(Color.laranjaFundoHome)
 
     }
