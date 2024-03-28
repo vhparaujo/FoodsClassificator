@@ -9,19 +9,19 @@ import SwiftUI
 
 struct PerfilImageViewComponent: View {
     
-    @State private var viewModel = HomeViewModel()
+    @State var userPhoto: String = ""
     
     var body: some View {
         Circle()
             .overlay {
-                Image(viewModel.userPhoto)
+                Image(userPhoto)
                     .resizable()
                     .scaledToFit()
                     .clipShape(Circle()
                     )
     
             }
-            .frame(width: 45, height: 45)
+            .frame(width: 100, height: 100)
             .overlay {
                 Circle()
                     .stroke(lineWidth: 2)

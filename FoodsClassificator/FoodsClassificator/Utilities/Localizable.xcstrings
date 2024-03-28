@@ -55,6 +55,18 @@
     "Água" : {
 
     },
+    "almoco" : {
+
+    },
+    "altura" : {
+
+    },
+    "Após o período de 21 dias, o cérebro começa a interpretar as mudanças como algo corriqueiro e incorporado à rotina" : {
+
+    },
+    "cafeDaManha" : {
+
+    },
     "calorias" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -106,6 +118,18 @@
         }
       }
     },
+    "Começar" : {
+
+    },
+    "conquistas" : {
+
+    },
+    "desafios" : {
+
+    },
+    "dias" : {
+
+    },
     "fibras" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -123,6 +147,12 @@
         }
       }
     },
+    "frequencia" : {
+
+    },
+    "genero" : {
+
+    },
     "gorduras" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -136,6 +166,52 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gorduras"
+          }
+        }
+      }
+    },
+    "idade" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Age"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idade"
+          }
+        }
+      }
+    },
+    "jantar" : {
+
+    },
+    "novaRefeicao" : {
+
+    },
+    "objetivo" : {
+
+    },
+    "ofensiva" : {
+
+    },
+    "peso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weight"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso"
           }
         }
       }
