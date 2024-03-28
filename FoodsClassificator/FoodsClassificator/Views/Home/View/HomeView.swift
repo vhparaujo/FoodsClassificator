@@ -10,18 +10,26 @@ import SwiftUI
 struct HomeView: View {
         
     var body: some View {
-        VStack {
+        
             
-            HeaderView()
-  
-            HStack {
-                Spacer()
-                DatePickerComponentHomeView()
-            }
-            
-            MealsCarrouselHomeView()
-            WaterRectangleComponentHomeView()
-        }
+            VStack {
+                
+                HeaderView()
+                
+                
+                HStack {
+                    Spacer()
+                    DatePickerComponentHomeView()
+                }
+                
+                MealsCarrouselHomeView()
+                    
+                WaterRectangleComponentHomeView()
+                
+            }.background(Image("backgroundHome")
+                .resizable()
+                .offset(y: 50)
+            )
         
     }
 }
