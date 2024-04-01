@@ -23,12 +23,12 @@
     "%@" : {
 
     },
-    "%@ / %lld.%lldL" : {
+    "%@ / %lld,%lldL" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$@ / %2$lld.%3$lldL"
+            "value" : "%1$@ / %2$lld,%3$lldL"
           }
         }
       }
@@ -46,18 +46,18 @@
     "%lld" : {
 
     },
-    "%lld %@ " : {
+    "%lld ml" : {
+
+    },
+    "%lld,%lld %@ " : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$lld %2$@ "
+            "value" : "%1$lld,%2$lld %3$@ "
           }
         }
       }
-    },
-    "%lld ml" : {
-
     },
     "100g" : {
 
@@ -70,16 +70,6 @@
     },
     "Água" : {
 
-    },
-    "Alimento: %@, Confiança: %f" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "Alimento: %1$@, Confiança: %2$f"
-          }
-        }
-      }
     },
     "Calorie Calculator" : {
 
@@ -97,9 +87,6 @@
 
     },
     "Done" : {
-
-    },
-    "Escolher da Biblioteca" : {
 
     },
     "Garrafa" : {
@@ -139,9 +126,6 @@
 
     },
     "Type something here..." : {
-
-    },
-    "Usar Câmera" : {
 
     },
     "Weight (kg)" : {
