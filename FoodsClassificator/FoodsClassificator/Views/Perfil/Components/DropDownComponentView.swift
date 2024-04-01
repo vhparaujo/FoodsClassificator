@@ -48,7 +48,7 @@ struct DropDownComponentView: View {
                             .background(.blue)
                             .clipShape(RoundedRectangle(cornerRadius: 40))
                     })
-                }.transition(.move(edge: .bottom))
+                }
                 
             }
             
