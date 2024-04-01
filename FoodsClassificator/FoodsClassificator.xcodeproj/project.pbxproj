@@ -36,6 +36,10 @@
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
 		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
+		4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */; };
+		4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */; };
+		4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */; };
+		4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */; };
 		4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */; };
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
@@ -97,6 +101,10 @@
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
 		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentView/ViewModel/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
 		4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterModalComponentHomeView.swift; sourceTree = "<group>"; };
+		4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1.swift; sourceTree = "<group>"; };
+		4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2.swift; sourceTree = "<group>"; };
+		4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3.swift; sourceTree = "<group>"; };
+		4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageControl.swift; sourceTree = "<group>"; };
 		4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculoCaloriasOnBoarding.swift; sourceTree = "<group>"; };
 		4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImagePicker.swift; sourceTree = "<group>"; };
 		4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoundingBoxesView.swift; sourceTree = "<group>"; };
@@ -166,6 +174,7 @@
 				0B1C22842BB20C61003C5C0E /* MealCircleComponentHomeView.swift */,
 				0B1C22862BB20C61003C5C0E /* MealsCarrouselHomeView.swift */,
 				0B1C22852BB20C61003C5C0E /* WaterRectangleComponentHomeView.swift */,
+				4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */,
 				0B1C22772BB20588003C5C0E /* Header */,
 			);
 			path = Components;
@@ -259,20 +268,12 @@
 			isa = PBXGroup;
 			children = (
 				4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */,
+				4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */,
+				4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */,
+				4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */,
+				4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */,
 			);
 			path = OnBoarding;
-			sourceTree = "<group>";
-		};
-		9B3C001F2BAD2012000B55B9 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				9BFA12652BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift */,
-				9B3C00142BACA4C2000B55B9 /* UserNameComponentHomeView.swift */,
-				9B3C00172BACA7FB000B55B9 /* UserPhotoAndStreakComponentHomeView.swift */,
-				9B3C001B2BACC903000B55B9 /* ProgressBarComponentViewHome.swift */,
-				9B3C00202BAD202D000B55B9 /* HeaderView.swift */,
-			);
-			path = Header;
 			sourceTree = "<group>";
 		};
 		9B452DE42BA4B5C500C75803 /* ContentView */ = {
@@ -523,45 +524,6 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
-		9BFA125D2BAB7E3B000C0CB5 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				9BFA12642BAB7F07000C0CB5 /* Components */,
-				9BFA125F2BAB7E46000C0CB5 /* View */,
-				9BFA125E2BAB7E40000C0CB5 /* ViewModel */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		9BFA125E2BAB7E40000C0CB5 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				9BFA12622BAB7EB3000C0CB5 /* HomeViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9BFA125F2BAB7E46000C0CB5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9BFA12602BAB7EA4000C0CB5 /* HomeView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		9BFA12642BAB7F07000C0CB5 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				9B3C001F2BAD2012000B55B9 /* Header */,
-				9B5E50D62BAE05AC00D734C8 /* DatePickerComponentHomeView.swift */,
-				9B5E50D82BAE05CD00D734C8 /* MealCircleComponentHomeView.swift */,
-				9B5E50DA2BAE05F500D734C8 /* MealsCarrouselHomeView.swift */,
-				9BE8627D2BB1EFF8001C37CB /* WaterRectangleComponentHomeView.swift */,
-				4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		9BFA12672BAB8383000C0CB5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,7 +549,6 @@
 			isa = PBXGroup;
 			children = (
 				4AB766592BB312440091042D /* OnBoarding */,
-				9BFA125D2BAB7E3B000C0CB5 /* Home */,
 				9BDAA2852BB49649000627F9 /* Perfil */,
 				0B1C22752BB2057B003C5C0E /* Home */,
 				0B73E8582BAF55EC00C6F91D /* RecentMeals */,
@@ -677,8 +638,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BFA12662BAB7F1F000C0CB5 /* MacrosComponentHomeView.swift in Sources */,
-				9BFA12632BAB7EB3000C0CB5 /* HomeViewModel.swift in Sources */,
 				4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */,
 				9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
@@ -687,17 +646,19 @@
 				9B8904952BB49B4F0058DFDD /* UserNameComponentPerfilView.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
-				9BE179A02B8A567C0086877C /* FoodsClassificatorApp.swift in Sources */,
 				4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */,
 				0B1C228D2BB20C74003C5C0E /* HomeView.swift in Sources */,
 				9BDAA28C2BB496F3000627F9 /* PerfilImageViewComponent.swift in Sources */,
 				0B73E8702BAFAC0E00C6F91D /* SemiCircularProgressBar.swift in Sources */,
+				4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */,
 				0B1C22822BB20C4A003C5C0E /* ProgressBarComponentViewHome.swift in Sources */,
 				0B73E8632BAF605B00C6F91D /* ProgressBar.swift in Sources */,
 				0B1C22832BB20C4A003C5C0E /* UserPhotoAndStreakComponentHomeView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
+				4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */,
 				0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */,
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
+				4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */,
 				9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */,
 				0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */,
 				0B73E8612BAF601300C6F91D /* HeaderMealView.swift in Sources */,
@@ -733,6 +694,7 @@
 				9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */,
 				9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */,
 				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
+				4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */,
 				9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */,
 				0B1C22812BB20C4A003C5C0E /* UserNameComponentHomeView.swift in Sources */,
 				0B73E8572BAF55DD00C6F91D /* RecentMealsView.swift in Sources */,
