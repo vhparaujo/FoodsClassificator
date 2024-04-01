@@ -1,37 +1,24 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     " %@" : {
 
     },
-    "." : {
-
-    },
-    "%.2f" : {
-
-    },
-    "%.2f %@" : {
+    " %@: %f" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$.2f %2$@"
+            "value" : " %1$@: %2$f"
           }
         }
       }
     },
     "%@" : {
 
-    },
-    "%@ / %lld,%lldL" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ / %2$lld,%3$lldL"
-          }
-        }
-      }
     },
     "%@(%@)" : {
       "localizations" : {
@@ -46,90 +33,225 @@
     "%lld" : {
 
     },
-    "%lld ml" : {
-
-    },
-    "%lld,%lld %@ " : {
+    "%lld %@" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$lld,%2$lld %3$@ "
+            "value" : "%1$lld %2$@"
           }
         }
       }
     },
-    "100g" : {
+    "%lld Cal" : {
 
     },
-    "Activity Level" : {
+    "0/2L" : {
 
     },
-    "Age" : {
+    "Adicionar nova refeição" : {
 
     },
     "Água" : {
 
     },
-    "Calorie Calculator" : {
+    "almoco" : {
 
     },
-    "Calories Needed Per Day" : {
+    "altura" : {
 
     },
-    "Calories: %.0f" : {
+    "Após o período de 21 dias, o cérebro começa a interpretar as mudanças como algo corriqueiro e incorporado à rotina" : {
 
     },
-    "Capacidade" : {
+    "cafeDaManha" : {
 
     },
-    "Copo" : {
+    "calorias" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calories"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calorias"
+          }
+        }
+      }
+    },
+    "caloriasMinusculo" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "calories"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "calorias"
+          }
+        }
+      }
+    },
+    "carboidratos" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carbohydrates"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carboidratos"
+          }
+        }
+      }
+    },
+    "Começar" : {
 
     },
-    "Done" : {
+    "conquistas" : {
 
     },
-    "Garrafa" : {
+    "desafios" : {
 
     },
-    "Gender" : {
+    "dias" : {
 
     },
-    "Height (cm)" : {
+    "fibras" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fibers"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fibras"
+          }
+        }
+      }
+    },
+    "frequencia" : {
 
     },
-    "L" : {
+    "genero" : {
 
     },
-    "Litros" : {
+    "gorduras" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fats"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gorduras"
+          }
+        }
+      }
+    },
+    "idade" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Age"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Idade"
+          }
+        }
+      }
+    },
+    "jantar" : {
 
     },
-    "Meta" : {
+    "novaRefeicao" : {
 
     },
-    "Millilitros" : {
+    "objetivo" : {
 
     },
-    "ml" : {
+    "ofensiva" : {
 
     },
-    "Nutrition Information" : {
+    "peso" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Weight"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Peso"
+          }
+        }
+      }
+    },
+    "proteinas" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proteins"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Proteínas"
+          }
+        }
+      }
+    },
+    "Refeições recentes" : {
 
     },
-    "Personal Information" : {
-
-    },
-    "Properties" : {
-
-    },
-    "Recipiente" : {
-
-    },
-    "Type something here..." : {
-
-    },
-    "Weight (kg)" : {
-
+    "restam" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remain"
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restam"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

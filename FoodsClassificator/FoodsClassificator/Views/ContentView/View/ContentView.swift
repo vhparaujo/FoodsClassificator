@@ -35,16 +35,16 @@
 //                // Lista que mostra a confiança
 //                List(observations, id: \.uuid) { observation in
 //                    ForEach(observation.labels.filter { $0.confidence > 0.5 }, id: \.identifier) { label in
-//                        Text("Alimento: \(label.identifier), Confiança: \(label.confidence)")
+//                        Text(" \(label.identifier): \(label.confidence)")
 //                        
 //                    }
 //                }
 //                
-//                #warning("Posicionar um botao dentro de cada BoundingBoxfnd fd dfdfd")
+//              
 //                // 1. Pegar a posicao central de cada bounding box e salvar num array para posicionar o botao
 //                List(findingIngredients, id: \.self) { ingredient in
 //                    Button(ingredient) {
-//                        print("Button Pressed: Search Ingredients")
+//                        print("")
 //                        viewModel.getIngredientID(query: ingredient)
 //                    }
 //                    .padding(10)
@@ -60,7 +60,7 @@
 //                    self.sourceType = .photoLibrary
 //                    self.showImagePicker = true
 //                }) {
-//                    Text("Escolher da Biblioteca")
+//                    Text("")
 //                        .foregroundColor(.white)
 //                        .frame(minWidth: 0, maxWidth: .infinity)
 //                        .padding()
@@ -74,7 +74,7 @@
 //                    self.sourceType = .camera
 //                    self.showImagePicker = true
 //                }) {
-//                    Text("Usar Câmera")
+//                    Text("")
 //                        .foregroundColor(.white)
 //                        .frame(minWidth: 0, maxWidth: .infinity)
 //                        .padding()

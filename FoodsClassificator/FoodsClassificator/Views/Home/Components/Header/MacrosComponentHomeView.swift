@@ -38,10 +38,6 @@ struct MacrosComponentHomeView: View {
     }
 }
 
-#Preview {
-   HeaderView()
-}
-
 #Preview{
     MacrosComponentHomeView(macroType: "Carboidrafhjufehuejfujcutos", backgroundColor: .blue)
 }
