@@ -14,9 +14,9 @@
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
 		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
+		4AA329252BB49CC100B485B6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA329242BB49CC100B485B6 /* Alamofire */; };
+		4AA329272BB49CC100B485B6 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA329262BB49CC100B485B6 /* AlamofireDynamic */; };
 		4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */; };
-		4ABD547D2BB354ED00565E1B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABD547C2BB354ED00565E1B /* Alamofire */; };
-		4ABD547F2BB354ED00565E1B /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABD547E2BB354ED00565E1B /* AlamofireDynamic */; };
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
@@ -98,8 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ABD547D2BB354ED00565E1B /* Alamofire in Frameworks */,
-				4ABD547F2BB354ED00565E1B /* AlamofireDynamic in Frameworks */,
+				4AA329252BB49CC100B485B6 /* Alamofire in Frameworks */,
+				4AA329272BB49CC100B485B6 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,8 +441,8 @@
 			);
 			name = FoodsClassificator;
 			packageProductDependencies = (
-				4ABD547C2BB354ED00565E1B /* Alamofire */,
-				4ABD547E2BB354ED00565E1B /* AlamofireDynamic */,
+				4AA329242BB49CC100B485B6 /* Alamofire */,
+				4AA329262BB49CC100B485B6 /* AlamofireDynamic */,
 			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
@@ -474,7 +474,7 @@
 			);
 			mainGroup = 9BE179932B8A567C0086877C;
 			packageReferences = (
-				4ABD547B2BB354ED00565E1B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4AA329232BB49CC100B485B6 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 9BE1799D2B8A567C0086877C /* Products */;
 			projectDirPath = "";
@@ -756,7 +756,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		4ABD547B2BB354ED00565E1B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		4AA329232BB49CC100B485B6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -767,14 +767,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4ABD547C2BB354ED00565E1B /* Alamofire */ = {
+		4AA329242BB49CC100B485B6 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4ABD547B2BB354ED00565E1B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 4AA329232BB49CC100B485B6 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
-		4ABD547E2BB354ED00565E1B /* AlamofireDynamic */ = {
+		4AA329262BB49CC100B485B6 /* AlamofireDynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 4ABD547B2BB354ED00565E1B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 4AA329232BB49CC100B485B6 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = AlamofireDynamic;
 		};
 /* End XCSwiftPackageProductDependency section */

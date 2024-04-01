@@ -13,12 +13,13 @@ struct WaterRectangleComponentHomeView: View {
     @State var isCupSelected = false
     @State var isBottleSelected = true
     
-    @State var litrosSelecionados = 2
-    @State var capacidadeSelecionada = 50
+    @State var litersSelected = 2
+    @State var milliliterSelected = 00
+    @State var capacitySelected = 50
     
     @State var aguaTotal = 0.0
     
-    
+    @State private var showPopover: Bool = false
     
     var body: some View {
         //        ZStack {
@@ -34,10 +35,11 @@ struct WaterRectangleComponentHomeView: View {
                             .bold()
                             .foregroundStyle(Color.white)
                             .padding(.horizontal)
+                        
                         Spacer()
                         var displayText: String {
                             if aguaTotal >= 1000 {
-                                let litros = Int(aguaTotal / 1000) // Calcula o número de litros
+                                // let litros = Int(aguaTotal / 1000) // Calcula o número de litros
                                 let decimais = String(format: "%.2f", (aguaTotal / 1000)) // Calcula a parte decimal dos litros
                                 return "\(decimais) L" // Retorna a string formatada
                             } else {
@@ -45,7 +47,7 @@ struct WaterRectangleComponentHomeView: View {
                             }
                         }
                         
-                        Text("\(displayText) / \(litrosSelecionados)L")
+                        Text("\(displayText) / \(litersSelected),\(milliliterSelected)L")
                             .font(.system(size: 20))
                             .bold()
                             .foregroundStyle(Color.white)
@@ -61,20 +63,21 @@ struct WaterRectangleComponentHomeView: View {
                     }
                     .padding(.horizontal)
                     .sheet(isPresented: $isPresented, content: {
-                        WaterModalComponentHomeView(litrosSelecionados: $litrosSelecionados,
-                                                    capacidadeSelecionada: $capacidadeSelecionada,
+                        WaterModalComponentHomeView(litrosSelecionados: $litersSelected,
+                                                    mililiterSelected: $milliliterSelected,
+                                                    capacidadeSelecionada: $capacitySelected,
                                                     isCupSelected: $isCupSelected,
                                                     isBottleSelected: $isBottleSelected,
-                                                    isPresented: $isPresented)
+                                                    isPresented: $isPresented,
+                                                    showPopover: $showPopover)
                         .presentationDetents([.medium])
                         
                     })
                     
                     HStack{
-                        
                         ForEach(0..<4) { _ in
                             Button(action: {
-                                aguaTotal += Double(capacidadeSelecionada)
+                                aguaTotal += Double(capacitySelected)
                             }, label: {
                                 isBottleSelected ?
                                 Image("waterbottle")

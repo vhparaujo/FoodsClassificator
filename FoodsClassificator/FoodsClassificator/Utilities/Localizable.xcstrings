@@ -4,6 +4,9 @@
     " %@" : {
 
     },
+    "." : {
+
+    },
     "%.2f" : {
 
     },
@@ -20,12 +23,12 @@
     "%@" : {
 
     },
-    "%@ / %lldL" : {
+    "%@ / %lld.%lldL" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$@ / %2$lldL"
+            "value" : "%1$@ / %2$lld.%3$lldL"
           }
         }
       }
@@ -43,12 +46,12 @@
     "%lld" : {
 
     },
-    "%lld %@" : {
+    "%lld %@ " : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$lld %2$@"
+            "value" : "%1$lld %2$@ "
           }
         }
       }
@@ -90,10 +93,16 @@
     "Capacidade" : {
 
     },
+    "Copo" : {
+
+    },
     "Done" : {
 
     },
     "Escolher da Biblioteca" : {
+
+    },
+    "Garrafa" : {
 
     },
     "Gender" : {
@@ -102,10 +111,16 @@
     "Height (cm)" : {
 
     },
+    "L" : {
+
+    },
     "Litros" : {
 
     },
-    "Meta Diária" : {
+    "Meta" : {
+
+    },
+    "Millilitros" : {
 
     },
     "ml" : {
