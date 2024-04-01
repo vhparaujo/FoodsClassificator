@@ -16,7 +16,7 @@ struct ListPerfilComponentView<T>: View {
         HStack {
             Text(label)
             Spacer()
-            Text("\(data)")
+//            Text("\(data)")
                 .foregroundStyle(.secondary)
         }
         

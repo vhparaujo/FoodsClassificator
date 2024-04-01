@@ -7,18 +7,21 @@
     " %@" : {
 
     },
-    " %@: %f" : {
+    "." : {
+
+    },
+    "%@" : {
+
+    },
+    "%@ / %lld,%lldL" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : " %1$@: %2$f"
+            "value" : "%1$@ / %2$lld,%3$lldL"
           }
         }
       }
-    },
-    "%@" : {
-
     },
     "%@(%@)" : {
       "localizations" : {
@@ -46,10 +49,26 @@
     "%lld Cal" : {
 
     },
-    "0/2L" : {
+    "%lld ml" : {
+
+    },
+    "%lld,%lld %@ " : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld,%2$lld %3$@ "
+          }
+        }
+      }
+    },
+    "Activity Level" : {
 
     },
     "Adicionar nova refeição" : {
+
+    },
+    "Age" : {
 
     },
     "Água" : {
@@ -101,6 +120,18 @@
         }
       }
     },
+    "Calorie Calculator" : {
+
+    },
+    "Calories Needed Per Day" : {
+
+    },
+    "Calories: %.0f" : {
+
+    },
+    "Capacidade" : {
+
+    },
     "carboidratos" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -124,10 +155,16 @@
     "conquistas" : {
 
     },
+    "Copo" : {
+
+    },
     "desafios" : {
 
     },
     "dias" : {
+
+    },
+    "Done" : {
 
     },
     "fibras" : {
@@ -150,6 +187,12 @@
     "frequencia" : {
 
     },
+    "Garrafa" : {
+
+    },
+    "Gender" : {
+
+    },
     "genero" : {
 
     },
@@ -169,6 +212,9 @@
           }
         }
       }
+    },
+    "Height (cm)" : {
+
     },
     "idade" : {
       "extractionState" : "manual",
@@ -190,6 +236,21 @@
     "jantar" : {
 
     },
+    "L" : {
+
+    },
+    "Litros" : {
+
+    },
+    "Meta" : {
+
+    },
+    "Millilitros" : {
+
+    },
+    "ml" : {
+
+    },
     "novaRefeicao" : {
 
     },
@@ -197,6 +258,9 @@
 
     },
     "ofensiva" : {
+
+    },
+    "Personal Information" : {
 
     },
     "peso" : {
@@ -233,6 +297,9 @@
         }
       }
     },
+    "Recipiente" : {
+
+    },
     "Refeições recentes" : {
 
     },
@@ -252,6 +319,9 @@
           }
         }
       }
+    },
+    "Weight (kg)" : {
+
     }
   },
   "version" : "1.0"
