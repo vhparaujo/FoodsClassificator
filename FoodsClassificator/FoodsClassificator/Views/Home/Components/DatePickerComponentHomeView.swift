@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DatePickerComponentHomeView: View {
-    @State private var viewModel = HomeViewModel()
+    
     @State  var selectedDate = Date()
     
     var body: some View {

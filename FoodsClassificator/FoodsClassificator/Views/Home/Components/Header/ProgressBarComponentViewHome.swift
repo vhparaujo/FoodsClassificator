@@ -9,45 +9,44 @@ import SwiftUI
 
 struct ProgressBarComponentHomeView: View {
     
-    @State private var viewModel = HomeViewModel()
+    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
     
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     
     var body: some View {
-        
-      
-            Image("mamaoHome")
-                .resizable()
-                .imageScale(.medium)
-                .scaledToFit()
-                .offset(y: -69)
     
         ZStack {
+            
+            Image("mamaoHome")
+                .resizable()
+                .scaledToFit()
+                .offset(y: -69)
 
             Circle()
                 .foregroundStyle(Color.laranjaFundoHome)
-//                .frame(width: screenWidth * 0.5, height: 255)
+//                .clipShape(Circle())
+//                .frame(width: screenWidth * 0.3, height: 255)
             
             Circle()
                 .trim(from: viewModel.initialProgressBarValue, to: viewModel.maxProgressBarValue)
-                .stroke(style: StrokeStyle(lineWidth: screenWidth * 0.06, lineCap: .round))
-//                .frame(width: screenWidth * 0.5, height: screenHeight * 0.2)
+                .stroke(style: StrokeStyle(lineWidth: 23, lineCap: .round))
+//                .frame(width: screenWidth * 0.4, height: screenHeight * 0.2)
                 .rotationEffect(.degrees(-270))
                 .foregroundStyle(.white)
                     
             Circle()
                 .trim(from: viewModel.initialProgressBarValue, to: viewModel.maxProgressBarValue)
-                .stroke(style: StrokeStyle(lineWidth: screenWidth * 0.05, lineCap: .round))
-//                .frame(width: screenWidth * 0.5, height: screenHeight * 0.2)
+                .stroke(style: StrokeStyle(lineWidth: 19, lineCap: .round))
+//                .frame(width: screenWidth * 0.4, height: screenHeight * 0.2)
                 .rotationEffect(.degrees(-270))
                 .foregroundStyle(Color.laranjaMacros)
             
             
             Circle()
                 .trim(from: viewModel.initialProgressBarValue, to: viewModel.progressBarValue)
-                .stroke(style: StrokeStyle(lineWidth: screenWidth * 0.04, lineCap: .round))
-//                .frame(width: screenWidth * 0.5, height: screenHeight * 0.2)
+                .stroke(style: StrokeStyle(lineWidth: 14, lineCap: .round))
+//                .frame(width: screenWidth * 0.4, height: screenHeight * 0.2)
                 .rotationEffect(.degrees(-270))
                 .foregroundStyle(.white)
             
@@ -79,18 +78,19 @@ struct ProgressBarComponentHomeView: View {
             }
             
         }
-        .padding()
-        .background(Color.laranjaFundoHome)
-        .clipShape(Circle())
-        .padding()
+//        .padding()
+//        .background(Color.laranjaFundoHome)
+//        .clipShape(Circle())
+//        .padding()
         
     }
 }
 
 #Preview {
-    ProgressBarComponentHomeView()
+    var viewModel = HomeViewModel()
+    return ProgressBarComponentHomeView()
+        .environment(viewModel)
 }
-
 
 #Preview {
     HomeView()
