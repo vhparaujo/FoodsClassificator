@@ -1,15 +1,15 @@
-////
-////  ContentViewModel.swift
-////  FoodsClassificator
-////
-////  Created by Bruno Souza on 01/03/24.
-////
 //
-//import Foundation
+//  ContentViewModel.swift
+//  FoodsClassificator
 //
-//class ContentViewModel: ObservableObject {
+//  Created by Bruno Souza on 01/03/24.
+//
+
+import Foundation
+
+class ContentViewModel: ObservableObject {
 //    @Published var nutritionDataToShow: NutritionData?
-//    
+    
 //    func getIngredientID(query: String) {
 //        FoodAPIManager.searchIngredients(query: query, number: 1) { result in
 //            switch result {
@@ -48,4 +48,5 @@
 //            }
 //        }
 //    }
-//}
+    
+}
