@@ -9,7 +9,13 @@ import SwiftUI
 
 struct OnBoardingPageControl: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView{
+            OnboardingPage1()
+            OnboardingPage2()
+            OnboardingPage3()
+        }
+        .tabViewStyle(.page(indexDisplayMode: .always))
+        .indexViewStyle(.page(backgroundDisplayMode: .always))
     }
 }
 
