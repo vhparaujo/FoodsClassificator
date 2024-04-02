@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    var viewModel = HomeViewModel()
         
     var body: some View {
-        
             
             VStack {
                 
                 HeaderView()
-                
+                    .environment(viewModel)
                 
                 HStack {
                     Spacer()
@@ -23,17 +24,16 @@ struct HomeView: View {
                 }
                 
                 MealsCarrouselHomeView()
-                    
+                
                 WaterRectangleComponentHomeView()
                 
-            }.background(Image("backgroundHome")
-                .resizable()
-                .offset(y: 50)
-            )
+            }
         
     }
 }
 
 #Preview {
-    HomeView()
+    NavigationStack {
+        HomeView()
+    }
 }

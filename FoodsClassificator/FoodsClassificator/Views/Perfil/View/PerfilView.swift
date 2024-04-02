@@ -9,8 +9,8 @@ import SwiftUI
 
 struct PerfilView: View {
     
-    @State private var viewModel = PerfilViewModel()
-    @State private var showMotivationSheet: Bool = false
+    var viewModel = PerfilViewModel()
+//    @State private var showMotivationSheet: Bool = false
     
     var body: some View {
         
@@ -41,17 +41,6 @@ struct PerfilView: View {
             // permite colocar um background color na list
                 .scrollContentBackground(.hidden)
         }.background(Color.laranjaFundoHome)
-        
-            .sheet(isPresented: $showMotivationSheet) {
-                MotivationSheetView()
-                    .presentationDetents([.fraction(0.1), .fraction(0.86)])
-                    .interactiveDismissDisabled()
-                    .presentationBackgroundInteraction(.enabled)
-            }
-        
-            .onAppear {
-                showMotivationSheet = true
-            }
         
     }
 }

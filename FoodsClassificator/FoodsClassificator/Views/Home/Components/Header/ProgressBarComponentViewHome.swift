@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProgressBarComponentHomeView: View {
     
-    @State private var viewModel = HomeViewModel()
+    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
     
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
@@ -31,14 +31,14 @@ struct ProgressBarComponentHomeView: View {
             
             Circle()
                 .trim(from: viewModel.initialProgressBarValue, to: viewModel.maxProgressBarValue)
-                .stroke(style: StrokeStyle(lineWidth: screenWidth * 0.06, lineCap: .round))
+                .stroke(style: StrokeStyle(lineWidth: 23, lineCap: .round))
 //                .frame(width: screenWidth * 0.5, height: screenHeight * 0.2)
                 .rotationEffect(.degrees(-270))
                 .foregroundStyle(.white)
                     
             Circle()
                 .trim(from: viewModel.initialProgressBarValue, to: viewModel.maxProgressBarValue)
-                .stroke(style: StrokeStyle(lineWidth: screenWidth * 0.05, lineCap: .round))
+                .stroke(style: StrokeStyle(lineWidth: 19, lineCap: .round))
 //                .frame(width: screenWidth * 0.5, height: screenHeight * 0.2)
                 .rotationEffect(.degrees(-270))
                 .foregroundStyle(Color.laranjaMacros)
@@ -46,7 +46,7 @@ struct ProgressBarComponentHomeView: View {
             
             Circle()
                 .trim(from: viewModel.initialProgressBarValue, to: viewModel.progressBarValue)
-                .stroke(style: StrokeStyle(lineWidth: screenWidth * 0.04, lineCap: .round))
+                .stroke(style: StrokeStyle(lineWidth: 14, lineCap: .round))
 //                .frame(width: screenWidth * 0.5, height: screenHeight * 0.2)
                 .rotationEffect(.degrees(-270))
                 .foregroundStyle(.white)
@@ -88,9 +88,10 @@ struct ProgressBarComponentHomeView: View {
 }
 
 #Preview {
-    ProgressBarComponentHomeView()
+    var viewModel = HomeViewModel()
+    return ProgressBarComponentHomeView()
+        .environment(viewModel)
 }
-
 
 #Preview {
     HomeView()

@@ -52,7 +52,7 @@
 		9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE179A62B8A567D0086877C /* Preview Assets.xcassets */; };
 		9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEBDF872BA760EA0077632C /* ExampleView.swift */; };
 		9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEBDF8A2BA7611E0077632C /* ExampleViewModel.swift */; };
-		9BF7830F2BB4B5B3008CD198 /* MotivationSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7830E2BB4B5B3008CD198 /* MotivationSheetView.swift */; };
+		9BF7830F2BB4B5B3008CD198 /* MotivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7830E2BB4B5B3008CD198 /* MotivationView.swift */; };
 		9BF783112BB4BBE9008CD198 /* DropDownComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF783102BB4BBE9008CD198 /* DropDownComponentView.swift */; };
 		9BF783132BB50541008CD198 /* ModalTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF783122BB50540008CD198 /* ModalTitles.swift */; };
 		9BF783152BB5116B008CD198 /* StreakComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF783142BB5116B008CD198 /* StreakComponentView.swift */; };
@@ -112,7 +112,7 @@
 		9BE179A62B8A567D0086877C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BEBDF872BA760EA0077632C /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		9BEBDF8A2BA7611E0077632C /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
-		9BF7830E2BB4B5B3008CD198 /* MotivationSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationSheetView.swift; sourceTree = "<group>"; };
+		9BF7830E2BB4B5B3008CD198 /* MotivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationView.swift; sourceTree = "<group>"; };
 		9BF783102BB4BBE9008CD198 /* DropDownComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownComponentView.swift; sourceTree = "<group>"; };
 		9BF783122BB50540008CD198 /* ModalTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTitles.swift; sourceTree = "<group>"; };
 		9BF783142BB5116B008CD198 /* StreakComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakComponentView.swift; sourceTree = "<group>"; };
@@ -298,7 +298,7 @@
 			isa = PBXGroup;
 			children = (
 				9BDAA2892BB496CE000627F9 /* PerfilView.swift */,
-				9BF7830E2BB4B5B3008CD198 /* MotivationSheetView.swift */,
+				9BF7830E2BB4B5B3008CD198 /* MotivationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -656,7 +656,7 @@
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
 				9BDAA28A2BB496CE000627F9 /* PerfilView.swift in Sources */,
 				9BF783132BB50541008CD198 /* ModalTitles.swift in Sources */,
-				9BF7830F2BB4B5B3008CD198 /* MotivationSheetView.swift in Sources */,
+				9BF7830F2BB4B5B3008CD198 /* MotivationView.swift in Sources */,
 				0B1C228A2BB20C61003C5C0E /* MealsCarrouselHomeView.swift in Sources */,
 				9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */,
 				0B73E8692BAF627000C6F91D /* RecentMealCard.swift in Sources */,

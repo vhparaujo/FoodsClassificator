@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserNameComponentHomeView: View {
     
-    @State private var viewModel = HomeViewModel()
+    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
     
     var body: some View {
         Text(viewModel.userName)
@@ -19,5 +19,7 @@ struct UserNameComponentHomeView: View {
 }
 
 #Preview {
-    UserNameComponentHomeView()
+    var viewModel = HomeViewModel()
+    return UserNameComponentHomeView()
+        .environment(viewModel)
 }

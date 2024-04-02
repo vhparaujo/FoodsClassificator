@@ -9,7 +9,7 @@ import SwiftUI
 
 struct UserPhotoAndStreakComponentHomeView: View {
     
-    @State private var viewModel = HomeViewModel()
+    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
     
     var body: some View {
         
@@ -32,23 +32,26 @@ struct UserPhotoAndStreakComponentHomeView: View {
                     .stroke(Color.laranjaMacros, lineWidth: 1)
             )
 
-            Circle()
-                .overlay {
-                    Image(viewModel.userPhoto)
-                        .resizable()
-                        .scaledToFit()
-                        .clipShape(Circle()
-                        )
-        
-                }
-                .frame(width: 45, height: 45)
-                .overlay {
-                    Circle()
-                        .stroke(lineWidth: 2)
-                        .foregroundStyle(.white)
-                }
-                .offset(x: 35)
+            NavigationLink {
+                MotivationView()
+            } label: {
+                Circle()
+                    .overlay {
+                        Image(viewModel.userPhoto)
+                            .resizable()
+                            .scaledToFit()
+                            .clipShape(Circle()
+                            )
             
+                    }
+                    .frame(width: 45, height: 45)
+                    .overlay {
+                        Circle()
+                            .stroke(lineWidth: 2)
+                            .foregroundStyle(.white)
+                    }
+                    .offset(x: 35)
+            }
             
         }
         
@@ -56,5 +59,7 @@ struct UserPhotoAndStreakComponentHomeView: View {
 }
 
 #Preview {
-    UserPhotoAndStreakComponentHomeView()
+    var viewModel = HomeViewModel()
+    return UserPhotoAndStreakComponentHomeView()
+        .environment(viewModel)
 }

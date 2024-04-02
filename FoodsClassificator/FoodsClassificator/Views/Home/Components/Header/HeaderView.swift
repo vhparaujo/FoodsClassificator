@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HeaderView: View {
-
+    
+    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
+    
     var body: some View {
+        
         VStack {
             
             HStack {
@@ -42,6 +45,7 @@ struct HeaderView: View {
                     
                     ProgressBarComponentHomeView()
                         .offset(y: 50)
+                        .padding(.horizontal)
                 }
             }
             .padding(.bottom)
@@ -53,5 +57,7 @@ struct HeaderView: View {
 }
 
 #Preview {
-    HeaderView()
+    var viewModel = HomeViewModel()
+    return HeaderView()
+        .environment(viewModel)
 }
