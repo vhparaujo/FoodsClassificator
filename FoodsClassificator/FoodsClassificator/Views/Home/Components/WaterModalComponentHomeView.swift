@@ -79,7 +79,7 @@ struct WaterModalComponentHomeView: View {
                             .onChange(of: selectedLitersIndex) { _, newValue in
                                 litersSelected = litersOptions[newValue]
                             }
-                            Text(".")
+                            Text(",")
                             Picker("Millilitros", selection: $selectedMillilitersIndex) {
                                 ForEach(0..<milliliterOptions.count, id: \.self) { index in
                                     Text("\(milliliterOptions[index])")
@@ -91,8 +91,10 @@ struct WaterModalComponentHomeView: View {
                             }
                             Text("L")
                         }
-                        .presentationCompactAdaptation(.popover)
                         .padding()
+                        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.2)
+
+                        .presentationCompactAdaptation(.popover)
                     })
                     
                     HStack {
@@ -132,13 +134,14 @@ struct WaterModalComponentHomeView: View {
                                         isBottleSelected = true
                                         print("Garrafa selecionado")
                                     }, label: {
-                                        Image("waterbottle")
+                                        Image("WaterBottle")
+                                            .resizable()
+                                            .scaledToFit()
                                     })
-                                    .padding(.horizontal)
+                                    .padding()
                                 }
                                 .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
                             Text("Garrafa")
-                            
                         }
                         Spacer()
                     }
@@ -175,6 +178,7 @@ struct WaterModalComponentHomeView: View {
                             }
                         }
                         .padding()
+                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.2)
                         .presentationCompactAdaptation(.popover)
                     }
                              

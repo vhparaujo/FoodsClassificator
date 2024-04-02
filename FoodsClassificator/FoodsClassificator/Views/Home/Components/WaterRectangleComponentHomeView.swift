@@ -15,53 +15,73 @@ struct WaterRectangleComponentHomeView: View {
     
     @State var litersSelected = 2
     @State var milliliterSelected = 00
-    @State var capacitySelected = 50
+    @State var capacitySelected = 200
     
     @State var aguaTotal = 0.0
     
     @State private var showPopover: Bool = false
     
     var body: some View {
-        //        ZStack {
-        RoundedRectangle(cornerRadius: 25)
-            .foregroundStyle(Color.laranjaFundoHome)
-            .frame(width: 300, height: 100)
-            .padding()
-            .overlay {
-                VStack {
+        
+        Button(action: {
+            print("EDITAR")
+            isPresented = true
+        }, label: {
+            RoundedRectangle(cornerRadius: 25)
+                .foregroundStyle(Color.laranjaFundoHome)
+                .frame(width: 200, height: 120)
+                .overlay {
                     HStack {
-                        Text("Água")
-                            .font(.system(size: 20))
-                            .bold()
-                            .foregroundStyle(Color.white)
-                            .padding(.horizontal)
-                        
-                        Spacer()
-                        var displayText: String {
-                            if aguaTotal >= 1000 {
-                                // let litros = Int(aguaTotal / 1000) // Calcula o número de litros
-                                let decimais = String(format: "%.2f", (aguaTotal / 1000)) // Calcula a parte decimal dos litros
-                                return "\(decimais) L" // Retorna a string formatada
-                            } else {
-                                return "\(Int(aguaTotal))ml" // Retorna a quantidade de água em mililitros
+                        VStack {
+                            Text("Água")
+                                .font(.system(size: 27))
+                                .bold()
+                                .foregroundStyle(Color.white)
+                                .padding(.trailing)
+                            
+                            Text("\(displayText) / \(litersSelected),\(milliliterSelected)L")
+                                .font(.system(size: 20))
+                                .bold()
+                                .foregroundStyle(Color.white)
+                                .padding(.trailing)
+                            
+                            
+                            HStack {
+                                ForEach(0..<4) { _ in
+                                    Circle()
+                                }
                             }
                         }
                         
-                        Text("\(displayText) / \(litersSelected),\(milliliterSelected)L")
-                            .font(.system(size: 20))
-                            .bold()
-                            .foregroundStyle(Color.white)
+                        Spacer()
+                        
+                        var displayText: String {
+                            if aguaTotal >= 1000 {
+                                let litros = Int(aguaTotal / 1000) // Calcula o número de litros
+                                let decimais = String(format: "%.2f", (aguaTotal / 1000)) // Calcula a parte decimal dos litros
+                                return "\(decimais)" // Retorna a string formatada
+                            } else {
+                                return "\(Int(aguaTotal))" // Retorna a quantidade de água em mililitros
+                            }
+                        }
                         
                         Button(action: {
-                            print("EDITAR")
-                            isPresented = true
+                            aguaTotal += Double(capacitySelected)
                         }, label: {
-                            Image(systemName: "pencil")
-                                .font(.title)
-                                .foregroundStyle(Color.white)
-                        })
+                            isBottleSelected ?
+                            Image("WaterBottle")
+                                .resizable()
+                                .scaledToFit()
+                            :
+                            Image("cup")
+                                .resizable()
+                                .scaledToFit()
+                            
+                        }
+                               
+                        )
                     }
-                    .padding(.horizontal)
+                    .padding()
                     .sheet(isPresented: $isPresented, content: {
                         WaterModalComponentHomeView(litrosSelecionados: $litersSelected,
                                                     mililiterSelected: $milliliterSelected,
@@ -73,31 +93,8 @@ struct WaterRectangleComponentHomeView: View {
                         .presentationDetents([.medium])
                         
                     })
-                    
-                    HStack{
-                        ForEach(0..<4) { _ in
-                            Button(action: {
-                                aguaTotal += Double(capacitySelected)
-                            }, label: {
-                                isBottleSelected ?
-                                Image("waterbottle")
-                                    .resizable().frame(width: 20, height: 50)
-                                :
-                                Image("cup")
-                                    .resizable().frame(width: 30, height: 50)
-                                
-                            })
-                            .padding(.horizontal)
-                            
-                        }
-                        
-                    }
                 }
-                .padding()
-                
-            }
-        
-        //        }
+        })
     }
 }
 
