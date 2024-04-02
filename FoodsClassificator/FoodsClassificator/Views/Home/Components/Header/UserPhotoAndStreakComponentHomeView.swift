@@ -13,8 +13,12 @@ struct UserPhotoAndStreakComponentHomeView: View {
     
     var body: some View {
         
+        NavigationLink {
+            MotivationView()
+        } label: {
+        
         ZStack{
-            
+
             HStack{
                 Text("\(viewModel.streakNumber)")
                     .font(.callout)
@@ -32,9 +36,7 @@ struct UserPhotoAndStreakComponentHomeView: View {
                     .stroke(Color.laranjaMacros, lineWidth: 1)
             )
 
-            NavigationLink {
-                MotivationView()
-            } label: {
+           
                 Circle()
                     .overlay {
                         Image(viewModel.userPhoto)
