@@ -170,11 +170,7 @@
 		0B1C22762BB20581003C5C0E /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0B1C22872BB20C61003C5C0E /* DatePickerComponentHomeView.swift */,
-				0B1C22842BB20C61003C5C0E /* MealCircleComponentHomeView.swift */,
-				0B1C22862BB20C61003C5C0E /* MealsCarrouselHomeView.swift */,
-				0B1C22852BB20C61003C5C0E /* WaterRectangleComponentHomeView.swift */,
-				4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */,
+				4AF7A7502BBC9A190057DF79 /* Footer */,
 				0B1C22772BB20588003C5C0E /* Header */,
 			);
 			path = Components;
@@ -274,6 +270,18 @@
 				4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */,
 			);
 			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		4AF7A7502BBC9A190057DF79 /* Footer */ = {
+			isa = PBXGroup;
+			children = (
+				0B1C22872BB20C61003C5C0E /* DatePickerComponentHomeView.swift */,
+				0B1C22842BB20C61003C5C0E /* MealCircleComponentHomeView.swift */,
+				0B1C22862BB20C61003C5C0E /* MealsCarrouselHomeView.swift */,
+				0B1C22852BB20C61003C5C0E /* WaterRectangleComponentHomeView.swift */,
+				4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */,
+			);
+			path = Footer;
 			sourceTree = "<group>";
 		};
 		9B452DE42BA4B5C500C75803 /* ContentView */ = {

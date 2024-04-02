@@ -8,17 +8,18 @@
 import SwiftUI
 
 struct WaterModalComponentHomeView: View {
+    
     @State  var selectedLitersIndex = 0
     let litersOptions = stride(from: 1, through: 15, by: 1).map { $0 }
-    @Binding  var litersSelected:Int
+    @Binding  var litersSelected:Double
     
     @State  var selectedMillilitersIndex = 0
     let milliliterOptions = stride(from: 00, through: 950, by: 50).map { $0 }
-    @Binding  var milliliterSelected:Int
+    @Binding  var milliliterSelected:Double
     
     @State  var selectedCapacityIndex = 0
     let capacityOptions = stride(from: 50, through: 5000, by: 50).map { $0 }
-    @Binding  var capacitySelected:Int
+    @Binding  var capacitySelected:Double
     
     @Binding  var isCupSelected:Bool
     @Binding  var isBottleSelected:Bool
@@ -28,15 +29,15 @@ struct WaterModalComponentHomeView: View {
     @State private var showCapacityPopover: Bool = false
     
     
-    init(litrosSelecionados: Binding<Int>, mililiterSelected: Binding<Int>,capacidadeSelecionada: Binding<Int> ,isCupSelected: Binding<Bool>, isBottleSelected: Binding<Bool>, isPresented: Binding<Bool>, showPopover: Binding<Bool>) {
+    init(litrosSelecionados: Binding<Double>, mililiterSelected: Binding<Double>,capacidadeSelecionada: Binding<Double> ,isCupSelected: Binding<Bool>, isBottleSelected: Binding<Bool>, isPresented: Binding<Bool>, showPopover: Binding<Bool>) {
         // Inicializa selectedLitersIndex com o valor atual de litrosSelecionados
-        _selectedLitersIndex = State(initialValue: litersOptions.firstIndex(of: litrosSelecionados.wrappedValue) ?? 0 )
+        _selectedLitersIndex = State(initialValue: litersOptions.firstIndex(of: Int(litrosSelecionados.wrappedValue)) ?? 0 )
         self._litersSelected = litrosSelecionados
         
-        _selectedMillilitersIndex = State(initialValue: milliliterOptions.firstIndex(of: mililiterSelected.wrappedValue) ?? 0 )
+        _selectedMillilitersIndex = State(initialValue: milliliterOptions.firstIndex(of: Int(mililiterSelected.wrappedValue)) ?? 0 )
         self._milliliterSelected = mililiterSelected
         
-        _selectedCapacityIndex = State(initialValue: capacityOptions.firstIndex(of: capacidadeSelecionada.wrappedValue) ?? 0)
+        _selectedCapacityIndex = State(initialValue: capacityOptions.firstIndex(of: Int(capacidadeSelecionada.wrappedValue)) ?? 0)
         self._capacitySelected = capacidadeSelecionada
         
         self._isCupSelected = isCupSelected
@@ -46,11 +47,24 @@ struct WaterModalComponentHomeView: View {
     }
     
     var body: some View {
+        
+        // Propriedade computada para calcular a soma de litros e mililitros
+        var totalWaterInLiters: Double {
+            return litersSelected + (milliliterSelected / 1000.0)
+        }
+        
+        // Propriedade computada para formatar a soma de litros e mililitros
+        var formattedTotalWater: String {
+            // Formata o total de água para mostrar com uma casa decimal
+            return String(format: "%.2f", totalWaterInLiters)
+        }
+
+        
         NavigationStack {
             GeometryReader { geometry in
                 VStack {
                     HStack {
-                        Text("Meta")
+                        Text("Meta Diária")
                         Spacer()
                     }
                     .padding(.horizontal)
@@ -64,7 +78,7 @@ struct WaterModalComponentHomeView: View {
                             .frame(height: 50)
                             .padding()
                             .overlay(
-                                Text("\(litersSelected),\(milliliterSelected) \(litersSelected > 1 ? "Litros" : "Litro") ")
+                                Text("\(formattedTotalWater) Litros")
                                     .foregroundStyle(Color.black)
                             )
                     })
@@ -77,9 +91,12 @@ struct WaterModalComponentHomeView: View {
                             }
                             .pickerStyle(WheelPickerStyle())
                             .onChange(of: selectedLitersIndex) { _, newValue in
-                                litersSelected = litersOptions[newValue]
+                                litersSelected = Double(litersOptions[newValue])
                             }
-                            Text(",")
+                            
+                            Text(".")
+                                .padding(.zero)
+                            
                             Picker("Millilitros", selection: $selectedMillilitersIndex) {
                                 ForEach(0..<milliliterOptions.count, id: \.self) { index in
                                     Text("\(milliliterOptions[index])")
@@ -87,7 +104,7 @@ struct WaterModalComponentHomeView: View {
                             }
                             .pickerStyle(WheelPickerStyle())
                             .onChange(of: selectedMillilitersIndex) { _, newValue in
-                                milliliterSelected = milliliterOptions[newValue]
+                                milliliterSelected = Double(milliliterOptions[newValue])
                             }
                             Text("L")
                         }
@@ -148,6 +165,12 @@ struct WaterModalComponentHomeView: View {
                     .padding(.horizontal)
                     
                     
+                    
+                    var formattedCapacity: String {
+                        // Formata a capacidade para mostrar como um inteiro (sem casas decimais)
+                        return String(format: "%.0f ml", capacitySelected)
+                    }
+
                     Button(action: {
                         showCapacityPopover.toggle()
                         print("Capacity popover clicker")
@@ -159,7 +182,7 @@ struct WaterModalComponentHomeView: View {
                             .overlay(
                                 HStack {
                                     Text("Capacidade")
-                                    Text("\(capacitySelected) ml")
+                                    Text("\(formattedCapacity)")
                                 }
                                     .foregroundStyle(Color.black)
                             )
@@ -174,7 +197,7 @@ struct WaterModalComponentHomeView: View {
                             }
                             .pickerStyle(WheelPickerStyle())
                             .onChange(of: selectedCapacityIndex) { _, newValue in
-                                capacitySelected = capacityOptions[newValue]
+                                capacitySelected = Double(capacityOptions[newValue])
                             }
                         }
                         .padding()
@@ -195,5 +218,17 @@ struct WaterModalComponentHomeView: View {
 
 
 #Preview {
+    WaterModalComponentHomeView(
+                litrosSelecionados: .constant(2), // Substitua 2 pelo valor inicial desejado para litros
+                mililiterSelected: .constant(100), // Substitua 100 pelo valor inicial desejado para mililitros
+                capacidadeSelecionada: .constant(500), // Substitua 500 pelo valor inicial desejado para capacidade
+                isCupSelected: .constant(true), // Substitua true pelo valor inicial desejado para isCupSelected
+                isBottleSelected: .constant(false), // Substitua false pelo valor inicial desejado para isBottleSelected
+                isPresented: .constant(true), // Substitua true pelo valor inicial desejado para isPresented
+                showPopover: .constant(true) // Substitua true pelo valor inicial desejado para showpopover
+            )
+}
+
+#Preview{
     HomeView()
 }

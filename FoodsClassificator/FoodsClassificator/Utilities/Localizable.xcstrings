@@ -7,8 +7,24 @@
     " %@" : {
 
     },
+    " Tire uma foto da refeição e veja a mágica acontecer com a nossa IA" : {
+
+    },
+    "." : {
+
+    },
     "%@" : {
 
+    },
+    "%@ / %lf.%lfL" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ / %2$lf.%3$lfL"
+          }
+        }
+      }
     },
     "%@(%@)" : {
       "localizations" : {
@@ -16,6 +32,19 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@(%2$@)"
+          }
+        }
+      }
+    },
+    "%lf ml" : {
+
+    },
+    "%lf,%lf %@ " : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lf,%2$lf %3$@ "
           }
         }
       }
@@ -36,10 +65,16 @@
     "%lld Cal" : {
 
     },
-    "0/2L" : {
+    "%lld ml" : {
+
+    },
+    "Activity Level" : {
 
     },
     "Adicionar nova refeição" : {
+
+    },
+    "Age" : {
 
     },
     "Água" : {
@@ -52,6 +87,9 @@
 
     },
     "Após o período de 21 dias, o cérebro começa a interpretar as mudanças como algo corriqueiro e incorporado à rotina" : {
+
+    },
+    "Cada passo dado em direção a uma vida mais saudável é motivo de comemoração" : {
 
     },
     "cafeDaManha" : {
@@ -91,6 +129,18 @@
         }
       }
     },
+    "Calorie Calculator" : {
+
+    },
+    "Calories Needed Per Day" : {
+
+    },
+    "Calories: %.0f" : {
+
+    },
+    "Capacidade" : {
+
+    },
     "carboidratos" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -111,7 +161,13 @@
     "Começar" : {
 
     },
+    "Comece sua jornada de bem-estar com Papaia" : {
+
+    },
     "conquistas" : {
+
+    },
+    "Copo" : {
 
     },
     "Dados Pessoais" : {
@@ -121,6 +177,9 @@
 
     },
     "dias" : {
+
+    },
+    "Done" : {
 
     },
     "fibras" : {
@@ -143,6 +202,12 @@
     "frequencia" : {
 
     },
+    "Garrafa" : {
+
+    },
+    "Gender" : {
+
+    },
     "genero" : {
 
     },
@@ -163,6 +228,9 @@
         }
       }
     },
+    "Height (cm)" : {
+
+    },
     "idade" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -180,7 +248,25 @@
         }
       }
     },
+    "Investir em uma alimentação saudável é investir em você mesmo" : {
+
+    },
     "jantar" : {
+
+    },
+    "L" : {
+
+    },
+    "Litros" : {
+
+    },
+    "Meta Diária" : {
+
+    },
+    "Millilitros" : {
+
+    },
+    "ml" : {
 
     },
     "novaRefeicao" : {
@@ -190,6 +276,9 @@
 
     },
     "ofensiva" : {
+
+    },
+    "Personal Information" : {
 
     },
     "peso" : {
@@ -226,7 +315,13 @@
         }
       }
     },
+    "Recipiente" : {
+
+    },
     "Refeições recentes" : {
+
+    },
+    "Registre suas refeições num piscar de olhos" : {
 
     },
     "restam" : {
@@ -245,6 +340,12 @@
           }
         }
       }
+    },
+    "Vamos celebrar suas conquistas" : {
+
+    },
+    "Weight (kg)" : {
+
     }
   },
   "version" : "1.0"

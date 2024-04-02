@@ -31,8 +31,8 @@ struct MealsCarrouselHomeView: View {
                         .offset(x: CGFloat(index - currentIndex) * 220 + dragOffset , y: 0)
                         
                     }
-                }//.background(Image("backgroundHome")
-//                    )
+                }
+                .background(Image("backgroundHome"))
                 
                 .gesture(
                     DragGesture()
