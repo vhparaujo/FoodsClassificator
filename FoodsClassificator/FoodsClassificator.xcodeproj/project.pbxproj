@@ -44,6 +44,10 @@
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
+		4AF7A7542BBD9FCF0057DF79 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A7532BBD9FCF0057DF79 /* FooterView.swift */; };
+		4AF7A7572BBDA5B90057DF79 /* FirstUseTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A7562BBDA5B90057DF79 /* FirstUseTips.swift */; };
+		4AF7A7592BBDAA5A0057DF79 /* FooterHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */; };
+		4AF7A75B2BBDE0240057DF79 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A75A2BBDE0240057DF79 /* Tutorial.swift */; };
 		9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
 		9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
@@ -109,6 +113,10 @@
 		4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImagePicker.swift; sourceTree = "<group>"; };
 		4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoundingBoxesView.swift; sourceTree = "<group>"; };
 		4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodDetection.mlmodel; sourceTree = "<group>"; };
+		4AF7A7532BBD9FCF0057DF79 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		4AF7A7562BBDA5B90057DF79 /* FirstUseTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUseTips.swift; sourceTree = "<group>"; };
+		4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterHomeViewModel.swift; sourceTree = "<group>"; };
+		4AF7A75A2BBDE0240057DF79 /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
@@ -200,6 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */,
+				4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -280,8 +289,18 @@
 				0B1C22862BB20C61003C5C0E /* MealsCarrouselHomeView.swift */,
 				0B1C22852BB20C61003C5C0E /* WaterRectangleComponentHomeView.swift */,
 				4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */,
+				4AF7A7532BBD9FCF0057DF79 /* FooterView.swift */,
 			);
 			path = Footer;
+			sourceTree = "<group>";
+		};
+		4AF7A7552BBDA11E0057DF79 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				4AF7A7562BBDA5B90057DF79 /* FirstUseTips.swift */,
+				4AF7A75A2BBDE0240057DF79 /* Tutorial.swift */,
+			);
+			path = Tutorial;
 			sourceTree = "<group>";
 		};
 		9B452DE42BA4B5C500C75803 /* ContentView */ = {
@@ -556,6 +575,7 @@
 		9BFB9ED02B8AD9DD00BF3028 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4AF7A7552BBDA11E0057DF79 /* Tutorial */,
 				4AB766592BB312440091042D /* OnBoarding */,
 				9BDAA2852BB49649000627F9 /* Perfil */,
 				0B1C22752BB2057B003C5C0E /* Home */,
@@ -661,14 +681,17 @@
 				4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */,
 				0B1C22822BB20C4A003C5C0E /* ProgressBarComponentViewHome.swift in Sources */,
 				0B73E8632BAF605B00C6F91D /* ProgressBar.swift in Sources */,
+				4AF7A7542BBD9FCF0057DF79 /* FooterView.swift in Sources */,
 				0B1C22832BB20C4A003C5C0E /* UserPhotoAndStreakComponentHomeView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
 				4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */,
+				4AF7A75B2BBDE0240057DF79 /* Tutorial.swift in Sources */,
 				0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */,
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
 				4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */,
 				9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */,
 				0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */,
+				4AF7A7572BBDA5B90057DF79 /* FirstUseTips.swift in Sources */,
 				0B73E8612BAF601300C6F91D /* HeaderMealView.swift in Sources */,
 				0B73E8672BAF60F500C6F91D /* MacroNutrientsView.swift in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
@@ -700,6 +723,7 @@
 				9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */,
 				0B73E8692BAF627000C6F91D /* RecentMealCard.swift in Sources */,
 				9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */,
+				4AF7A7592BBDAA5A0057DF79 /* FooterHomeViewModel.swift in Sources */,
 				9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */,
 				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
 				4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */,

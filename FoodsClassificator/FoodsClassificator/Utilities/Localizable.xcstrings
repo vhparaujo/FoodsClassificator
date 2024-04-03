@@ -16,15 +16,18 @@
     "%@" : {
 
     },
-    "%@ / %lf.%lfL" : {
+    "%@ / %.2fL" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$@ / %2$lf.%3$lfL"
+            "value" : "%1$@ / %2$.2fL"
           }
         }
       }
+    },
+    "%@ Litros" : {
+
     },
     "%@(%@)" : {
       "localizations" : {
@@ -32,19 +35,6 @@
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@(%2$@)"
-          }
-        }
-      }
-    },
-    "%lf ml" : {
-
-    },
-    "%lf,%lf %@ " : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lf,%2$lf %3$@ "
           }
         }
       }
@@ -321,6 +311,9 @@
     "Refeições recentes" : {
 
     },
+    "Registre suas refeições facilmente! Use a câmera para alimentos ou código de barras, ou apenas pesquise. Veja as calorias e nutrientes de cada refeição enquanto registra sua alimentação." : {
+
+    },
     "Registre suas refeições num piscar de olhos" : {
 
     },
@@ -340,6 +333,9 @@
           }
         }
       }
+    },
+    "Titulo" : {
+
     },
     "Vamos celebrar suas conquistas" : {
 

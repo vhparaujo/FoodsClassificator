@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TipKit
 
 @main
 struct FoodsClassificatorApp: App {
@@ -14,6 +15,11 @@ struct FoodsClassificatorApp: App {
             NavigationStack {
                 HomeView()
                     .preferredColorScheme(.light)
+                    .task {
+                        try? Tips.configure([
+                            .displayFrequency(.immediate)
+                        ])
+                    }
             }
         }
     }

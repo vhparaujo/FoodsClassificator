@@ -1,0 +1,98 @@
+//
+//  FooterHomeViewModel.swift
+//  FoodsClassificator
+//
+//  Created by Gabriel Ribeiro Noronha on 03/04/24.
+//
+
+import Foundation
+import Observation
+import Combine
+
+@Observable 
+class FooterHomeViewModel: ObservableObject {
+    
+    //MARK: rectangle
+    var isCupSelected = false
+    var isBottleSelected = true
+    
+    var litersSelected: Double = 2.0
+    var milliliterSelected: Double = 0.0
+    var capacitySelected = 200.0
+    
+    var waterIntakeTotal: Double = 0.0
+    
+    var totalWaterIntakeLiters: Double {
+        let millilitersInLiters = milliliterSelected / 1000.0
+        return litersSelected + millilitersInLiters
+    }
+    
+    var waterIntakeTotalFormatted: String {
+        String(format: "%.1f", waterIntakeTotal / 1000.0)
+    }
+    
+    // Calcula o total de água selecionada em ml
+    var totalWaterSelectedInML: Double {
+        (litersSelected * 1000) + milliliterSelected
+    }
+    
+    // Calcula a porcentagem de água consumida em relação ao total selecionado
+    var waterIntakePercentage: Double {
+        guard totalWaterSelectedInML > 0 else { return 0 }
+        return (waterIntakeTotal / totalWaterSelectedInML)
+    }
+    
+    // Calcula quantas bolinhas preencher baseado na porcentagem de água consumida
+    var filledCircles: Int {
+        let percentage = waterIntakePercentage
+        return Int(percentage * 4) // Como temos 4 bolinhas
+    }
+    
+    func addWaterIntake() {
+        waterIntakeTotal += Double(capacitySelected)
+    }
+    
+    //MARK: Modal
+    var selectedLitersIndex = 2
+    var selectedMillilitersIndex = 2
+    var selectedCapacityIndex = 2
+    
+    let litersOptions = Array(stride(from: 1, through: 15, by: 1))
+    let milliliterOptions = Array(stride(from: 0, through: 950, by: 50))
+    let capacityOptions = Array(stride(from: 50, through: 5000, by: 50))
+            
+//    init(litersSelected: Double, milliliterSelected: Double, capacitySelected: Double, isCupSelected: Bool, isBottleSelected: Bool) {
+//        self.litersSelected = litersSelected
+//        self.milliliterSelected = milliliterSelected
+//        self.capacitySelected = capacitySelected
+//        self.isCupSelected = isCupSelected
+//        self.isBottleSelected = isBottleSelected
+//        
+//        // Inicialize os índices baseados nos valores selecionados
+////        _selectedLitersIndex = Published(initialValue: litersOptions.firstIndex(of: Int(litersSelected)) ?? 0)
+////        _selectedMillilitersIndex = Published(initialValue: milliliterOptions.firstIndex(of: Int(milliliterSelected)) ?? 0)
+////        _selectedCapacityIndex = Published(initialValue: capacityOptions.firstIndex(of: Int(capacitySelected)) ?? 0)
+//    }
+    
+    
+    // Propriedade computada para calcular a soma de litros e mililitros
+    var totalWaterInLiters: Double {
+        litersSelected + (milliliterSelected / 1000.0)
+    }
+    
+    // Propriedade computada para formatar a soma de litros e mililitros
+    var formattedTotalWater: String {
+        String(format: "%.2f", totalWaterInLiters)
+    }
+    
+    var formattedCapacity: String {
+        String(format: "%.0f ml", capacitySelected)
+    }
+    
+    func updateSelectedValues() {
+        litersSelected = Double(litersOptions[selectedLitersIndex])
+        milliliterSelected = Double(milliliterOptions[selectedMillilitersIndex])
+        capacitySelected = Double(capacityOptions[selectedCapacityIndex])
+    }
+
+}
