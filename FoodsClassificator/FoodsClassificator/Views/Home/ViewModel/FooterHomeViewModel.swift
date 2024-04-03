@@ -53,27 +53,13 @@ class FooterHomeViewModel: ObservableObject {
     }
     
     //MARK: Modal
-    var selectedLitersIndex = 2
-    var selectedMillilitersIndex = 2
-    var selectedCapacityIndex = 2
+    var selectedLitersIndex = 0
+    var selectedMillilitersIndex = 0
+    var selectedCapacityIndex = 0
     
     let litersOptions = Array(stride(from: 1, through: 15, by: 1))
     let milliliterOptions = Array(stride(from: 0, through: 950, by: 50))
     let capacityOptions = Array(stride(from: 50, through: 5000, by: 50))
-            
-//    init(litersSelected: Double, milliliterSelected: Double, capacitySelected: Double, isCupSelected: Bool, isBottleSelected: Bool) {
-//        self.litersSelected = litersSelected
-//        self.milliliterSelected = milliliterSelected
-//        self.capacitySelected = capacitySelected
-//        self.isCupSelected = isCupSelected
-//        self.isBottleSelected = isBottleSelected
-//        
-//        // Inicialize os índices baseados nos valores selecionados
-////        _selectedLitersIndex = Published(initialValue: litersOptions.firstIndex(of: Int(litersSelected)) ?? 0)
-////        _selectedMillilitersIndex = Published(initialValue: milliliterOptions.firstIndex(of: Int(milliliterSelected)) ?? 0)
-////        _selectedCapacityIndex = Published(initialValue: capacityOptions.firstIndex(of: Int(capacitySelected)) ?? 0)
-//    }
-    
     
     // Propriedade computada para calcular a soma de litros e mililitros
     var totalWaterInLiters: Double {

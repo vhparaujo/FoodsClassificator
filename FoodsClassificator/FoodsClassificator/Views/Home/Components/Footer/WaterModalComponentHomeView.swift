@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WaterModalComponentHomeView: View {
     @Environment(FooterHomeViewModel.self) var footerHomeViewModel
+    
     @Binding var isPresented: Bool
     
     @State var showLiterPopover: Bool = false
@@ -50,7 +51,7 @@ struct WaterModalComponentHomeView: View {
                             }
                             .pickerStyle(WheelPickerStyle())
                             .onChange(of: footerHomeViewModel.selectedLitersIndex) { _, newValue in
-                                footerHomeViewModel.litersSelected = Double(footerHomeViewModel.litersOptions[newValue])
+                                footerHomeViewModel.updateSelectedValues()
                             }
                             
                             Text(".")
@@ -63,7 +64,7 @@ struct WaterModalComponentHomeView: View {
                             }
                             .pickerStyle(WheelPickerStyle())
                             .onChange(of: footerHomeViewModel.selectedMillilitersIndex) { _, newValue in
-                                footerHomeViewModel.milliliterSelected = Double(footerHomeViewModel.milliliterOptions[newValue])
+                                    footerHomeViewModel.updateSelectedValues()
                             }
                             Text("L")
                         }
@@ -149,7 +150,7 @@ struct WaterModalComponentHomeView: View {
                             }
                             .pickerStyle(WheelPickerStyle())
                             .onChange(of: footerHomeViewModel.selectedCapacityIndex) { _, newValue in
-                                footerHomeViewModel.capacitySelected = Double(footerHomeViewModel.capacityOptions[newValue])
+                                footerHomeViewModel.updateSelectedValues()
                             }
                         }
                         .padding()

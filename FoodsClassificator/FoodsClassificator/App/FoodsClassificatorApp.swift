@@ -13,13 +13,9 @@ struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomeView()
+//                HomeView()
+                Tutorial()
                     .preferredColorScheme(.light)
-                    .task {
-                        try? Tips.configure([
-                            .displayFrequency(.immediate)
-                        ])
-                    }
             }
         }
     }
