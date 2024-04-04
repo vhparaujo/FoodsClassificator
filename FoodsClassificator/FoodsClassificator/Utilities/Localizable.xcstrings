@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "en",
+  "sourceLanguage" : "pt-BR",
   "strings" : {
     "" : {
 
@@ -7,12 +7,28 @@
     " %@" : {
 
     },
+    " Tire uma foto da refeição e veja a mágica acontecer com a nossa IA" : {
+
+    },
+    "." : {
+
+    },
     "%@" : {
 
     },
+    "%@ / %lld,%lldL" : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ / %2$lld,%3$lldL"
+          }
+        }
+      }
+    },
     "%@(%@)" : {
       "localizations" : {
-        "en" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@(%2$@)"
@@ -25,7 +41,7 @@
     },
     "%lld %@" : {
       "localizations" : {
-        "en" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$lld %2$@"
@@ -36,10 +52,35 @@
     "%lld Cal" : {
 
     },
-    "0/2L" : {
+    "%lld cm" : {
+
+    },
+    "%lld kg" : {
+
+    },
+    "%lld ml" : {
+
+    },
+    "%lld,%lld %@ " : {
+      "localizations" : {
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld,%2$lld %3$@ "
+          }
+        }
+      }
+    },
+    "%lldx" : {
+
+    },
+    "Activity Level" : {
 
     },
     "Adicionar nova refeição" : {
+
+    },
+    "Age" : {
 
     },
     "Água" : {
@@ -51,7 +92,13 @@
     "altura" : {
 
     },
+    "Altura" : {
+
+    },
     "Após o período de 21 dias, o cérebro começa a interpretar as mudanças como algo corriqueiro e incorporado à rotina" : {
+
+    },
+    "Cada passo dado em direção a uma vida mais saudável é motivo de comemoração" : {
 
     },
     "cafeDaManha" : {
@@ -91,6 +138,18 @@
         }
       }
     },
+    "Calorie Calculator" : {
+
+    },
+    "Calories Needed Per Day" : {
+
+    },
+    "Calories: %.0f" : {
+
+    },
+    "Capacidade" : {
+
+    },
     "carboidratos" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -111,7 +170,13 @@
     "Começar" : {
 
     },
+    "Comece sua jornada de bem-estar com Papaia" : {
+
+    },
     "conquistas" : {
+
+    },
+    "Copo" : {
 
     },
     "Dados Pessoais" : {
@@ -121,6 +186,9 @@
 
     },
     "dias" : {
+
+    },
+    "Done" : {
 
     },
     "fibras" : {
@@ -143,6 +211,15 @@
     "frequencia" : {
 
     },
+    "Frequência de exercício" : {
+
+    },
+    "Garrafa" : {
+
+    },
+    "Gender" : {
+
+    },
     "genero" : {
 
     },
@@ -163,6 +240,9 @@
         }
       }
     },
+    "Height (cm)" : {
+
+    },
     "idade" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -180,7 +260,31 @@
         }
       }
     },
+    "Idade" : {
+
+    },
+    "Investir em uma alimentação saudável é investir em você mesmo" : {
+
+    },
     "jantar" : {
+
+    },
+    "L" : {
+
+    },
+    "Litros" : {
+
+    },
+    "Meta" : {
+
+    },
+    "Millilitros" : {
+
+    },
+    "ml" : {
+
+    },
+    "Nome da refeição" : {
 
     },
     "novaRefeicao" : {
@@ -189,7 +293,13 @@
     "objetivo" : {
 
     },
+    "Objetivo" : {
+
+    },
     "ofensiva" : {
+
+    },
+    "Personal Information" : {
 
     },
     "peso" : {
@@ -209,6 +319,9 @@
         }
       }
     },
+    "Peso" : {
+
+    },
     "proteinas" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -226,7 +339,13 @@
         }
       }
     },
+    "Recipiente" : {
+
+    },
     "Refeições recentes" : {
+
+    },
+    "Registre suas refeições num piscar de olhos" : {
 
     },
     "restam" : {
@@ -245,6 +364,15 @@
           }
         }
       }
+    },
+    "Sexo Biológico" : {
+
+    },
+    "Vamos celebrar suas conquistas" : {
+
+    },
+    "Weight (kg)" : {
+
     }
   },
   "version" : "1.0"
