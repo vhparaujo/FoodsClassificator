@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "en",
+  "sourceLanguage" : "pt-BR",
   "strings" : {
     "" : {
 
@@ -18,7 +18,7 @@
     },
     "%@ / %.2fL" : {
       "localizations" : {
-        "en" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@ / %2$.2fL"
@@ -31,7 +31,7 @@
     },
     "%@(%@)" : {
       "localizations" : {
-        "en" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@(%2$@)"
@@ -44,7 +44,7 @@
     },
     "%lld %@" : {
       "localizations" : {
-        "en" : {
+        "pt-BR" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$lld %2$@"

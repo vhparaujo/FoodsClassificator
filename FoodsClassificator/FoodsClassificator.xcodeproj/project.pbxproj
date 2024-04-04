@@ -40,6 +40,7 @@
 		4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */; };
 		4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */; };
 		4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */; };
+		4A60303A2BBF20BC00082ECA /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
 		4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */; };
 		4AB85A342BBEFFF40075ADD9 /* TutorialPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB85A332BBEFFF40075ADD9 /* TutorialPage1.swift */; };
 		4AB85A362BBF01290075ADD9 /* TutorialPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB85A352BBF01290075ADD9 /* TutorialPage2.swift */; };
@@ -50,7 +51,6 @@
 		4AF7A7572BBDA5B90057DF79 /* FirstUseTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A7562BBDA5B90057DF79 /* FirstUseTips.swift */; };
 		4AF7A7592BBDAA5A0057DF79 /* FooterHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */; };
 		4AF7A75B2BBDE0240057DF79 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A75A2BBDE0240057DF79 /* Tutorial.swift */; };
-		9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
 		9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
 		9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904922BB49A030058DFDD /* PerfilViewModel.swift */; };
@@ -61,7 +61,6 @@
 		9BDAA28C2BB496F3000627F9 /* PerfilImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDAA28B2BB496F3000627F9 /* PerfilImageViewComponent.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
 		9BE179A42B8A567D0086877C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE179A32B8A567D0086877C /* Assets.xcassets */; };
-		9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE179A62B8A567D0086877C /* Preview Assets.xcassets */; };
 		9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEBDF872BA760EA0077632C /* ExampleView.swift */; };
 		9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEBDF8A2BA7611E0077632C /* ExampleViewModel.swift */; };
 		9BF7830F2BB4B5B3008CD198 /* MotivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7830E2BB4B5B3008CD198 /* MotivationView.swift */; };
@@ -634,7 +633,7 @@
 			};
 			buildConfigurationList = 9BE179972B8A567C0086877C /* Build configuration list for PBXProject "FoodsClassificator" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -659,8 +658,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */,
-				9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */,
-				9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */,
+				4A60303A2BBF20BC00082ECA /* Localizable.xcstrings in Resources */,
 				9BE179A42B8A567D0086877C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
