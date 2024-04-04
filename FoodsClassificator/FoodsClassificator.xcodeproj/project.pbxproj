@@ -35,6 +35,7 @@
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
+		0BFD09FB2BBF4A1B00C8BCC2 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD09F92BBF4A1B00C8BCC2 /* Database.xcdatamodeld */; };
 		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
 		4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */; };
 		4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */; };
@@ -45,10 +46,8 @@
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
 		9B0238512BBC8541008E8960 /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0238502BBC8541008E8960 /* PerfilModel.swift */; };
-		9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
 		9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
-		9B77B82E2BBEE5A000FD9FDF /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B77B82C2BBEE59F00FD9FDF /* Database.xcdatamodeld */; };
 		9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904922BB49A030058DFDD /* PerfilViewModel.swift */; };
 		9B8904952BB49B4F0058DFDD /* UserNameComponentPerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904942BB49B4F0058DFDD /* UserNameComponentPerfilView.swift */; };
 		9B8904972BB49D800058DFDD /* ListPerfilComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904962BB49D800058DFDD /* ListPerfilComponentView.swift */; };
@@ -102,6 +101,7 @@
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
 		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentView/ViewModel/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
+		0BFD09FA2BBF4A1B00C8BCC2 /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterModalComponentHomeView.swift; sourceTree = "<group>"; };
 		4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1.swift; sourceTree = "<group>"; };
 		4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2.swift; sourceTree = "<group>"; };
@@ -112,10 +112,8 @@
 		4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoundingBoxesView.swift; sourceTree = "<group>"; };
 		4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodDetection.mlmodel; sourceTree = "<group>"; };
 		9B0238502BBC8541008E8960 /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilModel.swift; sourceTree = "<group>"; };
-		9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
-		9B77B82D2BBEE5A000FD9FDF /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		9B8904922BB49A030058DFDD /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
 		9B8904942BB49B4F0058DFDD /* UserNameComponentPerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameComponentPerfilView.swift; sourceTree = "<group>"; };
 		9B8904962BB49D800058DFDD /* ListPerfilComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPerfilComponentView.swift; sourceTree = "<group>"; };
@@ -382,6 +380,7 @@
 		9BE1799E2B8A567C0086877C /* FoodsClassificator */ = {
 			isa = PBXGroup;
 			children = (
+				0BFD09F92BBF4A1B00C8BCC2 /* Database.xcdatamodeld */,
 				0B1C22632BB20031003C5C0E /* FoodsClassificatorApp.swift */,
 				9BE179A32B8A567D0086877C /* Assets.xcassets */,
 				9BFA12672BAB8383000C0CB5 /* Extensions */,
@@ -391,7 +390,6 @@
 				9BFB9ED02B8AD9DD00BF3028 /* Views */,
 				9BFB9ECF2B8AD94C00BF3028 /* Utilities */,
 				9BE179A52B8A567D0086877C /* Preview Content */,
-				9B77B82C2BBEE59F00FD9FDF /* Database.xcdatamodeld */,
 			);
 			path = FoodsClassificator;
 			sourceTree = "<group>";
@@ -554,7 +552,6 @@
 				9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */,
 				9BEBDF802BA760050077632C /* CreateMLModel */,
 				9BEBDF7E2BA75FDB0077632C /* MLModels */,
-				9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -640,7 +637,6 @@
 			files = (
 				9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */,
 				9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */,
-				9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */,
 				9BE179A42B8A567D0086877C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -701,7 +697,7 @@
 				0B1C22742BB20551003C5C0E /* HomeTexts.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
 				9BDAA28A2BB496CE000627F9 /* PerfilView.swift in Sources */,
-				9B77B82E2BBEE5A000FD9FDF /* Database.xcdatamodeld in Sources */,
+				0BFD09FB2BBF4A1B00C8BCC2 /* Database.xcdatamodeld in Sources */,
 				9BF783132BB50541008CD198 /* ModalTitles.swift in Sources */,
 				9BF7830F2BB4B5B3008CD198 /* MotivationView.swift in Sources */,
 				0B1C228A2BB20C61003C5C0E /* MealsCarrouselHomeView.swift in Sources */,
@@ -936,14 +932,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9B77B82C2BBEE59F00FD9FDF /* Database.xcdatamodeld */ = {
+		0BFD09F92BBF4A1B00C8BCC2 /* Database.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				9B77B82D2BBEE5A000FD9FDF /* Database.xcdatamodel */,
+				0BFD09FA2BBF4A1B00C8BCC2 /* Database.xcdatamodel */,
 			);
-			currentVersion = 9B77B82D2BBEE5A000FD9FDF /* Database.xcdatamodel */;
+			currentVersion = 0BFD09FA2BBF4A1B00C8BCC2 /* Database.xcdatamodel */;
 			name = Database.xcdatamodeld;
-			path = /Users/vhparaujo/Documents/Academy/Mini04/FoodsClassificator/FoodsClassificator/FoodsClassificator/Database.xcdatamodeld;
+			path = /Users/brunosouza/Documents/GitHub/FoodsClassificator/FoodsClassificator/FoodsClassificator/Database.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
