@@ -163,6 +163,9 @@
     "Dados Pessoais" : {
 
     },
+    "Definir calorias" : {
+
+    },
     "desafios" : {
 
     },
@@ -250,6 +253,9 @@
     "Litros" : {
 
     },
+    "Melhorar a Experiência" : {
+
+    },
     "Meta Diária" : {
 
     },
@@ -266,6 +272,12 @@
 
     },
     "ofensiva" : {
+
+    },
+    "Página Melhorar Experiência" : {
+
+    },
+    "Página Talvez Mais Tarde" : {
 
     },
     "Personal Information" : {
@@ -287,6 +299,9 @@
           }
         }
       }
+    },
+    "Precisamos de algumas informações para melhorar sua experiência definindo as calorias, levará 5 minutos." : {
+
     },
     "proteinas" : {
       "extractionState" : "manual",
@@ -333,6 +348,9 @@
           }
         }
       }
+    },
+    "Talvez mais tarde" : {
+
     },
     "Titulo" : {
 
