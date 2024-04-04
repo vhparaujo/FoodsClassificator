@@ -29,7 +29,7 @@ struct DatePickerComponentHomeView: View {
             DatePicker(selection: $selectedDate, displayedComponents: .date) {}
                 .labelsHidden()
                 .contentShape(Rectangle())
-                .opacity(0.011)             // <<< here
+                .opacity(0.011)
         }
         .padding(.trailing)
         
@@ -46,7 +46,7 @@ struct DatePickerComponentHomeView: View {
             return "Hoje"
         } else {
             return selectedDate.formatted(.dateTime.day().month())
-
+            
         }
     }
 }

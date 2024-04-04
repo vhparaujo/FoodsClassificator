@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import TipKit
 
 @main
 struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomeView()
+//                HomeView()
+                Tutorial()
                     .preferredColorScheme(.light)
             }
         }

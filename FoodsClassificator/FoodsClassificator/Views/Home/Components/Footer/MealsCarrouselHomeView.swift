@@ -10,6 +10,8 @@ import SwiftUI
 struct MealsCarrouselHomeView: View {
     @State private var currentIndex: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
+    let firstUseTips = FirstUseTips()
+    
     private let mealViews: [(String, () -> Void)] = [
         ("Café da manhã", { print("Alimento adicionado ao Café da manhã") }),
         ("Almoço", { print("Alimento adicionado ao Almoço") }),
@@ -31,9 +33,7 @@ struct MealsCarrouselHomeView: View {
                         .offset(x: CGFloat(index - currentIndex) * 220 + dragOffset , y: 0)
                         
                     }
-                }//.background(Image("backgroundHome")
-//                    )
-                
+                }
                 .gesture(
                     DragGesture()
                         .onEnded({ value in

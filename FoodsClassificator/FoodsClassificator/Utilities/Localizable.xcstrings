@@ -16,6 +16,7 @@
     "%@" : {
 
     },
+    
     "%@ / %lld,%lldL" : {
       "localizations" : {
         "pt-BR" : {
@@ -26,6 +27,7 @@
         }
       }
     },
+    
     "%@(%@)" : {
       "localizations" : {
         "pt-BR" : {
@@ -52,6 +54,7 @@
     "%lld Cal" : {
 
     },
+
     "%lld cm" : {
 
     },
@@ -74,6 +77,7 @@
     "%lldx" : {
 
     },
+    
     "Activity Level" : {
 
     },
@@ -182,6 +186,9 @@
     "Dados Pessoais" : {
 
     },
+    "Definir calorias" : {
+
+    },
     "desafios" : {
 
     },
@@ -214,6 +221,7 @@
     "Frequência de exercício" : {
 
     },
+
     "Garrafa" : {
 
     },
@@ -263,6 +271,7 @@
     "Idade" : {
 
     },
+
     "Investir em uma alimentação saudável é investir em você mesmo" : {
 
     },
@@ -275,6 +284,7 @@
     "Litros" : {
 
     },
+
     "Meta" : {
 
     },
@@ -285,6 +295,17 @@
 
     },
     "Nome da refeição" : {
+
+    "Melhorar a Experiência" : {
+
+    },
+    "Meta Diária" : {
+
+    },
+    "Millilitros" : {
+
+    },
+    "ml" : {
 
     },
     "novaRefeicao" : {
@@ -299,6 +320,14 @@
     "ofensiva" : {
 
     },
+
+    "Página Melhorar Experiência" : {
+
+    },
+    "Página Talvez Mais Tarde" : {
+
+    },
+    
     "Personal Information" : {
 
     },
@@ -319,7 +348,9 @@
         }
       }
     },
-    "Peso" : {
+
+"Peso" : {
+    "Precisamos de algumas informações para melhorar sua experiência definindo as calorias, levará 5 minutos." : {
 
     },
     "proteinas" : {
@@ -345,6 +376,10 @@
     "Refeições recentes" : {
 
     },
+
+    "Registre suas refeições facilmente! Use a câmera para alimentos ou código de barras, ou apenas pesquise. Veja as calorias e nutrientes de cada refeição enquanto registra sua alimentação." : {
+
+    },
     "Registre suas refeições num piscar de olhos" : {
 
     },
@@ -365,7 +400,13 @@
         }
       }
     },
-    "Sexo Biológico" : {
+
+"Sexo Biológico" : {
+
+    "Talvez mais tarde" : {
+
+    },
+    "Titulo" : {
 
     },
     "Vamos celebrar suas conquistas" : {

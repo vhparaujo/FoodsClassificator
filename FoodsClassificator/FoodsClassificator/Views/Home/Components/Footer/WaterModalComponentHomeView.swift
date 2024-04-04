@@ -8,49 +8,23 @@
 import SwiftUI
 
 struct WaterModalComponentHomeView: View {
-    @State  var selectedLitersIndex = 0
-    let litersOptions = stride(from: 1, through: 15, by: 1).map { $0 }
-    @Binding  var litersSelected:Int
-    
-    @State  var selectedMillilitersIndex = 0
-    let milliliterOptions = stride(from: 00, through: 950, by: 50).map { $0 }
-    @Binding  var milliliterSelected:Int
-    
-    @State  var selectedCapacityIndex = 0
-    let capacityOptions = stride(from: 50, through: 5000, by: 50).map { $0 }
-    @Binding  var capacitySelected:Int
-    
-    @Binding  var isCupSelected:Bool
-    @Binding  var isBottleSelected:Bool
-    
+    @Environment(FooterHomeViewModel.self) var footerHomeViewModel
     @Binding var isPresented: Bool
-    @State private var showLiterPopover: Bool = false
-    @State private var showCapacityPopover: Bool = false
     
-    
-    init(litrosSelecionados: Binding<Int>, mililiterSelected: Binding<Int>,capacidadeSelecionada: Binding<Int> ,isCupSelected: Binding<Bool>, isBottleSelected: Binding<Bool>, isPresented: Binding<Bool>, showPopover: Binding<Bool>) {
-        // Inicializa selectedLitersIndex com o valor atual de litrosSelecionados
-        _selectedLitersIndex = State(initialValue: litersOptions.firstIndex(of: litrosSelecionados.wrappedValue) ?? 0 )
-        self._litersSelected = litrosSelecionados
-        
-        _selectedMillilitersIndex = State(initialValue: milliliterOptions.firstIndex(of: mililiterSelected.wrappedValue) ?? 0 )
-        self._milliliterSelected = mililiterSelected
-        
-        _selectedCapacityIndex = State(initialValue: capacityOptions.firstIndex(of: capacidadeSelecionada.wrappedValue) ?? 0)
-        self._capacitySelected = capacidadeSelecionada
-        
-        self._isCupSelected = isCupSelected
-        self._isBottleSelected = isBottleSelected
-        
-        self._isPresented = isPresented
-    }
+    @State var showLiterPopover: Bool = false
+    @State var showCapacityPopover: Bool = false
+
+    @State var selectedCapacityIndex = 0
+    @State var selectedLitersIndex = 0
+    @State var selectedMillilitersIndex = 0
     
     var body: some View {
         NavigationStack {
             GeometryReader { geometry in
                 VStack {
                     HStack {
-                        Text("Meta")
+                        Text("Meta Diária")
+                            .foregroundStyle(Color.black)
                         Spacer()
                     }
                     .padding(.horizontal)
@@ -64,35 +38,40 @@ struct WaterModalComponentHomeView: View {
                             .frame(height: 50)
                             .padding()
                             .overlay(
-                                Text("\(litersSelected),\(milliliterSelected) \(litersSelected > 1 ? "Litros" : "Litro") ")
+                                Text("\(footerHomeViewModel.formattedTotalWater) Litros")
                                     .foregroundStyle(Color.black)
                             )
                     })
                     .popover(isPresented: $showLiterPopover, content: {
                         HStack {
                             Picker("Litros", selection: $selectedLitersIndex) {
-                                ForEach(0..<litersOptions.count, id: \.self) { index in
-                                    Text("\(litersOptions[index])")
+                                ForEach(0..<footerHomeViewModel.litersOptions.count) {
+                                    Text("\(footerHomeViewModel.litersOptions[$0])")
                                 }
                             }
                             .pickerStyle(WheelPickerStyle())
                             .onChange(of: selectedLitersIndex) { _, newValue in
-                                litersSelected = litersOptions[newValue]
+                                footerHomeViewModel.litersSelected = Double(footerHomeViewModel.litersOptions[newValue])
                             }
+                            
                             Text(".")
+                                .padding(.zero)
+                            
                             Picker("Millilitros", selection: $selectedMillilitersIndex) {
-                                ForEach(0..<milliliterOptions.count, id: \.self) { index in
-                                    Text("\(milliliterOptions[index])")
+                                ForEach(0..<footerHomeViewModel.milliliterOptions.count) {
+                                    Text("\(footerHomeViewModel.milliliterOptions[$0])")
                                 }
                             }
                             .pickerStyle(WheelPickerStyle())
                             .onChange(of: selectedMillilitersIndex) { _, newValue in
-                                milliliterSelected = milliliterOptions[newValue]
+                                footerHomeViewModel.milliliterSelected = Double(footerHomeViewModel.milliliterOptions[newValue])
                             }
                             Text("L")
                         }
-                        .presentationCompactAdaptation(.popover)
                         .padding()
+                        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.2)
+                        
+                        .presentationCompactAdaptation(.popover)
                     })
                     
                     HStack {
@@ -106,11 +85,11 @@ struct WaterModalComponentHomeView: View {
                         VStack {
                             Circle()
                                 .foregroundStyle(Color.orange)
-                                .opacity(isCupSelected ? 1 : 0.4)
+                                .opacity(footerHomeViewModel.isCupSelected ? 1 : 0.4)
                                 .overlay {
                                     Button(action: {
-                                        isCupSelected = true
-                                        isBottleSelected = false
+                                        footerHomeViewModel.isCupSelected = true
+                                        footerHomeViewModel.isBottleSelected = false
                                         print("Copo selecionado")
                                     }, label: {
                                         Image("cup")
@@ -119,31 +98,35 @@ struct WaterModalComponentHomeView: View {
                                 }
                                 .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
                             Text("Copo")
+                                .foregroundStyle(Color.black)
+
                         }
                         Spacer()
                         
                         VStack {
                             Circle()
                                 .foregroundStyle(Color.orange)
-                                .opacity(isBottleSelected ? 1 : 0.5)
+                                .opacity(footerHomeViewModel.isBottleSelected ? 1 : 0.5)
                                 .overlay {
                                     Button(action: {
-                                        isCupSelected = false
-                                        isBottleSelected = true
+                                        footerHomeViewModel.isCupSelected = false
+                                        footerHomeViewModel.isBottleSelected = true
                                         print("Garrafa selecionado")
                                     }, label: {
-                                        Image("waterbottle")
+                                        Image("WaterBottle")
+                                            .resizable()
+                                            .scaledToFit()
                                     })
-                                    .padding(.horizontal)
+                                    .padding()
                                 }
                                 .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
                             Text("Garrafa")
-                            
+                                .foregroundStyle(Color.black)
+
                         }
                         Spacer()
                     }
                     .padding(.horizontal)
-                    
                     
                     Button(action: {
                         showCapacityPopover.toggle()
@@ -156,7 +139,7 @@ struct WaterModalComponentHomeView: View {
                             .overlay(
                                 HStack {
                                     Text("Capacidade")
-                                    Text("\(capacitySelected) ml")
+                                    Text("\(footerHomeViewModel.formattedCapacity)")
                                 }
                                     .foregroundStyle(Color.black)
                             )
@@ -165,16 +148,17 @@ struct WaterModalComponentHomeView: View {
                     .popover(isPresented: $showCapacityPopover, content: {
                         HStack {
                             Picker("ml", selection: $selectedCapacityIndex) {
-                                ForEach(0..<capacityOptions.count, id: \.self) { index in
-                                    Text("\(capacityOptions[index]) ml")
+                                ForEach(0..<footerHomeViewModel.capacityOptions.count) {
+                                    Text("\(footerHomeViewModel.capacityOptions[$0]) ml")
                                 }
                             }
                             .pickerStyle(WheelPickerStyle())
                             .onChange(of: selectedCapacityIndex) { _, newValue in
-                                capacitySelected = capacityOptions[newValue]
+                                footerHomeViewModel.capacitySelected = Double(footerHomeViewModel.capacityOptions[newValue])
                             }
                         }
                         .padding()
+                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.2)
                         .presentationCompactAdaptation(.popover)
                     }
                              
@@ -191,5 +175,14 @@ struct WaterModalComponentHomeView: View {
 
 
 #Preview {
-    HomeView()
+    var footerHomeViewModel = FooterHomeViewModel()
+    return WaterModalComponentHomeView(isPresented: .constant(true)) // Substitua true pelo valor inicial desejado para isPresented
+        .environment(footerHomeViewModel)
+    
+}
+
+#Preview{
+    var footerHomeViewModel = FooterHomeViewModel()
+    return HomeView()
+        .environment(footerHomeViewModel)
 }
