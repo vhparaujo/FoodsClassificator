@@ -10,19 +10,21 @@ import SwiftUI
 struct HomeView: View {
         
     var body: some View {
-        VStack {
-            
-            HeaderView()
-  
-            HStack {
-                Spacer()
-                DatePickerComponentHomeView()
+        NavigationStack {
+            VStack {
+                
+                HeaderView()
+                
+                HStack {
+                    Spacer()
+                    DatePickerComponentHomeView()
+                }
+                
+                MealsCarrouselHomeView()
+                
+                WaterRectangleComponentHomeView()
             }
-            
-            MealsCarrouselHomeView()
-            WaterRectangleComponentHomeView()
         }
-        
     }
 }
 

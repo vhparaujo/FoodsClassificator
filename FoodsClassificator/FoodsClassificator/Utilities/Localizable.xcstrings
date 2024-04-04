@@ -45,7 +45,13 @@
     "100g" : {
 
     },
-    "Adicionar nova refeição" : {
+    "Adicionar" : {
+
+    },
+    "Adicionar refeição" : {
+
+    },
+    "Adicione sua primeira refeição" : {
 
     },
     "Água" : {
@@ -64,16 +70,37 @@
     "Calorias" : {
 
     },
+    "Carboidratos" : {
+
+    },
+    "Deletar" : {
+
+    },
     "Done" : {
 
     },
+    "Editar" : {
+
+    },
     "Escolher da Biblioteca" : {
+
+    },
+    "Fibras" : {
+
+    },
+    "Gorduras" : {
+
+    },
+    "Nova refeição" : {
 
     },
     "Nutrition Information" : {
 
     },
     "Properties" : {
+
+    },
+    "Proteínas" : {
 
     },
     "Refeições recentes" : {
