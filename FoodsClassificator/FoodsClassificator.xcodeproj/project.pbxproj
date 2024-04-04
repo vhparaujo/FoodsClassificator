@@ -45,7 +45,6 @@
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
 		9B0238512BBC8541008E8960 /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0238502BBC8541008E8960 /* PerfilModel.swift */; };
-		9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
 		9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
 		9B77B82E2BBEE5A000FD9FDF /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B77B82C2BBEE59F00FD9FDF /* Database.xcdatamodeld */; };
@@ -112,7 +111,6 @@
 		4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoundingBoxesView.swift; sourceTree = "<group>"; };
 		4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodDetection.mlmodel; sourceTree = "<group>"; };
 		9B0238502BBC8541008E8960 /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilModel.swift; sourceTree = "<group>"; };
-		9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
 		9B77B82D2BBEE5A000FD9FDF /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
@@ -554,7 +552,6 @@
 				9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */,
 				9BEBDF802BA760050077632C /* CreateMLModel */,
 				9BEBDF7E2BA75FDB0077632C /* MLModels */,
-				9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -640,7 +637,6 @@
 			files = (
 				9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */,
 				9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */,
-				9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */,
 				9BE179A42B8A567D0086877C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
