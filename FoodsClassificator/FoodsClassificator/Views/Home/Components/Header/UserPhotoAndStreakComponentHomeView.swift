@@ -23,8 +23,9 @@ struct UserPhotoAndStreakComponentHomeView: View {
                 Text("\(viewModel.streakNumber)")
                     .font(.callout)
                     .bold()
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(Color.verdeTitle)
                 Image("fireSymbolHome")
+                    .foregroundStyle(.black)
                 
                 Spacer()
             }
@@ -33,7 +34,7 @@ struct UserPhotoAndStreakComponentHomeView: View {
             .background(Color.clear)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.laranjaMacros, lineWidth: 1)
+                    .stroke(Color.verdeTitle, lineWidth: 1)
             )
 
            
@@ -51,7 +52,7 @@ struct UserPhotoAndStreakComponentHomeView: View {
                     .overlay {
                         Circle()
                             .stroke(lineWidth: 2)
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.verdeTitle)
                     }
                     .offset(x: 35)
             }

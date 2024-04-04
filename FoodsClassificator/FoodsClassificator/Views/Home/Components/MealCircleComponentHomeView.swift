@@ -14,43 +14,52 @@ struct MealCircleComponentHomeView: View {
     var body: some View {
         
         ZStack {
+        
             Circle()
-                .stroke()
-                .foregroundStyle(.laranjaFundoHome)
-                .frame(width: 280)
-            
-            Circle()
-                .foregroundStyle(.laranjaFundoHome)
+                .foregroundStyle(.laranjaBrilhante)
                 .overlay(content: {
                     VStack {
                         Spacer()
                         Text(mealText)
-                            .foregroundStyle(.white)
-                            .font(.system(size: 35))
+                            .foregroundStyle(.black)
+                            .font(.largeTitle)
+                            .minimumScaleFactor(0.5)
                             .multilineTextAlignment(.center) // Alinhamento do texto ao centro
                             .padding(.horizontal) // Adiciona um preenchimento horizontal
                         
                         Spacer()
                         Button(action: buttonAction) {
                             Image(systemName: "plus")
-                                .foregroundStyle(.white)
-                                .font(.system(size: 40))
+                                .foregroundStyle(.black)
+                                .font(.title)
+                                .minimumScaleFactor(0.3)
+                                
                         }
                         Spacer()
                     }
                     .padding()
                     
                 })
-                .frame(width: 260)
+            
+                .overlay {
+                    Circle()
+                        .stroke(lineWidth: 10)
+                        .foregroundStyle(.laranjaBrilhante)
+                }
+                .overlay {
+                    Circle()
+                        .stroke(lineWidth: 9)
+                        .foregroundStyle(.windowBackground)
+                }
         }
     }
 }
 
-//#Preview {
-//    MealCircleComponentHomeView(mealText: "Café da Manhã") {
-//        print("Adicionar alimento")
-//    }
-//}
 #Preview {
-    HomeView()
+    MealCircleComponentHomeView(mealText: "Café da Manhã") {
+        print("Adicionar alimento")
+    }
 }
+//#Preview {
+//    HomeView()
+//}

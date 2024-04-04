@@ -18,8 +18,9 @@ struct MacrosComponentHomeView: View {
         VStack {
             Text(macroType)
                 .font(.footnote)
-                .foregroundStyle(.white)
+                .foregroundStyle(.verdeTitle)
                 .lineLimit(1)
+//                .frame(width: 65)
                 
             Text("\(viewModel.macrosValue)")
                 .foregroundStyle(.black)

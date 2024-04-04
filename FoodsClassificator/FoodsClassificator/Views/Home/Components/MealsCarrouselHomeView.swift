@@ -18,6 +18,9 @@ struct MealsCarrouselHomeView: View {
         ("Jantar", { print("Alimento adicionado ao Jantar") })
     ]
     
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
+    
     var body: some View {
         NavigationStack{
             VStack{
@@ -25,10 +28,10 @@ struct MealsCarrouselHomeView: View {
                     ForEach(0..<mealViews.count, id: \.self) { index in
                         MealCircleComponentHomeView(mealText: mealViews[index].0,
                                                     buttonAction: mealViews[index].1)
-                        .frame(width: 300, height: 300)
+//                        .frame(width: 300, height: 300)
                         .opacity(currentIndex == index ? 1.0 : 0.5)
                         .scaleEffect(currentIndex == index ? 1.0 : 0.5)
-                        .offset(x: CGFloat(index - currentIndex) * 220 + dragOffset , y: 0)
+                        .offset(x: CGFloat(index - currentIndex) * 240 + dragOffset , y: 0)
                         
                     }
                 }//.background(Image("backgroundHome")
@@ -52,6 +55,7 @@ struct MealsCarrouselHomeView: View {
                     
                 )
             }
+            .padding()
         }
         
     }
@@ -59,5 +63,5 @@ struct MealsCarrouselHomeView: View {
 }
 
 #Preview {
-    MealsCarrouselHomeView()
+    HomeView()
 }

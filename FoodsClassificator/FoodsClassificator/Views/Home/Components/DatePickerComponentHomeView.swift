@@ -21,8 +21,8 @@ struct DatePickerComponentHomeView: View {
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
-        .foregroundColor(.white)
-        .background(RoundedRectangle(cornerRadius: 15, style: .continuous).foregroundColor(.laranjaFundoHome))
+        .foregroundColor(.black)
+        .background(RoundedRectangle(cornerRadius: 15, style: .continuous).foregroundColor(.laranjaBrilhante))
         
         // Put the actual DataPicker here with overlay
         .overlay {

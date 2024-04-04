@@ -24,7 +24,7 @@ struct WaterRectangleComponentHomeView: View {
     var body: some View {
         //        ZStack {
         RoundedRectangle(cornerRadius: 25)
-            .foregroundStyle(Color.laranjaFundoHome)
+            .foregroundStyle(Color.verdeFundo)
             .frame(width: 300, height: 100)
             .padding()
             .overlay {

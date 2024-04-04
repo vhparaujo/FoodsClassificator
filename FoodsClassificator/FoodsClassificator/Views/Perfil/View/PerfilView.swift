@@ -68,6 +68,9 @@ struct PerfilView: View {
                             Spacer()
                             Text("\(idade)")
                                 .foregroundStyle(.secondary)
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(.secondary)
+                                .imageScale(.small)
                         }.foregroundStyle(.black)
                         
                     }.popover(isPresented: $showIdadePopover) {
@@ -95,6 +98,9 @@ struct PerfilView: View {
                             Spacer()
                             Text("\(peso) kg")
                                 .foregroundStyle(.secondary)
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(.secondary)
+                                .imageScale(.small)
                         }.foregroundStyle(.black)
                         
                     }.popover(isPresented: $showPesoPopover) {
@@ -122,6 +128,9 @@ struct PerfilView: View {
                             Spacer()
                             Text("\(altura) cm")
                                 .foregroundStyle(.secondary)
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(.secondary)
+                                .imageScale(.small)
                         }.foregroundStyle(.black)
                         
                     }.popover(isPresented: $showAlturaPopover) {
@@ -200,7 +209,7 @@ struct PerfilView: View {
                     
                 }
                
-            }.background(Color.laranjaFundoHome)
+            }.background(Color.verdeFundo)
             // permite colocar um background color na list
                 .scrollContentBackground(.hidden)
             
@@ -208,7 +217,7 @@ struct PerfilView: View {
                     EditButton()
                 }
             
-        }.background(Color.laranjaFundoHome)
+        }.background(Color.verdeFundo)
         
     }
     

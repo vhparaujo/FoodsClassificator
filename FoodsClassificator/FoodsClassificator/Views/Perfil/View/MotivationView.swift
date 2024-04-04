@@ -24,15 +24,14 @@ struct MotivationView: View {
                 } label: {
                     HStack {
                         Image(systemName: "person.fill")
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.verdeTitle)
                         Text("Dados Pessoais")
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.verdeTitle)
                             .font(.callout)
                     }
                 }
 
             }.frame(maxWidth: .infinity)
-                .background(Color.laranjaFundoHome)
             
             ScrollView {
                 ModalTitles(title: "Ofensiva")
@@ -51,10 +50,11 @@ struct MotivationView: View {
                     .padding(.top)
                 
                 DropDownComponentView()
-            }.background(.white)
+            }
+            .background(.white)
             
         }
-        .background(Color.laranjaFundoHome)
+        .background(Color.verdeFundo)
         
     }
 }

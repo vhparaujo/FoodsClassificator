@@ -26,7 +26,7 @@ struct PerfilImageViewComponent: View {
             .overlay {
                 Circle()
                     .stroke(lineWidth: 2)
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.verdeTitle)
             }
     }
 }

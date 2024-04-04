@@ -14,7 +14,8 @@ struct UserNameComponentHomeView: View {
     var body: some View {
         Text(viewModel.userName)
             .font(.title)
-            .foregroundStyle(.white)
+            .bold()
+            .foregroundStyle(.verdeTitle)
     }
 }
 

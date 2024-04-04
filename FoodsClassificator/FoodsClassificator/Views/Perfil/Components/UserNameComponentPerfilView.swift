@@ -14,7 +14,7 @@ struct UserNameComponentPerfilView: View {
     var body: some View {
         Text(userName)
             .font(.title)
-            .foregroundStyle(.white)
+            .foregroundStyle(.verdeTitle)
     }
 }
 

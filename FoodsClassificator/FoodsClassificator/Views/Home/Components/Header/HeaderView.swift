@@ -13,6 +13,9 @@ struct HeaderView: View {
     
     var myIcon = MyIcon()
     
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
+    
     var body: some View {
         
         VStack {
@@ -23,39 +26,51 @@ struct HeaderView: View {
                 UserPhotoAndStreakComponentHomeView()
             }.padding()
             
-            HStack {
+            ZStack {
                 
-                VStack {
-                    MacrosComponentHomeView(macroType: HomeTexts.proteinas, backgroundColor: Color.amareloFibras)
-                        .padding(.vertical)
+                HStack {
                     
-                    MacrosComponentHomeView(macroType: HomeTexts.gorduras, backgroundColor: Color.rosaGorduras)
-                        .padding(.vertical)
-                }
+                    VStack {
+                        
+                        MacrosComponentHomeView(macroType: HomeTexts.carboidratos, backgroundColor: Color.amareloCarboidratos)
+                            .padding(.vertical)
+                        
+                        MacrosComponentHomeView(macroType: HomeTexts.gorduras, backgroundColor: Color.rosaGorduras)
+                            .padding(.vertical)
+                    }
                 
-                ProgressBarComponentHomeView()
-                    .offset(x: 5, y: 40)
-                    .padding(.horizontal)
-                
-                VStack {
-                    MacrosComponentHomeView(macroType: HomeTexts.carboidratos, backgroundColor: Color.rosaProteinas)
-                        .padding(.vertical)
+                    Spacer()
                     
-                    MacrosComponentHomeView(macroType: HomeTexts.fibras, backgroundColor: Color.verdeCarboidratos)
-                        .padding(.vertical)
+                    VStack {
+                        
+                        MacrosComponentHomeView(macroType: HomeTexts.proteinas, backgroundColor: Color.rosaProteinas)
+                            .padding(.vertical)
+                        
+                        MacrosComponentHomeView(macroType: HomeTexts.fibras, backgroundColor: Color.amareloFibras)
+                            .padding(.vertical)
+                    }
+                    
                 }
-                
-            }
-//            .padding(.bottom)
+                .padding(.bottom)
             .padding(.horizontal)
-            
-        }.background(
-            GeometryReader { geometry in
-                myIcon.path(in: CGRect(x: 0, y: 0, width: geometry.size.width, height: geometry.size.height * 1.15))
-                    .foregroundStyle(.laranjaFundoHome)
+                
+                VStack {
+                    ProgressBarComponentHomeView()
+                        .offset(y:40)
+                        .padding(.horizontal)
+                }.frame(width: screenWidth * 0.5)
+                
             }
+            
+        }
+        .background(
+            GeometryReader { geometry in
+                myIcon.path(in: CGRect(x: 0, y: 0, width: geometry.size.width, height: geometry.size.height * 1.05))
+                    .foregroundStyle(.verdeFundo)
+            }
+            .ignoresSafeArea(edges: .all)
         )
-        
+
     }
 }
 
