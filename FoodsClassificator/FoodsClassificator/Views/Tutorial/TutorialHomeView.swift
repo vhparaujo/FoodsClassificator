@@ -56,6 +56,8 @@ struct TutorialHomeView: View {
                                 }
                         }
                         
+                        Spacer()
+                        
                         Button{
                             
                         } label: {
@@ -69,18 +71,6 @@ struct TutorialHomeView: View {
                                 }
                         }
                         
-                        Button{
-                            
-                        } label: {
-                            Image(systemName: "pencil.circle")
-                                .foregroundStyle(Color.white)
-                                .padding(10)
-                                .background{
-                                    RoundedRectangle(cornerRadius: 10,
-                                                     style: .continuous)
-                                        .fill(.black)
-                                }
-                        }
                     }
                     .padding(15)
                 }
