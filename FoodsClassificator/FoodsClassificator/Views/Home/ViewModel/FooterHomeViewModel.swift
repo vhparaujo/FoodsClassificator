@@ -9,8 +9,8 @@ import Foundation
 import Observation
 import Combine
 
-@Observable 
-class FooterHomeViewModel: ObservableObject {
+@Observable
+class FooterHomeViewModel {
     
     //MARK: rectangle
     var isCupSelected = false
@@ -21,12 +21,6 @@ class FooterHomeViewModel: ObservableObject {
     var capacitySelected = 200.0
     
     var waterIntakeTotal: Double = 0.0
-    
-    var totalWaterIntakeLiters: Double {
-        let millilitersInLiters = milliliterSelected / 1000.0
-        return litersSelected + millilitersInLiters
-    }
-    
     var waterIntakeTotalFormatted: String {
         String(format: "%.1f", waterIntakeTotal / 1000.0)
     }
@@ -53,13 +47,10 @@ class FooterHomeViewModel: ObservableObject {
     }
     
     //MARK: Modal
-    var selectedLitersIndex = 0
-    var selectedMillilitersIndex = 0
-    var selectedCapacityIndex = 0
-    
     let litersOptions = Array(stride(from: 1, through: 15, by: 1))
     let milliliterOptions = Array(stride(from: 0, through: 950, by: 50))
     let capacityOptions = Array(stride(from: 50, through: 5000, by: 50))
+    
     
     // Propriedade computada para calcular a soma de litros e mililitros
     var totalWaterInLiters: Double {
@@ -72,13 +63,7 @@ class FooterHomeViewModel: ObservableObject {
     }
     
     var formattedCapacity: String {
-        String(format: "%.0f ml", capacitySelected)
+        String(format: "%.2f ml", capacitySelected)
     }
     
-    func updateSelectedValues() {
-        litersSelected = Double(litersOptions[selectedLitersIndex])
-        milliliterSelected = Double(milliliterOptions[selectedMillilitersIndex])
-        capacitySelected = Double(capacityOptions[selectedCapacityIndex])
-    }
-
 }

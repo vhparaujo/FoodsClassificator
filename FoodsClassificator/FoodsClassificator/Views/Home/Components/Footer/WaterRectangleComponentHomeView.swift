@@ -31,7 +31,7 @@ struct WaterRectangleComponentHomeView: View {
                                 .padding(.trailing)
                                 .minimumScaleFactor(0.5)
                             
-                            Text("\(footerHomeViewModel.waterIntakeTotalFormatted) / \(footerHomeViewModel.totalWaterIntakeLiters, specifier: "%.2f")L")
+                            Text("\(footerHomeViewModel.waterIntakeTotalFormatted) / \(footerHomeViewModel.totalWaterInLiters, specifier: "%.2f")L")
                                 .font(.system(size: 20))
                                 .bold()
                                 .foregroundStyle(Color.white)

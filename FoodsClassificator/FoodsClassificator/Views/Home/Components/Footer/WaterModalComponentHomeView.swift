@@ -9,7 +9,6 @@ import SwiftUI
 
 struct WaterModalComponentHomeView: View {
     @Environment(FooterHomeViewModel.self) var footerHomeViewModel
-    
     @Binding var isPresented: Bool
     
     @State var showLiterPopover: Bool = false
@@ -25,6 +24,7 @@ struct WaterModalComponentHomeView: View {
                 VStack {
                     HStack {
                         Text("Meta Diária")
+                            .foregroundStyle(Color.black)
                         Spacer()
                     }
                     .padding(.horizontal)
@@ -45,26 +45,26 @@ struct WaterModalComponentHomeView: View {
                     .popover(isPresented: $showLiterPopover, content: {
                         HStack {
                             Picker("Litros", selection: $selectedLitersIndex) {
-                                ForEach(0..<footerHomeViewModel.litersOptions.count, id: \.self) { index in
-                                    Text("\(footerHomeViewModel.litersOptions[index])")
+                                ForEach(0..<footerHomeViewModel.litersOptions.count) {
+                                    Text("\(footerHomeViewModel.litersOptions[$0])")
                                 }
                             }
                             .pickerStyle(WheelPickerStyle())
-                            .onChange(of: footerHomeViewModel.selectedLitersIndex) { _, newValue in
-                                footerHomeViewModel.updateSelectedValues()
+                            .onChange(of: selectedLitersIndex) { _, newValue in
+                                footerHomeViewModel.litersSelected = Double(footerHomeViewModel.litersOptions[newValue])
                             }
                             
                             Text(".")
                                 .padding(.zero)
                             
                             Picker("Millilitros", selection: $selectedMillilitersIndex) {
-                                ForEach(0..<footerHomeViewModel.milliliterOptions.count, id: \.self) { index in
-                                    Text("\(footerHomeViewModel.milliliterOptions[index])")
+                                ForEach(0..<footerHomeViewModel.milliliterOptions.count) {
+                                    Text("\(footerHomeViewModel.milliliterOptions[$0])")
                                 }
                             }
                             .pickerStyle(WheelPickerStyle())
-                            .onChange(of: footerHomeViewModel.selectedMillilitersIndex) { _, newValue in
-                                    footerHomeViewModel.updateSelectedValues()
+                            .onChange(of: selectedMillilitersIndex) { _, newValue in
+                                footerHomeViewModel.milliliterSelected = Double(footerHomeViewModel.milliliterOptions[newValue])
                             }
                             Text("L")
                         }
@@ -98,6 +98,8 @@ struct WaterModalComponentHomeView: View {
                                 }
                                 .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
                             Text("Copo")
+                                .foregroundStyle(Color.black)
+
                         }
                         Spacer()
                         
@@ -119,6 +121,8 @@ struct WaterModalComponentHomeView: View {
                                 }
                                 .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
                             Text("Garrafa")
+                                .foregroundStyle(Color.black)
+
                         }
                         Spacer()
                     }
@@ -144,13 +148,13 @@ struct WaterModalComponentHomeView: View {
                     .popover(isPresented: $showCapacityPopover, content: {
                         HStack {
                             Picker("ml", selection: $selectedCapacityIndex) {
-                                ForEach(0..<footerHomeViewModel.capacityOptions.count, id: \.self) { index in
-                                    Text("\(footerHomeViewModel.capacityOptions[index]) ml")
+                                ForEach(0..<footerHomeViewModel.capacityOptions.count) {
+                                    Text("\(footerHomeViewModel.capacityOptions[$0]) ml")
                                 }
                             }
                             .pickerStyle(WheelPickerStyle())
-                            .onChange(of: footerHomeViewModel.selectedCapacityIndex) { _, newValue in
-                                footerHomeViewModel.updateSelectedValues()
+                            .onChange(of: selectedCapacityIndex) { _, newValue in
+                                footerHomeViewModel.capacitySelected = Double(footerHomeViewModel.capacityOptions[newValue])
                             }
                         }
                         .padding()
