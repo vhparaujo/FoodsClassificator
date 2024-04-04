@@ -36,13 +36,17 @@ struct HomeView: View {
         
         VStack {
             HeaderView()
-                .environment(viewModel)
-            
+                .environment(viewModel)            
+                .showCase(order: 0, title: "ELEMENTO DO ALIMENTO", cornerRadius: 25, style: .continuous)
+
             FooterView()
                 .environment(footerHomeViewModel)
                 .background(Image("backgroundHome"))
             
         }
+        .modifier(ShowCaseRoot(showHighlights: true, onFinish: {
+            print("Finished Tutorial")
+        }))
     }
 }
 

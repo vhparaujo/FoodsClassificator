@@ -31,9 +31,10 @@ struct MealsCarrouselHomeView: View {
                         .opacity(currentIndex == index ? 1.0 : 0.5)
                         .scaleEffect(currentIndex == index ? 1.0 : 0.5)
                         .offset(x: CGFloat(index - currentIndex) * 220 + dragOffset , y: 0)
-                        
+
                     }
                 }
+            
                 .gesture(
                     DragGesture()
                         .onEnded({ value in

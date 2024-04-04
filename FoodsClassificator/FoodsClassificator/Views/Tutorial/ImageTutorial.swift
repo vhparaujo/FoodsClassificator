@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Tutorial: View {
+struct ImageTutorial: View {
     @State private var showAlert = false
     @State private var tabIndex = 0
     private let totalImages = 5
@@ -61,5 +61,5 @@ struct Tutorial: View {
 
 
 #Preview {
-    Tutorial()
+    ImageTutorial()
 }
