@@ -14,10 +14,9 @@ struct PerfilImageViewComponent: View {
     var body: some View {
         Circle()
             .overlay {
-                Image(systemName: "person.fill")
+                Image(userPhoto)
                     .resizable()
                     .scaledToFit()
-                    .foregroundStyle(.gray)
                     .clipShape(Circle()
                     )
     
