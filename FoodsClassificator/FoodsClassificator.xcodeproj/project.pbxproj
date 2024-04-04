@@ -20,6 +20,8 @@
 		0B1C228B2BB20C61003C5C0E /* DatePickerComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C22872BB20C61003C5C0E /* DatePickerComponentHomeView.swift */; };
 		0B1C228D2BB20C74003C5C0E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C228C2BB20C74003C5C0E /* HomeView.swift */; };
 		0B1C228F2BB20C82003C5C0E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */; };
+		0B1C22922BB35754003C5C0E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1C22912BB35754003C5C0E /* Alamofire */; };
+		0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B377F682BBC4584002107B3 /* CircularProgressBar.swift */; };
 		0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */; };
 		0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */; };
 		0B73E8572BAF55DD00C6F91D /* RecentMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8562BAF55DD00C6F91D /* RecentMealsView.swift */; };
@@ -30,7 +32,6 @@
 		0B73E8672BAF60F500C6F91D /* MacroNutrientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8662BAF60F500C6F91D /* MacroNutrientsView.swift */; };
 		0B73E8692BAF627000C6F91D /* RecentMealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8682BAF627000C6F91D /* RecentMealCard.swift */; };
 		0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E86A2BAF62B800C6F91D /* Meal.swift */; };
-		0B73E8702BAFAC0E00C6F91D /* SemiCircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E86F2BAFAC0E00C6F91D /* SemiCircularProgressBar.swift */; };
 		0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */; };
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
@@ -86,6 +87,8 @@
 		0B1C22872BB20C61003C5C0E /* DatePickerComponentHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerComponentHomeView.swift; sourceTree = "<group>"; };
 		0B1C228C2BB20C74003C5C0E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0B1C22902BB2149D003C5C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0B377F682BBC4584002107B3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeSeachResponse.swift; sourceTree = "<group>"; };
 		0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeAPIManager.swift; sourceTree = "<group>"; };
 		0B73E8562BAF55DD00C6F91D /* RecentMealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMealsView.swift; sourceTree = "<group>"; };
@@ -96,7 +99,6 @@
 		0B73E8662BAF60F500C6F91D /* MacroNutrientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroNutrientsView.swift; sourceTree = "<group>"; };
 		0B73E8682BAF627000C6F91D /* RecentMealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMealCard.swift; sourceTree = "<group>"; };
 		0B73E86A2BAF62B800C6F91D /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
-		0B73E86F2BAFAC0E00C6F91D /* SemiCircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemiCircularProgressBar.swift; sourceTree = "<group>"; };
 		0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodAPIManager.swift; sourceTree = "<group>"; };
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1C22922BB35754003C5C0E /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +231,7 @@
 				0B73E8642BAF609000C6F91D /* MacroCircle.swift */,
 				0B73E8662BAF60F500C6F91D /* MacroNutrientsView.swift */,
 				0B73E8682BAF627000C6F91D /* RecentMealCard.swift */,
-				0B73E86F2BAFAC0E00C6F91D /* SemiCircularProgressBar.swift */,
+				0B377F682BBC4584002107B3 /* CircularProgressBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 			);
 			name = FoodsClassificator;
 			packageProductDependencies = (
+				0B1C22912BB35754003C5C0E /* Alamofire */,
 			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
@@ -668,6 +672,7 @@
 				4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */,
 				0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */,
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
+				0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */,
 				4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */,
 				9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */,
 				0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */,
@@ -944,6 +949,15 @@
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
+
+/* Begin XCSwiftPackageProductDependency section */
+        0B1C22912BB35754003C5C0E /* Alamofire */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = 0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */;
+            productName = Alamofire;
+        };
+/* End XCSwiftPackageProductDependency section */
+
 	};
 	rootObject = 9BE179942B8A567C0086877C /* Project object */;
 }

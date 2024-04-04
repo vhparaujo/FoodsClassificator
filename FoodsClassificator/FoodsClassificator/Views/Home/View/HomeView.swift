@@ -30,25 +30,22 @@ struct MyIcon: Shape {
 struct HomeView: View {
     
     var viewModel = HomeViewModel()
-   
+    
     var body: some View {
+        VStack {
             
-            VStack {
-                
-                HeaderView()
-                    .environment(viewModel)
-                
-                HStack {
-                    Spacer()
-                    DatePickerComponentHomeView()
-                }
-                
-                MealsCarrouselHomeView()
-                
-                WaterRectangleComponentHomeView()
-                
+            HeaderView()
+                .environment(viewModel)
+            
+            HStack {
+                Spacer()
+                DatePickerComponentHomeView()
             }
-        
+            
+            MealsCarrouselHomeView()
+            
+            WaterRectangleComponentHomeView()
+        }
     }
 }
 
