@@ -9,8 +9,8 @@ import SwiftUI
 
 struct MacrosComponentHomeView: View {
     
-    @State private var viewModel = HomeViewModel()
-    
+    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
+
     @State var macroType: String = ""
     @State var backgroundColor: Color = .clear
     
@@ -39,9 +39,7 @@ struct MacrosComponentHomeView: View {
 }
 
 #Preview {
-   HeaderView()
-}
-
-#Preview{
-    MacrosComponentHomeView(macroType: "Carboidrafhjufehuejfujcutos", backgroundColor: .blue)
+    var viewModel = HomeViewModel()
+    return MacrosComponentHomeView(macroType: "Carboidrafhjufehuejfujcutos", backgroundColor: .blue)
+        .environment(viewModel)
 }

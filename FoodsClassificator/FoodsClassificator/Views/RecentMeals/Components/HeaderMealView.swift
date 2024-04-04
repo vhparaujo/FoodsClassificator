@@ -31,7 +31,7 @@ struct HeaderMealView: View {
             } else {
                 ProgressBar(value: Double(meal.totalCalories / 2000))
                 
-                Text("\(meal.totalCalories) calorias")
+                Text("\(meal.totalCalories) \(HomeTexts.caloriasMinusculo)")
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .foregroundStyle(.white)

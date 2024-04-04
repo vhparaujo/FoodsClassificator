@@ -36,17 +36,35 @@
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
+		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
+		4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */; };
+		4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */; };
+		4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */; };
+		4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */; };
+		4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */; };
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
 		4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */; };
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
+		9B0238512BBC8541008E8960 /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0238502BBC8541008E8960 /* PerfilModel.swift */; };
 		9B3C001E2BACD109000B55B9 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */; };
 		9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
+		9B77B82E2BBEE5A000FD9FDF /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9B77B82C2BBEE59F00FD9FDF /* Database.xcdatamodeld */; };
+		9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904922BB49A030058DFDD /* PerfilViewModel.swift */; };
+		9B8904952BB49B4F0058DFDD /* UserNameComponentPerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904942BB49B4F0058DFDD /* UserNameComponentPerfilView.swift */; };
+		9B8904972BB49D800058DFDD /* ListPerfilComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904962BB49D800058DFDD /* ListPerfilComponentView.swift */; };
+		9B8904992BB4A1BC0058DFDD /* PerfilTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904982BB4A1BC0058DFDD /* PerfilTexts.swift */; };
+		9BDAA28A2BB496CE000627F9 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDAA2892BB496CE000627F9 /* PerfilView.swift */; };
+		9BDAA28C2BB496F3000627F9 /* PerfilImageViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDAA28B2BB496F3000627F9 /* PerfilImageViewComponent.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
 		9BE179A42B8A567D0086877C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE179A32B8A567D0086877C /* Assets.xcassets */; };
 		9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BE179A62B8A567D0086877C /* Preview Assets.xcassets */; };
 		9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEBDF872BA760EA0077632C /* ExampleView.swift */; };
 		9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BEBDF8A2BA7611E0077632C /* ExampleViewModel.swift */; };
+		9BF7830F2BB4B5B3008CD198 /* MotivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF7830E2BB4B5B3008CD198 /* MotivationView.swift */; };
+		9BF783112BB4BBE9008CD198 /* DropDownComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF783102BB4BBE9008CD198 /* DropDownComponentView.swift */; };
+		9BF783132BB50541008CD198 /* ModalTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF783122BB50540008CD198 /* ModalTitles.swift */; };
+		9BF783152BB5116B008CD198 /* StreakComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF783142BB5116B008CD198 /* StreakComponentView.swift */; };
 		9BFA12512BAB63B1000C0CB5 /* TesteLeituraJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12502BAB63B1000C0CB5 /* TesteLeituraJSON.swift */; };
 		9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12552BAB7950000C0CB5 /* Model.swift */; };
 		9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFA12582BAB79A8000C0CB5 /* JsonDecoder.swift */; };
@@ -86,18 +104,36 @@
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
 		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentView/ViewModel/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
+		4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterModalComponentHomeView.swift; sourceTree = "<group>"; };
+		4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1.swift; sourceTree = "<group>"; };
+		4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2.swift; sourceTree = "<group>"; };
+		4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3.swift; sourceTree = "<group>"; };
+		4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageControl.swift; sourceTree = "<group>"; };
+		4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculoCaloriasOnBoarding.swift; sourceTree = "<group>"; };
 		4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImagePicker.swift; sourceTree = "<group>"; };
 		4AD53C072B97B55600F2A8F8 /* NewBoundingBoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBoundingBoxesView.swift; sourceTree = "<group>"; };
 		4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodDetection.mlmodel; sourceTree = "<group>"; };
+		9B0238502BBC8541008E8960 /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilModel.swift; sourceTree = "<group>"; };
 		9B3C001D2BACD109000B55B9 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
+		9B77B82D2BBEE5A000FD9FDF /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
+		9B8904922BB49A030058DFDD /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
+		9B8904942BB49B4F0058DFDD /* UserNameComponentPerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameComponentPerfilView.swift; sourceTree = "<group>"; };
+		9B8904962BB49D800058DFDD /* ListPerfilComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPerfilComponentView.swift; sourceTree = "<group>"; };
+		9B8904982BB4A1BC0058DFDD /* PerfilTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilTexts.swift; sourceTree = "<group>"; };
+		9BDAA2892BB496CE000627F9 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
+		9BDAA28B2BB496F3000627F9 /* PerfilImageViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilImageViewComponent.swift; sourceTree = "<group>"; };
 		9BE1799C2B8A567C0086877C /* FoodsClassificator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsClassificator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BE179A12B8A567C0086877C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9BE179A32B8A567D0086877C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BE179A62B8A567D0086877C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BEBDF872BA760EA0077632C /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		9BEBDF8A2BA7611E0077632C /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
+		9BF7830E2BB4B5B3008CD198 /* MotivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotivationView.swift; sourceTree = "<group>"; };
+		9BF783102BB4BBE9008CD198 /* DropDownComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownComponentView.swift; sourceTree = "<group>"; };
+		9BF783122BB50540008CD198 /* ModalTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTitles.swift; sourceTree = "<group>"; };
+		9BF783142BB5116B008CD198 /* StreakComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakComponentView.swift; sourceTree = "<group>"; };
 		9BFA12502BAB63B1000C0CB5 /* TesteLeituraJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteLeituraJSON.swift; sourceTree = "<group>"; };
 		9BFA12552BAB7950000C0CB5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		9BFA12582BAB79A8000C0CB5 /* JsonDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonDecoder.swift; sourceTree = "<group>"; };
@@ -123,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				0B1C22732BB20551003C5C0E /* HomeTexts.swift */,
+				9B8904982BB4A1BC0058DFDD /* PerfilTexts.swift */,
 			);
 			path = Texts;
 			sourceTree = "<group>";
@@ -144,6 +181,7 @@
 				0B1C22842BB20C61003C5C0E /* MealCircleComponentHomeView.swift */,
 				0B1C22862BB20C61003C5C0E /* MealsCarrouselHomeView.swift */,
 				0B1C22852BB20C61003C5C0E /* WaterRectangleComponentHomeView.swift */,
+				4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */,
 				0B1C22772BB20588003C5C0E /* Header */,
 			);
 			path = Components;
@@ -233,6 +271,26 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		4AB766592BB312440091042D /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */,
+				4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */,
+				4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */,
+				4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */,
+				4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		9B02384F2BBC8530008E8960 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B0238502BBC8541008E8960 /* PerfilModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9B452DE42BA4B5C500C75803 /* ContentView */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +324,47 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9BDAA2852BB49649000627F9 /* Perfil */ = {
+			isa = PBXGroup;
+			children = (
+				9B02384F2BBC8530008E8960 /* Model */,
+				9BDAA2882BB4965D000627F9 /* ViewModel */,
+				9BDAA2872BB49657000627F9 /* Components */,
+				9BDAA2862BB49652000627F9 /* View */,
+			);
+			path = Perfil;
+			sourceTree = "<group>";
+		};
+		9BDAA2862BB49652000627F9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9BDAA2892BB496CE000627F9 /* PerfilView.swift */,
+				9BF7830E2BB4B5B3008CD198 /* MotivationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9BDAA2872BB49657000627F9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9BDAA28B2BB496F3000627F9 /* PerfilImageViewComponent.swift */,
+				9B8904942BB49B4F0058DFDD /* UserNameComponentPerfilView.swift */,
+				9B8904962BB49D800058DFDD /* ListPerfilComponentView.swift */,
+				9BF783102BB4BBE9008CD198 /* DropDownComponentView.swift */,
+				9BF783122BB50540008CD198 /* ModalTitles.swift */,
+				9BF783142BB5116B008CD198 /* StreakComponentView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9BDAA2882BB4965D000627F9 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9B8904922BB49A030058DFDD /* PerfilViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		9BE179932B8A567C0086877C = {
 			isa = PBXGroup;
 			children = (
@@ -286,7 +385,6 @@
 		9BE1799E2B8A567C0086877C /* FoodsClassificator */ = {
 			isa = PBXGroup;
 			children = (
-				0B1C22902BB2149D003C5C0E /* Info.plist */,
 				0B1C22632BB20031003C5C0E /* FoodsClassificatorApp.swift */,
 				9BE179A32B8A567D0086877C /* Assets.xcassets */,
 				9BFA12672BAB8383000C0CB5 /* Extensions */,
@@ -296,6 +394,7 @@
 				9BFB9ED02B8AD9DD00BF3028 /* Views */,
 				9BFB9ECF2B8AD94C00BF3028 /* Utilities */,
 				9BE179A52B8A567D0086877C /* Preview Content */,
+				9B77B82C2BBEE59F00FD9FDF /* Database.xcdatamodeld */,
 			);
 			path = FoodsClassificator;
 			sourceTree = "<group>";
@@ -466,6 +565,8 @@
 		9BFB9ED02B8AD9DD00BF3028 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4AB766592BB312440091042D /* OnBoarding */,
+				9BDAA2852BB49649000627F9 /* Perfil */,
 				0B1C22752BB2057B003C5C0E /* Home */,
 				0B73E8582BAF55EC00C6F91D /* RecentMeals */,
 				9BFA124E2BAB6397000C0CB5 /* TesteLeituraJSON */,
@@ -517,7 +618,7 @@
 			};
 			buildConfigurationList = 9BE179972B8A567C0086877C /* Build configuration list for PBXProject "FoodsClassificator" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -526,7 +627,6 @@
 			);
 			mainGroup = 9BE179932B8A567C0086877C;
 			packageReferences = (
-				0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 9BE1799D2B8A567C0086877C /* Products */;
 			projectDirPath = "";
@@ -556,20 +656,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */,
 				9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
+				9B8904992BB4A1BC0058DFDD /* PerfilTexts.swift in Sources */,
 				0B1C227F2BB20C4A003C5C0E /* MacrosComponentHomeView.swift in Sources */,
+				9B8904952BB49B4F0058DFDD /* UserNameComponentPerfilView.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
+				4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */,
 				0B1C228D2BB20C74003C5C0E /* HomeView.swift in Sources */,
+				9BDAA28C2BB496F3000627F9 /* PerfilImageViewComponent.swift in Sources */,
+				0B73E8702BAFAC0E00C6F91D /* SemiCircularProgressBar.swift in Sources */,
+				4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */,
 				0B1C22822BB20C4A003C5C0E /* ProgressBarComponentViewHome.swift in Sources */,
 				0B73E8632BAF605B00C6F91D /* ProgressBar.swift in Sources */,
 				0B1C22832BB20C4A003C5C0E /* UserPhotoAndStreakComponentHomeView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
+				4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */,
 				0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */,
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
 				0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */,
+				4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */,
+				9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */,
 				0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */,
+				9B0238512BBC8541008E8960 /* PerfilModel.swift in Sources */,
 				0B73E8612BAF601300C6F91D /* HeaderMealView.swift in Sources */,
 				0B73E8672BAF60F500C6F91D /* MacroNutrientsView.swift in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
@@ -585,22 +696,30 @@
 				0B1C228B2BB20C61003C5C0E /* DatePickerComponentHomeView.swift in Sources */,
 				0B73E85F2BAF5FEB00C6F91D /* RecentMealsViewModel.swift in Sources */,
 				0B1C228F2BB20C82003C5C0E /* HomeViewModel.swift in Sources */,
+				9B8904972BB49D800058DFDD /* ListPerfilComponentView.swift in Sources */,
 				9BFA12512BAB63B1000C0CB5 /* TesteLeituraJSON.swift in Sources */,
+				9BF783152BB5116B008CD198 /* StreakComponentView.swift in Sources */,
 				0B7F9CF92B9104ED0037B09B /* FoodAPIManager.swift in Sources */,
 				0B1C22882BB20C61003C5C0E /* MealCircleComponentHomeView.swift in Sources */,
 				0B1C22642BB20031003C5C0E /* FoodsClassificatorApp.swift in Sources */,
 				0B1C22892BB20C61003C5C0E /* WaterRectangleComponentHomeView.swift in Sources */,
 				0B1C22742BB20551003C5C0E /* HomeTexts.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
+				9BDAA28A2BB496CE000627F9 /* PerfilView.swift in Sources */,
+				9B77B82E2BBEE5A000FD9FDF /* Database.xcdatamodeld in Sources */,
+				9BF783132BB50541008CD198 /* ModalTitles.swift in Sources */,
+				9BF7830F2BB4B5B3008CD198 /* MotivationView.swift in Sources */,
 				0B1C228A2BB20C61003C5C0E /* MealsCarrouselHomeView.swift in Sources */,
 				9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */,
 				0B73E8692BAF627000C6F91D /* RecentMealCard.swift in Sources */,
 				9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */,
 				9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */,
 				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
+				4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */,
 				9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */,
 				0B1C22812BB20C4A003C5C0E /* UserNameComponentHomeView.swift in Sources */,
 				0B73E8572BAF55DD00C6F91D /* RecentMealsView.swift in Sources */,
+				9BF783112BB4BBE9008CD198 /* DropDownComponentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,7 +853,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FK777K42X;
+				DEVELOPMENT_TEAM = K559Z2V9Q2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
@@ -743,7 +862,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -770,7 +889,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FK777K42X;
+				DEVELOPMENT_TEAM = K559Z2V9Q2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
@@ -779,7 +898,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -821,24 +940,28 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.1;
-			};
+/* Begin XCVersionGroup section */
+		9B77B82C2BBEE59F00FD9FDF /* Database.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9B77B82D2BBEE5A000FD9FDF /* Database.xcdatamodel */,
+			);
+			currentVersion = 9B77B82D2BBEE5A000FD9FDF /* Database.xcdatamodel */;
+			name = Database.xcdatamodeld;
+			path = /Users/vhparaujo/Documents/Academy/Mini04/FoodsClassificator/FoodsClassificator/FoodsClassificator/Database.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCVersionGroup section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B1C22912BB35754003C5C0E /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
+        0B1C22912BB35754003C5C0E /* Alamofire */ = {
+            isa = XCSwiftPackageProductDependency;
+            package = 0B7F9CFA2B9107600037B09B /* XCRemoteSwiftPackageReference "Alamofire" */;
+            productName = Alamofire;
+        };
 /* End XCSwiftPackageProductDependency section */
+
 	};
 	rootObject = 9BE179942B8A567C0086877C /* Project object */;
 }

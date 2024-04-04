@@ -16,7 +16,7 @@ struct ExampleView: View {
             Text("\(viewModel.count)")
                 .font(.largeTitle)
                         
-            TextField("Type something here...", text: $viewModel.textFieldText)
+            TextField("", text: $viewModel.textFieldText)
                 .padding(.leading)
                 .frame(height: 55)
                 .font(.headline)
@@ -41,7 +41,7 @@ struct ExampleView: View {
                 )
             
             Button(action: {}, label: {
-                Text("Submit".uppercased())
+                Text("".uppercased())
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(height: 55)
