@@ -39,10 +39,9 @@ struct UserPhotoAndStreakComponentHomeView: View {
            
                 Circle()
                     .overlay {
-                        Image(systemName: "person.fill")
+                        Image(viewModel.userPhoto)
                             .resizable()
                             .scaledToFit()
-                            .foregroundStyle(.gray)
                             .clipShape(Circle()
                             )
             

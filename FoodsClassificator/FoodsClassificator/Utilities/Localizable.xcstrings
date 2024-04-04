@@ -1,5 +1,5 @@
 {
-  "sourceLanguage" : "pt-BR",
+  "sourceLanguage" : "en",
   "strings" : {
     "" : {
 
@@ -16,21 +16,22 @@
     "%@" : {
 
     },
-    
-    "%@ / %lld,%lldL" : {
+    "%@ / %.2fL" : {
       "localizations" : {
-        "pt-BR" : {
+        "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$@ / %2$lld,%3$lldL"
+            "value" : "%1$@ / %2$.2fL"
           }
         }
       }
     },
-    
+    "%@ Litros" : {
+
+    },
     "%@(%@)" : {
       "localizations" : {
-        "pt-BR" : {
+        "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$@(%2$@)"
@@ -43,7 +44,7 @@
     },
     "%lld %@" : {
       "localizations" : {
-        "pt-BR" : {
+        "en" : {
           "stringUnit" : {
             "state" : "new",
             "value" : "%1$lld %2$@"
@@ -54,30 +55,9 @@
     "%lld Cal" : {
 
     },
-
-    "%lld cm" : {
-
-    },
-    "%lld kg" : {
-
-    },
     "%lld ml" : {
 
     },
-    "%lld,%lld %@ " : {
-      "localizations" : {
-        "pt-BR" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$lld,%2$lld %3$@ "
-          }
-        }
-      }
-    },
-    "%lldx" : {
-
-    },
-    
     "Activity Level" : {
 
     },
@@ -94,9 +74,6 @@
 
     },
     "altura" : {
-
-    },
-    "Altura" : {
 
     },
     "Após o período de 21 dias, o cérebro começa a interpretar as mudanças como algo corriqueiro e incorporado à rotina" : {
@@ -218,10 +195,6 @@
     "frequencia" : {
 
     },
-    "Frequência de exercício" : {
-
-    },
-
     "Garrafa" : {
 
     },
@@ -268,10 +241,6 @@
         }
       }
     },
-    "Idade" : {
-
-    },
-
     "Investir em uma alimentação saudável é investir em você mesmo" : {
 
     },
@@ -284,18 +253,6 @@
     "Litros" : {
 
     },
-
-    "Meta" : {
-
-    },
-    "Millilitros" : {
-
-    },
-    "ml" : {
-
-    },
-    "Nome da refeição" : {
-
     "Melhorar a Experiência" : {
 
     },
@@ -314,20 +271,15 @@
     "objetivo" : {
 
     },
-    "Objetivo" : {
-
-    },
     "ofensiva" : {
 
     },
-
     "Página Melhorar Experiência" : {
 
     },
     "Página Talvez Mais Tarde" : {
 
     },
-    
     "Personal Information" : {
 
     },
@@ -348,8 +300,6 @@
         }
       }
     },
-
-"Peso" : {
     "Precisamos de algumas informações para melhorar sua experiência definindo as calorias, levará 5 minutos." : {
 
     },
@@ -376,7 +326,6 @@
     "Refeições recentes" : {
 
     },
-
     "Registre suas refeições facilmente! Use a câmera para alimentos ou código de barras, ou apenas pesquise. Veja as calorias e nutrientes de cada refeição enquanto registra sua alimentação." : {
 
     },
@@ -400,9 +349,6 @@
         }
       }
     },
-
-"Sexo Biológico" : {
-
     "Talvez mais tarde" : {
 
     },
