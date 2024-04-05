@@ -11,7 +11,7 @@ struct HeaderView: View {
     
     @Environment(HomeViewModel.self) var viewModel
     
-    var myIcon = MyIcon()
+    var background = BackgroundShapeHeaderHomeView()
     
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
@@ -65,7 +65,7 @@ struct HeaderView: View {
         }
         .background(
             GeometryReader { geometry in
-                myIcon.path(in: CGRect(x: 0, y: 0, width: geometry.size.width, height: geometry.size.height * 1.05))
+                background.path(in: CGRect(x: 0, y: 0, width: geometry.size.width, height: geometry.size.height * 1.05))
                     .foregroundStyle(.verdeFundo)
             }
             .ignoresSafeArea(edges: .all)

@@ -9,15 +9,16 @@ import SwiftUI
 
 struct UserNameComponentPerfilView: View {
     
-    @State var userName: String = ""
+    @Binding var userName: String
     
     var body: some View {
-        Text(userName)
+        TextField("Olá", text: $userName)
             .font(.title)
             .foregroundStyle(.verdeTitle)
     }
+    
 }
 
 #Preview {
-    UserNameComponentPerfilView()
+    UserNameComponentPerfilView(userName: .constant("Fulano"))
 }

@@ -9,7 +9,8 @@ import SwiftUI
 
 struct MotivationView: View {
     
-    @State private var viewModel = PerfilViewModel()
+    @Bindable private var viewModel = PerfilViewModel()
+    @Environment(\.modelContext) private var context
     
     var body: some View {
         
@@ -17,7 +18,8 @@ struct MotivationView: View {
             
             VStack {
                 
-                PerfilImageViewComponent(userPhoto: viewModel.userPhoto)
+                PerfilImageViewComponent(userPhoto: $viewModel.model.userPhoto)
+                    .frame(width: 80, height: 80)
                 
                 NavigationLink {
                     PerfilView()
@@ -37,15 +39,15 @@ struct MotivationView: View {
                 ModalTitles(title: "Ofensiva")
                     .padding(.top)
                 
-                StreakComponentView(dias: viewModel.streak)
+                StreakComponentView(dias: viewModel.model.streak)
                 
                 ModalTitles(title: "Desafios")
                     .padding(.top)
                 
-                ForEach(0..<4) {_ in
-                    DropDownComponentView(alimento: viewModel.alimento, dias: viewModel.dias)
-                }
-                
+//                ForEach(0..<4) {_ in
+//                    DropDownComponentView(alimento: viewModel.model.alimentos, dias: viewModel.dias)
+//                }
+
                 ModalTitles(title: "Conquistas")
                     .padding(.top)
                 
@@ -55,6 +57,10 @@ struct MotivationView: View {
             
         }
         .background(Color.verdeFundo)
+        
+        .onAppear(perform: {
+            viewModel.modelContext = context
+        })
         
     }
 }
