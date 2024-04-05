@@ -14,7 +14,7 @@ struct FoodsClassificatorApp: App {
         WindowGroup {
             NavigationStack {
 //                HomeView()
-                ImageTutorial()
+                TutorialHomeView()
                     .preferredColorScheme(.light)
             }
         }

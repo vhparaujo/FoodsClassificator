@@ -20,7 +20,7 @@
 		0B1C228B2BB20C61003C5C0E /* DatePickerComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C22872BB20C61003C5C0E /* DatePickerComponentHomeView.swift */; };
 		0B1C228D2BB20C74003C5C0E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C228C2BB20C74003C5C0E /* HomeView.swift */; };
 		0B1C228F2BB20C82003C5C0E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */; };
-		0B1C22922BB35754003C5C0E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B1C22912BB35754003C5C0E /* Alamofire */; };
+		0B1C22922BB35754003C5C0E /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B377F682BBC4584002107B3 /* CircularProgressBar.swift */; };
 		0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */; };
 		0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */; };
@@ -36,7 +36,6 @@
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
-		0BFD09FB2BBF4A1B00C8BCC2 /* Database.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0BFD09F92BBF4A1B00C8BCC2 /* Database.xcdatamodeld */; };
 		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
 		4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */; };
 		4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */; };
@@ -53,7 +52,6 @@
 		4AF7A7572BBDA5B90057DF79 /* FirstUseTips.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A7562BBDA5B90057DF79 /* FirstUseTips.swift */; };
 		4AF7A7592BBDAA5A0057DF79 /* FooterHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */; };
 		4AF7A75B2BBDE0240057DF79 /* ImageTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A75A2BBDE0240057DF79 /* ImageTutorial.swift */; };
-		9B0238512BBC8541008E8960 /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0238502BBC8541008E8960 /* PerfilModel.swift */; };
 		9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
 		9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904922BB49A030058DFDD /* PerfilViewModel.swift */; };
@@ -93,7 +91,6 @@
 		0B1C22872BB20C61003C5C0E /* DatePickerComponentHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerComponentHomeView.swift; sourceTree = "<group>"; };
 		0B1C228C2BB20C74003C5C0E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		0B1C22902BB2149D003C5C0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0B377F682BBC4584002107B3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeSeachResponse.swift; sourceTree = "<group>"; };
 		0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeAPIManager.swift; sourceTree = "<group>"; };
@@ -109,7 +106,6 @@
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
 		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentView/ViewModel/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
-		0BFD09FA2BBF4A1B00C8BCC2 /* Database.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Database.xcdatamodel; sourceTree = "<group>"; };
 		4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterModalComponentHomeView.swift; sourceTree = "<group>"; };
 		4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1.swift; sourceTree = "<group>"; };
 		4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2.swift; sourceTree = "<group>"; };
@@ -126,7 +122,6 @@
 		4AF7A7562BBDA5B90057DF79 /* FirstUseTips.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstUseTips.swift; sourceTree = "<group>"; };
 		4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterHomeViewModel.swift; sourceTree = "<group>"; };
 		4AF7A75A2BBDE0240057DF79 /* ImageTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTutorial.swift; sourceTree = "<group>"; };
-		9B0238502BBC8541008E8960 /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilModel.swift; sourceTree = "<group>"; };
 		9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
 		9B8904922BB49A030058DFDD /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
@@ -159,7 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B1C22922BB35754003C5C0E /* Alamofire in Frameworks */,
+				0B1C22922BB35754003C5C0E /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,7 +412,6 @@
 		9BE1799E2B8A567C0086877C /* FoodsClassificator */ = {
 			isa = PBXGroup;
 			children = (
-				0BFD09F92BBF4A1B00C8BCC2 /* Database.xcdatamodeld */,
 				0B1C22632BB20031003C5C0E /* FoodsClassificatorApp.swift */,
 				9BE179A32B8A567D0086877C /* Assets.xcassets */,
 				9BFA12672BAB8383000C0CB5 /* Extensions */,
@@ -627,7 +621,6 @@
 			);
 			name = FoodsClassificator;
 			packageProductDependencies = (
-				0B1C22912BB35754003C5C0E /* Alamofire */,
 			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
@@ -675,7 +668,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */,
-				9BE179A72B8A567D0086877C /* Preview Assets.xcassets in Resources */,
 				9BE179A42B8A567D0086877C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -700,7 +692,6 @@
 				0B1C228D2BB20C74003C5C0E /* HomeView.swift in Sources */,
 				9BDAA28C2BB496F3000627F9 /* PerfilImageViewComponent.swift in Sources */,
 				4A60303D2BBF2EEC00082ECA /* Highlight.swift in Sources */,
-				0B73E8702BAFAC0E00C6F91D /* SemiCircularProgressBar.swift in Sources */,
 				4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */,
 				0B1C22822BB20C4A003C5C0E /* ProgressBarComponentViewHome.swift in Sources */,
 				0B73E8632BAF605B00C6F91D /* ProgressBar.swift in Sources */,
@@ -742,7 +733,6 @@
 				0B1C22742BB20551003C5C0E /* HomeTexts.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
 				9BDAA28A2BB496CE000627F9 /* PerfilView.swift in Sources */,
-				0BFD09FB2BBF4A1B00C8BCC2 /* Database.xcdatamodeld in Sources */,
 				9BF783132BB50541008CD198 /* ModalTitles.swift in Sources */,
 				9BF7830F2BB4B5B3008CD198 /* MotivationView.swift in Sources */,
 				0B1C228A2BB20C61003C5C0E /* MealsCarrouselHomeView.swift in Sources */,
@@ -976,24 +966,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0BFD09F92BBF4A1B00C8BCC2 /* Database.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0BFD09FA2BBF4A1B00C8BCC2 /* Database.xcdatamodel */,
-			);
-			currentVersion = 0BFD09FA2BBF4A1B00C8BCC2 /* Database.xcdatamodel */;
-			name = Database.xcdatamodeld;
-			path = /Users/brunosouza/Documents/GitHub/FoodsClassificator/FoodsClassificator/FoodsClassificator/Database.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
-
-/* Begin XCSwiftPackageProductDependency section */
-/* End XCSwiftPackageProductDependency section */
-
 	};
 	rootObject = 9BE179942B8A567C0086877C /* Project object */;
 }

@@ -23,6 +23,7 @@ struct HeaderView: View {
                 UserPhotoAndStreakComponentHomeView()
             }.padding()
             
+            
             HStack {
                 
                 VStack {
@@ -36,6 +37,8 @@ struct HeaderView: View {
                 ProgressBarComponentHomeView()
                     .offset(x: 5, y: 40)
                     .padding(.horizontal)
+                
+                
                 
                 VStack {
                     MacrosComponentHomeView(macroType: HomeTexts.carboidratos, backgroundColor: Color.rosaProteinas)
@@ -55,7 +58,6 @@ struct HeaderView: View {
                     .foregroundStyle(.laranjaFundoHome)
             }
         )
-        
     }
 }
 

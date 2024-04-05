@@ -19,9 +19,13 @@ struct FooterView: View {
                     .padding(.vertical)
             }
             MealsCarrouselHomeView()
+                
+            
             
             WaterRectangleComponentHomeView()
+               
         }
+        
 
     }
     
