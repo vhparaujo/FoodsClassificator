@@ -14,7 +14,7 @@ import SwiftData
     var userPhoto: Data
     var idade: Int
     var peso: Int
-    var altura: Double
+    var altura: Int
     var sexoBiologico: String
     var objetivo: String
     var frequenciaExercicio: Int
@@ -24,7 +24,7 @@ import SwiftData
     var streak: Int
     var alimentos: [String]
     
-    init(userName: String = "", userPhoto: Data = Data(), idade: Int = 0, peso: Int = 0, altura: Double = 0, sexoBiologico: String = "Masculino", objetivo: String = "", frequenciaExercicio: Int = 0, refeicoes: [String] = [], streak: Int = 0, alimentos: [String] = []) {
+    init(userName: String = "", userPhoto: Data = Data(), idade: Int = 0, peso: Int = 0, altura: Int = 0, sexoBiologico: String = "Masculino", objetivo: String = "", frequenciaExercicio: Int = 0, refeicoes: [String] = [], streak: Int = 0, alimentos: [String] = []) {
         self.userName = userName
         self.userPhoto = userPhoto
         self.idade = idade

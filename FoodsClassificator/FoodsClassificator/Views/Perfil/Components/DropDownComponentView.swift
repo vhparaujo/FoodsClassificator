@@ -12,7 +12,7 @@ struct DropDownComponentView: View {
     @State private var isExpanded: Bool = false
     
     @State var alimento: String = ""
-    @State var dias: Int = 0
+    @State var streak: Int = 0
     
     var body: some View {
         VStack {
@@ -20,7 +20,7 @@ struct DropDownComponentView: View {
                 VStack(alignment: .leading) {
                     Text(alimento)
                         .font(.title)
-                    Text("\(dias) \(PerfilTexts.dias)")
+                    Text("\(streak) \(PerfilTexts.dias)")
                         .font(.title3)
                 }
                 
@@ -63,8 +63,4 @@ struct DropDownComponentView: View {
             .padding(.horizontal)
         
     }
-}
-
-#Preview {
-    DropDownComponentView()
 }

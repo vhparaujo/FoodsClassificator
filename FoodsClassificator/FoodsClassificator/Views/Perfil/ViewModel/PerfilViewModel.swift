@@ -8,9 +8,7 @@
 import SwiftData
 import Foundation
 
-@Observable class PerfilViewModel: Identifiable {
-    
-    let uuid = UUID()
+@Observable class PerfilViewModel {
     
     var model = PerfilModel()
     
@@ -44,7 +42,6 @@ import Foundation
             
             if let fetchedModel = try modelContext.fetch(descriptor).first {
                 model = fetchedModel
-                print(model.peso)
             } else {
                 fatalError("No data fetched")
             }

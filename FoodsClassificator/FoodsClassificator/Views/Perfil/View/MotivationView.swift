@@ -16,14 +16,14 @@ struct MotivationView: View {
         
         VStack {
             
-            VStack {
-                
-                PerfilImageViewComponent(userPhoto: $viewModel.model.userPhoto)
-                    .frame(width: 80, height: 80)
-                
-                NavigationLink {
-                    PerfilView()
-                } label: {
+            NavigationLink {
+                PerfilView()
+            } label: {
+                VStack {
+                    
+                    PerfilImageViewComponent(userPhoto: $viewModel.model.userPhoto)
+                        .frame(width: 80, height: 80)
+                    
                     HStack {
                         Image(systemName: "person.fill")
                             .foregroundStyle(.verdeTitle)
@@ -31,22 +31,21 @@ struct MotivationView: View {
                             .foregroundStyle(.verdeTitle)
                             .font(.callout)
                     }
-                }
-
-            }.frame(maxWidth: .infinity)
+                }.frame(maxWidth: .infinity)
+            }
             
             ScrollView {
                 ModalTitles(title: "Ofensiva")
                     .padding(.top)
                 
-                StreakComponentView(dias: viewModel.model.streak)
+                StreakComponentView(dias: $viewModel.model.streak)
                 
                 ModalTitles(title: "Desafios")
                     .padding(.top)
                 
-//                ForEach(0..<4) {_ in
-//                    DropDownComponentView(alimento: viewModel.model.alimentos, dias: viewModel.dias)
-//                }
+                ForEach(0..<4) {_ in
+                    DropDownComponentView(alimento: "chocolate", streak: viewModel.model.streak)
+                }
 
                 ModalTitles(title: "Conquistas")
                     .padding(.top)

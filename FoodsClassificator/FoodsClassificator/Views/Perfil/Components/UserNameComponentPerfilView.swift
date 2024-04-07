@@ -12,9 +12,14 @@ struct UserNameComponentPerfilView: View {
     @Binding var userName: String
     
     var body: some View {
-        TextField("Olá", text: $userName)
-            .font(.title)
-            .foregroundStyle(.verdeTitle)
+        HStack(alignment: .center) {
+            TextField("Digite seu nome", text: $userName)
+                .font(.title)
+                .foregroundStyle(.verdeTitle)
+                .clipShape(RoundedRectangle(cornerRadius: 1))
+                .padding()
+        }
+        
     }
     
 }

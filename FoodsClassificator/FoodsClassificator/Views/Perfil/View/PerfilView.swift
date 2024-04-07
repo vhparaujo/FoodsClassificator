@@ -6,26 +6,47 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct PerfilView: View {
     
     @Bindable private var viewModel = PerfilViewModel()
-
+    
     @Environment(\.editMode) private var editMode
     @Environment(\.modelContext) private var context
-
+    
     @State private var showIdadePopover: Bool = false
     @State private var showPesoPopover: Bool = false
     @State private var showAlturaPopover: Bool = false
-
+    
     var body: some View {
         
         VStack {
             
-            PerfilImageViewComponent(userPhoto: $viewModel.model.userPhoto)
-                .frame(width: 100, height: 100)
-            
-            UserNameComponentPerfilView(userName: $viewModel.model.userName)
+            if canEditFunc() == true {
+                
+                PerfilImagePickerViewComponent(userPhoto: $viewModel.model.userPhoto)
+                    .frame(width: 100, height: 100)
+                
+                UserNameComponentPerfilView(userName: $viewModel.model.userName)
+                
+            } else {
+                
+                PerfilImageViewComponent(userPhoto: $viewModel.model.userPhoto)
+                    .frame(width: 100, height: 100)
+                
+                HStack(alignment: .center) {
+                    if viewModel.model.userName == "" {
+                        Text("Olá")
+                            .font(.title)
+                            .foregroundStyle(.verdeTitle)
+                    } else {
+                        Text("Olá, \(viewModel.model.userName)!")
+                            .font(.title)
+                            .foregroundStyle(.verdeTitle)
+                    }
+                }
+            }
             
             Form {
                 
@@ -41,8 +62,7 @@ struct PerfilView: View {
                             Text("\(viewModel.model.idade)")
                                 .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
                             Image(systemName: "chevron.right")
-                                .foregroundStyle(.secondary)
-                                .opacity(canEditFunc() ? 1 : 0)
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
                                 .imageScale(.small)
                         }.foregroundStyle(.black)
                         
@@ -69,9 +89,9 @@ struct PerfilView: View {
                             Text("Peso")
                             Spacer()
                             Text("\(viewModel.model.peso) kg")
-                                .foregroundStyle(.tertiary)
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
                             Image(systemName: "chevron.right")
-                                .foregroundStyle(.tertiary)
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
                                 .imageScale(.small)
                         }.foregroundStyle(.black)
                         
@@ -98,9 +118,9 @@ struct PerfilView: View {
                             Text("Altura")
                             Spacer()
                             Text("\(viewModel.model.altura) cm")
-                                .foregroundStyle(.tertiary)
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
                             Image(systemName: "chevron.right")
-                                .foregroundStyle(.tertiary)
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
                                 .imageScale(.small)
                         }.foregroundStyle(.black)
                         
@@ -130,7 +150,7 @@ struct PerfilView: View {
                             Text("Sexo Biológico")
                         }
                         .disabled(!canEditFunc())
-                    
+                        
                     } else {
                         HStack {
                             Text("Sexo Biológico")
@@ -206,6 +226,7 @@ struct PerfilView: View {
                             viewModel.model.refeicoes.append(viewModel.textFieldName)
                             viewModel.textFieldName = ""
                         }
+                        .disabled(!canEditFunc())
                     
                 }
                 
@@ -241,9 +262,4 @@ struct PerfilView: View {
         }
     }
     
-}
-
-#Preview {
-    PerfilView()
-        .modelContainer(appContainer)
 }

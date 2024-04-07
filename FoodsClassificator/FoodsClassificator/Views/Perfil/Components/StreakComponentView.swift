@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StreakComponentView: View {
     
-    @State var dias: Int = 0
+    @Binding var dias: Int
     
     var body: some View {
         
@@ -30,8 +30,4 @@ struct StreakComponentView: View {
             .padding(.horizontal)
         
     }
-}
-
-#Preview {
-    StreakComponentView()
 }
