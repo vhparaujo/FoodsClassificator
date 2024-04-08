@@ -41,6 +41,14 @@
 		4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */; };
 		4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */; };
 		4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */; };
+		4A3F74892BC37B350080C021 /* Page1_name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74882BC37B350080C021 /* Page1_name.swift */; };
+		4A3F748B2BC37CC60080C021 /* NextButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F748A2BC37CC60080C021 /* NextButtonLabel.swift */; };
+		4A3F748D2BC3939B0080C021 /* Page2_age.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F748C2BC3939B0080C021 /* Page2_age.swift */; };
+		4A3F74922BC39C950080C021 /* TextFieldRectangleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74912BC39C950080C021 /* TextFieldRectangleComponent.swift */; };
+		4A3F74942BC39CDD0080C021 /* QuestionTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74932BC39CDD0080C021 /* QuestionTextComponent.swift */; };
+		4A3F74962BC39FD20080C021 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74952BC39FD20080C021 /* FormModel.swift */; };
+		4A3F74982BC3A02F0080C021 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74972BC3A02F0080C021 /* FormViewModel.swift */; };
+		4A3F749A2BC3A37F0080C021 /* FormProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74992BC3A37F0080C021 /* FormProgressBar.swift */; };
 		4A60303D2BBF2EEC00082ECA /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60303C2BBF2EEC00082ECA /* Highlight.swift */; };
 		4A60303F2BBF422900082ECA /* TutorialHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60303E2BBF422900082ECA /* TutorialHomeView.swift */; };
 		4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */; };
@@ -109,6 +117,14 @@
 		4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2.swift; sourceTree = "<group>"; };
 		4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3.swift; sourceTree = "<group>"; };
 		4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageControl.swift; sourceTree = "<group>"; };
+		4A3F74882BC37B350080C021 /* Page1_name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1_name.swift; sourceTree = "<group>"; };
+		4A3F748A2BC37CC60080C021 /* NextButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonLabel.swift; sourceTree = "<group>"; };
+		4A3F748C2BC3939B0080C021 /* Page2_age.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2_age.swift; sourceTree = "<group>"; };
+		4A3F74912BC39C950080C021 /* TextFieldRectangleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldRectangleComponent.swift; sourceTree = "<group>"; };
+		4A3F74932BC39CDD0080C021 /* QuestionTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTextComponent.swift; sourceTree = "<group>"; };
+		4A3F74952BC39FD20080C021 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
+		4A3F74972BC3A02F0080C021 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
+		4A3F74992BC3A37F0080C021 /* FormProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormProgressBar.swift; sourceTree = "<group>"; };
 		4A60303C2BBF2EEC00082ECA /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		4A60303E2BBF422900082ECA /* TutorialHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialHomeView.swift; sourceTree = "<group>"; };
 		4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculoCaloriasOnBoarding.swift; sourceTree = "<group>"; };
@@ -273,8 +289,24 @@
 		4A3F74872BC36C6C0080C021 /* UserForm */ = {
 			isa = PBXGroup;
 			children = (
+				4A3F74952BC39FD20080C021 /* FormModel.swift */,
+				4A3F74972BC3A02F0080C021 /* FormViewModel.swift */,
+				4A3F748E2BC39A790080C021 /* Components */,
+				4A3F74882BC37B350080C021 /* Page1_name.swift */,
+				4A3F748C2BC3939B0080C021 /* Page2_age.swift */,
 			);
 			path = UserForm;
+			sourceTree = "<group>";
+		};
+		4A3F748E2BC39A790080C021 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4A3F74912BC39C950080C021 /* TextFieldRectangleComponent.swift */,
+				4A3F748A2BC37CC60080C021 /* NextButtonLabel.swift */,
+				4A3F74932BC39CDD0080C021 /* QuestionTextComponent.swift */,
+				4A3F74992BC3A37F0080C021 /* FormProgressBar.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		4A60303B2BBF2ED800082ECA /* Model */ = {
@@ -689,6 +721,7 @@
 				0B1C227F2BB20C4A003C5C0E /* MacrosComponentHomeView.swift in Sources */,
 				9B8904952BB49B4F0058DFDD /* UserNameComponentPerfilView.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
+				4A3F749A2BC3A37F0080C021 /* FormProgressBar.swift in Sources */,
 				9BE179A22B8A567C0086877C /* ContentView.swift in Sources */,
 				4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */,
 				0B1C228D2BB20C74003C5C0E /* HomeView.swift in Sources */,
@@ -697,6 +730,7 @@
 				4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */,
 				0B1C22822BB20C4A003C5C0E /* ProgressBarComponentViewHome.swift in Sources */,
 				0B73E8632BAF605B00C6F91D /* ProgressBar.swift in Sources */,
+				4A3F74982BC3A02F0080C021 /* FormViewModel.swift in Sources */,
 				4AF7A7542BBD9FCF0057DF79 /* FooterView.swift in Sources */,
 				0B1C22832BB20C4A003C5C0E /* UserPhotoAndStreakComponentHomeView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
@@ -707,7 +741,9 @@
 				4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */,
 				9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */,
 				0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */,
+				4A3F748B2BC37CC60080C021 /* NextButtonLabel.swift in Sources */,
 				0B73E8612BAF601300C6F91D /* HeaderMealView.swift in Sources */,
+				4A3F748D2BC3939B0080C021 /* Page2_age.swift in Sources */,
 				0B73E8672BAF60F500C6F91D /* MacroNutrientsView.swift in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
@@ -716,7 +752,9 @@
 				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
 				0B73E8652BAF609000C6F91D /* MacroCircle.swift in Sources */,
 				4AB85A342BBEFFF40075ADD9 /* ShowCaseHelper.swift in Sources */,
+				4A3F74942BC39CDD0080C021 /* QuestionTextComponent.swift in Sources */,
 				0B1C22802BB20C4A003C5C0E /* HeaderView.swift in Sources */,
+				4A3F74962BC39FD20080C021 /* FormModel.swift in Sources */,
 				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
 				0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */,
 				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
@@ -740,9 +778,11 @@
 				0B73E8692BAF627000C6F91D /* RecentMealCard.swift in Sources */,
 				9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */,
 				4AF7A7592BBDAA5A0057DF79 /* FooterHomeViewModel.swift in Sources */,
+				4A3F74922BC39C950080C021 /* TextFieldRectangleComponent.swift in Sources */,
 				9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */,
 				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
 				4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */,
+				4A3F74892BC37B350080C021 /* Page1_name.swift in Sources */,
 				9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */,
 				0B1C22812BB20C4A003C5C0E /* UserNameComponentHomeView.swift in Sources */,
 				0B73E8572BAF55DD00C6F91D /* RecentMealsView.swift in Sources */,
