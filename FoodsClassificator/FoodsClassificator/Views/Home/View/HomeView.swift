@@ -43,6 +43,7 @@ struct HomeView: View {
                 .environment(footerHomeViewModel)
                 .background(Image("backgroundHome"))
         }
+        .navigationBarBackButtonHidden()
     }
 }
 

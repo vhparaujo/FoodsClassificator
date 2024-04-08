@@ -54,7 +54,7 @@ struct FormsPage5: View {
                 
                 
                 // NavigationLink para a próxima página do questionário
-                NavigationLink(destination: FormsPage2()) {
+                NavigationLink(destination: FormsPage6()) {
                     NextButtonLabel(nextButtonLabel: "Próximo")
                 }
             }

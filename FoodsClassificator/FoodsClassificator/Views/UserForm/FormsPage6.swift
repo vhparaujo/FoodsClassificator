@@ -63,7 +63,7 @@ struct FormsPage6: View {
                 Spacer()
                 
                 // NavigationLink para a próxima página do questionário
-                NavigationLink(destination: EmptyView()) {
+                NavigationLink(destination: HomeView()) {
                     NextButtonLabel(nextButtonLabel: "Próximo")
                 }
             }
