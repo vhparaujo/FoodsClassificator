@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct NextButtonLabel: View {
-    var label: String
+    var nextButtonLabel: String
     
     var body: some View {
-        Text(label)
+        Text(nextButtonLabel)
             .foregroundColor(.white)
             .font(.title2)
             .padding()
@@ -22,5 +22,5 @@ struct NextButtonLabel: View {
 }
 
 #Preview {
-    NextButtonLabel(label: "oi")
+    NextButtonLabel(nextButtonLabel: "oi")
 }

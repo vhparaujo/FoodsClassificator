@@ -1,5 +1,5 @@
 //
-//  Page1_name.swift
+//  FormsPage1.swift
 //  FoodsClassificator
 //
 //  Created by Gabriel Ribeiro Noronha on 07/04/24.
@@ -13,16 +13,16 @@
 
 import SwiftUI
 
-struct Page1_name: View {
+struct FormsPage1: View {
     @State var nome:String = ""
-    @State var percent: CGFloat = 002
+    @State var percent: CGFloat = 0.20
 
     var body: some View {
         NavigationStack {
             VStack {
-//                FormProgressBar(percent: $percent)
+                FormProgressBar(percent: .constant(0.16))
                 // Conteúdo da página aqui
-                QuestionTextComponent(label: "Como gostaria de ser chamado(a)?")
+                QuestionTextComponent(QuestionLabel: "Como gostaria de ser chamado(a)?")
                 
                 TextFieldRectangleComponent(placeholder: "Insira seu nome", text: $nome)
                 
@@ -33,8 +33,8 @@ struct Page1_name: View {
                 Spacer() // Empurra o conteúdo para cima e o botão para baixo
                 
                 // NavigationLink para a próxima página do questionário
-                NavigationLink(destination: Page2_age()) {
-                    NextButtonLabel(label: "Próximo")
+                NavigationLink(destination: FormsPage2()) {
+                    NextButtonLabel(nextButtonLabel: "Próximo")
                 }
             }
             .padding()
@@ -43,5 +43,5 @@ struct Page1_name: View {
 }
 
 #Preview {
-    Page1_name()
+    FormsPage1()
 }

@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct QuestionTextComponent: View {
-    var label: String
+    var QuestionLabel: String
     
     var body: some View {
-        Text(label)
-            .font(.system(size: 20))
-            .fontWeight(.semibold)
-            .multilineTextAlignment(.center)
-            .padding()
+        VStack(alignment: .leading) { // Este VStack está alinhado à esquerda.
+            Text(QuestionLabel)
+                .font(.system(size: 20))
+                .fontWeight(.semibold)
+                .multilineTextAlignment(.leading) // Alinha o texto à esquerda.
+        }
+        .frame(maxWidth: .infinity, alignment: .leading) // Garante que o VStack ocupe a largura total e alinhe seu conteúdo à esquerda.
     }
-
 }
 
 #Preview {
-    QuestionTextComponent(label: "Isso vai ser uma Pergunta?")
+    QuestionTextComponent(QuestionLabel: "Isso vai ser uma Pergunta?")
 }

@@ -41,14 +41,18 @@
 		4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */; };
 		4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */; };
 		4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */; };
-		4A3F74892BC37B350080C021 /* Page1_name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74882BC37B350080C021 /* Page1_name.swift */; };
+		4A3F74892BC37B350080C021 /* FormsPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74882BC37B350080C021 /* FormsPage1.swift */; };
 		4A3F748B2BC37CC60080C021 /* NextButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F748A2BC37CC60080C021 /* NextButtonLabel.swift */; };
-		4A3F748D2BC3939B0080C021 /* Page2_age.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F748C2BC3939B0080C021 /* Page2_age.swift */; };
+		4A3F748D2BC3939B0080C021 /* FormsPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F748C2BC3939B0080C021 /* FormsPage2.swift */; };
 		4A3F74922BC39C950080C021 /* TextFieldRectangleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74912BC39C950080C021 /* TextFieldRectangleComponent.swift */; };
 		4A3F74942BC39CDD0080C021 /* QuestionTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74932BC39CDD0080C021 /* QuestionTextComponent.swift */; };
 		4A3F74962BC39FD20080C021 /* FormModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74952BC39FD20080C021 /* FormModel.swift */; };
 		4A3F74982BC3A02F0080C021 /* FormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74972BC3A02F0080C021 /* FormViewModel.swift */; };
 		4A3F749A2BC3A37F0080C021 /* FormProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74992BC3A37F0080C021 /* FormProgressBar.swift */; };
+		4A3F749F2BC43D8B0080C021 /* FormsPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F749E2BC43D8B0080C021 /* FormsPage3.swift */; };
+		4A3F74A12BC4471F0080C021 /* FormsPage4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74A02BC4471F0080C021 /* FormsPage4.swift */; };
+		4A3F74A32BC44FD40080C021 /* FormsPage5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74A22BC44FD40080C021 /* FormsPage5.swift */; };
+		4A3F74A52BC44FF80080C021 /* FormsPage6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74A42BC44FF80080C021 /* FormsPage6.swift */; };
 		4A60303D2BBF2EEC00082ECA /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60303C2BBF2EEC00082ECA /* Highlight.swift */; };
 		4A60303F2BBF422900082ECA /* TutorialHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60303E2BBF422900082ECA /* TutorialHomeView.swift */; };
 		4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */; };
@@ -117,14 +121,18 @@
 		4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2.swift; sourceTree = "<group>"; };
 		4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3.swift; sourceTree = "<group>"; };
 		4A1CCCC12BBB51FE00ED750F /* OnBoardingPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageControl.swift; sourceTree = "<group>"; };
-		4A3F74882BC37B350080C021 /* Page1_name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1_name.swift; sourceTree = "<group>"; };
+		4A3F74882BC37B350080C021 /* FormsPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage1.swift; sourceTree = "<group>"; };
 		4A3F748A2BC37CC60080C021 /* NextButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButtonLabel.swift; sourceTree = "<group>"; };
-		4A3F748C2BC3939B0080C021 /* Page2_age.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2_age.swift; sourceTree = "<group>"; };
+		4A3F748C2BC3939B0080C021 /* FormsPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage2.swift; sourceTree = "<group>"; };
 		4A3F74912BC39C950080C021 /* TextFieldRectangleComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldRectangleComponent.swift; sourceTree = "<group>"; };
 		4A3F74932BC39CDD0080C021 /* QuestionTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTextComponent.swift; sourceTree = "<group>"; };
 		4A3F74952BC39FD20080C021 /* FormModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormModel.swift; sourceTree = "<group>"; };
 		4A3F74972BC3A02F0080C021 /* FormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewModel.swift; sourceTree = "<group>"; };
 		4A3F74992BC3A37F0080C021 /* FormProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormProgressBar.swift; sourceTree = "<group>"; };
+		4A3F749E2BC43D8B0080C021 /* FormsPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage3.swift; sourceTree = "<group>"; };
+		4A3F74A02BC4471F0080C021 /* FormsPage4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage4.swift; sourceTree = "<group>"; };
+		4A3F74A22BC44FD40080C021 /* FormsPage5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage5.swift; sourceTree = "<group>"; };
+		4A3F74A42BC44FF80080C021 /* FormsPage6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage6.swift; sourceTree = "<group>"; };
 		4A60303C2BBF2EEC00082ECA /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		4A60303E2BBF422900082ECA /* TutorialHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialHomeView.swift; sourceTree = "<group>"; };
 		4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculoCaloriasOnBoarding.swift; sourceTree = "<group>"; };
@@ -292,8 +300,12 @@
 				4A3F74952BC39FD20080C021 /* FormModel.swift */,
 				4A3F74972BC3A02F0080C021 /* FormViewModel.swift */,
 				4A3F748E2BC39A790080C021 /* Components */,
-				4A3F74882BC37B350080C021 /* Page1_name.swift */,
-				4A3F748C2BC3939B0080C021 /* Page2_age.swift */,
+				4A3F74882BC37B350080C021 /* FormsPage1.swift */,
+				4A3F748C2BC3939B0080C021 /* FormsPage2.swift */,
+				4A3F749E2BC43D8B0080C021 /* FormsPage3.swift */,
+				4A3F74A02BC4471F0080C021 /* FormsPage4.swift */,
+				4A3F74A22BC44FD40080C021 /* FormsPage5.swift */,
+				4A3F74A42BC44FF80080C021 /* FormsPage6.swift */,
 			);
 			path = UserForm;
 			sourceTree = "<group>";
@@ -726,6 +738,7 @@
 				9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				9B8904992BB4A1BC0058DFDD /* PerfilTexts.swift in Sources */,
+				4A3F74A52BC44FF80080C021 /* FormsPage6.swift in Sources */,
 				0B1C227F2BB20C4A003C5C0E /* MacrosComponentHomeView.swift in Sources */,
 				9B8904952BB49B4F0058DFDD /* UserNameComponentPerfilView.swift in Sources */,
 				4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */,
@@ -736,6 +749,7 @@
 				9BDAA28C2BB496F3000627F9 /* PerfilImageViewComponent.swift in Sources */,
 				4A60303D2BBF2EEC00082ECA /* Highlight.swift in Sources */,
 				4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */,
+				4A3F749F2BC43D8B0080C021 /* FormsPage3.swift in Sources */,
 				0B1C22822BB20C4A003C5C0E /* ProgressBarComponentViewHome.swift in Sources */,
 				0B73E8632BAF605B00C6F91D /* ProgressBar.swift in Sources */,
 				4A3F74982BC3A02F0080C021 /* FormViewModel.swift in Sources */,
@@ -747,11 +761,12 @@
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
 				0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */,
 				4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */,
+				4A3F74A12BC4471F0080C021 /* FormsPage4.swift in Sources */,
 				9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */,
 				0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */,
 				4A3F748B2BC37CC60080C021 /* NextButtonLabel.swift in Sources */,
 				0B73E8612BAF601300C6F91D /* HeaderMealView.swift in Sources */,
-				4A3F748D2BC3939B0080C021 /* Page2_age.swift in Sources */,
+				4A3F748D2BC3939B0080C021 /* FormsPage2.swift in Sources */,
 				0B73E8672BAF60F500C6F91D /* MacroNutrientsView.swift in Sources */,
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
@@ -776,6 +791,7 @@
 				0B1C22882BB20C61003C5C0E /* MealCircleComponentHomeView.swift in Sources */,
 				0B1C22642BB20031003C5C0E /* FoodsClassificatorApp.swift in Sources */,
 				0B1C22892BB20C61003C5C0E /* WaterRectangleComponentHomeView.swift in Sources */,
+				4A3F74A32BC44FD40080C021 /* FormsPage5.swift in Sources */,
 				0B1C22742BB20551003C5C0E /* HomeTexts.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
 				9BDAA28A2BB496CE000627F9 /* PerfilView.swift in Sources */,
@@ -790,7 +806,7 @@
 				9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */,
 				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
 				4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */,
-				4A3F74892BC37B350080C021 /* Page1_name.swift in Sources */,
+				4A3F74892BC37B350080C021 /* FormsPage1.swift in Sources */,
 				9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */,
 				0B1C22812BB20C4A003C5C0E /* UserNameComponentHomeView.swift in Sources */,
 				0B73E8572BAF55DD00C6F91D /* RecentMealsView.swift in Sources */,

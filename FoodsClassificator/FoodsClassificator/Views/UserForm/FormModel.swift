@@ -33,18 +33,18 @@ struct FormModel{
     var numberOfMeals:String
     var caloriesPreset:String
     
-    init(name: String, age: String, weight: String, height: String, sex: sex, objective: String, exercisePerWeek: String, haveNutritionist: Bool, numberOfMeals: String, caloriesPreset: String) {
-        self.name = name
-        self.age = age
-        self.weight = weight
-        self.height = height
-        self.sex = sex
-        self.objective = objective
-        self.exercisePerWeek = exercisePerWeek
-        self.haveNutritionist = haveNutritionist
-        self.numberOfMeals = numberOfMeals
-        self.caloriesPreset = caloriesPreset
-    }
+//    init(name: String, age: String, weight: String, height: String, sex: sex, objective: String, exercisePerWeek: String, haveNutritionist: Bool, numberOfMeals: String, caloriesPreset: String) {
+//        self.name = name
+//        self.age = age
+//        self.weight = weight
+//        self.height = height
+//        self.sex = sex
+//        self.objective = objective
+//        self.exercisePerWeek = exercisePerWeek
+//        self.haveNutritionist = haveNutritionist
+//        self.numberOfMeals = numberOfMeals
+//        self.caloriesPreset = caloriesPreset
+//    }
     
 }
 
