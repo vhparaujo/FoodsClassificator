@@ -9,10 +9,10 @@ import SwiftUI
 
 struct DatePickerComponentHomeView: View {
     
-    @State  var selectedDate = Date()
-    
+    @State var selectedDate = Date()
+    @Environment(\.dismiss) private var dismiss
+
     var body: some View {
-        
         // Put your own design here
         HStack(spacing: 2) {
             Image(systemName: "calendar")
@@ -29,7 +29,7 @@ struct DatePickerComponentHomeView: View {
             DatePicker(selection: $selectedDate, displayedComponents: .date) {}
                 .labelsHidden()
                 .contentShape(Rectangle())
-                .opacity(0.011)             // <<< here
+                .opacity(0.011)
         }
         .padding(.trailing)
         
@@ -46,7 +46,7 @@ struct DatePickerComponentHomeView: View {
             return "Hoje"
         } else {
             return selectedDate.formatted(.dateTime.day().month())
-
+            
         }
     }
 }

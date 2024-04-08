@@ -48,8 +48,7 @@ struct PerfilView: View {
                 }
             }
             
-            Form {
-                
+            List {
                 Section {
                     
                     Button {

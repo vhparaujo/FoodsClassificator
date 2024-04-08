@@ -9,7 +9,13 @@ import SwiftUI
 
 struct MealCircleComponentHomeView: View {
     let mealText: String // Texto do botão
-    let buttonAction: () -> Void // Ação a ser executada quando o botão é pressionado
+    let destinationView: () -> AnyView // Ação a ser executada quando o botão é pressionado
+    @Environment(\.dismiss) private var dismiss
+
+    init(mealText: String, destinationView: @escaping () -> AnyView) {
+        self.mealText = mealText
+        self.destinationView = destinationView
+    }
     
     var body: some View {
         
@@ -28,7 +34,7 @@ struct MealCircleComponentHomeView: View {
                             .padding(.horizontal) // Adiciona um preenchimento horizontal
                         
                         Spacer()
-                        Button(action: buttonAction) {
+                        NavigationLink(destination: destinationView()) {
                             Image(systemName: "plus")
                                 .foregroundStyle(.black)
                                 .font(.title)

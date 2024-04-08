@@ -70,7 +70,6 @@ struct HeaderView: View {
             }
             .ignoresSafeArea(edges: .all)
         )
-
     }
 }
 

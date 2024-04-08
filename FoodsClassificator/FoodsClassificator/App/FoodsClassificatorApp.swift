@@ -13,7 +13,8 @@ struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomeView()
+//                HomeView()
+                TutorialHomeView()
                     .preferredColorScheme(.light)
             }
         }.modelContainer(appContainer)

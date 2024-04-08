@@ -8,27 +8,22 @@
 import SwiftUI
 
 struct HomeView: View {
-    
+    @Environment(\.dismiss) private var dismiss
+
     var viewModel = HomeViewModel()
-   
+    var footerHomeViewModel = FooterHomeViewModel()
+    
     var body: some View {
-            
-            VStack {
-                
-                HeaderView()
-                    .environment(viewModel)
-                
-                HStack {
-                    Spacer()
-                    DatePickerComponentHomeView()
-                }
-                
-                MealsCarrouselHomeView()
-                
-                WaterRectangleComponentHomeView()
-                
-            }
         
+        VStack {
+            HeaderView()
+                .environment(viewModel) 
+                
+            FooterView()
+                .environment(footerHomeViewModel)
+                .background(Image("backgroundHome"))
+        }
+        .navigationBarBackButtonHidden()
     }
 }
 
