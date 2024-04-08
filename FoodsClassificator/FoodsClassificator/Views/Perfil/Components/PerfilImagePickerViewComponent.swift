@@ -10,9 +10,11 @@ import PhotosUI
 
 struct PerfilImagePickerViewComponent: View {
     
-    @Binding var userPhoto: Data
-    
+    @State var photo: Data?
+        
     @State private var photosPickerItem: PhotosPickerItem?
+    
+    @Bindable var viewModel: PerfilViewModel
     
     var body: some View {
         Circle()
@@ -20,7 +22,7 @@ struct PerfilImagePickerViewComponent: View {
             .foregroundStyle(.verdeTitle)
             .overlay {
                 PhotosPicker(selection: $photosPickerItem, matching: .images, photoLibrary: .shared()) {
-                    if let uiImage = UIImage(data: userPhoto) {
+                    if let uiImage = UIImage(data: photo ?? Data()) {
                         Image(uiImage: uiImage)
                             .resizable()
                             .aspectRatio(contentMode: .fill)
@@ -32,10 +34,19 @@ struct PerfilImagePickerViewComponent: View {
                     Task {
                         if let photosPickerItem,
                            let data = try await photosPickerItem.loadTransferable(type: Data.self) {
-                                userPhoto = data
+                            viewModel.model.userPhoto = data
+                            
+                            viewModel.fetchData()
+                            
+                            photo = viewModel.model.userPhoto
                         }
                         photosPickerItem = nil
+                        
+                
                     }
+                }
+                .onAppear {
+                    photo = viewModel.model.userPhoto
                 }
                 
             }
@@ -49,16 +60,16 @@ struct PerfilImagePickerViewComponent: View {
     }
 }
 
-#Preview {
-    // Supondo que você tenha uma extensão que permita inicializar uma UIImage a partir de um recurso com o nome "labelPerfil"
-    var photo: UIImage = UIImage(named: "labelPerfil")!
-
-    // Converta a imagem em dados, por exemplo, em formato PNG
-    guard let imageData = photo.pngData() else {
-        fatalError("Não foi possível converter a imagem em dados.")
-    }
-
-    // Agora você pode passar os dados da imagem para o construtor do UIImage dentro de PerfilImageViewComponent
-    return PerfilImagePickerViewComponent(userPhoto: .constant(Data(imageData)))
-
-}
+//#Preview {
+//    // Supondo que você tenha uma extensão que permita inicializar uma UIImage a partir de um recurso com o nome "labelPerfil"
+//    var photo: UIImage = UIImage(named: "labelPerfil")!
+//
+//    // Converta a imagem em dados, por exemplo, em formato PNG
+//    guard let imageData = photo.pngData() else {
+//        fatalError("Não foi possível converter a imagem em dados.")
+//    }
+//
+//    // Agora você pode passar os dados da imagem para o construtor do UIImage dentro de PerfilImageViewComponent
+//    return PerfilImagePickerViewComponent(userPhoto: .constant(Data(imageData)), viewModel: .constant(PerfilViewModel()))
+//
+//}

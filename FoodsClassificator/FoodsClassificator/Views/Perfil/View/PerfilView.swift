@@ -18,14 +18,14 @@ struct PerfilView: View {
     @State private var showIdadePopover: Bool = false
     @State private var showPesoPopover: Bool = false
     @State private var showAlturaPopover: Bool = false
-    
+        
     var body: some View {
         
         VStack {
             
             if canEditFunc() == true {
                 
-                PerfilImagePickerViewComponent(userPhoto: $viewModel.model.userPhoto)
+                PerfilImagePickerViewComponent(viewModel: viewModel)
                     .frame(width: 100, height: 100)
                 
                 UserNameComponentPerfilView(userName: $viewModel.model.userName)
