@@ -61,11 +61,11 @@ struct MealCircleComponentHomeView: View {
     }
 }
 
-#Preview {
-    MealCircleComponentHomeView(mealText: "Café da Manhã") {
-        print("Adicionar alimento")
-    }
-}
+//#Preview {
+//    MealCircleComponentHomeView(mealText: "Café da Manhã") {
+//        print("Adicionar alimento")
+//    }
+//}
 //#Preview {
 //    HomeView()
 //}

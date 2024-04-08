@@ -14,13 +14,15 @@ struct WaterRectangleComponentHomeView: View {
     @State var isPresented = false
     @State private var showPopover: Bool = false
     
+    let height = UIScreen.main.bounds.height
+    
     var body: some View {
         Button(action: {
             print("Ediçao abeta")
             isPresented = true
         }, label: {
             RoundedRectangle(cornerRadius: 25)
-                .foregroundStyle(Color.laranjaFundoHome)
+                .foregroundStyle(Color.verdeFundo)
                 .overlay {
                     HStack {
                         VStack {
@@ -68,8 +70,10 @@ struct WaterRectangleComponentHomeView: View {
                         
                     })
                 }
+                .frame(height: height * 0.15)
         })
     }
+    
 }
 
 

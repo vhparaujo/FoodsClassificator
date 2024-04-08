@@ -23,7 +23,7 @@ struct FormProgressBar: View {
             }
             
             Capsule()
-                .fill(Color.laranjaFundoHome)
+                .fill(Color.verdeFundo)
                 .frame(width: UIScreen.main.bounds.width * percent,
                        height: UIScreen.main.bounds.height * 0.01)
         }

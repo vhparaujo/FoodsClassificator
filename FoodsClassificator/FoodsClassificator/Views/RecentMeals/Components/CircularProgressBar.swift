@@ -19,7 +19,7 @@ struct CircularProgressBar: View {
         ZStack {
             Circle()
                 .frame(width: screenWidth * 0.38)
-                .foregroundStyle(Color.laranjaFundoHome)
+                .foregroundStyle(Color.verdeFundo)
             
             Circle()
                 .trim(from: initialProgressBarValue, to: maxProgressBarValue)

@@ -16,7 +16,7 @@ struct ProgressBar: View {
     var body: some View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 21)
-                .fill(Color.laranjaFundoHome)
+                .fill(Color.verdeFundo)
                 .frame(width: totalWidth * 1.2, height: 14)
             
             RoundedRectangle(cornerRadius: 21)

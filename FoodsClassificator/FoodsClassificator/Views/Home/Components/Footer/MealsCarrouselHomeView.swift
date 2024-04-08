@@ -28,20 +28,21 @@ struct MealsCarrouselHomeView: View {
     @GestureState private var dragOffset: CGFloat = 0
     @State private var selectedMealTime: MealTime?
     
-    let screenWidth = UIScreen.main.bounds.size.width
-    let screenHeight = UIScreen.main.bounds.size.height
-    
     var body: some View {
         NavigationStack{
             VStack{
                 ZStack{
-                    ForEach(0..<mealViews.count, id: \.self) { index in
-                        MealCircleComponentHomeView(mealText: mealViews[index].0,
-                                                    buttonAction: mealViews[index].1)
-//                        .frame(width: 300, height: 300)
+                    ForEach(MealTime.allCases.indices, id: \.self) { index in
+                        let meal = MealTime.allCases[index]
+                        
+                        MealCircleComponentHomeView(mealText: meal.title) {
+                            return AnyView(RecentMealsView(title: meal.title) {
+                                print("Chamando view 'Add Meal' para \(meal.title)")
+                            })
+                        }
                         .opacity(currentIndex == index ? 1.0 : 0.5)
                         .scaleEffect(currentIndex == index ? 1.0 : 0.5)
-                        .offset(x: CGFloat(index - currentIndex) * 240 + dragOffset , y: 0)
+                        .offset(x: CGFloat(index - currentIndex) * 220 + dragOffset, y: 0)
                         
                     }
                 }
@@ -63,11 +64,11 @@ struct MealsCarrouselHomeView: View {
                         })
                 )
             }
-            .padding()
         }
     }
 }
 
 #Preview {
-    HomeView()
+    MealsCarrouselHomeView()
 }
+

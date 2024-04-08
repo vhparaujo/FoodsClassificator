@@ -45,7 +45,7 @@ struct HeaderMealView: View {
             Spacer()
         }
         .animation(.easeInOut, value: isExpanded)
-        .background(Color.laranjaFundoHome)
+        .background(Color.verdeFundo)
         .padding(.top, -screenHeight * 0.02)
     }
 }

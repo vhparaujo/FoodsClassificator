@@ -31,7 +31,7 @@ struct MacroNutrientsView: View {
             HStack(spacing: screenWidth * 0.1) { // Ajuste o espaçamento conforme necessário
                 MacroCircle(value: macros.fats, color: Color.rosaGorduras)
                 MacroCircle(value: macros.fibers, color: Color.amareloFibras)
-                MacroCircle(value: macros.carbohydrates, color: Color.verdeCarboidratos)
+                MacroCircle(value: macros.carbohydrates, color: Color.amareloCarboidratos)
                 MacroCircle(value: macros.proteins, color: Color.rosaProteinas)
             }
         }
