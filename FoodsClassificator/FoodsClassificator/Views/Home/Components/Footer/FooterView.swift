@@ -8,32 +8,28 @@
 import SwiftUI
 
 struct FooterView: View {
-//    @Environment(HomeViewModel.self) var viewModel
+    //    @Environment(HomeViewModel.self) var viewModel
     @Environment(FooterHomeViewModel.self) var footerHomeViewModel
-
+    
     var body: some View {
         VStack{
             HStack {
                 Spacer()
                 DatePickerComponentHomeView()
-//                    .padding(.vertical)
+                    .padding(.horizontal)
             }
-            HStack {
-                MealsCarrouselHomeView()
-            }
-                
             
-            HStack {
-                Spacer()
-                WaterRectangleComponentHomeView()
-                Spacer()
-            }
-               
+            MealsCarrouselHomeView()
+            
+            WaterRectangleComponentHomeView()
+                .padding(.horizontal)
         }
-        
-
+        .background(
+            Image("backgroundHome")
+            .resizable()
+            .scaledToFill()
+        )
     }
-    
 }
 
 #Preview {

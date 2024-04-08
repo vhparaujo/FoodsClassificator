@@ -11,7 +11,7 @@ struct DatePickerComponentHomeView: View {
     
     @State var selectedDate = Date()
     @Environment(\.dismiss) private var dismiss
-
+    
     var body: some View {
         // Put your own design here
         HStack(spacing: 2) {
@@ -22,7 +22,10 @@ struct DatePickerComponentHomeView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
         .foregroundColor(.black)
-        .background(RoundedRectangle(cornerRadius: 15, style: .continuous).foregroundColor(.laranjaBrilhante))
+        .background(
+            RoundedRectangle(cornerRadius: 15,
+                             style: .continuous)
+            .foregroundColor(.laranjaBrilhante))
         
         // Put the actual DataPicker here with overlay
         .overlay {
@@ -31,7 +34,6 @@ struct DatePickerComponentHomeView: View {
                 .contentShape(Rectangle())
                 .opacity(0.011)
         }
-        .padding(.trailing)
         
     }
     

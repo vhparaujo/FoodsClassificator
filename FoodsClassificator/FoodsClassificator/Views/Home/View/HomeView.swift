@@ -18,19 +18,19 @@ struct HomeView: View {
         VStack{
             HeaderView()
                 .environment(viewModel)
-            Spacer()
-            
+                .padding(.bottom, -20)
             FooterView()
                 .environment(footerHomeViewModel)
-                .background(Image("backgroundHome"))
+                .background(
+                    Image("backgroundHome")
+                    .resizable()
+                    .scaledToFill()
+                )
         }
-        
         .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
-    NavigationStack {
         HomeView()
-    }
 }
