@@ -309,6 +309,13 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		4A3F749B2BC437990080C021 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4A60303B2BBF2ED800082ECA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +395,7 @@
 		9BDAA2852BB49649000627F9 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
+				4A3F749B2BC437990080C021 /* Model */,
 				9BDAA2882BB4965D000627F9 /* ViewModel */,
 				9BDAA2872BB49657000627F9 /* Components */,
 				9BDAA2862BB49652000627F9 /* View */,
