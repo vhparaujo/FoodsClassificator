@@ -28,7 +28,8 @@ struct MyIcon: Shape {
 }
 
 struct HomeView: View {
-    
+    @Environment(\.dismiss) private var dismiss
+
     var viewModel = HomeViewModel()
     var footerHomeViewModel = FooterHomeViewModel()
     

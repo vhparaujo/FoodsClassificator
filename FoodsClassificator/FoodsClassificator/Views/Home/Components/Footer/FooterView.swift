@@ -18,11 +18,16 @@ struct FooterView: View {
                 DatePickerComponentHomeView()
                     .padding(.vertical)
             }
-            MealsCarrouselHomeView()
+            HStack {
+                MealsCarrouselHomeView()
+            }
                 
             
-            
-            WaterRectangleComponentHomeView()
+            HStack {
+                Spacer()
+                WaterRectangleComponentHomeView()
+                Spacer()
+            }
                
         }
         

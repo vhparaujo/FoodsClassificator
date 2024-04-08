@@ -13,7 +13,6 @@ import Combine
 class FooterHomeViewModel {
     
     //MARK: rectangle
-    var isCupSelected = false
     var isBottleSelected = true
     
     var litersSelected: Double = 2.0
@@ -63,7 +62,7 @@ class FooterHomeViewModel {
     }
     
     var formattedCapacity: String {
-        String(format: "%.2f ml", capacitySelected)
+        String(format: "%.0f ml", capacitySelected)
     }
     
 }

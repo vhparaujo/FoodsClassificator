@@ -9,11 +9,12 @@ import SwiftUI
 
 struct WaterModalComponentHomeView: View {
     @Environment(FooterHomeViewModel.self) var footerHomeViewModel
+    @Environment(\.dismiss) private var dismiss
     @Binding var isPresented: Bool
     
     @State var showLiterPopover: Bool = false
     @State var showCapacityPopover: Bool = false
-
+    
     @State var selectedCapacityIndex = 0
     @State var selectedLitersIndex = 0
     @State var selectedMillilitersIndex = 0
@@ -23,11 +24,10 @@ struct WaterModalComponentHomeView: View {
             GeometryReader { geometry in
                 VStack {
                     HStack {
-                        Text("Meta Diária")
+                        Text("Meta")
                             .foregroundStyle(Color.black)
                         Spacer()
                     }
-                    .padding(.horizontal)
                     
                     Button(action: {
                         showLiterPopover.toggle()
@@ -35,11 +35,12 @@ struct WaterModalComponentHomeView: View {
                     }, label: {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.orange)
-                            .frame(height: 50)
-                            .padding()
+                        //                            .padding()
                             .overlay(
                                 Text("\(footerHomeViewModel.formattedTotalWater) Litros")
                                     .foregroundStyle(Color.black)
+                                    .font(.system(size: 24))
+                                    .bold()
                             )
                     })
                     .popover(isPresented: $showLiterPopover, content: {
@@ -55,7 +56,7 @@ struct WaterModalComponentHomeView: View {
                             }
                             
                             Text(".")
-                                .padding(.zero)
+                            //                                .padding(.zero)
                             
                             Picker("Millilitros", selection: $selectedMillilitersIndex) {
                                 ForEach(0..<footerHomeViewModel.milliliterOptions.count) {
@@ -68,79 +69,76 @@ struct WaterModalComponentHomeView: View {
                             }
                             Text("L")
                         }
-                        .padding()
-                        .frame(width: UIScreen.main.bounds.width * 0.5, height: UIScreen.main.bounds.height * 0.2)
-                        
+                        //                        .padding()
                         .presentationCompactAdaptation(.popover)
                     })
                     
                     HStack {
                         Text("Recipiente")
-                            .padding(.horizontal)
+                        //                            .padding(.horizontal)
                         Spacer()
                     }
                     
                     HStack {
                         Spacer()
                         VStack {
-                            Circle()
-                                .foregroundStyle(Color.orange)
-                                .opacity(footerHomeViewModel.isCupSelected ? 1 : 0.4)
-                                .overlay {
-                                    Button(action: {
-                                        footerHomeViewModel.isCupSelected = true
-                                        footerHomeViewModel.isBottleSelected = false
-                                        print("Copo selecionado")
-                                    }, label: {
+                            Button(action: {
+                                footerHomeViewModel.isBottleSelected = false
+                                print("Garrafa selecionado")
+                            }, label: {
+                                Circle()
+                                    .overlay{
                                         Image("cup")
-                                    })
-                                    .padding(.horizontal)
-                                }
-                                .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .padding()
+                                    }
+                            })
+                            .foregroundStyle(Color.orange)
+                            .opacity(footerHomeViewModel.isBottleSelected ? 0.5 : 1.0)
                             Text("Copo")
                                 .foregroundStyle(Color.black)
-
+                            
                         }
                         Spacer()
                         
                         VStack {
-                            Circle()
-                                .foregroundStyle(Color.orange)
-                                .opacity(footerHomeViewModel.isBottleSelected ? 1 : 0.5)
-                                .overlay {
-                                    Button(action: {
-                                        footerHomeViewModel.isCupSelected = false
-                                        footerHomeViewModel.isBottleSelected = true
-                                        print("Garrafa selecionado")
-                                    }, label: {
+                            Button(action: {
+                                footerHomeViewModel.isBottleSelected = true
+                                print("Garrafa selecionado")
+                            }, label: {
+                                Circle()
+                                    .overlay{
                                         Image("WaterBottle")
                                             .resizable()
                                             .scaledToFit()
-                                    })
-                                    .padding()
-                                }
-                                .frame(width: geometry.size.width * 0.2, height: geometry.size.width * 0.2)
+                                            .padding()
+                                    }
+                            })
+                            .foregroundStyle(Color.orange)
+                            .opacity(footerHomeViewModel.isBottleSelected ? 1 : 0.5)
                             Text("Garrafa")
                                 .foregroundStyle(Color.black)
-
                         }
                         Spacer()
                     }
-                    .padding(.horizontal)
-                    
+                    .frame(height:geometry.size.height * 0.34)
+
                     Button(action: {
                         showCapacityPopover.toggle()
                         print("Capacity popover clicker")
                     }, label: {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.orange)
-                            .frame(height: 50)
-                            .padding()
+                        //                            .frame(height: 50)
+                        //                            .padding()
                             .overlay(
                                 HStack {
                                     Text("Capacidade")
+                                    Spacer()
                                     Text("\(footerHomeViewModel.formattedCapacity)")
                                 }
+                                    .padding(.horizontal)
                                     .foregroundStyle(Color.black)
                             )
                         
@@ -157,19 +155,33 @@ struct WaterModalComponentHomeView: View {
                                 footerHomeViewModel.capacitySelected = Double(footerHomeViewModel.capacityOptions[newValue])
                             }
                         }
-                        .padding()
-                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.2)
+                        //                        .padding()
+                        //                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.2)
                         .presentationCompactAdaptation(.popover)
-                    }
-                             
-                    )
+                    })
                 }
+                //                .toolbar {
+                //                    ToolbarItemGroup(placement: .topBarTrailing) {
+                //                        Button ("Done") {
+                //                            isPresented = false
+                //                            dismiss ()
+                //                        }
+                //                            .foregroundStyle(Color.red)
+                //                    }
+                //
+                //                }
+                
+                
                 .padding()
             }
+            .navigationTitle("Água")
+            
         }
         Button("Done") {
             isPresented = false
+            dismiss ()
         }
+        .foregroundStyle(Color.red)
     }
 }
 

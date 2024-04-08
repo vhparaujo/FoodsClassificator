@@ -9,7 +9,8 @@ import SwiftUI
 
 struct WaterRectangleComponentHomeView: View {
     @Environment(FooterHomeViewModel.self) var footerHomeViewModel : FooterHomeViewModel
-    
+    @Environment(\.dismiss) private var dismiss
+
     @State var isPresented = false
     @State private var showPopover: Bool = false
     
@@ -20,7 +21,6 @@ struct WaterRectangleComponentHomeView: View {
         }, label: {
             RoundedRectangle(cornerRadius: 25)
                 .foregroundStyle(Color.laranjaFundoHome)
-                .frame(width: 200, height: 120)
                 .overlay {
                     HStack {
                         VStack {
@@ -43,7 +43,6 @@ struct WaterRectangleComponentHomeView: View {
                                     Circle()
                                         .stroke(lineWidth: 2) // Desenha o contorno da bolinha
                                         .background(footerHomeViewModel.filledCircles > index ? Circle().fill(Color.white) : Circle().fill(Color.clear)) // Preenche se a condição for verdadeira
-                                        .frame(width: 20, height: 20)
                                 }
                             }
                         }
@@ -65,7 +64,7 @@ struct WaterRectangleComponentHomeView: View {
                     .padding()
                     .sheet(isPresented: $isPresented, content: {
                         WaterModalComponentHomeView(isPresented: $isPresented)
-                        .presentationDetents([.medium])
+                            .presentationDetents([.medium])
                         
                     })
                 }

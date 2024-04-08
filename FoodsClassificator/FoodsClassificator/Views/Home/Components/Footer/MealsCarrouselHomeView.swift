@@ -22,6 +22,8 @@ enum MealTime: String, CaseIterable {
 }
 
 struct MealsCarrouselHomeView: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var currentIndex: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
     @State private var selectedMealTime: MealTime?
@@ -38,7 +40,6 @@ struct MealsCarrouselHomeView: View {
                                 print("Chamando view 'Add Meal' para \(meal.title)")
                             })
                         }
-                        .frame(width: 300, height: 300)
                         .opacity(currentIndex == index ? 1.0 : 0.5)
                         .scaleEffect(currentIndex == index ? 1.0 : 0.5)
                         .offset(x: CGFloat(index - currentIndex) * 220 + dragOffset, y: 0)

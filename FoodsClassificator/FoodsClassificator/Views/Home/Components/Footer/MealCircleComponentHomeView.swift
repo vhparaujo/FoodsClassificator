@@ -10,7 +10,8 @@ import SwiftUI
 struct MealCircleComponentHomeView: View {
     let mealText: String // Texto do botão
     let destinationView: () -> AnyView // Ação a ser executada quando o botão é pressionado
-    
+    @Environment(\.dismiss) private var dismiss
+
     init(mealText: String, destinationView: @escaping () -> AnyView) {
         self.mealText = mealText
         self.destinationView = destinationView
@@ -22,7 +23,7 @@ struct MealCircleComponentHomeView: View {
             Circle()
                 .stroke()
                 .foregroundStyle(.laranjaFundoHome)
-                .frame(width: 280)
+//                .frame(width: 280)
             
             Circle()
                 .foregroundStyle(.laranjaFundoHome)
@@ -46,7 +47,6 @@ struct MealCircleComponentHomeView: View {
                     .padding()
                     
                 })
-                .frame(width: 260)
         }
     }
 }
