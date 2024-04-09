@@ -16,12 +16,10 @@ struct FooterView: View {
             HStack {
                 Spacer()
                 DatePickerComponentHomeView()
-//                    .padding(.vertical)
             }
             HStack {
                 MealsCarrouselHomeView()
-            }
-                
+            }.padding(.bottom)
             
             HStack {
                 Spacer()

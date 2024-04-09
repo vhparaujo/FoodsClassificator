@@ -21,165 +21,156 @@ struct WaterModalComponentHomeView: View {
     
     var body: some View {
         NavigationStack {
-            GeometryReader { geometry in
+            ScrollView {
                 VStack {
-                    HStack {
-                        Text("Meta")
-                            .foregroundStyle(Color.black)
-                        Spacer()
-                    }
-                    
-                    Button(action: {
-                        showLiterPopover.toggle()
-                        print("popover clicker")
-                    }, label: {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.orange)
-                            .overlay(
+                        HStack {
+                            Text("Meta")
+                                .font(.title2)
+                                .foregroundStyle(Color.black)
+                            Spacer()
+                        }
+                        
+                        Button(action: {
+                            showLiterPopover.toggle()
+                        }, label: {
+                            VStack{
                                 Text("\(footerHomeViewModel.formattedTotalWater) Litros")
                                     .foregroundStyle(Color.black)
-                                    .padding()
-                                    .font(.system(size: 24))
-                                    .bold()
-                            )
-                    })
-                    .popover(isPresented: $showLiterPopover, content: {
+                                    .font(.title)
+                            }.padding(.vertical)
+                            .frame(maxWidth: .infinity)
+                            .background(.laranjaBrilhante)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                               
+                        })
+                        .popover(isPresented: $showLiterPopover, content: {
+                            HStack {
+                                Picker("Litros", selection: $selectedLitersIndex) {
+                                    ForEach(0..<footerHomeViewModel.litersOptions.count, id: \.self) {
+                                        Text("\(footerHomeViewModel.litersOptions[$0])")
+                                    }
+                                }
+                                .pickerStyle(WheelPickerStyle())
+                                .onChange(of: selectedLitersIndex) { _, newValue in
+                                    footerHomeViewModel.litersSelected = Double(footerHomeViewModel.litersOptions[newValue])
+                                }
+                                
+                                Text(".")
+                                
+                                Picker("Millilitros", selection: $selectedMillilitersIndex) {
+                                    ForEach(0..<footerHomeViewModel.milliliterOptions.count, id: \.self) {
+                                        Text("\(footerHomeViewModel.milliliterOptions[$0])")
+                                    }
+                                }
+                                .pickerStyle(WheelPickerStyle())
+                                .onChange(of: selectedMillilitersIndex) { _, newValue in
+                                    footerHomeViewModel.milliliterSelected = Double(footerHomeViewModel.milliliterOptions[newValue])
+                                }
+                                Text("L")
+                            }
+                            .presentationCompactAdaptation(.popover)
+                        })
+                        
                         HStack {
-                            Picker("Litros", selection: $selectedLitersIndex) {
-                                ForEach(0..<footerHomeViewModel.litersOptions.count) {
-                                    Text("\(footerHomeViewModel.litersOptions[$0])")
-                                }
-                            }
-                            .pickerStyle(WheelPickerStyle())
-                            .onChange(of: selectedLitersIndex) { _, newValue in
-                                footerHomeViewModel.litersSelected = Double(footerHomeViewModel.litersOptions[newValue])
-                            }
-                            
-                            Text(".")
-                            //                                .padding(.zero)
-                            
-                            Picker("Millilitros", selection: $selectedMillilitersIndex) {
-                                ForEach(0..<footerHomeViewModel.milliliterOptions.count) {
-                                    Text("\(footerHomeViewModel.milliliterOptions[$0])")
-                                }
-                            }
-                            .pickerStyle(WheelPickerStyle())
-                            .onChange(of: selectedMillilitersIndex) { _, newValue in
-                                footerHomeViewModel.milliliterSelected = Double(footerHomeViewModel.milliliterOptions[newValue])
-                            }
-                            Text("L")
-                        }
-                        //                        .padding()
-                        .presentationCompactAdaptation(.popover)
-                    })
-                    
-                    HStack {
-                        Text("Recipiente")
-                        //                            .padding(.horizontal)
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Spacer()
-                        VStack {
-                            Button(action: {
-                                footerHomeViewModel.isBottleSelected = false
-                                print("Garrafa selecionado")
-                            }, label: {
-                                Circle()
-                                    .overlay{
+                            Text("Recipiente")
+                                .font(.title2)
+                                .foregroundStyle(.black)
+                            Spacer()
+                        }.padding(.top)
+                        
+                        HStack {
+                            Spacer()
+                            VStack {
+                                Button(action: {
+                                    footerHomeViewModel.isBottleSelected = false
+                                    print("copo selecionado")
+                                }, label: {
+                                    
+                                    VStack {
                                         Image("cup")
                                             .resizable()
-                                            .scaledToFit()
-                                            .padding()
+                                            .frame(width: 40, height: 40)
                                     }
-                            })
-                            .foregroundStyle(Color.orange)
-                            .opacity(footerHomeViewModel.isBottleSelected ? 0.5 : 1.0)
-                            Text("Copo")
-                                .foregroundStyle(Color.black)
+                                    .padding()
+                                    .background(.laranjaBrilhante)
+                                    .opacity(footerHomeViewModel.isBottleSelected ? 0.5 : 1.0)
+                                    .clipShape(Circle())
+                                    
+                                })
+                                
+                                Text("Copo")
+                                    .foregroundStyle(Color.black)
+                                
+                            }
+                            Spacer()
                             
-                        }
-                        Spacer()
-                        
-                        VStack {
-                            Button(action: {
-                                footerHomeViewModel.isBottleSelected = true
-                                print("Garrafa selecionado")
-                            }, label: {
-                                Circle()
-                                    .overlay{
+                            VStack {
+                                Button(action: {
+                                    footerHomeViewModel.isBottleSelected = true
+                                    print("Garrafa selecionado")
+                                }, label: {
+            
+                                    VStack {
                                         Image("WaterBottle")
                                             .resizable()
-                                            .scaledToFit()
-                                            .padding()
+                                            .frame(width: 42, height: 42)
                                     }
-                            })
-                            .foregroundStyle(Color.orange)
-                            .opacity(footerHomeViewModel.isBottleSelected ? 1 : 0.5)
-                            Text("Garrafa")
-                                .foregroundStyle(Color.black)
-                        }
-                        Spacer()
-                    }
-                    .frame(height:geometry.size.height * 0.34)
+                                    .padding()
+                                    .background(.laranjaBrilhante)
+                                    .opacity(footerHomeViewModel.isBottleSelected ? 1 : 0.5)
+                                    .clipShape(Circle())
+                                    
+                                })
 
-                    Button(action: {
-                        showCapacityPopover.toggle()
-                        print("Capacity popover clicker")
-                    }, label: {
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color.orange)
-                        //                            .frame(height: 50)
-                        //                            .padding()
-                            .overlay(
-                                HStack {
-                                    Text("Capacidade")
-                                    Spacer()
-                                    Text("\(footerHomeViewModel.formattedCapacity)")
-                                }
-                                    .padding(.horizontal)
+                                Text("Garrafa")
                                     .foregroundStyle(Color.black)
-                            )
+                            }
+                            Spacer()
+                        }
+
+                        Button(action: {
+                            showCapacityPopover.toggle()
+                            print("Capacity popover clicker")
+                        }, label: {
                         
-                    })
-                    .popover(isPresented: $showCapacityPopover, content: {
-                        HStack {
-                            Picker("ml", selection: $selectedCapacityIndex) {
-                                ForEach(0..<footerHomeViewModel.capacityOptions.count) {
-                                    Text("\(footerHomeViewModel.capacityOptions[$0]) ml")
+                            HStack{
+                                Text("Capacidade")
+                                    .font(.headline)
+                                Spacer()
+                                Text("\(footerHomeViewModel.formattedCapacity)")
+                                    .foregroundStyle(Color.black)
+                                    .font(.headline)
+                            }.padding(10)
+                            .frame(maxWidth: .infinity)
+                            .background(.laranjaBrilhante)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            
+                        })
+                        .popover(isPresented: $showCapacityPopover, content: {
+                            HStack {
+                                Picker("ml", selection: $selectedCapacityIndex) {
+                                    ForEach(0..<footerHomeViewModel.capacityOptions.count, id: \.self) {
+                                        Text("\(footerHomeViewModel.capacityOptions[$0]) ml")
+                                    }
+                                }
+                                .pickerStyle(WheelPickerStyle())
+                                .onChange(of: selectedCapacityIndex) { _, newValue in
+                                    footerHomeViewModel.capacitySelected = Double(footerHomeViewModel.capacityOptions[newValue])
                                 }
                             }
-                            .pickerStyle(WheelPickerStyle())
-                            .onChange(of: selectedCapacityIndex) { _, newValue in
-                                footerHomeViewModel.capacitySelected = Double(footerHomeViewModel.capacityOptions[newValue])
-                            }
-                        }
-                        //                        .padding()
-                        //                        .frame(width: UIScreen.main.bounds.width * 0.4, height: UIScreen.main.bounds.height * 0.2)
-                        .presentationCompactAdaptation(.popover)
-                    })
+
+                            .presentationCompactAdaptation(.popover)
+                        })
+                    }
+     
+                    .padding()
                 }
-                //                .toolbar {
-                //                    ToolbarItemGroup(placement: .topBarTrailing) {
-                //                        Button ("Done") {
-                //                            isPresented = false
-                //                            dismiss ()
-                //                        }
-                //                            .foregroundStyle(Color.red)
-                //                    }
-                //
-                //                }
-                
-                
-                .padding()
-            }
-            .navigationTitle("Água")
+                .navigationTitle("Água")
             
         }
         Button("Done") {
             isPresented = false
-            dismiss ()
+            dismiss()
         }
         .foregroundStyle(Color.red)
     }
@@ -191,10 +182,4 @@ struct WaterModalComponentHomeView: View {
     return WaterModalComponentHomeView(isPresented: .constant(true)) // Substitua true pelo valor inicial desejado para isPresented
         .environment(footerHomeViewModel)
     
-}
-
-#Preview{
-    var footerHomeViewModel = FooterHomeViewModel()
-    return HomeView()
-        .environment(footerHomeViewModel)
 }

@@ -11,7 +11,7 @@ struct MealCircleComponentHomeView: View {
     let mealText: String // Texto do botão
     let destinationView: () -> AnyView // Ação a ser executada quando o botão é pressionado
     @Environment(\.dismiss) private var dismiss
-
+    
     init(mealText: String, destinationView: @escaping () -> AnyView) {
         self.mealText = mealText
         self.destinationView = destinationView
@@ -20,30 +20,34 @@ struct MealCircleComponentHomeView: View {
     var body: some View {
         
         ZStack {
-        
+            
             Circle()
                 .foregroundStyle(.laranjaBrilhante)
                 .overlay(content: {
-                    VStack {
-                        Spacer()
-                        Text(mealText)
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .minimumScaleFactor(0.5)
-                            .multilineTextAlignment(.center) // Alinhamento do texto ao centro
-                            .padding(.horizontal) // Adiciona um preenchimento horizontal
+                    NavigationLink(destination: destinationView()) {
                         
-                        Spacer()
-                        NavigationLink(destination: destinationView()) {
+                        VStack {
+                            
+                            Spacer()
+                            
+                            Text(mealText)
+                                .foregroundStyle(.black)
+                                .font(.largeTitle)
+                                .minimumScaleFactor(0.5)
+                                .multilineTextAlignment(.center) // Alinhamento do texto ao centro
+                                .padding(.horizontal) // Adiciona um preenchimento horizontal
+                            
+                            Spacer()
+                            
                             Image(systemName: "plus")
                                 .foregroundStyle(.black)
                                 .font(.title)
                                 .minimumScaleFactor(0.3)
-                                
-                        }
-                        Spacer()
+                            
+                            Spacer()
+                        }.padding()
+                        
                     }
-                    .padding()
                     
                 })
             
@@ -58,6 +62,7 @@ struct MealCircleComponentHomeView: View {
                         .foregroundStyle(.windowBackground)
                 }
         }
+        
     }
 }
 
