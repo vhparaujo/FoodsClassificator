@@ -8,37 +8,33 @@ import SwiftUI
 
 struct FormsPage2: View {
     @Environment(\.modelContext) private var context
-
     @Bindable private var viewModel = PerfilViewModel()
-    
-//    @State private var idadeString: String = ""
-//    @State private var pesoString: String = ""
     
     var body: some View {
         VStack {
             FormProgressBar(percent: .constant(0.32))
             
             
-                QuestionTextComponent(QuestionLabel: "Quantos anos você tem?")
+            QuestionTextComponent(QuestionLabel: "Quantos anos você tem?")
             TextFieldRectangleComponent(placeholder: "20", text: $viewModel.idadeAsString)
-                    .keyboardType(.numberPad)
-                    .onTapGesture {
-                        print(viewModel.model.idade)
-                    }
+                .keyboardType(.numberPad)
+                .onTapGesture {
+                    print(viewModel.model.idade)
+                }
             
             
             
-                QuestionTextComponent(QuestionLabel: "Qual seu Peso?")
+            QuestionTextComponent(QuestionLabel: "Qual seu Peso?")
             TextFieldRectangleComponent(placeholder: "48kg", text: $viewModel.pesoAsString)
-                    .keyboardType(.numberPad)
-                    .onTapGesture {
-                        print(viewModel.model.peso)
-                    }
+                .keyboardType(.numberPad)
+                .onTapGesture {
+                    print(viewModel.model.peso)
+                }
             
-         
-//                QuestionTextComponent(QuestionLabel: "Qual sua Altura?")
-//                TextFieldRectangleComponent(placeholder: "154cm", text: $viewModel.model.altura)
-//                    .keyboardType(.numberPad)
+            
+            QuestionTextComponent(QuestionLabel: "Qual sua Altura?")
+            TextFieldRectangleComponent(placeholder: "154cm", text: $viewModel.alturaAsString)
+                .keyboardType(.numberPad)
             
             
             Spacer()

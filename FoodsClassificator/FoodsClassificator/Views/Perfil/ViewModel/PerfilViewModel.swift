@@ -45,12 +45,10 @@ import Foundation
             } else {
                 fatalError("No data fetched")
             }
-       
+            
         } catch {
             fatalError("Fetch failed: \(error.localizedDescription)")
         }
-        
-        
 
     }
     var idadeAsString: String {
@@ -62,5 +60,9 @@ import Foundation
         get { String(model.peso) }
         set { model.peso = Int(newValue) ?? model.peso }
     }
-
+    
+    var alturaAsString: String {
+        get { String(model.altura) }
+        set { model.altura = Int(newValue) ?? model.altura }
+    }
 }
