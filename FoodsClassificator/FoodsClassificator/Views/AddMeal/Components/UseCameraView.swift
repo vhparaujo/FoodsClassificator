@@ -41,7 +41,7 @@ struct UseCameraView: View {
                 }
             }
             .frame(width: screenWidth * 0.4, height: screenHeight * 0.05)
-            .background(Color.laranjaFundoHome)
+            .background(Color.laranjaMacros)
             .cornerRadius(28)
             .padding(.bottom, screenHeight * 0.04) 
         }
