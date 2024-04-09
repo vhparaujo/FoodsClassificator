@@ -27,7 +27,7 @@ struct WaterRectangleComponentHomeView: View {
                 VStack(alignment: .leading) {
                     Text("Água")
                         .font(.title)
-                        .fontWeight(.semibold)
+//                        .fontWeight(.semibold)
                         .foregroundStyle(Color.black)
                         .padding(.trailing)
                         .minimumScaleFactor(0.5)
@@ -38,17 +38,17 @@ struct WaterRectangleComponentHomeView: View {
                         .padding(.trailing)
                         .minimumScaleFactor(0.5)
                     
+                    Spacer()
+                    
                     HStack {
                         ForEach(0..<4) { index in
                             Circle()
-                                .stroke(lineWidth: 2)
+                                .stroke(lineWidth: 1)
                                 .foregroundStyle(.black)// Desenha o contorno da bolinha
                                 .background(footerHomeViewModel.filledCircles > index ?
                                             Circle()
-                                    .fill(Color.white) :
-                                                Circle()
-                                    .fill(Color.clear))
-                                .frame(width: width * 0.05)
+                                    .fill(Color.white) : Circle().fill(Color.white.opacity(0.3)))
+                                .frame(width: width * 0.04)
                         }
                     }
                 }
