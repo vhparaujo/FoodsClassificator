@@ -45,7 +45,9 @@ struct RecentMealsView: View {
                     
                     if viewModel.currentMeal == nil {
                         NavigationLink {
-                            AddMealView(recentMealsViewModel: viewModel, title: self.title)
+                            AddMealView(recentMealsViewModel: viewModel, title: self.title, onCreateMeal: { meal in
+                                viewModel.addMealToRecent(meal)
+                            })
                         } label: {
                             HStack {
                                 Image(systemName: "plus")
@@ -151,12 +153,12 @@ struct RecentMealsView: View {
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarTitleDisplayMode(.inline)
         }
-        .onAppear {
-            if viewModel.recentMeals.isEmpty {
-                let cafe1 = Meal(mealName: "Cafe 1", image: "", totalCalories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30), foodDetails: ["arroz":FoodDetail(calories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30))])
-                viewModel.addMealToRecent(cafe1)
-            }
-        }
+//        .onAppear {
+//            if viewModel.recentMeals.isEmpty {
+//                let cafe1 = Meal(mealName: "Cafe 1", image: "", totalCalories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30), foodDetails: ["arroz":FoodDetail(calories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30))])
+//                viewModel.addMealToRecent(cafe1)
+//            }
+//        }
     }
 }
 

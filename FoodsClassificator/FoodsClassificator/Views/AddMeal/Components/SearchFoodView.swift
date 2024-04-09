@@ -11,9 +11,15 @@ struct SearchFoodView: View {
     @Binding var searchText: String
     @ObservedObject var speechRecognizerManager: SpeechRecognizerManager
     @Binding var selectedFoods: [Food]
+    @State private var foodWeights: [String: Int] = [:]
+    
     var filteredFoods: [Food]
     var selectFood: (Food) -> Void
     var onAddMeal: (Food) -> Void
+    
+    @State private var expandedFood: Food?
+    @State private var isExpanded: Bool = false
+    @State private var expandedFoodCode: String?
     
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
@@ -74,17 +80,49 @@ struct SearchFoodView: View {
                     // Lista de alimentos selecionados
                     ScrollView(.vertical, showsIndicators: false) {
                         VStack {
-                            ForEach(selectedFoods) { food in
-                                let energiaKcal = food.detalhesNutricionais.first { $0.componente == "Energia" && $0.unidade == "kcal" }
-                                let energiaKcalText = energiaKcal.map { "\($0.valor) Cal" } ?? "N/A"
+                            ForEach(selectedFoods.indices, id: \.self) { index in
+                                let food = selectedFoods[index]
+                                let energiaKcal = food.detalhesNutricionais.first(where: {$0.componente == "Energia" && $0.unidade == "kcal"})?.valor ?? "0"
+                                let energiaKcalText = "\(energiaKcal) Cal"
+
                                 
-                                // Buscar o detalhe de peso, se disponível
-                                let pesoText = "100 gramas" // Isso pode ser ajustado dependendo do seu modelo
-                                
-                                // Agora você pode usar `energiaKcalText` e `pesoText` para criar sua célula
-                                FoodItemCell(showImage: false, image: nil, title: food.nome, weight: pesoText, calories: energiaKcalText) {
-                                    // Defina a ação para adicionar a comida selecionada
-                                    onAddMeal(food)
+                                // Aqui, ao invés de passar valores fixos, usaremos os dados reais do alimento
+                                if isExpanded && expandedFoodCode == food.codigo {
+                                    let _ = print("Exibindo ExpandedFoodDetailView para: \(food.nome)")
+                                    // O ExpandedFoodDetailView é apresentado com os dados do alimento selecionado
+                                    ExpandedFoodDetailView(showImage: false, food: food, onSave: { updatedFood, updatedWeight in
+                                        print("Salvando alterações para: \(updatedFood.nome)")
+                                        withAnimation {
+                                            if let index = selectedFoods.firstIndex(where: { $0.codigo == updatedFood.codigo }) {
+                                                        selectedFoods[index] = updatedFood
+                                                        foodWeights[updatedFood.codigo] = updatedWeight // Atualiza o peso no dicionário
+                                                        isExpanded = false
+                                                        expandedFoodCode = nil
+                                                    }
+                                        }
+                                    })
+                                    .transition(.slide)
+                                } else {
+                                    Button {
+                                        print("Tentativa de expandir o item: \(food.nome)")
+                                        withAnimation {
+                                            if expandedFoodCode == food.codigo {
+                                                expandedFoodCode = nil // Recolhe se já está expandido
+                                            } else {
+                                                expandedFoodCode = food.codigo // Expande o novo item
+                                            }
+                                            expandedFood = food
+                                            isExpanded = true
+                                            print("isExpanded agora é \(isExpanded) para \(food.nome)")
+                                        }
+                                    } label: {
+                                        let weightText = "\(foodWeights[food.codigo, default: 100]) gramas"
+                                        
+                                        FoodItemCell(showImage: true, title: food.nome, weight: weightText, calories: energiaKcalText) {
+                                            onAddMeal(food)
+                                        }
+                                        .transition(.slide)
+                                    }
                                 }
                             }
                         }
