@@ -7,15 +7,19 @@
 
 import AVFoundation
 import UIKit
+import Vision
 
 class CameraController: NSObject, ObservableObject{
     
     var captureSession: AVCaptureSession?
-    private let metadataOutput = AVCaptureMetadataOutput()
-    private let videoOutput = AVCaptureVideoDataOutput()
-    private var previewLayer:AVCaptureVideoPreviewLayer?
-    private var backCamera: AVCaptureDevice?
-    @Published var isStatusBarHidden = false
+        private let metadataOutput = AVCaptureMetadataOutput()
+        private let videoOutput = AVCaptureVideoDataOutput()
+        private var previewLayer: AVCaptureVideoPreviewLayer?
+        private var photoOutput = AVCapturePhotoOutput()
+        private var backCamera: AVCaptureDevice?
+        @Published var isStatusBarHidden = false
+        private let modelControl = ImagePredictor()
+
 
     private var darkOverlayLayer: CALayer?
     private var redLineLayer: CALayer?
@@ -29,7 +33,11 @@ class CameraController: NSObject, ObservableObject{
     //MARK: - Configuração camera
     func setupCaptureSession(){
         captureSession = AVCaptureSession()
-        captureSession?.sessionPreset = .hd1920x1080
+        captureSession?.sessionPreset = .hd1280x720
+        
+//        videoOutput.videoSettings = [
+//            String(kCVPixelBufferPixelFormatTypeKey): kCVPixelFormatType_32BGRA
+//        ]
         
         guard let backCamera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
             DispatchQueue.main.async {
@@ -43,6 +51,9 @@ class CameraController: NSObject, ObservableObject{
         do {
             let input = try AVCaptureDeviceInput(device: backCamera)
             captureSession?.addInput(input)
+            if captureSession?.canAddOutput(photoOutput) == true {
+                captureSession?.addOutput(photoOutput) // Adicionando a saída de foto à sessão de captura
+            }
         } catch let error {
             print("Error Unable to initialize back camera: \(error.localizedDescription)")
             return
@@ -123,6 +134,12 @@ class CameraController: NSObject, ObservableObject{
         }
     }
     
+    //MARK: - Tirar foto
+    func capturePhoto() {
+        let settings = AVCapturePhotoSettings()
+        photoOutput.capturePhoto(with: settings, delegate: self)
+    }
+    
     //MARK: - Retorna o capture session que foi configurado na função acima, essa função é chamada na CameraPreview aonde é exibida a camera
     func getPreviewLayer() -> AVCaptureVideoPreviewLayer {
         if self.previewLayer == nil {
@@ -185,10 +202,37 @@ class CameraController: NSObject, ObservableObject{
 }
 
 extension CameraController: AVCaptureVideoDataOutputSampleBufferDelegate {
-    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        //
-    }
+//
+}
+
+extension CameraController: AVCapturePhotoCaptureDelegate {
     
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let imageData = photo.fileDataRepresentation(),
+              let image = UIImage(data: imageData)?.corrigirOrientacao(),
+              let cgImage = image.cgImage else { return }
+        
+        // Convertendo UIImage para CVPixelBuffer
+        guard let pixelBuffer = cgImage.toCVPixelBuffer() else { return }
+        
+        // A detecção de objetos é feita aqui
+        modelControl.detectObjects(in: pixelBuffer) { [weak self] results in
+            
+            // Extrair e imprimir os resultados
+            self?.printDetectionResults(results)
+            
+        }
+    }
+
+    private func printDetectionResults(_ results: [VNRecognizedObjectObservation]) {
+        print("-----------------")
+        for result in results {
+            for label in result.labels where label.confidence > 0.5 {
+                print("Detecção: \(label.identifier), Confiança: \(label.confidence)")
+            }
+        }
+    }
+
 }
 
 extension CameraController: AVCaptureMetadataOutputObjectsDelegate {
@@ -200,5 +244,39 @@ extension CameraController: AVCaptureMetadataOutputObjectsDelegate {
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
             print("\(stringValue)")
         }
+    }
+}
+
+extension CGImage {
+    func toCVPixelBuffer() -> CVPixelBuffer? {
+        let frameSize = CGSize(width: self.width, height: self.height)
+        var pixelBuffer: CVPixelBuffer? = nil
+        let status = CVPixelBufferCreate(kCFAllocatorDefault, Int(frameSize.width), Int(frameSize.height), kCVPixelFormatType_32ARGB, nil, &pixelBuffer)
+        if status != kCVReturnSuccess {
+            return nil
+        }
+
+        CVPixelBufferLockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+        let data = CVPixelBufferGetBaseAddress(pixelBuffer!)
+        let rgbColorSpace = CGColorSpaceCreateDeviceRGB()
+        let context = CGContext(data: data, width: Int(frameSize.width), height: Int(frameSize.height), bitsPerComponent: 8, bytesPerRow: CVPixelBufferGetBytesPerRow(pixelBuffer!), space: rgbColorSpace, bitmapInfo: CGImageAlphaInfo.noneSkipFirst.rawValue)
+        
+        context?.draw(self, in: CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height))
+        CVPixelBufferUnlockBaseAddress(pixelBuffer!, CVPixelBufferLockFlags(rawValue: 0))
+        
+        return pixelBuffer
+    }
+}
+
+extension UIImage {
+    func corrigirOrientacao() -> UIImage? {
+        guard imageOrientation != .up else { return self } // A orientação já está correta
+
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        draw(in: CGRect(origin: .zero, size: size))
+        let imagemNormalizada = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return imagemNormalizada
     }
 }

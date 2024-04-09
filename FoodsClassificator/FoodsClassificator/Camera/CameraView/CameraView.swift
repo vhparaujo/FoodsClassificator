@@ -86,7 +86,7 @@ struct CameraView: View {
                     
                     if !controlBarCodeMask{
                         Button{
-                            print("Apertou Camera")
+                            cameraManager.capturePhoto()
                         }label: {
                             ZStack{
                                 Circle()
