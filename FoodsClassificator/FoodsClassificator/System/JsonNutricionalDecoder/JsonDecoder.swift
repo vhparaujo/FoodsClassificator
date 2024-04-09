@@ -23,4 +23,9 @@ import Foundation
         }
     }
     
+    // Função para buscar alimentos pelo nome
+    func searchFoodByName(_ name: String) -> [Food] {
+        guard name.count >= 3 else { return [] }
+        return foods.filter { $0.nome.lowercased().contains(name.lowercased()) }
+    }
 }

@@ -24,7 +24,7 @@ struct Meal: Identifiable {
     let id = UUID()
     let mealName: String
     let image: String
-    let totalCalories: Int
-    let macros: Macronutrients
+    var totalCalories: Int
+    var macros: Macronutrients
     let foodDetails: [String: FoodDetail]
 }

@@ -23,7 +23,7 @@ struct MacroCircle: View {
                     Circle()
                         .stroke(Color.white, lineWidth: 2)
                 )
-            Text("\(Int(value))")
+            Text(String(format: "%.2f", value))
                 .foregroundColor(.white)
                 .bold()
         }
