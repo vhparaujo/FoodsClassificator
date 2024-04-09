@@ -35,10 +35,10 @@ struct WaterModalComponentHomeView: View {
                     }, label: {
                         RoundedRectangle(cornerRadius: 10)
                             .fill(Color.orange)
-                        //                            .padding()
                             .overlay(
                                 Text("\(footerHomeViewModel.formattedTotalWater) Litros")
                                     .foregroundStyle(Color.black)
+                                    .padding()
                                     .font(.system(size: 24))
                                     .bold()
                             )
