@@ -17,11 +17,11 @@ struct RecentMealsView: View {
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
+    
     init(title: String, onAddMeal: @escaping () -> Void) {
         self.title = title
         self.onAddMeal = onAddMeal
     }
-    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) {
@@ -44,7 +44,9 @@ struct RecentMealsView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     
                     if viewModel.currentMeal == nil {
-                        Button(action: onAddMeal) {
+                        NavigationLink {
+                            AddMealView(recentMealsViewModel: viewModel, title: self.title)
+                        } label: {
                             HStack {
                                 Image(systemName: "plus")
                                     .foregroundColor(.white)
@@ -58,7 +60,7 @@ struct RecentMealsView: View {
                             .frame(width: screenWidth * 0.94, height: screenHeight * 0.08)
                             .background(Color.laranjaFundoHome)
                             .cornerRadius(20)
-                            .padding(.top, -screenWidth * 0.01 )
+                            .padding(.top, -screenWidth * 0.01)
                         }
                     }
                     
