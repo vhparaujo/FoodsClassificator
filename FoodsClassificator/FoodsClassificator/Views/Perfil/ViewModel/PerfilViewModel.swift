@@ -50,6 +50,17 @@ import Foundation
             fatalError("Fetch failed: \(error.localizedDescription)")
         }
         
+        
+
+    }
+    var idadeAsString: String {
+        get { String(model.idade) }
+        set { model.idade = Int(newValue) ?? model.idade }
     }
     
+    var pesoAsString: String {
+        get { String(model.peso) }
+        set { model.peso = Int(newValue) ?? model.peso }
+    }
+
 }

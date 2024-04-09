@@ -14,17 +14,18 @@
 import SwiftUI
 
 struct FormsPage1: View {
-    @State var nome:String = ""
-    @State var percent: CGFloat = 0.20
+    @Environment(\.modelContext) private var context
 
+    @Bindable private var viewModel = PerfilViewModel()
+    
     var body: some View {
-        NavigationStack {
+//        NavigationStack {
             VStack {
                 FormProgressBar(percent: .constant(0.16))
                 // Conteúdo da página aqui
                 QuestionTextComponent(QuestionLabel: "Como gostaria de ser chamado(a)?")
                 
-                TextFieldRectangleComponent(placeholder: "Insira seu nome", text: $nome)
+                TextFieldRectangleComponent(placeholder: "Insira seu nome", text: $viewModel.model.userName)
                 
                 Spacer()
                 
@@ -38,7 +39,11 @@ struct FormsPage1: View {
                 }
             }
             .padding()
-        }
+            .onAppear{
+                viewModel.modelContext = context
+            }
+
+//        }
     }
 }
 

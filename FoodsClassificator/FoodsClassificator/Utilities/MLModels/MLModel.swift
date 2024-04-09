@@ -166,7 +166,6 @@ class ImagePredictor {
                     let confidence = observation.labels.first!.confidence
                     return Prediction(classification: topClassification, confidencePercentage: String(format: "%.2f%", confidence * 100))
                 }
-
                 completionHandler(predictions, objectObservations)
             }
         }

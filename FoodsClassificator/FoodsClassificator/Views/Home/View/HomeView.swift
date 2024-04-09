@@ -19,6 +19,8 @@ struct HomeView: View {
             HeaderView()
                 .environment(viewModel)
                 .padding(.bottom, -20)
+            
+            
             FooterView()
                 .environment(footerHomeViewModel)
                 .background(
@@ -26,6 +28,12 @@ struct HomeView: View {
                     .resizable()
                     .scaledToFill()
                 )
+            NavigationLink(destination: FormsPage1()
+                .environment(PerfilViewModel())
+) {
+                NextButtonLabel(nextButtonLabel: "Próximo")
+            }
+
         }
         .navigationBarBackButtonHidden()
     }

@@ -15,45 +15,45 @@ struct FormsPage6: View {
             VStack {
                 FormProgressBar(percent: .constant(0.91))
                 
-                Group {
-                    QuestionTextComponent(QuestionLabel: "Você possui uma meta de calorias prescrita por nutricionista?")
+                
+                QuestionTextComponent(QuestionLabel: "Você possui uma meta de calorias prescrita por nutricionista?")
+                
+                HStack {
+                    Button(action: {
+                        haveNutritionist = true
+                        print("Tem Nutricionista")
+                    }, label: {
+                        Capsule()
+                            .foregroundStyle(.green.opacity(0.4))
+                            .overlay {
+                                Text("Sim")
+                                    .tint(.black)
+                            }
+                            .frame(height: 50)
+                    })
+                    .opacity(haveNutritionist ? 1.0 : 0.5)
                     
-                    HStack {
-                        Button(action: {
-                            haveNutritionist = true
-                            print("Tem Nutricionista")
-                        }, label: {
-                            Capsule()
-                                .foregroundStyle(.green.opacity(0.4))
-                                .overlay {
-                                    Text("Sim")
-                                        .tint(.black)
-                                }
-                                .frame(height: 50)
-                        })
-                        .opacity(haveNutritionist ? 1.0 : 0.5)
-                        
-                        Button(action: {
-                            haveNutritionist = false
-                            print("nao tem Nutricionista")
-                        }, label: {
-                            Capsule()
-                                .foregroundStyle(.green.opacity(0.4))
-                                .overlay {
-                                    Text("Nao")
-                                        .tint(.black)
-                                }
-                                .frame(height: 50)
-                        })
-                        .opacity(haveNutritionist ? 0.5 : 1.0)
-                    }
+                    Button(action: {
+                        haveNutritionist = false
+                        print("nao tem Nutricionista")
+                    }, label: {
+                        Capsule()
+                            .foregroundStyle(.green.opacity(0.4))
+                            .overlay {
+                                Text("Nao")
+                                    .tint(.black)
+                            }
+                            .frame(height: 50)
+                    })
+                    .opacity(haveNutritionist ? 0.5 : 1.0)
                 }
                 
-                Group {
-                    QuestionTextComponent(QuestionLabel: "Qual é a sua meta?")
+                
+                
+                QuestionTextComponent(QuestionLabel: "Qual é a sua meta?")
                 TextFieldRectangleComponent(placeholder: "1800cal", text: $meta)
                     .keyboardType(.numberPad)
-                }
+                
                 
                 
                 Spacer()
