@@ -16,6 +16,7 @@ class RecentMealsViewModel: ObservableObject {
     }
     
     func setCurrentMeal(_ meal: Meal) {
+        print("Definindo a refeição atual para: \(meal)")
         currentMeal = meal
     }
     

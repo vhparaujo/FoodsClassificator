@@ -26,12 +26,12 @@ struct HeaderMealView: View {
                 .padding()
             
             if isExpanded {
-                CircularProgressBar()
+                CircularProgressBar(meal: meal)
                     .padding(.top, -screenWidth * 0.06)
             } else {
                 ProgressBar(value: Double(meal.totalCalories / 2000))
                 
-                Text("\(meal.totalCalories) \(HomeTexts.caloriasMinusculo)")
+                Text("\(meal.totalCalories) calorias")
                     .font(.headline)
                     .frame(maxWidth: .infinity, alignment: .center)
                     .foregroundStyle(.white)
