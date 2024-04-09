@@ -12,8 +12,7 @@ struct FormsPage3: View {
     
     @Bindable private var viewModel = PerfilViewModel()
     
-    @State private var gender = 0
-    let genders = ["Female", "Male"]
+    
     
     var body: some View {
         VStack {
@@ -22,19 +21,20 @@ struct FormsPage3: View {
             QuestionTextComponent(QuestionLabel: "Qual o seu sexo biológico?")
             
             HStack{
-                ForEach(viewModel.sexos, id: \.self) { index in
+                ForEach(viewModel.sexos, id: \.self) { sexo in
                     Button(action: {
-                        viewModel.model.sexoBiologico = index
+                        viewModel.model.sexoBiologico = sexo
                         print(viewModel.model.sexoBiologico)
                         
                     }) {
                         Capsule()
                             .foregroundStyle(.green.opacity(0.4))
                             .overlay {
-                                Text(viewModel.model.sexoBiologico)                      .tint(.black)
+                                Text(sexo)
+                                    .foregroundStyle(.black)
                             }
                             .frame(height: 50)
-                            .opacity(viewModel.model.sexoBiologico == index ? 1.0 : 0.5)
+                            .opacity(viewModel.model.sexoBiologico == sexo ? 1.0 : 0.5)
                     }
                 }
             }
@@ -54,7 +54,6 @@ struct FormsPage3: View {
         .onAppear{
             viewModel.modelContext = context
         }
-        .environment(PerfilViewModel())
     }
 }
 

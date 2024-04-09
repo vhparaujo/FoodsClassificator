@@ -25,20 +25,14 @@ struct HomeView: View {
                 .environment(footerHomeViewModel)
                 .background(
                     Image("backgroundHome")
-                    .resizable()
-                    .scaledToFill()
+                        .resizable()
+                        .scaledToFill()
                 )
-            NavigationLink(destination: FormsPage1()
-                .environment(PerfilViewModel())
-) {
-                NextButtonLabel(nextButtonLabel: "Próximo")
-            }
-
         }
         .navigationBarBackButtonHidden()
     }
 }
 
-#Preview {
-        HomeView()
-}
+//#Preview {
+//        HomeView()
+//}

@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct FormsPage5: View {
+    @Environment(\.modelContext) private var context
+    
+    @Bindable private var viewModel = PerfilViewModel()
     @State private var refeicao = 0
     let refeicoes:[String] = ["Café da manhã", "Lanche da manhã", "Almoço", "Lanche da tarde", "Jantar"]
     
     
     var body: some View {
-        NavigationStack {
             VStack {
                 Group {
                     FormProgressBar(percent: .constant(0.80))
@@ -59,7 +61,9 @@ struct FormsPage5: View {
                 }
             }
             .padding()
-        }
+            .onAppear{
+                viewModel.modelContext = context
+            }
     }
 }
 

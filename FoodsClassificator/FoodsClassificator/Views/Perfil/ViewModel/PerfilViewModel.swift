@@ -28,7 +28,7 @@ import Foundation
     
     let refeicoesFixas: [String] = ["Café da manhã", "Almoço", "Jantar"]
     
-    let frequencias: [Int] = [1, 2, 3, 4, 5]
+    let intensidades: [String] = ["Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"]
     
     var textFieldName = ""
     

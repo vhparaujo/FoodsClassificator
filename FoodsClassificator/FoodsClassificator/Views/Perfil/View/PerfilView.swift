@@ -188,10 +188,10 @@ struct PerfilView: View {
                     
                     if canEditFunc() == true {
                         
-                        Picker(selection: $viewModel.model.frequenciaExercicio) {
-                            ForEach(viewModel.frequencias, id: \.self) { frequencia in
-                                Text("\(frequencia)x")
-                                    .tag(frequencia)
+                        Picker(selection: $viewModel.model.intensidadeDoExercicio) {
+                            ForEach(viewModel.intensidades, id: \.self) { intensidade in
+                                Text("\(intensidade)x")
+                                    .tag(intensidade)
                             }
                         } label: {
                             Text("Frequência de exercício")
@@ -201,7 +201,7 @@ struct PerfilView: View {
                         HStack {
                             Text("Frequência de exercício")
                             Spacer()
-                            Text("\(viewModel.model.frequenciaExercicio)x")
+                            Text("\(viewModel.model.intensidadeDoExercicio)x")
                                 .foregroundStyle(.tertiary)
                         }
                     }

@@ -19,7 +19,7 @@ struct PerfilTexts {
     
     static let objetivo = String(localized: "objetivo")
     
-    static let frequencia = String(localized: "frequencia")
+    static let intensidade = String(localized: "intensidade")
     
     static let cafeDaManha = String(localized: "cafeDaManha")
     

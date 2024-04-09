@@ -11,14 +11,15 @@ import SwiftData
 @main
 struct FoodsClassificatorApp: App {
     let modelcontent: ModelContainer = .appContainer
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
+
                 FormsPage1()
                     .preferredColorScheme(.light)
-                    .environment(PerfilViewModel())
-                //                HomeView()
             }
+            .environment(PerfilViewModel())
         }.modelContainer(modelcontent)
     }
 }

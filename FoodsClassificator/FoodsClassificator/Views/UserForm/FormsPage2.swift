@@ -53,10 +53,10 @@ struct FormsPage2: View {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
         }
+        .padding()
         .onAppear{
             viewModel.modelContext = context
         }
-        .environment(PerfilViewModel())
     }
 }
 

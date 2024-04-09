@@ -8,75 +8,71 @@
 import SwiftUI
 
 struct FormsPage4: View {
-    @State private var objective = 0
-    let objectives:[String] = ["Perder Peso", "Manter Peso", "Ganhar Peso", "Ganhar massa muscular", "Ter uma Alimentação Balanceada"]
+    @Environment(\.modelContext) private var context
+    
+    @Bindable private var viewModel = PerfilViewModel()
+    
     @State private var activity = 0
-    let activityLevels = ["1x", "2x", "3x", "4x", "5x", "6x", "7x"]
+    let activityLevels = ["Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"]
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                Group {
-                    FormProgressBar(percent: .constant(0.64))
-                }
+        VStack {
+            ScrollView {
+                FormProgressBar(percent: .constant(0.64))
                 
-                Group {
-                    QuestionTextComponent(QuestionLabel: "Qual é o seu principal objetivo?")
-                }
+                QuestionTextComponent(QuestionLabel: "Qual é o seu principal objetivo?")
                 
-                Group {
-                    VStack{
-                        ForEach(0..<objectives.count, id: \.self) { index in
-                            Button(action: {
-                                self.objective = index
-                                print(objectives[index])
-                                print(objective)
-                            }) {
-                                Capsule()
-                                    .foregroundStyle(.green.opacity(0.4))
-                                    .overlay {
-                                        Text(objectives[index])                         .tint(.black)
-                                    }
-                                    .frame(height: 50)
-                                    .opacity(objective == index ? 1.0 : 0.5)
-                            }
+                VStack{
+                    ForEach(viewModel.objetivos, id: \.self) { objetivo in
+                        Button(action: {
+                            viewModel.model.objetivo = objetivo
+                            print(viewModel.model.objetivo)
+                        }) {
+                            RoundedRectangle(cornerRadius: 15)
+                                .foregroundStyle(.green.opacity(0.4))
+                                .overlay {
+                                    Text(objetivo)
+                                        .tint(.black)
+                                }
+                                .frame(height: 50)
+                                .opacity(viewModel.model.objetivo == objetivo ? 1.0 : 0.5)
                         }
                     }
-                }
+                }.padding(.bottom)
                 
-                Spacer()
                 
-                Group {
-                    QuestionTextComponent(QuestionLabel: "Quantas vezes na semana você pratica exercício físico?")
-                    HStack(spacing: 10){
-                        ForEach(0..<activityLevels.count, id: \.self) { index in
-                            Button(action: {
-                                self.activity = index
-                                print(activityLevels[index])
-                                print(activity)
-                            }) {
-                                RoundedRectangle(cornerRadius: 15)
-                                    .foregroundStyle(.green.opacity(0.4))
-                                    .overlay {
-                                        Text(activityLevels[index])                         .tint(.black)
-                                    }
-                                    .frame(height: 50)
-                                    .opacity(activity == index ? 1.0 : 0.5)
-                            }
+                
+                QuestionTextComponent(QuestionLabel: "Quantas vezes na semana você pratica exercício físico?")
+                VStack(spacing: 10){
+                    ForEach(viewModel.intensidades, id: \.self) { intensidade in
+                        Button(action: {
+                            viewModel.model.intensidadeDoExercicio = intensidade
+                            print(viewModel.model.intensidadeDoExercicio)
+                        }) {
+                            RoundedRectangle(cornerRadius: 15)
+                                .foregroundStyle(.green.opacity(0.4))
+                                .overlay {
+                                    Text(intensidade)
+                                        .foregroundStyle(.black)
+                                }
+                                .frame(height: 50)
+                                .opacity(viewModel.model.intensidadeDoExercicio == intensidade ? 1.0 : 0.5)
                         }
                     }
                 }
                 
                 
-                            
                 Spacer()
                 
                 // NavigationLink para a próxima página do questionário
-                NavigationLink(destination: FormsPage5()) {
-                    NextButtonLabel(nextButtonLabel: "Próximo")
-                }
             }
-            .padding()
+            NavigationLink(destination: FormsPage5()) {
+                NextButtonLabel(nextButtonLabel: "Próximo")
+            }
+        }
+        .padding()
+        .onAppear{
+            viewModel.modelContext = context
         }
     }
 }
