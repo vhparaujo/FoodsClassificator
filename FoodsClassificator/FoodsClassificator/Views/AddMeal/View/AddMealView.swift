@@ -13,13 +13,15 @@ struct AddMealView: View {
     @State var recentMealsViewModel: RecentMealsViewModel
     
     var title: String
+    var onCreateMeal: (Meal) -> Void
     
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
-    init(recentMealsViewModel: RecentMealsViewModel, title: String) {
+    init(recentMealsViewModel: RecentMealsViewModel, title: String, onCreateMeal: @escaping (Meal) -> Void) {
         self.recentMealsViewModel = recentMealsViewModel
         self.title = title
+        self.onCreateMeal = onCreateMeal
     }
     
     var body: some View {
@@ -70,10 +72,7 @@ struct AddMealView: View {
                                     return 0.0
                                 }
                                 
-                                // Substituindo vírgula por ponto para conversão correta em localidades que usam vírgula como separador decimal
-                                let valorFormatado = detalhe.valor.replacingOccurrences(of: ",", with: ".")
-                                
-                                guard let valor = Double(valorFormatado) else {
+                                guard let valor = Double(detalhe.valor) else {
                                     print("Não foi possível converter o valor do componente \(componente): \(detalhe.valor)")
                                     return 0.0
                                 }
@@ -109,6 +108,20 @@ struct AddMealView: View {
                                 recentMealsViewModel.setCurrentMeal(newMeal)
                                 print("Nova refeição criada a partir do alimento selecionado: \(newMeal)")
                             }
+                        }
+                        
+                        if recentMealsViewModel.currentMeal != nil {
+                            Button {
+                                onCreateMeal(recentMealsViewModel.currentMeal!)
+                            } label: {
+                                Text("Criar refeição")
+                                    .foregroundColor(.white)
+                                    .font(.headline)
+                            }
+                            .frame(width: screenWidth * 0.56, height: screenHeight * 0.05)
+                            .background(Color.verdeFundo)
+                            .cornerRadius(28)
+                            .padding(.bottom, screenHeight * 0.04)
                         }
                     }
                     
@@ -156,7 +169,7 @@ struct AddMealView_Previews: PreviewProvider {
         viewModel.addMealToRecent(Meal(mealName: "Café da Manhã", image: "breakfast", totalCalories: 350, macros: Macronutrients(fats: 20, fibers: 20, carbohydrates: 20, proteins: 20), foodDetails: [:]))
         viewModel.setCurrentMeal(viewModel.recentMeals[0])
         
-        return AddMealView(recentMealsViewModel: viewModel, title: "Café da Manhã")
+        return AddMealView(recentMealsViewModel: viewModel, title: "Café da Manhã", onCreateMeal: { _ in print("") })
     }
 }
 

@@ -24,14 +24,15 @@ struct FoodItemCell: View {
                 image
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 60, height: 60)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .frame(width: screenWidth * 0.2, height: screenWidth * 0.2)
+                    .clipShape(RoundedRectangle(cornerRadius: 2))
                     .padding(.leading, 10)
             }
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
-                    .font(.title2)
+                    .font(.title3)
+                    .fontWeight(.medium)
                 Text(weight)
                     .font(.subheadline)
                 Text(calories)
@@ -46,6 +47,7 @@ struct FoodItemCell: View {
                     .resizable()
                     .frame(width: screenWidth * 0.1, height: screenWidth * 0.1)
                     .foregroundColor(.black)
+                    .fontWeight(.thin)
             }
             .padding(.trailing, 20)
         }
@@ -60,7 +62,7 @@ struct FoodItemCell_Previews: PreviewProvider {
         Group {
             FoodItemCell(
                 showImage: true,
-                image: Image(systemName: "photo"), // Usando um ícone de sistema para o exemplo de preview
+                image: Image("BatataFrita"), // Usando um ícone de sistema para o exemplo de preview
                 title: "Batata frita",
                 weight: "100 gramas",
                 calories: "300 Cal",

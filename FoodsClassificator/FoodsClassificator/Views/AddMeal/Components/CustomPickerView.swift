@@ -79,10 +79,3 @@ struct CustomPickerView: View {
         .padding()
     }
 }
-
-
-//struct CustomPickerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CustomPickerView()
-//    }
-//}
