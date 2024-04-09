@@ -40,6 +40,7 @@ struct CalculoCaloriasOnBoarding: View {
                             Text(self.activityLevels[$0])
                         }
                     }
+                    .pickerStyle(.wheel)
                 }
                 
                 Section(header: Text("Calories Needed Per Day")) {

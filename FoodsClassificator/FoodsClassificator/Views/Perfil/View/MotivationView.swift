@@ -9,56 +9,61 @@ import SwiftUI
 
 struct MotivationView: View {
     
-    @State private var viewModel = PerfilViewModel()
+    @Bindable private var viewModel = PerfilViewModel()
+    @Environment(\.modelContext) private var context
     
     var body: some View {
         
         VStack {
             
-            VStack {
-                
-                PerfilImageViewComponent(userPhoto: viewModel.userPhoto)
-                
-                NavigationLink {
-                    PerfilView()
-                } label: {
+            NavigationLink {
+                PerfilView()
+            } label: {
+                VStack {
+                    
+                    PerfilImageViewComponent(userPhoto: $viewModel.model.userPhoto)
+                        .frame(width: 80, height: 80)
+                    
                     HStack {
                         Image(systemName: "person.fill")
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.verdeTitle)
                         Text("Dados Pessoais")
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.verdeTitle)
                             .font(.callout)
                     }
-                }
-
-            }.frame(maxWidth: .infinity)
-                .background(Color.laranjaFundoHome)
+                }.frame(maxWidth: .infinity)
+            }
             
             ScrollView {
                 ModalTitles(title: "Ofensiva")
                     .padding(.top)
                 
-                StreakComponentView(dias: viewModel.streak)
+                StreakComponentView(dias: $viewModel.model.streak)
                 
                 ModalTitles(title: "Desafios")
                     .padding(.top)
                 
                 ForEach(0..<4) {_ in
-                    DropDownComponentView(alimento: viewModel.alimento, dias: viewModel.dias)
+                    DropDownComponentView(alimento: "chocolate", streak: viewModel.model.streak)
                 }
-                
+
                 ModalTitles(title: "Conquistas")
                     .padding(.top)
                 
                 DropDownComponentView()
-            }.background(.white)
+            }
+            .background(.white)
             
         }
-        .background(Color.laranjaFundoHome)
+        .background(Color.verdeFundo)
+        
+        .onAppear(perform: {
+            viewModel.modelContext = context
+        })
         
     }
 }
 
-#Preview {
-    MotivationView()
-}
+//#Preview {
+//    MotivationView()
+//}

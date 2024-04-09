@@ -58,7 +58,7 @@ struct RecentMealsView: View {
                                     .font(.title2)
                             }
                             .frame(width: screenWidth * 0.94, height: screenHeight * 0.08)
-                            .background(Color.laranjaFundoHome)
+                            .background(Color.verdeFundo)
                             .cornerRadius(20)
                             .padding(.top, -screenWidth * 0.01)
                         }
@@ -123,7 +123,7 @@ struct RecentMealsView: View {
                                 .font(.headline)
                         }
                         .frame(width: screenWidth * 0.56, height: screenHeight * 0.05)
-                        .background(Color.laranjaFundoHome)
+                        .background(Color.verdeFundo)
                         .cornerRadius(28)
                         .padding(.bottom, screenHeight * 0.04)
                     }

@@ -18,7 +18,7 @@ struct MacrosComponentHomeView: View {
         VStack {
             Text(macroType)
                 .font(.footnote)
-                .foregroundStyle(.white)
+                .foregroundStyle(.verdeTitle)
                 .lineLimit(1)
                 
             Text("\(viewModel.macrosValue)")
@@ -26,13 +26,14 @@ struct MacrosComponentHomeView: View {
                 .font(.subheadline)
                 .lineLimit(1)
                 .minimumScaleFactor(0.75)
-                .frame(width: 75, height: 35)
-                .background(backgroundColor)
+                .padding(.horizontal, 25)
+                .padding(.vertical, 8)
+                .background(RoundedRectangle(cornerRadius: 17, style: .continuous).foregroundStyle(backgroundColor))
                 .overlay (
                     RoundedRectangle(cornerRadius: 17)
-                        .stroke(Color.white, lineWidth: 3.5)
+                        .stroke(Color.white, lineWidth: 2)
                 )
-                .clipShape(RoundedRectangle(cornerRadius: 17))
+                
                
         }
     }

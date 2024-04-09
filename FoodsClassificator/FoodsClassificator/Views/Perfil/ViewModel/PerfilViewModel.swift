@@ -5,74 +5,51 @@
 //  Created by Victor Hugo Pacheco Araujo on 27/03/24.
 //
 
+import SwiftData
 import Foundation
-import CoreData
 
 @Observable class PerfilViewModel {
     
-    var userName: String = "Olá, Fulano!"
-    var userPhoto: String = "labelImage"
+    var model = PerfilModel()
     
-    // variaveis do modal motivacional
-    var alimento: String = "Chocolate"
-    var dias: Int = 21
-    var streak: Int = 3
+    var modelContext: ModelContext? {
+        didSet {
+            fetchData()
+        }
+    }
     
-}
-
-class RefeicaoCoreDataViewModel: ObservableObject {
-    let container: NSPersistentContainer
+    var variacaoDaIdade = stride(from: 0, through: 120, by: 1).map { $0 }
+    var variacaoDoPeso = stride(from: 0, through: 1000, by: 1).map { $0 }
+    var variacaoDaAltura = stride(from: 0, through: 250, by: 1).map { $0 }
     
-    @Published var refeicoes: [Refeicao] = []
+    let sexos: [String] = ["Masculino", "Feminino"]
     
-    init() {
-        container = NSPersistentContainer(name: "Database")
-        container.loadPersistentStores { (description, error) in
-            if let error = error {
-                print("Error \(error)")
+    let objetivos: [String] = ["Perder peso", "Manter peso", "Ganhar peso", "Ganhar massa muscular", "Ter uma alimentação balanceada"]
+    
+    let refeicoesFixas: [String] = ["Café da manhã", "Almoço", "Jantar"]
+    
+    let frequencias: [Int] = [1, 2, 3, 4, 5]
+    
+    var textFieldName = ""
+    
+    func fetchData() {
+        
+        guard let modelContext = self.modelContext else { return }
+        
+        do {
+            
+            let descriptor = FetchDescriptor<PerfilModel>()
+            
+            if let fetchedModel = try modelContext.fetch(descriptor).first {
+                model = fetchedModel
             } else {
-                print("Successfully")
+                fatalError("No data fetched")
             }
-        }
-        
-        fetchRefeicoes()
-        
-    }
-    
-    func fetchRefeicoes() {
-        let request = NSFetchRequest<Refeicao>(entityName: "Refeicao")
-        
-        do {
-            refeicoes = try container.viewContext.fetch(request)
-        } catch let error {
-            print(error.localizedDescription)
-        }
-    }
-    
-    func saveRefeicao(nome: String) {
-        let newRefeicao = Refeicao(context: container.viewContext)
-        newRefeicao.nome = nome
-        
-        do {
-            try container.viewContext.save()
-            fetchRefeicoes()
+       
         } catch {
-            print("Nao salvou \(error)")
-        }
-    }
-    
-    func deleteRefeicao(at indexSet: IndexSet) {
-        indexSet.forEach { index in
-            let refeicao = refeicoes[index]
-            container.viewContext.delete(refeicao)
+            fatalError("Fetch failed: \(error.localizedDescription)")
         }
         
-        do {
-            try container.viewContext.save()
-            fetchRefeicoes()
-        } catch {
-            print("Nao deletou \(error)")
-        }
     }
     
 }

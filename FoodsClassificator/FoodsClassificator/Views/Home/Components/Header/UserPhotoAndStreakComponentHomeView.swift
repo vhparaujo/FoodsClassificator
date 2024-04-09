@@ -11,6 +11,10 @@ struct UserPhotoAndStreakComponentHomeView: View {
     
     @Environment(HomeViewModel.self) var viewModel: HomeViewModel
     
+    @Bindable private var perfilViewModel = PerfilViewModel()
+    
+    @Environment(\.modelContext) private var context
+    
     var body: some View {
         
         NavigationLink {
@@ -23,8 +27,9 @@ struct UserPhotoAndStreakComponentHomeView: View {
                 Text("\(viewModel.streakNumber)")
                     .font(.callout)
                     .bold()
-                    .foregroundStyle(Color.white)
+                    .foregroundStyle(Color.verdeTitle)
                 Image("fireSymbolHome")
+                    .foregroundStyle(.black)
                 
                 Spacer()
             }
@@ -33,28 +38,16 @@ struct UserPhotoAndStreakComponentHomeView: View {
             .background(Color.clear)
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.laranjaMacros, lineWidth: 1)
+                    .stroke(Color.verdeTitle, lineWidth: 1)
             )
 
-           
-                Circle()
-                    .overlay {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .scaledToFit()
-                            .foregroundStyle(.gray)
-                            .clipShape(Circle()
-                            )
-            
-                    }
+            PerfilImageViewComponent(userPhoto: $perfilViewModel.model.userPhoto)
                     .frame(width: 45, height: 45)
-                    .overlay {
-                        Circle()
-                            .stroke(lineWidth: 2)
-                            .foregroundStyle(.white)
-                    }
                     .offset(x: 35)
             }
+        .onAppear(perform: {
+            perfilViewModel.modelContext = context
+        })
             
         }
         

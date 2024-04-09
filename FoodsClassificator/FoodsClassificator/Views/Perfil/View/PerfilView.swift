@@ -6,57 +6,49 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct PerfilView: View {
     
-    @StateObject var refeicaoViewModel = RefeicaoCoreDataViewModel()
+    @Bindable private var viewModel = PerfilViewModel()
     
-    var viewModel = PerfilViewModel()
+    @Environment(\.editMode) private var editMode
+    @Environment(\.modelContext) private var context
     
     @State private var showIdadePopover: Bool = false
     @State private var showPesoPopover: Bool = false
     @State private var showAlturaPopover: Bool = false
-    
-    @State var textFieldName = ""
-    
-    @State var idadeSelecionada = 0
-    @State var variacaoDaIdade = stride(from: 0, through: 120, by: 1).map { $0 }
-    
-    @State var pesoSelecionado = 0
-    @State var variacaoDoPeso = stride(from: 0, through: 1000, by: 1).map { $0 }
-    
-    @State var alturaSelecionada = 0
-    @State var variacaoDaAltura = stride(from: 0, through: 250, by: 1).map { $0 }
-    
-    @AppStorage("userName") var userName: String = ""
-    @AppStorage("userPhoto") var userPhoto: String = ""
-    
-    @AppStorage("idade") var idade: Int = 0
-    @AppStorage("peso") var peso: Int = 0
-    @AppStorage("altura") var altura: Int = 0
-    @AppStorage("sexoBiologico") var sexoBiologico: String = ""
-    @AppStorage("objetivo") var objetivo: String = ""
-    @AppStorage("frequenciaExercicio") var frequenciaExercicio: Int = 0
-    
-    let sexos: [String] = ["Masculino", "Feminino"]
-    @AppStorage("sexoSelecionado") var sexoSelecionado: String = ""
-    
-    let objetivos: [String] = ["Perder peso", "Manter peso", "Ganhar peso", "Ganhar massa muscular", "Ter uma alimentação balanceada"]
-    @AppStorage("objetivoSelecionado") var objetivoSelecionado: String = ""
-    
-    let frequencias: [Int] = [1, 2, 3, 4, 5]
-    @AppStorage("frequenciaSelecionada") var frequenciaSelecionada: Int = 1
-    
-    @State private var refeicoes = ["Café da manhã", "Almoço", "Jantar"]
+        
     var body: some View {
         
         VStack {
             
-            PerfilImageViewComponent(userPhoto: viewModel.userPhoto)
-            UserNameComponentPerfilView(userName: viewModel.userName)
-            
-            Form {
+            if canEditFunc() == true {
                 
+                PerfilImagePickerViewComponent(viewModel: viewModel)
+                    .frame(width: 100, height: 100)
+                
+                UserNameComponentPerfilView(userName: $viewModel.model.userName)
+                
+            } else {
+                
+                PerfilImageViewComponent(userPhoto: $viewModel.model.userPhoto)
+                    .frame(width: 100, height: 100)
+                
+                HStack(alignment: .center) {
+                    if viewModel.model.userName == "" {
+                        Text("Olá")
+                            .font(.title)
+                            .foregroundStyle(.verdeTitle)
+                    } else {
+                        Text("Olá, \(viewModel.model.userName)!")
+                            .font(.title)
+                            .foregroundStyle(.verdeTitle)
+                    }
+                }
+            }
+            
+            List {
                 Section {
                     
                     Button {
@@ -66,21 +58,23 @@ struct PerfilView: View {
                         HStack {
                             Text("Idade")
                             Spacer()
-                            Text("\(idade)")
-                                .foregroundStyle(.secondary)
+                            Text("\(viewModel.model.idade)")
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
+                                .imageScale(.small)
                         }.foregroundStyle(.black)
                         
-                    }.popover(isPresented: $showIdadePopover) {
+                    }
+                    .disabled(!canEditFunc())
+                    .popover(isPresented: $showIdadePopover) {
                         HStack {
-                            Picker("", selection: $idadeSelecionada) {
-                                ForEach(0..<variacaoDaIdade.count, id: \.self) { index in
-                                    Text("\(variacaoDaIdade[index])")
+                            Picker("", selection: $viewModel.model.idade) {
+                                ForEach(0..<viewModel.variacaoDaIdade.count, id: \.self) {
+                                    Text("\(viewModel.variacaoDaIdade[$0])").tag(viewModel.variacaoDaIdade[$0])
                                 }
                             }
                             .pickerStyle(.wheel)
-                            .onChange(of: idadeSelecionada) { _, newValue in
-                                idade = variacaoDaIdade[newValue]
-                            }
                         }
                         .frame(maxWidth: 150, maxHeight: 120)
                         .presentationCompactAdaptation(.popover)
@@ -93,21 +87,23 @@ struct PerfilView: View {
                         HStack {
                             Text("Peso")
                             Spacer()
-                            Text("\(peso) kg")
-                                .foregroundStyle(.secondary)
+                            Text("\(viewModel.model.peso) kg")
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
+                                .imageScale(.small)
                         }.foregroundStyle(.black)
                         
-                    }.popover(isPresented: $showPesoPopover) {
+                    }
+                    .disabled(!canEditFunc())
+                    .popover(isPresented: $showPesoPopover) {
                         HStack {
-                            Picker("", selection: $pesoSelecionado) {
-                                ForEach(0..<variacaoDoPeso.count) {
-                                    Text("\(variacaoDoPeso[$0]) kg")
+                            Picker("", selection: $viewModel.model.peso) {
+                                ForEach(0..<viewModel.variacaoDoPeso.count, id: \.self) {
+                                    Text("\(viewModel.variacaoDoPeso[$0]) kg").tag(viewModel.variacaoDoPeso[$0])
                                 }
                             }
                             .pickerStyle(.wheel)
-                            .onChange(of: pesoSelecionado) { _, newValue in
-                                peso = variacaoDoPeso[newValue]
-                            }
                         }
                         .frame(maxWidth: 150, maxHeight: 120)
                         .presentationCompactAdaptation(.popover)
@@ -120,87 +116,120 @@ struct PerfilView: View {
                         HStack {
                             Text("Altura")
                             Spacer()
-                            Text("\(altura) cm")
-                                .foregroundStyle(.secondary)
+                            Text("\(viewModel.model.altura) cm")
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
+                            Image(systemName: "chevron.right")
+                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
+                                .imageScale(.small)
                         }.foregroundStyle(.black)
                         
-                    }.popover(isPresented: $showAlturaPopover) {
+                    }
+                    .disabled(!canEditFunc())
+                    .popover(isPresented: $showAlturaPopover) {
                         HStack {
                             
-                            Picker("", selection: $alturaSelecionada) {
-                                ForEach(0..<variacaoDaAltura.count) {
-                                    Text("\(variacaoDaAltura[$0]) cm")
+                            Picker("", selection: $viewModel.model.altura) {
+                                ForEach(0..<viewModel.variacaoDaAltura.count, id: \.self) {
+                                    Text("\(viewModel.variacaoDaAltura[$0]) cm").tag(viewModel.variacaoDaAltura[$0])
                                 }
                             }
                             .pickerStyle(.wheel)
-                            .onChange(of: alturaSelecionada) { _, newValue in
-                                altura = variacaoDaAltura[newValue]
-                            }
                         }
                         .frame(maxWidth: 150, maxHeight: 120)
                         .presentationCompactAdaptation(.popover)
                     }
                     
-                    Picker(selection: $sexoSelecionado) {
-                        ForEach(sexos, id: \.self) { sexo in
-                            Text(sexo).tag(sexo)
+                    if canEditFunc() == true {
+                        
+                        Picker(selection: $viewModel.model.sexoBiologico) {
+                            ForEach(viewModel.sexos, id: \.self) { sexo in
+                                Text(sexo).tag(sexo)
+                            }
+                        } label: {
+                            Text("Sexo Biológico")
                         }
-                    } label: {
-                        Text("Sexo Biológico")
-                    }.onChange(of: sexoSelecionado) { _, newValue in
-                        sexoBiologico = newValue
+                        .disabled(!canEditFunc())
+                        
+                    } else {
+                        HStack {
+                            Text("Sexo Biológico")
+                            Spacer()
+                            Text("\(viewModel.model.sexoBiologico)")
+                                .foregroundStyle(.tertiary)
+                            Image(systemName: "chevron.up.chevron.down")
+                                .foregroundStyle(.tertiary)
+                        }
                     }
                     
                 }
                 
                 Section {
                     
-                    Picker(selection: $objetivoSelecionado) {
-                        ForEach(objetivos, id: \.self) { objetivo in
-                            Text(objetivo).tag(objetivo)
+                    if canEditFunc() == true {
+                        
+                        Picker(selection: $viewModel.model.objetivo) {
+                            ForEach(viewModel.objetivos, id: \.self) { objetivo in
+                                Text(objetivo).tag(objetivo)
+                            }
+                        } label: {
+                            Text("Objetivo")
                         }
-                    } label: {
-                        Text("Objetivo")
-                    }
-                    .onChange(of: objetivoSelecionado) { _, newValue in
-                        objetivo = newValue
+                        
+                    } else {
+                        HStack {
+                            Text("Objetivo")
+                            Spacer()
+                            Text("\(viewModel.model.objetivo)")
+                                .foregroundStyle(.tertiary)
+                            Image(systemName: "chevron.up.chevron.down")
+                                .foregroundStyle(.tertiary)
+                        }
                     }
                     
-                    Picker(selection: $frequenciaSelecionada) {
-                        ForEach(frequencias, id: \.self) { frequencia in
-                            Text("\(frequencia)x").tag(frequencia)
+                    if canEditFunc() == true {
+                        
+                        Picker(selection: $viewModel.model.frequenciaExercicio) {
+                            ForEach(viewModel.frequencias, id: \.self) { frequencia in
+                                Text("\(frequencia)x")
+                                    .tag(frequencia)
+                            }
+                        } label: {
+                            Text("Frequência de exercício")
                         }
-                    } label: {
-                        Text("Frequência de exercício")
-                    }
-                    .onChange(of: frequenciaSelecionada) { _, newValue in
-                        frequenciaExercicio = newValue
+                        
+                    } else {
+                        HStack {
+                            Text("Frequência de exercício")
+                            Spacer()
+                            Text("\(viewModel.model.frequenciaExercicio)x")
+                                .foregroundStyle(.tertiary)
+                        }
                     }
                     
                 }
                 
                 Section {
                     
-                    ForEach(refeicoes, id: \.self) { refeicao in
-                        Text(refeicao)
-                    }.onMove(perform: move)
-                    
-                    ForEach(refeicaoViewModel.refeicoes) { refeicao in
-                        Text(refeicao.nome ?? "")
+                    ForEach(viewModel.refeicoesFixas, id: \.self) { refeicao in
+                        Text(refeicao).tag(refeicao)
                     }
+                    
+                    ForEach(viewModel.model.refeicoes.indices, id: \.self) { index in
+                        TextField("", text: $viewModel.model.refeicoes[index]).tag(viewModel.model.refeicoes[index])
+                    }
+                    .onMove(perform: move)
                     .onDelete(perform: delete)
-                    .onMove(perform: moveNew)
                     
-                    TextField("Nome da refeição", text: $textFieldName)
+                    TextField("Nome da refeição", text: $viewModel.textFieldName)
                         .onSubmit {
-                            guard !textFieldName.isEmpty else { return }
-                            refeicaoViewModel.saveRefeicao(nome: textFieldName)
-                            textFieldName = ""
+                            viewModel.model.refeicoes.append(viewModel.textFieldName)
+                            viewModel.textFieldName = ""
                         }
+                        .disabled(!canEditFunc())
                     
                 }
-               
-            }.background(Color.laranjaFundoHome)
+                
+            }.background(Color.verdeFundo)
             // permite colocar um background color na list
                 .scrollContentBackground(.hidden)
             
@@ -208,24 +237,28 @@ struct PerfilView: View {
                     EditButton()
                 }
             
-        }.background(Color.laranjaFundoHome)
+        }.background(Color.verdeFundo)
+        
+            .onAppear(perform: {
+                viewModel.modelContext = context
+            })
         
     }
     
     func delete(at offsets: IndexSet) {
-        refeicaoViewModel.deleteRefeicao(at: offsets)
+        viewModel.model.refeicoes.remove(atOffsets: offsets)
     }
     
     func move(from source: IndexSet, to destination: Int) {
-        refeicoes.move(fromOffsets: source, toOffset: destination)
+        viewModel.model.refeicoes.move(fromOffsets: source, toOffset: destination)
     }
     
-    func moveNew(from source: IndexSet, to destination: Int) {
-        refeicaoViewModel.refeicoes.move(fromOffsets: source, toOffset: destination)
+    func canEditFunc() -> Bool {
+        if editMode?.wrappedValue.isEditing == true {
+            return true
+        } else {
+            return false
+        }
     }
     
-}
-
-#Preview {
-    PerfilView()
 }
