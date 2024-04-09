@@ -50,12 +50,6 @@ struct PerfilImagePickerViewComponent: View {
                 }
                 
             }
-//            .task(id: photosPickerItem){
-//                if let data = try? await photosPickerItem?.loadTransferable(type: Data.self) {
-//                        userPhoto = data
-//                }
-//                photosPickerItem = nil
-//            }
             
     }
 }

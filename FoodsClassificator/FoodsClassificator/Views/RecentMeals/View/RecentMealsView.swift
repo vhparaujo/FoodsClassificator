@@ -17,11 +17,11 @@ struct RecentMealsView: View {
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
+    
     init(title: String, onAddMeal: @escaping () -> Void) {
         self.title = title
         self.onAddMeal = onAddMeal
     }
-    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) {
@@ -44,7 +44,11 @@ struct RecentMealsView: View {
                         .frame(maxWidth: .infinity, alignment: .center)
                     
                     if viewModel.currentMeal == nil {
-                        Button(action: onAddMeal) {
+                        NavigationLink {
+                            AddMealView(recentMealsViewModel: viewModel, title: self.title, onCreateMeal: { meal in
+                                viewModel.addMealToRecent(meal)
+                            })
+                        } label: {
                             HStack {
                                 Image(systemName: "plus")
                                     .foregroundColor(.white)
@@ -58,7 +62,7 @@ struct RecentMealsView: View {
                             .frame(width: screenWidth * 0.94, height: screenHeight * 0.08)
                             .background(Color.verdeFundo)
                             .cornerRadius(20)
-                            .padding(.top, -screenWidth * 0.01 )
+                            .padding(.top, -screenWidth * 0.01)
                         }
                     }
                     
@@ -149,12 +153,12 @@ struct RecentMealsView: View {
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarTitleDisplayMode(.inline)
         }
-        .onAppear {
-            if viewModel.recentMeals.isEmpty {
-                let cafe1 = Meal(mealName: "Cafe 1", image: "", totalCalories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30), foodDetails: ["arroz":FoodDetail(calories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30))])
-                viewModel.addMealToRecent(cafe1)
-            }
-        }
+//        .onAppear {
+//            if viewModel.recentMeals.isEmpty {
+//                let cafe1 = Meal(mealName: "Cafe 1", image: "", totalCalories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30), foodDetails: ["arroz":FoodDetail(calories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30))])
+//                viewModel.addMealToRecent(cafe1)
+//            }
+//        }
     }
 }
 

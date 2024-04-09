@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CircularProgressBar: View {
+    var meal: Meal
     var progressBarValue: Double = 0.7
     var maxProgressBarValue: Double = 0.88
     var initialProgressBarValue: Double = 0.12
@@ -43,7 +44,7 @@ struct CircularProgressBar: View {
                 .foregroundStyle(.white)
             
             VStack {
-                Text("\(10)")
+                Text("\(meal.totalCalories)")
                     .font(.title)
                     .foregroundStyle(.white)
                     .bold()
@@ -65,9 +66,9 @@ struct CircularProgressBar: View {
     }
 }
 
-#Preview {
-    CircularProgressBar()
-}
+//#Preview {
+//    CircularProgressBar()
+//}
 
 
 

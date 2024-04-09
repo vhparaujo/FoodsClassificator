@@ -64,6 +64,6 @@ struct MotivationView: View {
     }
 }
 
-#Preview {
-    MotivationView()
-}
+//#Preview {
+//    MotivationView()
+//}

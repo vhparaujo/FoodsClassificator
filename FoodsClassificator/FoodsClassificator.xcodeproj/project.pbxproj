@@ -22,6 +22,15 @@
 		0B1C228F2BB20C82003C5C0E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */; };
 		0B1C22922BB35754003C5C0E /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B377F682BBC4584002107B3 /* CircularProgressBar.swift */; };
+		0B63392D2BC0378B002D56E7 /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B63392C2BC0378B002D56E7 /* AddMealView.swift */; };
+		0B6339362BC03CE9002D56E7 /* AddMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339352BC03CE9002D56E7 /* AddMealViewModel.swift */; };
+		0B63393C2BC071B3002D56E7 /* UseCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B63393B2BC071B3002D56E7 /* UseCameraView.swift */; };
+		0B63393E2BC0728F002D56E7 /* SearchFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B63393D2BC0728F002D56E7 /* SearchFoodView.swift */; };
+		0B6339402BC09A12002D56E7 /* FoodItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B63393F2BC09A12002D56E7 /* FoodItemCell.swift */; };
+		0B6339422BC34B68002D56E7 /* SpeechRecognizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339412BC34B68002D56E7 /* SpeechRecognizerManager.swift */; };
+		0B6339462BC43030002D56E7 /* ExpandedFoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339452BC43030002D56E7 /* ExpandedFoodDetailView.swift */; };
+		0B6339482BC44150002D56E7 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339472BC44150002D56E7 /* CustomPickerView.swift */; };
+		0B63394A2BC4D20F002D56E7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6339492BC4D20F002D56E7 /* Alamofire */; };
 		0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */; };
 		0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */; };
 		0B73E8572BAF55DD00C6F91D /* RecentMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8562BAF55DD00C6F91D /* RecentMealsView.swift */; };
@@ -90,6 +99,19 @@
 		9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB9ECD2B8AC9DB00BF3028 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0B6339342BC039AD002D56E7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0B1C22632BB20031003C5C0E /* FoodsClassificatorApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FoodsClassificatorApp.swift; path = App/FoodsClassificatorApp.swift; sourceTree = "<group>"; };
 		0B1C22732BB20551003C5C0E /* HomeTexts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTexts.swift; sourceTree = "<group>"; };
@@ -105,6 +127,14 @@
 		0B1C228C2BB20C74003C5C0E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		0B377F682BBC4584002107B3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
+		0B63392C2BC0378B002D56E7 /* AddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealView.swift; sourceTree = "<group>"; };
+		0B6339352BC03CE9002D56E7 /* AddMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewModel.swift; sourceTree = "<group>"; };
+		0B63393B2BC071B3002D56E7 /* UseCameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCameraView.swift; sourceTree = "<group>"; };
+		0B63393D2BC0728F002D56E7 /* SearchFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodView.swift; sourceTree = "<group>"; };
+		0B63393F2BC09A12002D56E7 /* FoodItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemCell.swift; sourceTree = "<group>"; };
+		0B6339412BC34B68002D56E7 /* SpeechRecognizerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizerManager.swift; sourceTree = "<group>"; };
+		0B6339452BC43030002D56E7 /* ExpandedFoodDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedFoodDetailView.swift; sourceTree = "<group>"; };
+		0B6339472BC44150002D56E7 /* CustomPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPickerView.swift; sourceTree = "<group>"; };
 		0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeSeachResponse.swift; sourceTree = "<group>"; };
 		0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeAPIManager.swift; sourceTree = "<group>"; };
 		0B73E8562BAF55DD00C6F91D /* RecentMealsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMealsView.swift; sourceTree = "<group>"; };
@@ -180,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B1C22922BB35754003C5C0E /* (null) in Frameworks */,
+				0B63394A2BC4D20F002D56E7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +273,44 @@
 				4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0B6339282BC0370F002D56E7 /* AddMeal */ = {
+			isa = PBXGroup;
+			children = (
+				0B6339292BC0372D002D56E7 /* Components */,
+				0B63392A2BC03735002D56E7 /* ViewModel */,
+				0B63392B2BC0373E002D56E7 /* View */,
+			);
+			path = AddMeal;
+			sourceTree = "<group>";
+		};
+		0B6339292BC0372D002D56E7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0B63393B2BC071B3002D56E7 /* UseCameraView.swift */,
+				0B63393D2BC0728F002D56E7 /* SearchFoodView.swift */,
+				0B63393F2BC09A12002D56E7 /* FoodItemCell.swift */,
+				0B6339452BC43030002D56E7 /* ExpandedFoodDetailView.swift */,
+				0B6339472BC44150002D56E7 /* CustomPickerView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0B63392A2BC03735002D56E7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0B6339352BC03CE9002D56E7 /* AddMealViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0B63392B2BC0373E002D56E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B63392C2BC0378B002D56E7 /* AddMealView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		0B73E8582BAF55EC00C6F91D /* RecentMeals */ = {
@@ -565,6 +634,7 @@
 				9BFA12522BAB7919000C0CB5 /* JsonNutricionalDecoder */,
 				0B7F9CF82B9104ED0037B09B /* FoodAPIManager.swift */,
 				0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */,
+				0B6339412BC34B68002D56E7 /* SpeechRecognizerManager.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -650,6 +720,7 @@
 		9BFB9ED02B8AD9DD00BF3028 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0B6339282BC0370F002D56E7 /* AddMeal */,
 				4A3F74872BC36C6C0080C021 /* UserForm */,
 				4AF7A7552BBDA11E0057DF79 /* Tutorial */,
 				4AB766592BB312440091042D /* OnBoarding */,
@@ -675,6 +746,7 @@
 				9BE179982B8A567C0086877C /* Sources */,
 				9BE179992B8A567C0086877C /* Frameworks */,
 				9BE1799A2B8A567C0086877C /* Resources */,
+				0B6339342BC039AD002D56E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -682,6 +754,7 @@
 			);
 			name = FoodsClassificator;
 			packageProductDependencies = (
+				0B6339492BC4D20F002D56E7 /* Alamofire */,
 			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
@@ -713,6 +786,7 @@
 			);
 			mainGroup = 9BE179932B8A567C0086877C;
 			packageReferences = (
+				0B63392E2BC0397E002D56E7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 9BE1799D2B8A567C0086877C /* Products */;
 			projectDirPath = "";
@@ -744,6 +818,7 @@
 				4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */,
 				4A60303F2BBF422900082ECA /* TutorialHomeView.swift in Sources */,
 				9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */,
+				0B6339462BC43030002D56E7 /* ExpandedFoodDetailView.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				9B8904992BB4A1BC0058DFDD /* PerfilTexts.swift in Sources */,
 				4A3F74A52BC44FF80080C021 /* FormsPage6.swift in Sources */,
@@ -755,6 +830,7 @@
 				4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */,
 				0B1C228D2BB20C74003C5C0E /* HomeView.swift in Sources */,
 				9BDAA28C2BB496F3000627F9 /* PerfilImagePickerViewComponent.swift in Sources */,
+				9BDAA28C2BB496F3000627F9 /* PerfilImagePickerViewComponent.swift in Sources */,
 				4A60303D2BBF2EEC00082ECA /* Highlight.swift in Sources */,
 				4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */,
 				4A3F749F2BC43D8B0080C021 /* FormsPage3.swift in Sources */,
@@ -763,15 +839,18 @@
 				4A3F74982BC3A02F0080C021 /* FormViewModel.swift in Sources */,
 				4AF7A7542BBD9FCF0057DF79 /* FooterView.swift in Sources */,
 				0B1C22832BB20C4A003C5C0E /* UserPhotoAndStreakComponentHomeView.swift in Sources */,
+				0B63392D2BC0378B002D56E7 /* AddMealView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
 				4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */,
 				0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */,
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
 				0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */,
+				0B6339422BC34B68002D56E7 /* SpeechRecognizerManager.swift in Sources */,
 				4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */,
 				4A3F74A12BC4471F0080C021 /* FormsPage4.swift in Sources */,
 				9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */,
 				0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */,
+				0B6339362BC03CE9002D56E7 /* AddMealViewModel.swift in Sources */,
 				9BAFA53D2BC46C070089454A /* PerfilModel.swift in Sources */,
 				4A3F748B2BC37CC60080C021 /* NextButtonLabel.swift in Sources */,
 				0B73E8612BAF601300C6F91D /* HeaderMealView.swift in Sources */,
@@ -804,12 +883,16 @@
 				4A3F74A32BC44FD40080C021 /* FormsPage5.swift in Sources */,
 				0B1C22742BB20551003C5C0E /* HomeTexts.swift in Sources */,
 				9BFB9ECC2B8AA84F00BF3028 /* MLModel.swift in Sources */,
+				0B63393E2BC0728F002D56E7 /* SearchFoodView.swift in Sources */,
 				9BDAA28A2BB496CE000627F9 /* PerfilView.swift in Sources */,
 				9BF783132BB50541008CD198 /* ModalTitles.swift in Sources */,
+				0B63393C2BC071B3002D56E7 /* UseCameraView.swift in Sources */,
 				9BF7830F2BB4B5B3008CD198 /* MotivationView.swift in Sources */,
+				0B6339402BC09A12002D56E7 /* FoodItemCell.swift in Sources */,
 				0B1C228A2BB20C61003C5C0E /* MealsCarrouselHomeView.swift in Sources */,
 				9BFA12592BAB79A8000C0CB5 /* JsonDecoder.swift in Sources */,
 				0B73E8692BAF627000C6F91D /* RecentMealCard.swift in Sources */,
+				0B6339482BC44150002D56E7 /* CustomPickerView.swift in Sources */,
 				9BFA125C2BAB7B5C000C0CB5 /* Errors.swift in Sources */,
 				4AF7A7592BBDAA5A0057DF79 /* FooterHomeViewModel.swift in Sources */,
 				4A3F74922BC39C950080C021 /* TextFieldRectangleComponent.swift in Sources */,
@@ -954,11 +1037,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = 2GNPFRN684;
+				DEVELOPMENT_TEAM = 6FK777K42X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Papaia;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -990,11 +1074,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = 2GNPFRN684;
+				DEVELOPMENT_TEAM = 6FK777K42X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
-				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_CFBundleDisplayName = Papaia;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1040,6 +1125,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0B63392E2BC0397E002D56E7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0B6339492BC4D20F002D56E7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B63392E2BC0397E002D56E7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9BE179942B8A567C0086877C /* Project object */;
 }

@@ -78,7 +78,3 @@ struct HeaderView: View {
     return HeaderView()
         .environment(viewModel)
 }
-
-//#Preview {
-//    HomeView()
-//}

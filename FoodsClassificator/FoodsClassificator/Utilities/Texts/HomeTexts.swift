@@ -9,18 +9,18 @@ import Foundation
 
 struct HomeTexts {
     
-    static let restam = String(localized: "restam")
+    static let restam = String(localized: "Restam")
     
-    static let calorias = String(localized: "calorias")
+    static let calorias = String(localized: "Calorias")
     
-    static let caloriasMinusculo = String(localized: "caloriasMinusculo")
+    static let caloriasMinusculo = String(localized: "calorias")
     
-    static let proteinas = String(localized: "proteinas")
+    static let proteinas = String(localized: "Proteínas")
     
-    static let carboidratos = String(localized: "carboidratos")
+    static let carboidratos = String(localized: "Carboidratos")
     
-    static let fibras = String(localized: "fibras")
+    static let fibras = String(localized: "Fibras")
     
-    static let gorduras = String(localized: "gorduras")
+    static let gorduras = String(localized: "Gorduras")
     
 }
