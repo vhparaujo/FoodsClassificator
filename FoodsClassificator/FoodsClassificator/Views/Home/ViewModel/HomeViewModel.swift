@@ -8,7 +8,7 @@
 import SwiftUI
 
 @Observable class HomeViewModel {
-    
+    var totalMeals: Meal?
     var userName: String = "Olá, Fulano!"
     var userPhoto: String = "labelImage"
     var macrosValue: Int = 100
@@ -28,6 +28,11 @@ import SwiftUI
         if self.progressBarValue > maxProgressBarValue {
             self.progressBarValue = initialProgressBarValue
         }
+    }
+    
+    func setTotalMeal(_ meal: Meal) {
+        print("Definindo a refeição atual para: \(meal)")
+        totalMeals = meal
     }
     
 }

@@ -9,23 +9,40 @@ import SwiftUI
 
 struct RecentMealsView: View {
     @StateObject var viewModel: RecentMealsViewModel = RecentMealsViewModel()
+    var editMealViewModel: EditMealViewModel
+    @State private var selectedMealForEdit: Meal?
+    @State private var isEditingMeal: Bool = false
+
+    
     @State private var isExpanded = false
     @State private var haveCurrentMeal = false
     var title: String
-    var onAddMeal: () -> Void
+    var onAddMeal: (Meal) -> Void
 
     private let screenWidth = UIScreen.main.bounds.width
     private let screenHeight = UIScreen.main.bounds.height
     
     
-    init(title: String, onAddMeal: @escaping () -> Void) {
+    init(title: String, onAddMeal: @escaping (Meal) -> Void) {
         self.title = title
         self.onAddMeal = onAddMeal
+        self.editMealViewModel = EditMealViewModel(meal: Meal(mealName: "", image: "", totalCalories: 0, macros: Macronutrients(fats: 0, fibers: 0, carbohydrates: 0, proteins: 0), foodDetails: [:]))
+    }
+    func destinationView() -> some View {
+        if let mealToEdit = selectedMealForEdit {
+            return AnyView(EditMealView(viewModel: EditMealViewModel(meal: mealToEdit)) {
+                // Código para executar após salvar as alterações, se necessário
+            })
+        } else {
+            return AnyView(EmptyView())
+        }
     }
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) {
-                
+                NavigationLink(destination: destinationView(), isActive: $isEditingMeal) {
+                    EmptyView()
+                }
                 let cafe2 = Meal(mealName: "Cafe 2", image: "", totalCalories: 0, macros: Macronutrients(fats: 0, fibers: 0, carbohydrates: 0, proteins: 0), foodDetails: ["":FoodDetail(calories: 0, macros: Macronutrients(fats: 0, fibers: 0, carbohydrates: 0, proteins: 0))])
                 
                 VStack {
@@ -101,7 +118,8 @@ struct RecentMealsView: View {
                                             }
                                         }
                                         Button(action: {
-                                            viewModel.editMeal(meal.id, with: meal)
+                                            self.selectedMealForEdit = meal
+                                            self.isEditingMeal = true
                                         }) {
                                             Label("Editar", systemImage: "pencil")
                                         }
@@ -119,7 +137,9 @@ struct RecentMealsView: View {
                     }
                     
                     if viewModel.currentMeal != nil {
-                        Button(action: onAddMeal) {
+                        Button {
+                            onAddMeal(viewModel.currentMeal!)
+                        } label: {
                             Text("Adicionar refeição")
                                 .foregroundColor(.white)
                                 .font(.headline)
@@ -153,6 +173,12 @@ struct RecentMealsView: View {
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarTitleDisplayMode(.inline)
         }
+//        .sheet(item: $selectedMealForEdit) { meal in
+//            EditMealView(viewModel: EditMealViewModel(meal: meal)) {
+//                // Aqui você pode definir o que acontece quando as alterações são salvas.
+//                // Isso também pode ser um bom lugar para redefinir selectedMealForEdit para nil.
+//            }
+//        }
 //        .onAppear {
 //            if viewModel.recentMeals.isEmpty {
 //                let cafe1 = Meal(mealName: "Cafe 1", image: "", totalCalories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30), foodDetails: ["arroz":FoodDetail(calories: 400, macros: Macronutrients(fats: 21, fibers: 7, carbohydrates: 50, proteins: 30))])
@@ -162,17 +188,17 @@ struct RecentMealsView: View {
     }
 }
 
-struct RecentMealsView_Previews: PreviewProvider {
-    static var previews: some View {
-        let viewModel = RecentMealsViewModel()
-        viewModel.addMealToRecent(Meal(mealName: "Café da Manhã", image: "breakfast", totalCalories: 350, macros: Macronutrients(fats: 20, fibers: 20, carbohydrates: 20, proteins: 20), foodDetails: [:]))
-        viewModel.setCurrentMeal(viewModel.recentMeals[0])
-        
-        return RecentMealsView(title: "Café da Manhã", onAddMeal: {
-            // Aqui você implementa a ação de adicionar uma nova refeição.
-            // Para propósitos de preview, isso pode ficar vazio ou apenas imprimir uma mensagem.
-            print("Adicionar nova refeição")
-        })
-    }
-}
+//struct RecentMealsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let viewModel = RecentMealsViewModel()
+//        viewModel.addMealToRecent(Meal(mealName: "Café da Manhã", image: "breakfast", totalCalories: 350, macros: Macronutrients(fats: 20, fibers: 20, carbohydrates: 20, proteins: 20), foodDetails: [:]))
+//        viewModel.setCurrentMeal(viewModel.recentMeals[0])
+//        
+//        return RecentMealsView(title: "Café da Manhã", onAddMeal: {
+//            // Aqui você implementa a ação de adicionar uma nova refeição.
+//            // Para propósitos de preview, isso pode ficar vazio ou apenas imprimir uma mensagem.
+//            print("Adicionar nova refeição")
+//        })
+//    }
+//}
 

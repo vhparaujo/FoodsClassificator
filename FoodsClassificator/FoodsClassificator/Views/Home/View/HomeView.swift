@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Environment(\.dismiss) private var dismiss
+//    @Environment(\.dismiss) private var dismiss
+    var viewModel = HomeViewModel()
     
     var body: some View {
         
         VStack{
-            HeaderView()
+            HeaderView(viewModel: viewModel)
             Spacer()
             
-            FooterView()
+            FooterView(viewModel: viewModel)
                 .background(Image("backgroundHome"))
         }
         
