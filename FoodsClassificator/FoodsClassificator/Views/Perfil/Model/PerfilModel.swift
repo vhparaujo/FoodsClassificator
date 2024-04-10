@@ -26,7 +26,7 @@ import SwiftData
     var streak: Int
     var alimentos: [String]
     
-    init(userName: String = "", userPhoto: Data = Data(), idade: Int = 20, peso: Int = 60, altura: Int = 160, sexoBiologico: String = "Feminino", objetivo: String = "", intensidadeDoExercicio: String = "Moderado" , refeicoes: [String] = [], streak: Int = 0, alimentos: [String] = [], temNutricionista: Bool = false, totalCalories: Int = 2000) {
+    init(userName: String = "", userPhoto: Data = Data(), idade: Int = 20, peso: Int = 60, altura: Int = 160, sexoBiologico: String = "Feminino", objetivo: String = "", intensidadeDoExercicio: String = "Moderado" , refeicoes: [String] = ["Café da manhã", "Almoço", "Jantar"], streak: Int = 0, alimentos: [String] = [], temNutricionista: Bool = false, totalCalories: Int = 2000) {
         
         self.userName = userName
         self.userPhoto = userPhoto

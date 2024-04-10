@@ -16,54 +16,62 @@ struct FormsPage5: View {
     
     
     var body: some View {
+        VStack {
+            Group {
+                FormProgressBar(percent: .constant(0.80))
+            }
+            
+            
+            QuestionTextComponent(QuestionLabel: "Quais refeições você faz por dia?")
+            
             VStack {
-                Group {
-                    FormProgressBar(percent: .constant(0.80))
-                }
                 
-                Group {
-                    QuestionTextComponent(QuestionLabel: "Quais refeições você faz por dia?")
+                ForEach(viewModel.model.refeicoes, id: \.self) { refeicao in
                     
-                    VStack{
-                        ForEach(0..<refeicoes.count, id: \.self) { index in
-                            Button(action: {
-                                self.refeicao = index
-                                print(refeicoes[index])
-                                print(refeicao)
-                            }) {
-                                Capsule()
-                                    .foregroundStyle(.green.opacity(0.4))
-                                    .overlay {
-                                        HStack {
-                                            Text(refeicoes[index])                       
-                                                .tint(.black)
-                                            Spacer()
-                                            Image(systemName: "list.bullet")
-                                                .foregroundStyle(Color.black)
-                                        }
-                                        .padding(.horizontal)
-                                    }
-                                    .frame(height: 50)
-                                    .opacity(refeicao == index ? 1.0 : 0.5)
-                                
+                    RoundedRectangle(cornerRadius: 15)
+                        .foregroundStyle(.green.opacity(0.4))
+                        .overlay {
+                            HStack {
+                                Text(refeicao)
+                                    .tint(.black)
+                                Spacer()
+                                Image(systemName: "list.bullet")
+                                    .foregroundStyle(Color.black)
                             }
-                            
+                            .padding(.horizontal)
                         }
+                        .frame(height: 50)
+                        .opacity(refeicao == refeicao ? 1.0 : 0.5)
+                    
+                }.onMove(perform: move)
+                .onDelete(perform: delete)
+               
+                TextField("Nome da refeição", text: $viewModel.textFieldName)
+                    .onSubmit {
+                        viewModel.model.refeicoes.append(viewModel.textFieldName)
+                        viewModel.textFieldName = ""
                     }
-                }
-                
-                Spacer()
-                
-                
-                // NavigationLink para a próxima página do questionário
-                NavigationLink(destination: FormsPage6()) {
-                    NextButtonLabel(nextButtonLabel: "Próximo")
-                }
             }
-            .padding()
-            .onAppear{
-                viewModel.modelContext = context
+ 
+            Spacer()
+        
+            // NavigationLink para a próxima página do questionário
+            NavigationLink(destination: FormsPage6()) {
+                NextButtonLabel(nextButtonLabel: "Próximo")
             }
+        }
+        .padding()
+        .onAppear{
+            viewModel.modelContext = context
+        }
+    }
+    
+    func delete(at offsets: IndexSet) {
+        viewModel.model.refeicoes.remove(atOffsets: offsets)
+    }
+    
+    func move(from source: IndexSet, to destination: Int) {
+        viewModel.model.refeicoes.move(fromOffsets: source, toOffset: destination)
     }
 }
 
