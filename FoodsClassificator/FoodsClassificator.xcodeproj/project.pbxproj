@@ -45,6 +45,9 @@
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
+
+		3B00FD662BC6A6AE0061479B /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00FD652BC6A6AE0061479B /* EnumModel.swift */; };
+
 		3BE31CD72BBB373900E66F3E /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE31CD62BBB373900E66F3E /* CameraPreview.swift */; };
 		3BE31CD92BBB374D00E66F3E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE31CD82BBB374D00E66F3E /* CameraController.swift */; };
 		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
@@ -151,6 +154,8 @@
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
 		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentView/ViewModel/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
+
+		3B00FD652BC6A6AE0061479B /* EnumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		3BE31CD62BBB373900E66F3E /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		3BE31CD82BBB374D00E66F3E /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterModalComponentHomeView.swift; sourceTree = "<group>"; };
@@ -623,6 +628,7 @@
 			isa = PBXGroup;
 			children = (
 				9BFB9ECB2B8AA84F00BF3028 /* MLModel.swift */,
+				3B00FD652BC6A6AE0061479B /* EnumModel.swift */,
 			);
 			path = MLModels;
 			sourceTree = "<group>";
@@ -852,6 +858,7 @@
 				4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */,
 				0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */,
 				4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */,
+				3B00FD662BC6A6AE0061479B /* EnumModel.swift in Sources */,
 				0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */,
 				0B6339422BC34B68002D56E7 /* SpeechRecognizerManager.swift in Sources */,
 				4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */,
