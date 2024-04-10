@@ -2,20 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>CFBundleDocumentTypes</key>
-    <array>
-        <dict/>
-    </array>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict/>
-        <dict/>
-    </array>
-    <!-- Adicionando as permissões de microfone e reconhecimento de voz abaixo -->
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Este app requer acesso ao seu microfone para poder reconhecer voz.</string>
-    <key>NSSpeechRecognitionUsageDescription</key>
-    <string>Este app requer acesso ao reconhecimento de voz para transcrever sua fala em texto.</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict/>
+	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict/>
+		<dict/>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>launchScreen</string>
+	</dict>
 </dict>
 </plist>
-

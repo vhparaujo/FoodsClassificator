@@ -20,6 +20,7 @@ struct HeaderView: View {
             
             HStack {
                 UserNameComponentHomeView(viewModel: viewModel)
+
                 Spacer()
                 UserPhotoAndStreakComponentHomeView(viewModel: viewModel)
             }.padding()
@@ -68,6 +69,7 @@ struct HeaderView: View {
             }
             .ignoresSafeArea(edges: .all)
         )
+        
     }
 }
 

@@ -21,7 +21,7 @@ struct MotivationView: View {
             } label: {
                 VStack {
                     
-                    PerfilImageViewComponent(userPhoto: $viewModel.model.userPhoto)
+                    PerfilImageViewComponent(viewModel: viewModel)
                         .frame(width: 80, height: 80)
                     
                     HStack {

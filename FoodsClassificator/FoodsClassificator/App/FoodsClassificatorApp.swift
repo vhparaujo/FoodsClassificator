@@ -10,11 +10,16 @@ import SwiftData
 
 @main
 struct FoodsClassificatorApp: App {
+    var homeViewModel = HomeViewModel()
+    var footerHomeViewModel = FooterHomeViewModel()
+
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 HomeView()
                     .preferredColorScheme(.light)
+                    .environment(homeViewModel)
+                    .environment(footerHomeViewModel)
             }
         }.modelContainer(appContainer)
     }

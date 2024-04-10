@@ -8,20 +8,27 @@
 import SwiftUI
 
 struct UserNameComponentHomeView: View {
-    
-//    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
     var viewModel: HomeViewModel
+    @Environment(\.modelContext) private var context
     
+    @State var perfilViewModel = PerfilViewModel()
+        
     var body: some View {
-        Text(viewModel.userName)
-            .font(.title)
-            .bold()
-            .foregroundStyle(.verdeTitle)
+        VStack{
+            
+            if perfilViewModel.model.userName == "" {
+                Text("Olá")
+                    .font(.title)
+                    .foregroundStyle(.verdeTitle)
+            } else {
+                Text("Olá, \(perfilViewModel.model.userName)!")
+                    .font(.title)
+                    .foregroundStyle(.verdeTitle)
+            }
+        }.onAppear(perform: {
+            perfilViewModel.modelContext = context
+        })
+        
     }
+    
 }
-
-//#Preview {
-//    var viewModel = HomeViewModel()
-//    return UserNameComponentHomeView(viewModel: viewModel)
-//        .environment(viewModel)
-//}

@@ -9,9 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
 //    @Environment(\.dismiss) private var dismiss
-    
     var viewModel = HomeViewModel()
-    var footerHomeViewModel = FooterHomeViewModel()
     
     var body: some View {
         
@@ -20,7 +18,6 @@ struct HomeView: View {
             Spacer()
             
             FooterView(viewModel: viewModel)
-                .environment(footerHomeViewModel)
                 .background(Image("backgroundHome"))
         }
         

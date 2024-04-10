@@ -47,6 +47,8 @@
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
+		3BE31CD72BBB373900E66F3E /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE31CD62BBB373900E66F3E /* CameraPreview.swift */; };
+		3BE31CD92BBB374D00E66F3E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE31CD82BBB374D00E66F3E /* CameraController.swift */; };
 		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
 		4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */; };
 		4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */; };
@@ -153,6 +155,8 @@
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
 		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentView/ViewModel/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
+		3BE31CD62BBB373900E66F3E /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		3BE31CD82BBB374D00E66F3E /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterModalComponentHomeView.swift; sourceTree = "<group>"; };
 		4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1.swift; sourceTree = "<group>"; };
 		4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		4AF7A7532BBD9FCF0057DF79 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterHomeViewModel.swift; sourceTree = "<group>"; };
 		9B0D2C0A2BC068E70046EFF5 /* BackgroundShapeHeaderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundShapeHeaderHomeView.swift; sourceTree = "<group>"; };
+		9B22D1112BC6B4320086069F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dados_alimentos_completo.json; sourceTree = "<group>"; };
 		9B8904922BB49A030058DFDD /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
@@ -587,6 +592,7 @@
 				9BFB9ED02B8AD9DD00BF3028 /* Views */,
 				9BFB9ECF2B8AD94C00BF3028 /* Utilities */,
 				9BE179A52B8A567D0086877C /* Preview Content */,
+				9B22D1112BC6B4320086069F /* PrivacyInfo.xcprivacy */,
 			);
 			path = FoodsClassificator;
 			sourceTree = "<group>";
@@ -644,6 +650,8 @@
 			isa = PBXGroup;
 			children = (
 				9BFB9ECD2B8AC9DB00BF3028 /* CameraView.swift */,
+				3BE31CD62BBB373900E66F3E /* CameraPreview.swift */,
+				3BE31CD82BBB374D00E66F3E /* CameraController.swift */,
 			);
 			path = CameraView;
 			sourceTree = "<group>";
@@ -898,12 +906,14 @@
 				0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */,
 				9BFB9ECE2B8AC9DB00BF3028 /* CameraView.swift in Sources */,
 				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
+				3BE31CD72BBB373900E66F3E /* CameraPreview.swift in Sources */,
 				0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */,
 				9BE934192BC20FF100E52625 /* PerfilImageViewComponent.swift in Sources */,
 				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
 				0B73E8652BAF609000C6F91D /* MacroCircle.swift in Sources */,
 				4AB85A342BBEFFF40075ADD9 /* ShowCaseHelper.swift in Sources */,
 				4A3F74942BC39CDD0080C021 /* QuestionTextComponent.swift in Sources */,
+				3BE31CD92BBB374D00E66F3E /* CameraController.swift in Sources */,
 				0B1C22802BB20C4A003C5C0E /* HeaderView.swift in Sources */,
 				4A3F74962BC39FD20080C021 /* FormModel.swift in Sources */,
 				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
@@ -1077,16 +1087,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FK777K42X;
+				DEVELOPMENT_TEAM = K559Z2V9Q2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Papaia;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Este app requer acesso ao seu microfone para poder reconhecer voz.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Este app requer acesso ao reconhecimento de voz para transcrever sua fala em texto.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1114,16 +1125,17 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FK777K42X;
+				DEVELOPMENT_TEAM = K559Z2V9Q2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Papaia;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Este app requer acesso ao seu microfone para poder reconhecer voz.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Este app requer acesso ao reconhecimento de voz para transcrever sua fala em texto.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (

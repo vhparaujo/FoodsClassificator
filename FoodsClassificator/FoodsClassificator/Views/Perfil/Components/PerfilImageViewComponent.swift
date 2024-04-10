@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct PerfilImageViewComponent: View {
-    
-    @Binding var userPhoto: Data
+        
+    @Bindable var viewModel: PerfilViewModel
     
     var body: some View {
         Circle()
             .stroke(lineWidth: 2)
             .foregroundStyle(.verdeTitle)
             .overlay {
-                if let uiImage = UIImage(data: userPhoto) {
+                if let uiImage = UIImage(data: viewModel.model.userPhoto) {
                     Image(uiImage: uiImage)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .clipShape(.circle)
                 }
             }
+        
     }
 }
