@@ -57,7 +57,12 @@ struct TutorialHomeView: View {
                                 .frame(width: 45, height: 45)
                                 .offset(x: 35)
                         }
+                        .showCase(order: 3,
+                                  title: "Acompanhe seu crescimento, participe de desafios para evoluir e celebre suas vitórias! A ofensiva é ativada quando você atinge sua meta diária de água e registra pelo menos uma refeição.",
+                                  cornerRadius: 10,
+                                  style: .continuous)
                     }.padding()
+                        
                     
                     ZStack {
                         HStack {
@@ -140,11 +145,18 @@ struct TutorialHomeView: View {
                                     }
                                     
                                 }
-                            }.padding(.horizontal)
+                            }
+                            .padding(.horizontal)
                                 .offset(y:40)
                                 .padding(.horizontal)
-                        }.frame(width: screenWidth * 0.5)
+                        }
+                        .frame(width: screenWidth * 0.5)
+                        .showCase(order: 4,
+                                  title: "Defina suas calorias e acompanhe seu objetivo diário, além de ver como está progredindo!",
+                                  cornerRadius: 10,
+                                  style: .continuous)
                     }
+
                 }
                 .background(
                     background.path(in: CGRect(x: 0, y: 0,
@@ -161,51 +173,54 @@ struct TutorialHomeView: View {
                         DatePickerComponentHomeView()
                             .padding(.trailing)
                     }
-                    HStack {
-                        VStack{
-                            ZStack{
-                                ZStack {
-                                    Circle()
-                                        .foregroundStyle(.laranjaBrilhante)
-                                        .overlay(content: {
-                                                VStack {
-                                                    Spacer()
-                                                    Text("Café da Manha")
-                                                        .foregroundStyle(.black)
-                                                        .font(.largeTitle)
-                                                        .minimumScaleFactor(0.5)
-                                                        .multilineTextAlignment(.center) // Alinhamento do texto ao centro
-                                                        .padding(.horizontal) // Adiciona um preenchimento horizontal
-                                                    
-                                                    Spacer()
-                                                    
-                                                    Image(systemName: "plus")
-                                                        .foregroundStyle(.black)
-                                                        .font(.title)
-                                                        .minimumScaleFactor(0.3)
-                                                    
-                                                    Spacer()
-                                                }.padding()
-                                            
-                                        })
-                                    
-                                        .overlay {
-                                            Circle()
-                                                .stroke(lineWidth: 10)
-                                                .foregroundStyle(.laranjaBrilhante)
-                                        }
-                                        .overlay {
-                                            Circle()
-                                                .stroke(lineWidth: 9)
-                                                .foregroundStyle(.windowBackground)
-                                        }
-                                }
-                            }
-                        }
-                    }.padding(.bottom)
                     
-                    HStack {
-                        Spacer()
+                    ZStack {
+                        Circle()
+                            .foregroundStyle(.laranjaBrilhante)
+                            .overlay(content: {
+                                VStack {
+                                    Spacer()
+                                    Text("Café da Manha")
+                                        .foregroundStyle(.black)
+                                        .font(.largeTitle)
+                                        .minimumScaleFactor(0.5)
+                                        .multilineTextAlignment(.center) // Alinhamento do texto ao centro
+                                        .padding(.horizontal) // Adiciona um preenchimento horizontal
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "plus")
+                                        .foregroundStyle(.black)
+                                        .font(.title)
+                                        .minimumScaleFactor(0.3)
+                                    
+                                    Spacer()
+                                }
+                                
+                                .padding()
+                                
+                            })
+                            .showCase(order: 1,
+                                      title: "Registre suas refeições facilmente! Use a câmera para alimentos ou código de barras, ou apenas pesquise. Veja as calorias e nutrientes de cada refeição enquanto registra sua alimentação.",
+                                      cornerRadius: 180,
+                                      style: .continuous)
+                            .overlay {
+                                Circle()
+                                    .stroke(lineWidth: 10)
+                                    .foregroundStyle(.laranjaBrilhante)
+                            }
+                            .overlay {
+                                Circle()
+                                    .stroke(lineWidth: 9)
+                                    .foregroundStyle(.windowBackground)
+                            }
+                            
+                    }
+                    .padding(.bottom)
+                    
+                    
+                    
+//                        Spacer()
                         HStack {
                             VStack(alignment: .leading) {
                                 Text("Água")
@@ -244,12 +259,15 @@ struct TutorialHomeView: View {
                                 .tint(.black)
                         }
                         .padding()
+                        .showCase(order: 2,
+                                  title: "Lembre-se de se hidratar! Personalize seu recipiente de água e a meta diária. Quando terminar sua garrafinha, não se esqueça de registrar!",
+                                  cornerRadius: 10,
+                                  style: .continuous)
                         .background(.laranjaBrilhante)
                         .clipShape(RoundedRectangle(cornerRadius: 15))
                         .padding(.horizontal, 60)
                         .frame(height: screenHeight * 0.15)
-                        Spacer()
-                    }
+                        
                     
                 }
                 .background(
@@ -257,6 +275,10 @@ struct TutorialHomeView: View {
                         .resizable()
                         .scaledToFill())
             }
+            .modifier(ShowCaseRoot(showHighlights: true, onFinished: {
+                print("Finished Tutorial")
+            }))
+            
         }
     }
 }

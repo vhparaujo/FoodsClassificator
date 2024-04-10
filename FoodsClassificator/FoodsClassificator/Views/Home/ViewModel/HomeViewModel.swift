@@ -31,8 +31,6 @@ import SwiftUI
         }
     }
     
-    func totalCalories() {
-        self.calories = Int(perfilViewModel.caloriesPerDay())
-    }
+
     
 }

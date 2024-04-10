@@ -81,7 +81,8 @@ import Foundation
         let bmr = (10 * weight) + (6.25 * height) - (5 * age) + Double(genderFactor)
         let calories = bmr * activityMultiplier
         print(calories)
+        model.totalCalories = Int(calories)
         return calories
     }
-
+    
 }

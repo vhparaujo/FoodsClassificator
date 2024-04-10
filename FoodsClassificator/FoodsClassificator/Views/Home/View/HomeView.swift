@@ -8,21 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Environment(\.dismiss) private var dismiss
-    @Environment(\.modelContext) private var context
-    @Bindable private var viewModel = PerfilViewModel()
-    @Bindable private var footerHomeViewModel = FooterHomeViewModel()
-    
+    @Environment(\.dismiss) private var dismiss    
     var body: some View {
         
         VStack{
             HeaderView()
-                .environment(viewModel)
                 .padding(.bottom, -20)
             
             
             FooterView()
-                .environment(footerHomeViewModel)
                 .background(
                     Image("backgroundHome")
                         .resizable()
@@ -30,9 +24,6 @@ struct HomeView: View {
                 )
         }
         .navigationBarBackButtonHidden()
-        .onAppear{
-            viewModel.modelContext = context
-        }
     }
 }
 

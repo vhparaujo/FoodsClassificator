@@ -20,6 +20,7 @@ struct FoodsClassificatorApp: App {
             }
             .environment(PerfilViewModel())
             .environment(HomeViewModel())
+            .environment(FooterHomeViewModel())
 
         }.modelContainer(modelcontent)
     }
