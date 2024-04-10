@@ -46,6 +46,7 @@ struct PerfilView: View {
                             .foregroundStyle(.verdeTitle)
                     }
                 }
+                
             }
             
             List {

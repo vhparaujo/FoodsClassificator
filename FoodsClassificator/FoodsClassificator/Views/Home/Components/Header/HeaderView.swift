@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct HeaderView: View {
-    
+        
     @Environment(HomeViewModel.self) var viewModel
-    
+        
     var background = BackgroundShapeHeaderHomeView()
     
     let screenWidth = UIScreen.main.bounds.size.width
@@ -21,7 +21,9 @@ struct HeaderView: View {
         VStack {
             
             HStack {
+                // O nome ainda não aparece
                 UserNameComponentHomeView()
+                
                 Spacer()
                 UserPhotoAndStreakComponentHomeView()
             }.padding()
@@ -70,6 +72,7 @@ struct HeaderView: View {
             }
             .ignoresSafeArea(edges: .all)
         )
+        
     }
 }
 

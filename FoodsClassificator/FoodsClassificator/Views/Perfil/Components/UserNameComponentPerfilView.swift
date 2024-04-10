@@ -6,20 +6,33 @@
 //
 
 import SwiftUI
+import Combine
 
 struct UserNameComponentPerfilView: View {
     
     @Binding var userName: String
+
+    let textLimit = 12 //Your limit
     
     var body: some View {
         HStack(alignment: .center) {
             TextField("Digite seu nome", text: $userName)
                 .font(.title)
                 .foregroundStyle(.verdeTitle)
+                .frame(width: 150)
                 .clipShape(RoundedRectangle(cornerRadius: 1))
                 .padding()
+            
+                .onReceive(Just(userName)) { _ in limitText(textLimit) }
+
         }
         
+    }
+    
+    func limitText(_ upper: Int) {
+        if userName.count > upper {
+            userName = String(userName.prefix(upper))
+        }
     }
     
 }
