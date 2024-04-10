@@ -61,10 +61,12 @@ struct PerfilView: View {
                             Spacer()
                             Text("\(viewModel.model.idade)")
                                 .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
-                            Image(systemName: "chevron.right")
-                                .opacity(canEditFunc() ? 1 : 0)
-                                .foregroundStyle(.secondary)
-                                .imageScale(.small)
+                            if canEditFunc() {
+                                Image(systemName: "chevron.right")
+                                    .foregroundStyle(.secondary)
+                                    .imageScale(.small)
+                            }
+  
                         }.foregroundStyle(.black)
                         
                     }
@@ -91,10 +93,11 @@ struct PerfilView: View {
                             Spacer()
                             Text("\(viewModel.model.peso) kg")
                                 .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
-                            Image(systemName: "chevron.right")
-                                .opacity(canEditFunc() ? 1 : 0)
-                                .foregroundStyle(.secondary)
-                                .imageScale(.small)
+                            if canEditFunc() {
+                                Image(systemName: "chevron.right")
+                                    .foregroundStyle(.secondary)
+                                    .imageScale(.small)
+                            }
                         }.foregroundStyle(.black)
                         
                     }
@@ -121,10 +124,11 @@ struct PerfilView: View {
                             Spacer()
                             Text("\(viewModel.model.altura) cm")
                                 .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
-                            Image(systemName: "chevron.right")
-                                .opacity(canEditFunc() ? 1 : 0)
-                                .foregroundStyle(.secondary)
-                                .imageScale(.small)
+                            if canEditFunc() {
+                                Image(systemName: "chevron.right")
+                                    .foregroundStyle(.secondary)
+                                    .imageScale(.small)
+                            }
                         }.foregroundStyle(.black)
                         
                     }
