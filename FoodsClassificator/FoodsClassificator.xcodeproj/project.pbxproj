@@ -23,6 +23,7 @@
 		0B1C22922BB35754003C5C0E /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		0B21FD0E2BC5DE4400F07054 /* EditMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B21FD0D2BC5DE4400F07054 /* EditMealViewModel.swift */; };
 		0B21FD102BC5DEB700F07054 /* EditMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B21FD0F2BC5DEB700F07054 /* EditMealView.swift */; };
+		0B21FD122BC70EF400F07054 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B21FD112BC70EF400F07054 /* Alamofire */; };
 		0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B377F682BBC4584002107B3 /* CircularProgressBar.swift */; };
 		0B63392D2BC0378B002D56E7 /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B63392C2BC0378B002D56E7 /* AddMealView.swift */; };
 		0B6339362BC03CE9002D56E7 /* AddMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339352BC03CE9002D56E7 /* AddMealViewModel.swift */; };
@@ -32,7 +33,6 @@
 		0B6339422BC34B68002D56E7 /* SpeechRecognizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339412BC34B68002D56E7 /* SpeechRecognizerManager.swift */; };
 		0B6339462BC43030002D56E7 /* ExpandedFoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339452BC43030002D56E7 /* ExpandedFoodDetailView.swift */; };
 		0B6339482BC44150002D56E7 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339472BC44150002D56E7 /* CustomPickerView.swift */; };
-		0B63394E2BC5C96F002D56E7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B63394D2BC5C96F002D56E7 /* Alamofire */; };
 		0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */; };
 		0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */; };
 		0B73E8572BAF55DD00C6F91D /* RecentMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8562BAF55DD00C6F91D /* RecentMealsView.swift */; };
@@ -219,7 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B1C22922BB35754003C5C0E /* (null) in Frameworks */,
-				0B63394E2BC5C96F002D56E7 /* Alamofire in Frameworks */,
+				0B21FD122BC70EF400F07054 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -800,7 +800,7 @@
 			);
 			name = FoodsClassificator;
 			packageProductDependencies = (
-				0B63394D2BC5C96F002D56E7 /* Alamofire */,
+				0B21FD112BC70EF400F07054 /* Alamofire */,
 			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
@@ -1087,7 +1087,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = K559Z2V9Q2;
+				DEVELOPMENT_TEAM = 6FK777K42X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
@@ -1125,7 +1125,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = K559Z2V9Q2;
+				DEVELOPMENT_TEAM = 6FK777K42X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
@@ -1190,7 +1190,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B63394D2BC5C96F002D56E7 /* Alamofire */ = {
+		0B21FD112BC70EF400F07054 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B63392E2BC0397E002D56E7 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
