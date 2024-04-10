@@ -13,6 +13,10 @@ struct CameraView: View {
     @State var controlBolt:Bool = false
     @State var controlButton:Bool = false
     @State var controlBarCodeMask:Bool = false
+    let modelControl = ImagePredictor.shared
+    @Environment(\.dismiss) var dismiss
+    
+    var onDismiss: (([String]) -> Void)?
     
     var body: some View {
         
@@ -38,7 +42,7 @@ struct CameraView: View {
                         Spacer()
                         HStack{
                             Button{
-                                print("Apertou X")
+                                dismiss()
                             }label: {
                                 Image(systemName: "xmark")
                                     .resizable()
@@ -87,6 +91,7 @@ struct CameraView: View {
                     if !controlBarCodeMask{
                         Button{
                             cameraManager.capturePhoto()
+                            dismiss()
                         }label: {
                             ZStack{
                                 Circle()
@@ -125,6 +130,7 @@ struct CameraView: View {
             .statusBar(hidden: cameraManager.isStatusBarHidden)
             .onDisappear{
                 cameraManager.stopRunning()
+                onDismiss?(modelControl.modelResults)
             }
         }
     }

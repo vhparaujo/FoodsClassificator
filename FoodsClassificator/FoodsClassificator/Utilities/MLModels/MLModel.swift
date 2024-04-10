@@ -10,7 +10,10 @@ import Vision
 import CoreML
 
 class ImagePredictor: ObservableObject {
+    
+    static let shared = ImagePredictor()
     private var model: VNCoreMLModel?
+    @Published var modelResults:[String] = []
     
     init() {
         setupModel()
@@ -45,6 +48,7 @@ class ImagePredictor: ObservableObject {
                 }
                 
                 DispatchQueue.main.async {
+                    self.modelResults = self.collectDetectionCodes(results)
                     completion(results)
                 }
             }
@@ -55,4 +59,22 @@ class ImagePredictor: ObservableObject {
             print("Falha ao carregar o modelo Core ML ou ao realizar a detecção: \(error)")
         }
     }
+
+    private func collectDetectionCodes(_ results: [VNRecognizedObjectObservation]) -> [String] {
+        var detectionCodes: [String] = []
+        for result in results {
+            for label in result.labels where label.confidence > 0.5 {
+                if let code = FoodItem.findCodeByName(label.identifier) {
+                    detectionCodes.append(code)
+                    print("\(label.identifier) - Código: \(code), Confiança: \(label.confidence)")
+                } else {
+                    print("\(label.identifier) - Nada encontrado")
+                }
+            }
+        }
+        print("Detection: \(detectionCodes)")
+        return detectionCodes
+    }
+
+
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @Observable class FoodData {
     
@@ -27,5 +28,22 @@ import Foundation
     func searchFoodByName(_ name: String) -> [Food] {
         guard name.count >= 3 else { return [] }
         return foods.filter { $0.nome.lowercased().contains(name.lowercased()) }
+    }
+    
+    func searchFoodFromModel(_ codeFood: [String]) -> [Food] {
+        var saveJson: [Food] = []
+        
+        for name in codeFood {
+            // Filtra os alimentos cujo código contém o nome atual, ignorando a diferença entre maiúsculas e minúsculas.
+            let filteredFoods = foods.filter { $0.codigo.uppercased().contains(name.uppercased()) }
+            
+            // Adiciona os alimentos filtrados ao array de resultado.
+            saveJson.append(contentsOf: filteredFoods)
+        }
+        print("\(foods.count)")
+        print("searchFoodFromModel: \(saveJson)")
+        print("searchFoodFromModel: \(codeFood)")
+        
+        return saveJson
     }
 }

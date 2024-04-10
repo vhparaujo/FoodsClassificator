@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import Vision
 
 struct AddMealView: View {
     @StateObject var viewModel: AddMealViewModel = AddMealViewModel()
     @ObservedObject var speechRecognizerManager: SpeechRecognizerManager = SpeechRecognizerManager()
     @State var recentMealsViewModel: RecentMealsViewModel
+    @State var sharingFoods: [VNRecognizedObjectObservation] = []
     
     var title: String
     var onCreateMeal: (Meal) -> Void
@@ -50,10 +52,57 @@ struct AddMealView: View {
                     .padding(screenWidth * 0.02)
                     
                     if viewModel.selectedSegment == 0 {
-                        UseCameraView(onScanMeal: {
-                            print("CÂMERA AQUI")
+                        UseCameraView(imagePredictor: ImagePredictor.shared,sharingFoods: $sharingFoods, selectedFoods: $viewModel.selectedFoods, selectFood: { code in
+                            viewModel.addFoodCodesToSelect(foodCodes: code)
+                            print("entrou closure: \(code)")
+                        }, onScanMeal: { food in
+                            print("Comida selecionada para adicionar à refeição: \(food)")
+                            
+                            // Função auxiliar para extrair e converter valores nutricionais
+                            func valorParaComponente(_ componente: String) -> Double {
+                                guard let detalhe = food.detalhesNutricionais.first(where: { $0.componente == componente }) else {
+                                    print("Componente \(componente) não encontrado.")
+                                    return 0.0
+                                }
+                                
+                                guard let valor = Double(detalhe.valor) else {
+                                    print("Não foi possível converter o valor do componente \(componente): \(detalhe.valor)")
+                                    return 0.0
+                                }
+                                
+                                return valor
+                            }
+                            
+                            let fats = valorParaComponente("Lipídios")
+                            let fibers = valorParaComponente("Fibra alimentar")
+                            let carbohydrates = valorParaComponente("Carboidrato disponível")
+                            let proteins = valorParaComponente("Proteína")
+                            let totalCalories = Int(food.detalhesNutricionais.first { $0.componente == "Energia" && $0.unidade == "kcal" }?.valor.replacingOccurrences(of: ",", with: ".") ?? "0") ?? 0
+                            
+                            // Se já existe uma refeição atual, atualize seus valores
+                            if var currentMeal = recentMealsViewModel.currentMeal {
+                                currentMeal.totalCalories += totalCalories
+                                currentMeal.macros.fats += fats
+                                currentMeal.macros.fibers += fibers
+                                currentMeal.macros.carbohydrates += carbohydrates
+                                currentMeal.macros.proteins += proteins
+                                // Atualiza a refeição atual com os novos valores
+                                recentMealsViewModel.setCurrentMeal(currentMeal)
+                                print("Refeição atualizada com o novo alimento: \(currentMeal)")
+                            } else {
+                                // Se não existe uma refeição atual, crie uma nova com os valores do alimento
+                                let newMeal = Meal(
+                                    mealName: "Refeição Personalizada",
+                                    image: "", // Use uma imagem padrão ou permita a seleção de uma imagem
+                                    totalCalories: totalCalories,
+                                    macros: Macronutrients(fats: fats, fibers: fibers, carbohydrates: carbohydrates, proteins: proteins),
+                                    foodDetails: [:] // Este campo pode ser preenchido conforme necessário
+                                )
+                                recentMealsViewModel.setCurrentMeal(newMeal)
+                                print("Nova refeição criada a partir do alimento selecionado: \(newMeal)")
+                            }
                         })
-                        .padding(.top, viewModel.isExpanded ? screenHeight * 0.05 : screenHeight * 0.15)
+//                        .padding(.top, viewModel.isExpanded ? screenHeight * 0.05 : screenHeight * 0.15)
                     } else {
                         SearchFoodView(
                             searchText: $viewModel.searchText, 
