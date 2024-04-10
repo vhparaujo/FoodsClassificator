@@ -28,6 +28,11 @@ struct OnboardingPage3: View {
                 .frame(alignment: .center)
                 .padding()
             
+            NavigationLink(destination: TutorialHomeView()) {
+                NextButtonLabel(nextButtonLabel: "Iniciar tutorial")
+            }.padding()
+
+            
             Spacer()
         }
     }
