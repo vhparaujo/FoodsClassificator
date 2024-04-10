@@ -145,6 +145,7 @@ struct SearchFoodView: View {
                             .foregroundColor(Color.laranjaMacros)
                             .font(.title3)
                             .padding()
+                            .multilineTextAlignment(.center)
                         
                         Spacer()
                     }

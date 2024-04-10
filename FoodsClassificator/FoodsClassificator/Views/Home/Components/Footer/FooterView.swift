@@ -10,6 +10,8 @@ import SwiftUI
 struct FooterView: View {
 //    @Environment(HomeViewModel.self) var viewModel
     @Environment(FooterHomeViewModel.self) var footerHomeViewModel
+    
+    var viewModel: HomeViewModel
 
     var body: some View {
         VStack{
@@ -18,7 +20,7 @@ struct FooterView: View {
                 DatePickerComponentHomeView()
             }
             HStack {
-                MealsCarrouselHomeView()
+                MealsCarrouselHomeView(viewModel: viewModel)
             }.padding(.bottom)
             
             HStack {
@@ -34,8 +36,8 @@ struct FooterView: View {
     
 }
 
-#Preview {
-    var viewModel = FooterHomeViewModel()
-    return FooterView()
-        .environment(viewModel)
-}
+//#Preview {
+//    var viewModel = FooterHomeViewModel()
+//    return FooterView()
+//        .environment(viewModel)
+//}

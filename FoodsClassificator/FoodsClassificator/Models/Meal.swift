@@ -9,8 +9,8 @@ import Foundation
 
 struct FoodDetail: Identifiable {
     let id = UUID()
-    let calories: Int
-    let macros: Macronutrients
+    var calories: Int
+    var macros: Macronutrients
 }
 
 struct Macronutrients {
@@ -22,9 +22,9 @@ struct Macronutrients {
 
 struct Meal: Identifiable {
     let id = UUID()
-    let mealName: String
+    var mealName: String
     let image: String
     var totalCalories: Int
     var macros: Macronutrients
-    let foodDetails: [String: FoodDetail]
+    var foodDetails: [String: FoodDetail]
 }

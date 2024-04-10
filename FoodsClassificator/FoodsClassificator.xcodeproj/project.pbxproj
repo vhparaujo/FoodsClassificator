@@ -21,6 +21,8 @@
 		0B1C228D2BB20C74003C5C0E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C228C2BB20C74003C5C0E /* HomeView.swift */; };
 		0B1C228F2BB20C82003C5C0E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */; };
 		0B1C22922BB35754003C5C0E /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		0B21FD0E2BC5DE4400F07054 /* EditMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B21FD0D2BC5DE4400F07054 /* EditMealViewModel.swift */; };
+		0B21FD102BC5DEB700F07054 /* EditMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B21FD0F2BC5DEB700F07054 /* EditMealView.swift */; };
 		0B377F692BBC4584002107B3 /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B377F682BBC4584002107B3 /* CircularProgressBar.swift */; };
 		0B63392D2BC0378B002D56E7 /* AddMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B63392C2BC0378B002D56E7 /* AddMealView.swift */; };
 		0B6339362BC03CE9002D56E7 /* AddMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339352BC03CE9002D56E7 /* AddMealViewModel.swift */; };
@@ -30,7 +32,7 @@
 		0B6339422BC34B68002D56E7 /* SpeechRecognizerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339412BC34B68002D56E7 /* SpeechRecognizerManager.swift */; };
 		0B6339462BC43030002D56E7 /* ExpandedFoodDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339452BC43030002D56E7 /* ExpandedFoodDetailView.swift */; };
 		0B6339482BC44150002D56E7 /* CustomPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B6339472BC44150002D56E7 /* CustomPickerView.swift */; };
-		0B63394A2BC4D20F002D56E7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B6339492BC4D20F002D56E7 /* Alamofire */; };
+		0B63394E2BC5C96F002D56E7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B63394D2BC5C96F002D56E7 /* Alamofire */; };
 		0B73E8532BACB65A00C6F91D /* BarcodeSeachResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8522BACB65A00C6F91D /* BarcodeSeachResponse.swift */; };
 		0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8542BACB6F300C6F91D /* BarcodeAPIManager.swift */; };
 		0B73E8572BAF55DD00C6F91D /* RecentMealsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B73E8562BAF55DD00C6F91D /* RecentMealsView.swift */; };
@@ -126,6 +128,8 @@
 		0B1C22872BB20C61003C5C0E /* DatePickerComponentHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerComponentHomeView.swift; sourceTree = "<group>"; };
 		0B1C228C2BB20C74003C5C0E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		0B21FD0D2BC5DE4400F07054 /* EditMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMealViewModel.swift; sourceTree = "<group>"; };
+		0B21FD0F2BC5DEB700F07054 /* EditMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMealView.swift; sourceTree = "<group>"; };
 		0B377F682BBC4584002107B3 /* CircularProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
 		0B63392C2BC0378B002D56E7 /* AddMealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealView.swift; sourceTree = "<group>"; };
 		0B6339352BC03CE9002D56E7 /* AddMealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMealViewModel.swift; sourceTree = "<group>"; };
@@ -210,7 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B1C22922BB35754003C5C0E /* (null) in Frameworks */,
-				0B63394A2BC4D20F002D56E7 /* Alamofire in Frameworks */,
+				0B63394E2BC5C96F002D56E7 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +275,39 @@
 			children = (
 				0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */,
 				4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0B21FD092BC5D7D300F07054 /* EditMeal */ = {
+			isa = PBXGroup;
+			children = (
+				0B21FD0C2BC5D7F000F07054 /* ViewModel */,
+				0B21FD0B2BC5D7EB00F07054 /* View */,
+				0B21FD0A2BC5D7DC00F07054 /* Components */,
+			);
+			path = EditMeal;
+			sourceTree = "<group>";
+		};
+		0B21FD0A2BC5D7DC00F07054 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0B21FD0B2BC5D7EB00F07054 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B21FD0F2BC5DEB700F07054 /* EditMealView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B21FD0C2BC5D7F000F07054 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0B21FD0D2BC5DE4400F07054 /* EditMealViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -720,6 +757,7 @@
 		9BFB9ED02B8AD9DD00BF3028 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0B21FD092BC5D7D300F07054 /* EditMeal */,
 				0B6339282BC0370F002D56E7 /* AddMeal */,
 				4A3F74872BC36C6C0080C021 /* UserForm */,
 				4AF7A7552BBDA11E0057DF79 /* Tutorial */,
@@ -754,7 +792,7 @@
 			);
 			name = FoodsClassificator;
 			packageProductDependencies = (
-				0B6339492BC4D20F002D56E7 /* Alamofire */,
+				0B63394D2BC5C96F002D56E7 /* Alamofire */,
 			);
 			productName = FoodsClassificator;
 			productReference = 9BE1799C2B8A567C0086877C /* FoodsClassificator.app */;
@@ -838,6 +876,7 @@
 				0B73E8632BAF605B00C6F91D /* ProgressBar.swift in Sources */,
 				4A3F74982BC3A02F0080C021 /* FormViewModel.swift in Sources */,
 				4AF7A7542BBD9FCF0057DF79 /* FooterView.swift in Sources */,
+				0B21FD0E2BC5DE4400F07054 /* EditMealViewModel.swift in Sources */,
 				0B1C22832BB20C4A003C5C0E /* UserPhotoAndStreakComponentHomeView.swift in Sources */,
 				0B63392D2BC0378B002D56E7 /* AddMealView.swift in Sources */,
 				4AD53C082B97B55600F2A8F8 /* NewBoundingBoxesView.swift in Sources */,
@@ -899,6 +938,7 @@
 				9BEBDF8B2BA7611E0077632C /* ExampleViewModel.swift in Sources */,
 				0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */,
 				4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */,
+				0B21FD102BC5DEB700F07054 /* EditMealView.swift in Sources */,
 				4A3F74892BC37B350080C021 /* FormsPage1.swift in Sources */,
 				9BEBDF882BA760EA0077632C /* ExampleView.swift in Sources */,
 				0B1C22812BB20C4A003C5C0E /* UserNameComponentHomeView.swift in Sources */,
@@ -1138,7 +1178,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B6339492BC4D20F002D56E7 /* Alamofire */ = {
+		0B63394D2BC5C96F002D56E7 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B63392E2BC0397E002D56E7 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;

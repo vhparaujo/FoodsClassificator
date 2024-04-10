@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct MacrosComponentHomeView: View {
-    
-    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
 
     @State var macroType: String = ""
     @State var backgroundColor: Color = .clear
+    var macro: Double
     
     var body: some View {
         VStack {
@@ -21,7 +20,7 @@ struct MacrosComponentHomeView: View {
                 .foregroundStyle(.verdeTitle)
                 .lineLimit(1)
                 
-            Text("\(viewModel.macrosValue)")
+            Text("\(macro, specifier: "%.f")")
                 .foregroundStyle(.black)
                 .font(.subheadline)
                 .lineLimit(1)
@@ -33,14 +32,12 @@ struct MacrosComponentHomeView: View {
                     RoundedRectangle(cornerRadius: 17)
                         .stroke(Color.white, lineWidth: 2)
                 )
-                
-               
         }
     }
 }
 
-#Preview {
-    var viewModel = HomeViewModel()
-    return MacrosComponentHomeView(macroType: "Carboidrafhjufehuejfujcutos", backgroundColor: .blue)
-        .environment(viewModel)
-}
+//#Preview {
+//    var viewModel = HomeViewModel()
+//    return MacrosComponentHomeView(macroType: "Carboidrafhjufehuejfujcutos", backgroundColor: .blue)
+//        .environment(viewModel)
+//}

@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
-    
-    @Environment(HomeViewModel.self) var viewModel
-    
+    var viewModel: HomeViewModel
     var background = BackgroundShapeHeaderHomeView()
     
     let screenWidth = UIScreen.main.bounds.size.width
@@ -21,9 +19,9 @@ struct HeaderView: View {
         VStack {
             
             HStack {
-                UserNameComponentHomeView()
+                UserNameComponentHomeView(viewModel: viewModel)
                 Spacer()
-                UserPhotoAndStreakComponentHomeView()
+                UserPhotoAndStreakComponentHomeView(viewModel: viewModel)
             }.padding()
             
             ZStack {
@@ -32,10 +30,10 @@ struct HeaderView: View {
                     
                     VStack {
                         
-                        MacrosComponentHomeView(macroType: HomeTexts.carboidratos, backgroundColor: Color.amareloCarboidratos)
+                        MacrosComponentHomeView(macroType: HomeTexts.carboidratos, backgroundColor: Color.amareloCarboidratos, macro: viewModel.totalMeals?.macros.carbohydrates ?? 0)
                             .padding(.vertical)
-                        
-                        MacrosComponentHomeView(macroType: HomeTexts.gorduras, backgroundColor: Color.rosaGorduras)
+                        let _ = print("CARBOIDRATOS: \(viewModel.totalMeals?.macros.carbohydrates)")
+                        MacrosComponentHomeView(macroType: HomeTexts.gorduras, backgroundColor: Color.rosaGorduras, macro: viewModel.totalMeals?.macros.fats ?? 0)
                             .padding(.vertical)
                     }
                 
@@ -43,10 +41,10 @@ struct HeaderView: View {
                     
                     VStack {
                         
-                        MacrosComponentHomeView(macroType: HomeTexts.proteinas, backgroundColor: Color.rosaProteinas)
+                        MacrosComponentHomeView(macroType: HomeTexts.proteinas, backgroundColor: Color.rosaProteinas, macro: viewModel.totalMeals?.macros.proteins ?? 0)
                             .padding(.vertical)
                         
-                        MacrosComponentHomeView(macroType: HomeTexts.fibras, backgroundColor: Color.amareloFibras)
+                        MacrosComponentHomeView(macroType: HomeTexts.fibras, backgroundColor: Color.amareloFibras, macro: viewModel.totalMeals?.macros.fibers ?? 0)
                             .padding(.vertical)
                     }
                     
@@ -55,7 +53,7 @@ struct HeaderView: View {
             .padding(.horizontal)
                 
                 VStack {
-                    ProgressBarComponentHomeView()
+                    ProgressBarComponentHomeView(viewModel: viewModel)
                         .offset(y:40)
                         .padding(.horizontal)
                 }.frame(width: screenWidth * 0.5)
@@ -73,8 +71,8 @@ struct HeaderView: View {
     }
 }
 
-#Preview {
-    var viewModel = HomeViewModel()
-    return HeaderView()
-        .environment(viewModel)
-}
+//#Preview {
+//    var viewModel = HomeViewModel()
+//    return HeaderView()
+//        .environment(viewModel)
+//}

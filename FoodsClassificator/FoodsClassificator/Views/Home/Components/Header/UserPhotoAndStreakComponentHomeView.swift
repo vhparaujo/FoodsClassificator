@@ -9,7 +9,8 @@ import SwiftUI
 
 struct UserPhotoAndStreakComponentHomeView: View {
     
-    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
+//    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
+    var viewModel: HomeViewModel
     
     @Bindable private var perfilViewModel = PerfilViewModel()
     
@@ -54,8 +55,8 @@ struct UserPhotoAndStreakComponentHomeView: View {
     }
 }
 
-#Preview {
-    var viewModel = HomeViewModel()
-    return UserPhotoAndStreakComponentHomeView()
-        .environment(viewModel)
-}
+//#Preview {
+//    var viewModel = HomeViewModel()
+//    return UserPhotoAndStreakComponentHomeView(v)
+//        .environment(viewModel)
+//}
