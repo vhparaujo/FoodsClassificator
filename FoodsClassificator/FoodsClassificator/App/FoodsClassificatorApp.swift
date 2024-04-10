@@ -15,11 +15,12 @@ struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-
                 FormsPage1()
                     .preferredColorScheme(.light)
             }
             .environment(PerfilViewModel())
+            .environment(HomeViewModel())
+
         }.modelContainer(modelcontent)
     }
 }

@@ -49,7 +49,7 @@ import Foundation
         } catch {
             fatalError("Fetch failed: \(error.localizedDescription)")
         }
-
+        
     }
     var idadeAsString: String {
         get { String(model.idade) }
@@ -65,4 +65,23 @@ import Foundation
         get { String(model.altura) }
         set { model.altura = Int(newValue) ?? model.altura }
     }
+    
+    var selectedIntensityIndex: Int = 0
+    
+    func caloriesPerDay() -> Double {
+        let genderFactor = model.sexoBiologico == "Masculino" ? 5 : -161
+        let weight = Double(model.peso)
+        let height = Double(model.altura)
+        let age = Double(model.idade)
+        // Array de multiplicadores de atividade correspondendo a "Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"
+        let activityMultipliers = [1.2, 1.375, 1.55, 1.725, 1.9]
+        // Usa o selectedIndex para obter o multiplicador correto
+        let activityMultiplier = activityMultipliers[selectedIntensityIndex]
+        
+        let bmr = (10 * weight) + (6.25 * height) - (5 * age) + Double(genderFactor)
+        let calories = bmr * activityMultiplier
+        print(calories)
+        return calories
+    }
+
 }

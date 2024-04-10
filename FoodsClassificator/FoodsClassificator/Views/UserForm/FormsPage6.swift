@@ -11,8 +11,9 @@ struct FormsPage6: View {
     @Environment(\.modelContext) private var context
     
     @Bindable private var viewModel = PerfilViewModel()
+    @Bindable private var homeViewModel = HomeViewModel()
+    @Bindable private var perfilViewModel = PerfilViewModel()
     
-    @State private var haveNutritionist = false
     @State var meta:String = ""
     var body: some View {
         VStack {
@@ -23,8 +24,23 @@ struct FormsPage6: View {
             
             HStack {
                 Button(action: {
-                    haveNutritionist = true
+                    viewModel.model.temNutricionista = false
+                    print("nao tem Nutricionista")
+                }, label: {
+                    Capsule()
+                        .foregroundStyle(.green.opacity(0.4))
+                        .overlay {
+                            Text("Não")
+                                .tint(.black)
+                        }
+                        .frame(height: 50)
+                })
+                .opacity(viewModel.model.temNutricionista ? 0.5 : 1.0)
+                
+                Button(action: {
+                    viewModel.model.temNutricionista = true
                     print("Tem Nutricionista")
+                    
                 }, label: {
                     Capsule()
                         .foregroundStyle(.green.opacity(0.4))
@@ -34,25 +50,11 @@ struct FormsPage6: View {
                         }
                         .frame(height: 50)
                 })
-                .opacity(haveNutritionist ? 1.0 : 0.5)
-                
-                Button(action: {
-                    haveNutritionist = false
-                    print("nao tem Nutricionista")
-                }, label: {
-                    Capsule()
-                        .foregroundStyle(.green.opacity(0.4))
-                        .overlay {
-                            Text("Nao")
-                                .tint(.black)
-                        }
-                        .frame(height: 50)
-                })
-                .opacity(haveNutritionist ? 0.5 : 1.0)
+                .opacity(viewModel.model.temNutricionista ? 1.0 : 0.5)
             }
             
             
-            if haveNutritionist {
+            if viewModel.model.temNutricionista  {
                 QuestionTextComponent(QuestionLabel: "Qual é a sua meta?")
                 TextFieldRectangleComponent(placeholder: "1800cal", text: $meta)
                     .keyboardType(.numberPad)

@@ -44,19 +44,22 @@ struct FormsPage4: View {
                 
                 QuestionTextComponent(QuestionLabel: "Quantas vezes na semana você pratica exercício físico?")
                 VStack(spacing: 10){
-                    ForEach(viewModel.intensidades, id: \.self) { intensidade in
+                    ForEach(0..<viewModel.intensidades.count, id: \.self) { index in
                         Button(action: {
-                            viewModel.model.intensidadeDoExercicio = intensidade
+                            viewModel.selectedIntensityIndex = index
+                            viewModel.model.intensidadeDoExercicio = viewModel.intensidades[index]
+
                             print(viewModel.model.intensidadeDoExercicio)
+
                         }) {
                             RoundedRectangle(cornerRadius: 15)
                                 .foregroundStyle(.green.opacity(0.4))
                                 .overlay {
-                                    Text(intensidade)
+                                    Text(viewModel.intensidades[index])
                                         .foregroundStyle(.black)
                                 }
                                 .frame(height: 50)
-                                .opacity(viewModel.model.intensidadeDoExercicio == intensidade ? 1.0 : 0.5)
+                                .opacity(viewModel.model.intensidadeDoExercicio == viewModel.intensidades[index] ? 1.0 : 0.5)
                         }
                     }
                 }

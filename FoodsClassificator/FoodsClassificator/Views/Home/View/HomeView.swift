@@ -9,9 +9,9 @@ import SwiftUI
 
 struct HomeView: View {
     @Environment(\.dismiss) private var dismiss
-    
-    var viewModel = HomeViewModel()
-    var footerHomeViewModel = FooterHomeViewModel()
+    @Environment(\.modelContext) private var context
+    @Bindable private var viewModel = PerfilViewModel()
+    @Bindable private var footerHomeViewModel = FooterHomeViewModel()
     
     var body: some View {
         
@@ -30,6 +30,9 @@ struct HomeView: View {
                 )
         }
         .navigationBarBackButtonHidden()
+        .onAppear{
+            viewModel.modelContext = context
+        }
     }
 }
 
