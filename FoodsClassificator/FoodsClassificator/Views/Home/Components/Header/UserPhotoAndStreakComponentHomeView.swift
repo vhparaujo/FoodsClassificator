@@ -41,9 +41,10 @@ struct UserPhotoAndStreakComponentHomeView: View {
                     .stroke(Color.verdeTitle, lineWidth: 1)
             )
 
-            PerfilImageViewComponent(userPhoto: $perfilViewModel.model.userPhoto)
+            PerfilImageViewComponent(viewModel: perfilViewModel)
                     .frame(width: 45, height: 45)
                     .offset(x: 35)
+            
             }
         .onAppear(perform: {
             perfilViewModel.modelContext = context

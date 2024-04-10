@@ -11,5 +11,10 @@
 		<dict/>
 		<dict/>
 	</array>
+	<key>UILaunchScreen</key>
+	<dict>
+		<key>UIImageName</key>
+		<string>launchScreen</string>
+	</dict>
 </dict>
 </plist>

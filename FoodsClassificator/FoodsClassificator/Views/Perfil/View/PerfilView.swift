@@ -32,7 +32,7 @@ struct PerfilView: View {
                 
             } else {
                 
-                PerfilImageViewComponent(userPhoto: $viewModel.model.userPhoto)
+                PerfilImageViewComponent(viewModel: viewModel)
                     .frame(width: 100, height: 100)
                 
                 HStack(alignment: .center) {
@@ -61,7 +61,8 @@ struct PerfilView: View {
                             Text("\(viewModel.model.idade)")
                                 .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
                             Image(systemName: "chevron.right")
-                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
+                                .opacity(canEditFunc() ? 1 : 0)
+                                .foregroundStyle(.secondary)
                                 .imageScale(.small)
                         }.foregroundStyle(.black)
                         
@@ -90,7 +91,8 @@ struct PerfilView: View {
                             Text("\(viewModel.model.peso) kg")
                                 .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
                             Image(systemName: "chevron.right")
-                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
+                                .opacity(canEditFunc() ? 1 : 0)
+                                .foregroundStyle(.secondary)
                                 .imageScale(.small)
                         }.foregroundStyle(.black)
                         
@@ -119,7 +121,8 @@ struct PerfilView: View {
                             Text("\(viewModel.model.altura) cm")
                                 .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
                             Image(systemName: "chevron.right")
-                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
+                                .opacity(canEditFunc() ? 1 : 0)
+                                .foregroundStyle(.secondary)
                                 .imageScale(.small)
                         }.foregroundStyle(.black)
                         
@@ -156,8 +159,6 @@ struct PerfilView: View {
                             Spacer()
                             Text("\(viewModel.model.sexoBiologico)")
                                 .foregroundStyle(.tertiary)
-                            Image(systemName: "chevron.up.chevron.down")
-                                .foregroundStyle(.tertiary)
                         }
                     }
                     
@@ -180,8 +181,6 @@ struct PerfilView: View {
                             Text("Objetivo")
                             Spacer()
                             Text("\(viewModel.model.objetivo)")
-                                .foregroundStyle(.tertiary)
-                            Image(systemName: "chevron.up.chevron.down")
                                 .foregroundStyle(.tertiary)
                         }
                     }
