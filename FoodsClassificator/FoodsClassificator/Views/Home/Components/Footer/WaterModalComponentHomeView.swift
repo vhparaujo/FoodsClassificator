@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WaterModalComponentHomeView: View {
-    @Environment(FooterHomeViewModel.self) var footerHomeViewModel
+    var footerHomeViewModel = FooterHomeViewModel()
     @Environment(\.dismiss) private var dismiss
     @Binding var isPresented: Bool
     
@@ -177,9 +177,9 @@ struct WaterModalComponentHomeView: View {
 }
 
 
-#Preview {
-    var footerHomeViewModel = FooterHomeViewModel()
-    return WaterModalComponentHomeView(isPresented: .constant(true)) // Substitua true pelo valor inicial desejado para isPresented
-        .environment(footerHomeViewModel)
-    
-}
+//#Preview {
+//    var footerHomeViewModel = FooterHomeViewModel()
+//    return WaterModalComponentHomeView(isPresented: .constant(true)) // Substitua true pelo valor inicial desejado para isPresented
+//        .environment(footerHomeViewModel)
+//    
+//}

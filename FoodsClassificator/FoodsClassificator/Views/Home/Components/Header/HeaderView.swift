@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct HeaderView: View {
-        
-    @Environment(HomeViewModel.self) var viewModel
-        
+                
     var background = BackgroundShapeHeaderHomeView()
     
     let screenWidth = UIScreen.main.bounds.size.width

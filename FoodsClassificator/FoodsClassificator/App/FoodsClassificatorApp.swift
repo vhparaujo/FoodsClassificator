@@ -9,19 +9,20 @@ import SwiftUI
 import SwiftData
 
 @main
+@MainActor
 struct FoodsClassificatorApp: App {
-    var homeViewModel = HomeViewModel()
-    var footerHomeViewModel = FooterHomeViewModel()
+    
+    var modelContainer: ModelContainer = appContainer
+    
+    @AppStorage("onBoardingViewed") var onBoardingViewed = false
 
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomeView()
+                FormsPage1()
                     .preferredColorScheme(.light)
-                    .environment(homeViewModel)
-                    .environment(footerHomeViewModel)
             }
-        }.modelContainer(appContainer)
+        }.modelContainer(modelContainer)
     }
 }
 

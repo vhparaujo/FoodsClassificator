@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WaterRectangleComponentHomeView: View {
-    @Environment(FooterHomeViewModel.self) var footerHomeViewModel
+    var footerHomeViewModel = FooterHomeViewModel()
     @Environment(\.dismiss) private var dismiss
     
     @State var isPresented = false
@@ -86,8 +86,8 @@ struct WaterRectangleComponentHomeView: View {
 }
 
 
-#Preview {
-    var footerHomeViewModel = FooterHomeViewModel()
-    return HomeView()
-        .environment(footerHomeViewModel)
-}
+//#Preview {
+//    var footerHomeViewModel = FooterHomeViewModel()
+//    return HomeView()
+//        .environment(footerHomeViewModel)
+//}

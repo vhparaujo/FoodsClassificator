@@ -9,8 +9,8 @@ import SwiftUI
 
 struct FooterView: View {
 //    @Environment(HomeViewModel.self) var viewModel
-    @Environment(FooterHomeViewModel.self) var footerHomeViewModel
-
+    var footerHomeViewModel = FooterHomeViewModel()
+    
     var body: some View {
         VStack{
             HStack {

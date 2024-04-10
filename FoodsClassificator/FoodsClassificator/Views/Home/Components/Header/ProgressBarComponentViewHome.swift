@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProgressBarComponentHomeView: View {
     
-    @Environment(HomeViewModel.self) var homeViewModel: HomeViewModel
+    var homeViewModel = HomeViewModel()
     @Environment(\.modelContext) var context
     @State var perfilViewModel = PerfilViewModel()
     

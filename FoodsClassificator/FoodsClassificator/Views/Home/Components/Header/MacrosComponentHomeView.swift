@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MacrosComponentHomeView: View {
     
-    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
+    var viewModel: HomeViewModel?
 
     @State var macroType: String = ""
     @State var backgroundColor: Color = .clear
@@ -21,7 +21,7 @@ struct MacrosComponentHomeView: View {
                 .foregroundStyle(.verdeTitle)
                 .lineLimit(1)
                 
-            Text("\(viewModel.macrosValue)")
+            Text("\(viewModel?.macrosValue)")
                 .foregroundStyle(.black)
                 .font(.subheadline)
                 .lineLimit(1)
@@ -41,6 +41,6 @@ struct MacrosComponentHomeView: View {
 
 #Preview {
     var viewModel = HomeViewModel()
-    return MacrosComponentHomeView(macroType: "Carboidrafhjufehuejfujcutos", backgroundColor: .blue)
+    return MacrosComponentHomeView(viewModel: viewModel, macroType: "Carboidrafhjufehuejfujcutos", backgroundColor: .blue)
         .environment(viewModel)
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 
 @Observable class HomeViewModel {
-    var perfilViewModel = PerfilViewModel()
     
     var userName: String = "Olá, Fulano!"
     var userPhoto: String = "labelImage"
@@ -30,7 +29,5 @@ import SwiftUI
             self.progressBarValue = initialProgressBarValue
         }
     }
-    
-
     
 }

@@ -38,9 +38,9 @@ struct FormsPage1: View {
             }
         }
         .padding()
-        .onAppear{
+        .onAppear(perform: {
             viewModel.modelContext = context
-        }
+        })
     }
 }
 
