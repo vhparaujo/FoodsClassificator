@@ -15,5 +15,7 @@ struct Highlight: Identifiable, Equatable {
     var cornerRadius: CGFloat
     var style: RoundedCornerStyle = .continuous
     var scale: CGFloat
+    var popoverType: PopoverType // Novo campo
+
 }
 

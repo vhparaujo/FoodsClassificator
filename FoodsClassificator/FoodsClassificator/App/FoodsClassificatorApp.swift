@@ -15,7 +15,7 @@ struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                TutorialHomeView()
+                FormsPage3()
                     .preferredColorScheme(.light)
             }
             .environment(PerfilViewModel())

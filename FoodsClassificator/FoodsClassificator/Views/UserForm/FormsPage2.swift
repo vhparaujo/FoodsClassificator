@@ -39,12 +39,7 @@ struct FormsPage2: View {
             
             Spacer()
             
-            ZStack {
-                HStack {
-                    Image("form_page2ruler")
-                }
-                Image("form_page2Papaia")
-            }
+           Image("form_page2")
             
             Spacer() // Empurra o conteúdo para cima e o botão para baixo
             

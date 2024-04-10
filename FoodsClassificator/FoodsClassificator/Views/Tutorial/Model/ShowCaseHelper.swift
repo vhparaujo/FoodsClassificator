@@ -9,14 +9,14 @@ import SwiftUI
 
 extension View {
     @ViewBuilder
-    func showCase(order: Int, title: String, cornerRadius: CGFloat, style: RoundedCornerStyle, scale: CGFloat = 1) -> some View {
+    func showCase(order: Int, title: String, cornerRadius: CGFloat, style: RoundedCornerStyle, scale: CGFloat = 1, popoverType: PopoverType = .standard) -> some View {
         self
             .anchorPreference(key: HighlightAnchorKey.self, value: .bounds) { anchor in
                 let highlight = Highlight(anchor: anchor,
                                           title: title,
                                           cornerRadius: cornerRadius,
                                           style: style,
-                                          scale: scale)
+                                          scale: scale, popoverType: popoverType)
                 return [order: highlight]
             }
     }
@@ -24,6 +24,7 @@ extension View {
 
 ///Showcase Root View Modifier
 struct ShowCaseRoot: ViewModifier{
+    @Binding var showStartPopover: Bool
     var showHighlights: Bool
     var onFinished: () -> ()
     
@@ -70,15 +71,16 @@ struct ShowCaseRoot: ViewModifier{
                 }
                 .ignoresSafeArea()
                 .onTapGesture {
-                    if currentHighlight >= highlightOrder.count - 1 {
-                        ///hides the hilightView
+                    if currentHighlight == 4 { // Presumindo que o índice comece de
+                        showStartPopover = true
+                    } else if currentHighlight >= highlightOrder.count - 1 {
                         withAnimation(.easeInOut(duration: 0.25)){
-                            
-                            showView = false
+                            showView = true // ou qualquer lógica que você tenha para esconder o view
+                            showStartPopover = true
                         }
-                        onFinished()
+                        onFinished() // Ou qualquer ação que você tenha ao finalizar os showcases
                     } else {
-                        ///Move to the next highligh
+                        // Lógica para mover para o próximo highlight
                         withAnimation(.interactiveSpring(response: 0.3,
                                                          dampingFraction: 0.7,
                                                          blendDuration: 0.7)){
@@ -95,30 +97,54 @@ struct ShowCaseRoot: ViewModifier{
                         showTitle = true
                     }
                 }
-            
-            Rectangle()
-                .foregroundStyle(Color.clear)
-            ///ading Border
-            //////simply Extend it's size
-                .frame(width: highlightRect.width + 20,
-                       height: highlightRect.height + 20)
-                .clipShape(RoundedRectangle(cornerRadius: highlight.cornerRadius,
-                                            style: highlight.style))
-                .popover(isPresented: $showTitle){
-                    Text(highlight.title)
-                        .lineLimit(nil) // Permite um número ilimitado de linhas
-                        .fixedSize(horizontal: false, vertical: true)
-                        .padding()
-                        .presentationCompactAdaptation(.popover)
-                        .interactiveDismissDisabled()
-                        .frame(height: 150)
-                }
-                .scaleEffect(highlight.scale )
-                .scaledToFit()
-                .offset(x: highlightRect.minX - 10, y: highlightRect.minY - 10)
-            
-            
-            
+            switch highlight.popoverType {
+            case .standard:
+                Rectangle()
+                    .foregroundStyle(Color.clear)
+                    .frame(width: highlightRect.width + 20,
+                           height: highlightRect.height + 20)
+                    .clipShape(RoundedRectangle(cornerRadius: highlight.cornerRadius,
+                                                style: highlight.style))
+                    .popover(isPresented: $showTitle){
+                        Text(highlight.title)
+                            .lineLimit(nil) // Permite um número ilimitado de linhas
+                            .fixedSize(horizontal: false, vertical: true)
+                            .padding()
+                            .presentationCompactAdaptation(.popover)
+                            .interactiveDismissDisabled()
+                            .frame(height: 150)
+                    }
+                    .scaleEffect(highlight.scale)
+                    .scaledToFit()
+                    .offset(x: highlightRect.minX - 10, y: highlightRect.minY - 10)
+
+            case .custom:
+                Rectangle()
+                    .foregroundStyle(Color.clear)
+                    .frame(width: highlightRect.width + 20, height: highlightRect.height + 20)
+                    .clipShape(RoundedRectangle(cornerRadius: highlight.cornerRadius, style: highlight.style))
+//                    .popover(isPresented: $showTitle) {
+//                        CustomAlertView(
+//                            title: highlight.title,
+//                            onConfirm: {
+//                                // Aqui vai a lógica quando o usuário tocar em "Confirmar"
+//                                print("Confirmado")
+//                            },
+//                            onCancel: {
+//                                // Aqui vai a lógica quando o usuário tocar em "Cancelar"
+//                                print("Cancelado")
+//                            }
+//                        )
+//                        .frame(width: 300, height: 200) // Ajuste o tamanho conforme necessário
+//                    }
+//                    .scaleEffect(highlight.scale)
+//                    .offset(x: highlightRect.minX - 10, y: highlightRect.minY - 10)
+
+            case .vazio:
+                RoundedRectangle(cornerRadius: 10)
+                    .frame( width: 0, height: 0)
+                    .opacity(0.4)
+            }
         }
     }
 }
@@ -148,6 +174,6 @@ fileprivate struct HighlightAnchorKey: PreferenceKey {
     }
 }
 
-#Preview {
-    TutorialHomeViewTeste()
-}
+//#Preview {
+//    TutorialHomeViewTeste()
+//}

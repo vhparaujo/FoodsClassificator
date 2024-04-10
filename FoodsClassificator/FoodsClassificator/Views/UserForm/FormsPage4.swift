@@ -17,7 +17,7 @@ struct FormsPage4: View {
     
     var body: some View {
         VStack {
-            ScrollView {
+//            ScrollView {
                 FormProgressBar(percent: .constant(0.64))
                 
                 QuestionTextComponent(QuestionLabel: "Qual é o seu principal objetivo?")
@@ -34,7 +34,7 @@ struct FormsPage4: View {
                                     Text(objetivo)
                                         .tint(.black)
                                 }
-                                .frame(height: 50)
+                                .frame(height: 40)
                                 .opacity(viewModel.model.objetivo == objetivo ? 1.0 : 0.5)
                         }
                     }
@@ -58,7 +58,7 @@ struct FormsPage4: View {
                                     Text(viewModel.intensidades[index])
                                         .foregroundStyle(.black)
                                 }
-                                .frame(height: 50)
+                                .frame(height: 40)
                                 .opacity(viewModel.model.intensidadeDoExercicio == viewModel.intensidades[index] ? 1.0 : 0.5)
                         }
                     }
@@ -68,7 +68,7 @@ struct FormsPage4: View {
                 Spacer()
                 
                 // NavigationLink para a próxima página do questionário
-            }
+//            }
             NavigationLink(destination: FormsPage5()) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
