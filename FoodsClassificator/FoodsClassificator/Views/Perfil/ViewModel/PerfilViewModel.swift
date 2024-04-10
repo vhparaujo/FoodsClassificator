@@ -28,7 +28,7 @@ import Foundation
     
     let refeicoesFixas: [String] = ["Café da manhã", "Almoço", "Jantar"]
     
-    let frequencias: [Int] = [1, 2, 3, 4, 5]
+    let intensidades: [String] = ["Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"]
     
     var textFieldName = ""
     
@@ -45,11 +45,44 @@ import Foundation
             } else {
                 fatalError("No data fetched")
             }
-       
+            
         } catch {
             fatalError("Fetch failed: \(error.localizedDescription)")
         }
         
+    }
+    var idadeAsString: String {
+        get { String(model.idade) }
+        set { model.idade = Int(newValue) ?? model.idade }
+    }
+    
+    var pesoAsString: String {
+        get { String(model.peso) }
+        set { model.peso = Int(newValue) ?? model.peso }
+    }
+    
+    var alturaAsString: String {
+        get { String(model.altura) }
+        set { model.altura = Int(newValue) ?? model.altura }
+    }
+    
+    var selectedIntensityIndex: Int = 0
+    
+    func caloriesPerDay() -> Double {
+        let genderFactor = model.sexoBiologico == "Masculino" ? 5 : -161
+        let weight = Double(model.peso)
+        let height = Double(model.altura)
+        let age = Double(model.idade)
+        // Array de multiplicadores de atividade correspondendo a "Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"
+        let activityMultipliers = [1.2, 1.375, 1.55, 1.725, 1.9]
+        // Usa o selectedIndex para obter o multiplicador correto
+        let activityMultiplier = activityMultipliers[selectedIntensityIndex]
+        
+        let bmr = (10 * weight) + (6.25 * height) - (5 * age) + Double(genderFactor)
+        let calories = bmr * activityMultiplier
+        print(calories)
+        model.totalCalories = Int(calories)
+        return calories
     }
     
 }

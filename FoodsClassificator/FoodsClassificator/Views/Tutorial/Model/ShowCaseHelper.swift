@@ -73,6 +73,7 @@ struct ShowCaseRoot: ViewModifier{
                     if currentHighlight >= highlightOrder.count - 1 {
                         ///hides the hilightView
                         withAnimation(.easeInOut(duration: 0.25)){
+                            
                             showView = false
                         }
                         onFinished()
@@ -105,11 +106,15 @@ struct ShowCaseRoot: ViewModifier{
                                             style: highlight.style))
                 .popover(isPresented: $showTitle){
                     Text(highlight.title)
+                        .lineLimit(nil) // Permite um número ilimitado de linhas
+                        .fixedSize(horizontal: false, vertical: true)
                         .padding()
                         .presentationCompactAdaptation(.popover)
                         .interactiveDismissDisabled()
+                        .frame(height: 150)
                 }
-                .scaleEffect(highlight.scale)
+                .scaleEffect(highlight.scale )
+                .scaledToFit()
                 .offset(x: highlightRect.minX - 10, y: highlightRect.minY - 10)
             
             
@@ -144,5 +149,5 @@ fileprivate struct HighlightAnchorKey: PreferenceKey {
 }
 
 #Preview {
-    TutorialHomeView()
+    TutorialHomeViewTeste()
 }

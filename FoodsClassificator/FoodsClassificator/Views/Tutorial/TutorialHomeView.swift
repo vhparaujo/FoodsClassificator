@@ -2,172 +2,284 @@
 //  TutorialHomeView.swift
 //  FoodsClassificator
 //
-//  Created by Gabriel Ribeiro Noronha on 04/04/24.
+//  Created by Gabriel Ribeiro Noronha on 10/04/24.
 //
 
 import SwiftUI
 
 struct TutorialHomeView: View {
+    let screenWidth = UIScreen.main.bounds.size.width
+    let screenHeight = UIScreen.main.bounds.size.height
+    var background = BackgroundShapeHeaderHomeView()
+    @State private var currentIndex: Int = 0
+    @GestureState private var dragOffset: CGFloat = 0
+    
     var body: some View {
-        
-        TabView {
-            GeometryReader { /*geometry in*/
-                let safeArea = $0.safeAreaInsets
-                HStack {
-                    VStack {
-                        VStack {
-                            RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
-                                .foregroundStyle(Color.red)
-                                .showCase(order: 2,
-                                          title: "ELEMENTO 3",
-                                          cornerRadius: 10,
-                                          style: .continuous)
-                            
-                            RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
-                                .foregroundStyle(Color.green)
-                                .showCase(order: 3,
-                                          title: "ELEMENTO 4",
-                                          cornerRadius: 10,
-                                          style: .continuous)
-                            
-                            RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
-                                .foregroundStyle(Color.blue)
-                                .showCase(order: 4,
-                                          title: "ELEMENTO 5",
-                                          cornerRadius: 10,
-                                          style: .continuous)
-                            
-                            RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
-                                .foregroundStyle(Color.yellow)
-                                .showCase(order: 5,
-                                          title: "ELEMENTO 6",
-                                          cornerRadius: 10,
-                                          style: .continuous)
-                        }
-                    }
-                    VStack {
-                        RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
-                            .foregroundStyle(Color.red)
-                            .showCase(order: 6,
-                                      title: "ELEMENTO 7",
-                                      cornerRadius: 10,
-                                      style: .continuous)
-                        RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
-                            .foregroundStyle(Color.green)
-                            .showCase(order: 7,
-                                      title: "ELEMENTO 8",
-                                      cornerRadius: 10,
-                                      style: .continuous)
-                        
-                        RoundedRectangle(cornerSize: /*@START_MENU_TOKEN@*/CGSize(width: 20, height: 10)/*@END_MENU_TOKEN@*/)
-                            .foregroundStyle(Color.blue)
-                            .showCase(order: 8,
-                                      title: "ELEMENTO 9",
-                                      cornerRadius: 10,
-                                      style: .continuous)
-                        RoundedRectangle(cornerSize: CGSize(width: 20, height: 10))
-                            .foregroundStyle(Color.yellow)
-                            .showCase(order: 9,
-                                      title: "ELEMENTO 10",
-                                      cornerRadius: 10,
-                                      style: .continuous)
-                    }
-                }
-                .overlay(alignment: .top, content: {
-                    Rectangle()
-                        .fill(.ultraThinMaterial)
-                        .frame(height: safeArea.top)
-                })
-                .ignoresSafeArea()
-                .overlay(alignment: .topTrailing){
-                    VStack{
-                        Button{
-                            
-                        } label: {
-                            Image(systemName: "pencil.circle")
-                                .foregroundStyle(Color.white)
-                                .padding(10)
-                                .background{
-                                    RoundedRectangle(cornerRadius: 10,
-                                                     style: .continuous)
-                                    .fill(.black)
-                                }
-                        }
-                        .showCase(order: 0,
-                                  title: "ELEMENTO 1",
-                                  cornerRadius: 10,
-                                  style: .continuous)
-                        
-                        
+        GeometryReader { geometry in
+            //            let safeArea = $0.safeAreaInsets
+            VStack{
+                VStack {
+                    HStack {
+                        Text("Olá, Fulano!")
+                            .font(.title)
+                            .bold()
+                            .foregroundStyle(.verdeTitle)
                         Spacer()
-                        
-                        Button{
+                        ZStack{
                             
-                        } label: {
-                            Image(systemName: "heart.fill")
-                                .foregroundStyle(Color.red)
-                                .padding(10)
-                                .background{
-                                    RoundedRectangle(cornerRadius: 10,
-                                                     style: .continuous)
-                                    .fill(.green)
+                            HStack{
+                                Text("20")
+                                    .font(.callout)
+                                    .bold()
+                                    .foregroundStyle(Color.verdeTitle)
+                                Image("fireSymbolHome")
+                                    .foregroundStyle(.black)
+                                
+                                Spacer()
+                            }
+                            .frame(width: 80, height: 29)
+                            .padding(.horizontal)
+                            .background(Color.clear)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .stroke(Color.verdeTitle, lineWidth: 1)
+                            )
+                            
+                            Circle()
+                                .stroke(lineWidth: 2)
+                                .foregroundStyle(.verdeTitle)
+                                .overlay {
+                                    Image("labelPerfil")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .clipShape(.circle)
                                 }
+                                .frame(width: 45, height: 45)
+                                .offset(x: 35)
                         }
-                        .showCase(order: 1,
-                                  title: "ELEMENTO 2",
+                        .showCase(order: 3,
+                                  title: "Acompanhe seu crescimento, participe de desafios para evoluir e celebre suas vitórias! A ofensiva é ativada quando você atinge sua meta diária de água e registra pelo menos uma refeição.",
                                   cornerRadius: 10,
                                   style: .continuous)
+                    }.padding()
                         
+                    
+                    ZStack {
+                        HStack {
+                            VStack {
+                                
+                                MacrosComponentHomeView(macroType: "Carboidratos",
+                                                        backgroundColor: Color.amareloCarboidratos)
+                                .padding(.vertical)
+                                
+                                MacrosComponentHomeView(macroType: "Gorduras",
+                                                        backgroundColor: Color.rosaGorduras)
+                                .padding(.vertical)
+                            }
+                            Spacer()
+                            
+                            VStack {
+                                MacrosComponentHomeView(macroType: "Proteínas",
+                                                        backgroundColor: Color.rosaProteinas)
+                                .padding(.vertical)
+                                
+                                MacrosComponentHomeView(macroType: "Fibras",
+                                                        backgroundColor: Color.amareloFibras)
+                                .padding(.vertical)
+                            }
+                            
+                        }
+                        .padding(.bottom)
+                        .padding(.horizontal)
+                        
+                        VStack {
+                            HStack {
+                                ZStack {
+                                    Image("mamaoHome")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .offset(y: -60)
+                                    Circle()
+                                        .foregroundStyle(Color.verdeFundo)
+                                    Circle()
+                                        .trim(from: 0.12, to: 0.88)
+                                        .stroke(style: StrokeStyle(lineWidth: 23, lineCap: .round))
+                                        .rotationEffect(.degrees(-270))
+                                        .foregroundStyle(.verdeTitle)
+                                    
+                                    Circle()
+                                        .trim(from: 0.12, to: 0.88)                    .stroke(style: StrokeStyle(lineWidth: 19, lineCap: .round))
+                                        .rotationEffect(.degrees(-270))
+                                        .foregroundStyle(Color.white)
+                                        .opacity(0.8)
+                                    
+                                    Circle()
+                                        .trim(from: 0.12, to: 0.70)
+                                        .stroke(style: StrokeStyle(lineWidth: 14, lineCap: .round))
+                                        .rotationEffect(.degrees(-270))
+                                        .foregroundStyle(.verdeTitle)
+                                    
+                                    VStack{
+                                        Text("Restam")
+                                            .font(.title2)
+                                            .foregroundStyle(.verdeTitle)
+                                            .bold()
+                                            .lineLimit(1)
+                                            .minimumScaleFactor(0.5)
+                                            .offset(y: 15)
+                                        
+                                        Text("2000")
+                                            .font(.title)
+                                            .bold()
+                                            .foregroundStyle(.verdeTitle)
+                                            .lineLimit(1)
+                                            .minimumScaleFactor(0.5)
+                                            .offset(y: 10)
+                                        
+                                        Text("Calorias")
+                                            .font(.headline)
+                                            .foregroundStyle(.verdeTitle)
+                                            .lineLimit(1)
+                                            .minimumScaleFactor(0.5)
+                                            .offset(y: 30)
+                                    }
+                                    
+                                }
+                            }
+                            .padding(.horizontal)
+                                .offset(y:40)
+                                .padding(.horizontal)
+                        }
+                        .frame(width: screenWidth * 0.5)
+                        .showCase(order: 4,
+                                  title: "Defina suas calorias e acompanhe seu objetivo diário, além de ver como está progredindo!",
+                                  cornerRadius: 10,
+                                  style: .continuous)
                     }
-                    .padding(15)
-                }
-            }
-            .tabItem {
-                Image(systemName: "square.and.arrow.up")
-                Text("Aba1")
 
+                }
+                .background(
+                    background.path(in: CGRect(x: 0, y: 0,
+                                               width: geometry.size.width,
+                                               height: geometry.size.height * 0.5))
+                    .foregroundStyle(.verdeFundo)
+                    .ignoresSafeArea(edges: .all))
+                .padding(.bottom, -20)
+                
+                //MARK: ----------FOOTERVIEW-------------------------------------------------------
+                VStack{
+                    HStack {
+                        Spacer()
+                        DatePickerComponentHomeView()
+                            .padding(.trailing)
+                    }
+                    
+                    ZStack {
+                        Circle()
+                            .foregroundStyle(.laranjaBrilhante)
+                            .overlay(content: {
+                                VStack {
+                                    Spacer()
+                                    Text("Café da Manha")
+                                        .foregroundStyle(.black)
+                                        .font(.largeTitle)
+                                        .minimumScaleFactor(0.5)
+                                        .multilineTextAlignment(.center) // Alinhamento do texto ao centro
+                                        .padding(.horizontal) // Adiciona um preenchimento horizontal
+                                    
+                                    Spacer()
+                                    
+                                    Image(systemName: "plus")
+                                        .foregroundStyle(.black)
+                                        .font(.title)
+                                        .minimumScaleFactor(0.3)
+                                    
+                                    Spacer()
+                                }
+                                
+                                .padding()
+                                
+                            })
+                            .showCase(order: 1,
+                                      title: "Registre suas refeições facilmente! Use a câmera para alimentos ou código de barras, ou apenas pesquise. Veja as calorias e nutrientes de cada refeição enquanto registra sua alimentação.",
+                                      cornerRadius: 180,
+                                      style: .continuous)
+                            .overlay {
+                                Circle()
+                                    .stroke(lineWidth: 10)
+                                    .foregroundStyle(.laranjaBrilhante)
+                            }
+                            .overlay {
+                                Circle()
+                                    .stroke(lineWidth: 9)
+                                    .foregroundStyle(.windowBackground)
+                            }
+                            
+                    }
+                    .padding(.bottom)
+                    
+                    
+                    
+//                        Spacer()
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text("Água")
+                                    .font(.title)
+                                //                        .fontWeight(.semibold)
+                                    .foregroundStyle(Color.black)
+                                    .padding(.trailing)
+                                    .minimumScaleFactor(0.5)
+                                
+                                Text("1.5 / 2.0L")
+                                    .font(.title3)
+                                    .foregroundStyle(Color.black)
+                                    .padding(.trailing)
+                                    .minimumScaleFactor(0.5)
+                                
+                                Spacer()
+                                
+                                HStack {
+                                    ForEach(0..<4) { index in
+                                        Circle()
+                                            .stroke(lineWidth: 1)
+                                            .foregroundStyle(.black)// Desenha o contorno da bolinha
+                                            .background(3 > index ?
+                                                        Circle()
+                                                .fill(Color.white) : Circle().fill(Color.white.opacity(0.3)))
+                                            .frame(width: screenWidth * 0.04)
+                                    }
+                                }
+                            }
+                            
+                            Spacer()
+                            
+                            Image("garrafaPretaHome")
+                                .resizable()
+                                .scaledToFit()
+                                .tint(.black)
+                        }
+                        .padding()
+                        .showCase(order: 2,
+                                  title: "Lembre-se de se hidratar! Personalize seu recipiente de água e a meta diária. Quando terminar sua garrafinha, não se esqueça de registrar!",
+                                  cornerRadius: 10,
+                                  style: .continuous)
+                        .background(.laranjaBrilhante)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .padding(.horizontal, 60)
+                        .frame(height: screenHeight * 0.15)
+                        
+                    
+                }
+                .background(
+                    Image("backgroundHome")
+                        .resizable()
+                        .scaledToFill())
             }
+            .modifier(ShowCaseRoot(showHighlights: true, onFinished: {
+                print("Finished Tutorial")
+            }))
             
-            .toolbarBackground(.visible, for: .tabBar)
-            .toolbarBackground(.ultraThinMaterial, for: .tabBar)
-            
-            Text("")
-                .tabItem {
-                    Image(systemName: "square.and.arrow.up")
-                    Text("Aba2")
-                }
-            
-            Text("")
-                .tabItem {
-                    Image(systemName: "square.and.arrow.up")
-                    Text("Aba3")
-                }
         }
-        .overlay(alignment: .bottom, content: {
-            HStack (spacing: 0){
-                Circle()
-                    .foregroundStyle(Color.clear)
-                    .frame(width: 45, height: 45)
-                    .frame(maxWidth: .infinity)
-                Circle()
-                    .foregroundStyle(Color.clear)
-                    .frame(width: 45, height: 45)
-               
-                    .frame(maxWidth: .infinity)
-                Circle()
-                    .foregroundStyle(Color.clear)
-                    .frame(width: 45, height: 45)
-                    .frame(maxWidth: .infinity)
-
-            }
-        ///disable the click on it
-            .allowsHitTesting(false)
-        })
-        /// Call  This Modifier on top of the   Current View, also it must be called once
-        .modifier(ShowCaseRoot(showHighlights: true, onFinished: {
-            print("Finished Tutorial")
-        }))
-        
     }
 }
 

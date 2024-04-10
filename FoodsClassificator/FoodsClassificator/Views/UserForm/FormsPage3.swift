@@ -8,51 +8,55 @@
 import SwiftUI
 
 struct FormsPage3: View {
-    @State private var gender = 0
-    let genders = ["Female", "Male"]
+    @Environment(\.modelContext) private var context
+    
+    @Bindable private var viewModel = PerfilViewModel()
+    
+    
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                FormProgressBar(percent: .constant(0.48))
-                
-                Group {
-                    QuestionTextComponent(QuestionLabel: "Qual o seu sexo biológico?")
-                }
-                
-                HStack{
-                    ForEach(0..<genders.count, id: \.self) { index in
-                        Button(action: {
-                            self.gender = index
-                            print(genders[index])
-                            
-                        }) {
-                            Capsule()
-                                .foregroundStyle(.green.opacity(0.4))
-                                .overlay {
-                                    Text(genders[index])                                        .tint(.black)
-                                }
-                                .frame(height: 50)
-                                .opacity(gender == index ? 1.0 : 0.5)
-                        }
+        VStack {
+            FormProgressBar(percent: .constant(0.48))
+            
+            QuestionTextComponent(QuestionLabel: "Qual o seu sexo biológico?")
+            
+            HStack{
+                ForEach(viewModel.sexos, id: \.self) { sexo in
+                    Button(action: {
+                        viewModel.model.sexoBiologico = sexo
+                        print(viewModel.model.sexoBiologico)
+                        
+                    }) {
+                        Capsule()
+                            .foregroundStyle(.green.opacity(0.4))
+                            .overlay {
+                                Text(sexo)
+                                    .foregroundStyle(.black)
+                            }
+                            .frame(height: 50)
+                            .opacity(viewModel.model.sexoBiologico == sexo ? 1.0 : 0.5)
                     }
                 }
-                
-                Spacer()
-                
-                Image("form_page3")
-                
-                Spacer()
-                
-                // NavigationLink para a próxima página do questionário
-                NavigationLink(destination: FormsPage4()) {
-                    NextButtonLabel(nextButtonLabel: "Próximo")
-                }
             }
-            .padding()
+            
+            Spacer()
+            
+            Image("form_page3")
+            
+            Spacer()
+            
+            // NavigationLink para a próxima página do questionário
+            NavigationLink(destination: FormsPage4()) {
+                NextButtonLabel(nextButtonLabel: "Próximo")
+            }
+        }
+        .padding()
+        .onAppear{
+            viewModel.modelContext = context
         }
     }
 }
+
 
 
 #Preview {

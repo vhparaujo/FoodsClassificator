@@ -64,7 +64,7 @@
 		4A3F74A32BC44FD40080C021 /* FormsPage5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74A22BC44FD40080C021 /* FormsPage5.swift */; };
 		4A3F74A52BC44FF80080C021 /* FormsPage6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74A42BC44FF80080C021 /* FormsPage6.swift */; };
 		4A60303D2BBF2EEC00082ECA /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60303C2BBF2EEC00082ECA /* Highlight.swift */; };
-		4A60303F2BBF422900082ECA /* TutorialHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60303E2BBF422900082ECA /* TutorialHomeView.swift */; };
+		4A60303F2BBF422900082ECA /* TutorialHomeViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60303E2BBF422900082ECA /* TutorialHomeViewTeste.swift */; };
 		4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */; };
 		4AB85A342BBEFFF40075ADD9 /* ShowCaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB85A332BBEFFF40075ADD9 /* ShowCaseHelper.swift */; };
 		4AD53C062B97B4FD00F2A8F8 /* NewImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */; };
@@ -72,6 +72,7 @@
 		4AD53C0C2B97B6A000F2A8F8 /* FoodDetection.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */; };
 		4AF7A7542BBD9FCF0057DF79 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A7532BBD9FCF0057DF79 /* FooterView.swift */; };
 		4AF7A7592BBDAA5A0057DF79 /* FooterHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */; };
+		4AFE140A2BC69F3700888C1C /* TutorialHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFE14092BC69F3700888C1C /* TutorialHomeView.swift */; };
 		9B0D2C0B2BC068E70046EFF5 /* BackgroundShapeHeaderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0D2C0A2BC068E70046EFF5 /* BackgroundShapeHeaderHomeView.swift */; };
 		9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */; };
 		9B7735EC2BA8AEA100782303 /* dados_alimentos_completo.json in Resources */ = {isa = PBXBuildFile; fileRef = 9B7735EB2BA8AEA100782303 /* dados_alimentos_completo.json */; };
@@ -170,7 +171,7 @@
 		4A3F74A22BC44FD40080C021 /* FormsPage5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage5.swift; sourceTree = "<group>"; };
 		4A3F74A42BC44FF80080C021 /* FormsPage6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage6.swift; sourceTree = "<group>"; };
 		4A60303C2BBF2EEC00082ECA /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
-		4A60303E2BBF422900082ECA /* TutorialHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialHomeView.swift; sourceTree = "<group>"; };
+		4A60303E2BBF422900082ECA /* TutorialHomeViewTeste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialHomeViewTeste.swift; sourceTree = "<group>"; };
 		4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculoCaloriasOnBoarding.swift; sourceTree = "<group>"; };
 		4AB85A332BBEFFF40075ADD9 /* ShowCaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseHelper.swift; sourceTree = "<group>"; };
 		4AD53C052B97B4FD00F2A8F8 /* NewImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImagePicker.swift; sourceTree = "<group>"; };
@@ -178,6 +179,7 @@
 		4AD53C0B2B97B6A000F2A8F8 /* FoodDetection.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FoodDetection.mlmodel; sourceTree = "<group>"; };
 		4AF7A7532BBD9FCF0057DF79 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		4AF7A7582BBDAA5A0057DF79 /* FooterHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterHomeViewModel.swift; sourceTree = "<group>"; };
+		4AFE14092BC69F3700888C1C /* TutorialHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialHomeView.swift; sourceTree = "<group>"; };
 		9B0D2C0A2BC068E70046EFF5 /* BackgroundShapeHeaderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundShapeHeaderHomeView.swift; sourceTree = "<group>"; };
 		9B22D1112BC6B4320086069F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		9B5E50D42BAE058000D734C8 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
@@ -445,7 +447,8 @@
 			isa = PBXGroup;
 			children = (
 				4A60303B2BBF2ED800082ECA /* Model */,
-				4A60303E2BBF422900082ECA /* TutorialHomeView.swift */,
+				4A60303E2BBF422900082ECA /* TutorialHomeViewTeste.swift */,
+				4AFE14092BC69F3700888C1C /* TutorialHomeView.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -820,7 +823,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */,
-				4A60303F2BBF422900082ECA /* TutorialHomeView.swift in Sources */,
+				4A60303F2BBF422900082ECA /* TutorialHomeViewTeste.swift in Sources */,
 				9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */,
 				0B6339462BC43030002D56E7 /* ExpandedFoodDetailView.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
@@ -836,6 +839,7 @@
 				9BDAA28C2BB496F3000627F9 /* PerfilImagePickerViewComponent.swift in Sources */,
 				9BDAA28C2BB496F3000627F9 /* PerfilImagePickerViewComponent.swift in Sources */,
 				4A60303D2BBF2EEC00082ECA /* Highlight.swift in Sources */,
+				4AFE140A2BC69F3700888C1C /* TutorialHomeView.swift in Sources */,
 				4A1CCCC22BBB51FE00ED750F /* OnBoardingPageControl.swift in Sources */,
 				4A3F749F2BC43D8B0080C021 /* FormsPage3.swift in Sources */,
 				0B1C22822BB20C4A003C5C0E /* ProgressBarComponentViewHome.swift in Sources */,

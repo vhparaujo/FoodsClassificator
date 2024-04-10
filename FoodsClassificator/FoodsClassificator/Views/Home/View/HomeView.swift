@@ -14,18 +14,20 @@ struct HomeView: View {
         
         VStack{
             HeaderView()
-            Spacer()
+                .padding(.bottom, -20)
+            
             
             FooterView()
-                .background(Image("backgroundHome"))
+                .background(
+                    Image("backgroundHome")
+                        .resizable()
+                        .scaledToFill()
+                )
         }
-        
         .navigationBarBackButtonHidden()
     }
 }
 
-#Preview {
-    NavigationStack {
-        HomeView()
-    }
-}
+//#Preview {
+//        HomeView()
+//}

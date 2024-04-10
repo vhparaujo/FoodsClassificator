@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ProgressBarComponentHomeView: View {
     
-    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
+    @Environment(HomeViewModel.self) var homeViewModel: HomeViewModel
+    @Environment(\.modelContext) var context
+    @State var perfilViewModel = PerfilViewModel()
     
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
@@ -28,14 +30,14 @@ struct ProgressBarComponentHomeView: View {
                     .foregroundStyle(Color.verdeFundo)
                 
                 Circle()
-                    .trim(from: viewModel.initialProgressBarValue, to: viewModel.maxProgressBarValue)
+                    .trim(from: homeViewModel.initialProgressBarValue, to: homeViewModel.maxProgressBarValue)
                     .stroke(style: StrokeStyle(lineWidth: 23, lineCap: .round))
     //                .frame(width: screenWidth * 0.4, height: screenHeight * 0.2)
                     .rotationEffect(.degrees(-270))
                     .foregroundStyle(.verdeTitle)
                         
                 Circle()
-                    .trim(from: viewModel.initialProgressBarValue, to: viewModel.maxProgressBarValue)
+                    .trim(from: homeViewModel.initialProgressBarValue, to: homeViewModel.maxProgressBarValue)
                     .stroke(style: StrokeStyle(lineWidth: 19, lineCap: .round))
     //                .frame(width: screenWidth * 0.4, height: screenHeight * 0.2)
                     .rotationEffect(.degrees(-270))
@@ -43,7 +45,7 @@ struct ProgressBarComponentHomeView: View {
                     .opacity(0.8)
                 
                 Circle()
-                    .trim(from: viewModel.initialProgressBarValue, to: viewModel.progressBarValue)
+                    .trim(from: homeViewModel.initialProgressBarValue, to: homeViewModel.progressBarValue)
                     .stroke(style: StrokeStyle(lineWidth: 14, lineCap: .round))
     //                .frame(width: screenWidth * 0.4, height: screenHeight * 0.2)
                     .rotationEffect(.degrees(-270))
@@ -59,7 +61,7 @@ struct ProgressBarComponentHomeView: View {
                         .minimumScaleFactor(0.5)
                         .offset(y: 15)
                     
-                    Text("\(viewModel.calories)")
+                    Text("\(perfilViewModel.model.totalCalories)")
                         .font(.title)
                         .bold()
                         .foregroundStyle(.verdeTitle)
@@ -76,7 +78,12 @@ struct ProgressBarComponentHomeView: View {
                 }
                 
             }
-        }.padding(.horizontal)
+        }
+        .padding(.horizontal)
+        .onAppear{
+            perfilViewModel.modelContext = context
+            perfilViewModel.caloriesPerDay()
+        }
 
     }
 }
