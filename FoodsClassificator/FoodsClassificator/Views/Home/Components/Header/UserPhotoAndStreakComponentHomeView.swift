@@ -9,7 +9,8 @@ import SwiftUI
 
 struct UserPhotoAndStreakComponentHomeView: View {
     
-    var viewModel: HomeViewModel?
+//    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
+    var viewModel: HomeViewModel
     
     @Bindable private var perfilViewModel = PerfilViewModel()
     
@@ -24,7 +25,7 @@ struct UserPhotoAndStreakComponentHomeView: View {
         ZStack{
 
             HStack{
-                Text("\(viewModel?.streakNumber)")
+                Text("\(viewModel.streakNumber)")
                     .font(.callout)
                     .bold()
                     .foregroundStyle(Color.verdeTitle)
@@ -57,6 +58,6 @@ struct UserPhotoAndStreakComponentHomeView: View {
 
 //#Preview {
 //    var viewModel = HomeViewModel()
-//    return UserPhotoAndStreakComponentHomeView()
+//    return UserPhotoAndStreakComponentHomeView(v)
 //        .environment(viewModel)
 //}

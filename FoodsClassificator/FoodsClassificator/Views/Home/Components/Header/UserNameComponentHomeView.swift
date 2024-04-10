@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct UserNameComponentHomeView: View {
-    
+    var viewModel: HomeViewModel
     @Environment(\.modelContext) private var context
     
     @State var perfilViewModel = PerfilViewModel()
@@ -32,9 +32,3 @@ struct UserNameComponentHomeView: View {
     }
     
 }
-
-//#Preview {
-//   @Bindable var viewModel = PerfilViewModel()
-//    return UserNameComponentHomeView(perfilViewModel: $viewModel.model.userName)
-//        .environment(viewModel)
-//}

@@ -27,6 +27,10 @@ class AddMealViewModel: ObservableObject {
             }
         }
     }
+    
+    func addFoodCodesToSelect(foodCodes:[String]){
+        selectedFoods = foodData.searchFoodFromModel(foodCodes)
+    }
 
     func loadFoods() {
         Task {
@@ -37,5 +41,7 @@ class AddMealViewModel: ObservableObject {
             }
         }
     }
+    
+
 }
 

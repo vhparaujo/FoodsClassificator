@@ -8,21 +8,17 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Environment(\.dismiss) private var dismiss
+
+    var viewModel = HomeViewModel()
     
     var body: some View {
         
         VStack{
-            HeaderView()
-                .padding(.bottom, -20)
+            HeaderView(viewModel: viewModel)
+            Spacer()
             
-            
-            FooterView()
-                .background(
-                    Image("backgroundHome")
-                        .resizable()
-                        .scaledToFill()
-                )
+            FooterView(viewModel: viewModel)
+                .background(Image("backgroundHome"))
         }
         .navigationBarBackButtonHidden()
     }

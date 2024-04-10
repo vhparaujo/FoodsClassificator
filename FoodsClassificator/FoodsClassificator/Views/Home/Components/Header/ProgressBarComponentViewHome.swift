@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ProgressBarComponentHomeView: View {
     
-    var homeViewModel = HomeViewModel()
     @Environment(\.modelContext) var context
     @State var perfilViewModel = PerfilViewModel()
+    var viewModel: HomeViewModel
     
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
@@ -88,11 +88,11 @@ struct ProgressBarComponentHomeView: View {
     }
 }
 
-#Preview {
-    var viewModel = HomeViewModel()
-    return ProgressBarComponentHomeView()
-        .environment(viewModel)
-}
+//#Preview {
+//    var viewModel = HomeViewModel()
+//    return ProgressBarComponentHomeView(viewModel: viewModel)
+//        .environment(viewModel)
+//}
 
 #Preview {
     HomeView()

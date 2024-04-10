@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import Vision
 
 struct AddMealView: View {
     @StateObject var viewModel: AddMealViewModel = AddMealViewModel()
     @ObservedObject var speechRecognizerManager: SpeechRecognizerManager = SpeechRecognizerManager()
-    @State var recentMealsViewModel: RecentMealsViewModel
+//    @State var recentMealsViewModel: RecentMealsViewModel
+    @State var sharingFoods: [VNRecognizedObjectObservation] = []
+    @ObservedObject var recentMealsViewModel: RecentMealsViewModel
+    @State var currentMeal: Meal?
     
     var title: String
     var onCreateMeal: (Meal) -> Void
@@ -50,19 +54,10 @@ struct AddMealView: View {
                     .padding(screenWidth * 0.02)
                     
                     if viewModel.selectedSegment == 0 {
-                        UseCameraView(onScanMeal: {
-                            print("CÂMERA AQUI")
-                        })
-                        .padding(.top, viewModel.isExpanded ? screenHeight * 0.05 : screenHeight * 0.15)
-                    } else {
-                        SearchFoodView(
-                            searchText: $viewModel.searchText, 
-                            speechRecognizerManager: speechRecognizerManager,
-                            selectedFoods: $viewModel.selectedFoods,
-                            filteredFoods: viewModel.filteredFoods
-                        ) { food in
-                            viewModel.addFoodToSelected(food: food)
-                        } onAddMeal: { food in
+                        UseCameraView(imagePredictor: ImagePredictor.shared,sharingFoods: $sharingFoods, selectedFoods: $viewModel.selectedFoods, selectFood: { code in
+                            viewModel.addFoodCodesToSelect(foodCodes: code)
+                            print("entrou closure: \(code)")
+                        }, onScanMeal: { food in
                             print("Comida selecionada para adicionar à refeição: \(food)")
                             
                             // Função auxiliar para extrair e converter valores nutricionais
@@ -104,6 +99,58 @@ struct AddMealView: View {
                                     totalCalories: totalCalories,
                                     macros: Macronutrients(fats: fats, fibers: fibers, carbohydrates: carbohydrates, proteins: proteins),
                                     foodDetails: [:] // Este campo pode ser preenchido conforme necessário
+                                )
+                                recentMealsViewModel.setCurrentMeal(newMeal)
+                                print("Nova refeição criada a partir do alimento selecionado: \(newMeal)")
+                            }
+                        })
+//                        .padding(.top, viewModel.isExpanded ? screenHeight * 0.05 : screenHeight * 0.15)
+                    } else {
+                        SearchFoodView(
+                            searchText: $viewModel.searchText,
+                            speechRecognizerManager: speechRecognizerManager,
+                            selectedFoods: $viewModel.selectedFoods,
+                            filteredFoods: viewModel.filteredFoods
+                        ) { food in
+                            viewModel.addFoodToSelected(food: food)
+                        } onAddMeal: { food in
+                            print("Comida selecionada para adicionar à refeição: \(food)")
+                            
+                            let fats = valorParaComponente("Lipídios", from: food)
+                            let fibers = valorParaComponente("Fibra alimentar", from: food)
+                            let carbohydrates = valorParaComponente("Carboidrato disponível", from: food)
+                            let proteins = valorParaComponente("Proteína", from: food)
+                            let totalCalories = Int(food.detalhesNutricionais.first { $0.componente == "Energia" && $0.unidade == "kcal" }?.valor.replacingOccurrences(of: ",", with: ".") ?? "0") ?? 0
+                            
+                            let foodDetail = FoodDetail(calories: totalCalories, macros: Macronutrients(fats: fats, fibers: fibers, carbohydrates: carbohydrates, proteins: proteins))
+                            
+                            // Verifica se já existe uma refeição atual
+                            if var currentMeal = recentMealsViewModel.currentMeal {
+                                currentMeal.totalCalories += totalCalories
+                                currentMeal.macros.fats += fats
+                                currentMeal.macros.fibers += fibers
+                                currentMeal.macros.carbohydrates += carbohydrates
+                                currentMeal.macros.proteins += proteins
+                                
+                                // Adiciona ou atualiza o detalhe do alimento no dicionário foodDetails
+                                currentMeal.foodDetails[food.nome] = foodDetail
+                                
+                                print(currentMeal.foodDetails)
+                                
+                                // Atualiza a refeição atual com os novos valores
+                                recentMealsViewModel.setCurrentMeal(currentMeal)
+                                print("Refeição atualizada com o novo alimento: \(currentMeal)")
+                            } else {
+                                // Cria um dicionário de detalhes do alimento
+                                let details = [food.nome: foodDetail]
+                                
+                                // Cria uma nova refeição com os valores do alimento selecionado
+                                let newMeal = Meal(
+                                    mealName: "Refeição personalizada", // Assegure-se de que viewModel possui uma propriedade mealName
+                                    image: "", // Use uma imagem padrão ou permita a seleção de uma imagem
+                                    totalCalories: totalCalories,
+                                    macros: Macronutrients(fats: fats, fibers: fibers, carbohydrates: carbohydrates, proteins: proteins),
+                                    foodDetails: details // Usa o dicionário criado
                                 )
                                 recentMealsViewModel.setCurrentMeal(newMeal)
                                 print("Nova refeição criada a partir do alimento selecionado: \(newMeal)")
@@ -160,6 +207,20 @@ struct AddMealView: View {
                 }
             }
         }
+    }
+    
+    func valorParaComponente(_ componente: String, from food: Food) -> Double {
+        guard let detalhe = food.detalhesNutricionais.first(where: { $0.componente == componente }) else {
+            print("Componente \(componente) não encontrado no alimento \(food.nome).")
+            return 0.0
+        }
+        
+        guard let valor = Double(detalhe.valor.replacingOccurrences(of: ",", with: ".")) else {
+            print("Não foi possível converter o valor do componente \(componente) para Double: \(detalhe.valor)")
+            return 0.0
+        }
+        
+        return valor
     }
 }
 

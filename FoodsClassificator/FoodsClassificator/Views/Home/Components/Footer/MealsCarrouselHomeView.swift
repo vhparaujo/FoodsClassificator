@@ -22,28 +22,46 @@ enum MealTime: String, CaseIterable {
 }
 
 struct MealsCarrouselHomeView: View {
-    @Environment(\.dismiss) private var dismiss
-    
     @State private var currentIndex: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
     @State private var selectedMealTime: MealTime?
+    
+    var viewModel: HomeViewModel
     
     var body: some View {
         NavigationStack{
             VStack{
                 ZStack{
-                    ForEach(MealTime.allCases.indices, id: \.self) { index in
-                        let meal = MealTime.allCases[index]
-                        
-                        MealCircleComponentHomeView(mealText: meal.title) {
-                            return AnyView(RecentMealsView(title: meal.title) {
-                                print("Chamando view 'Add Meal' para \(meal.title)")
+                    ForEach(MealTime.allCases, id: \.self) { mealTime in
+                        MealCircleComponentHomeView(mealText: mealTime.title) {
+                            return AnyView(RecentMealsView(title: mealTime.title) { meal in
+                                if var currentMeal = viewModel.totalMeals {
+                                    currentMeal.totalCalories += meal.totalCalories
+                                    currentMeal.macros.fats += meal.macros.fats
+                                    currentMeal.macros.fibers += meal.macros.fibers
+                                    currentMeal.macros.carbohydrates += meal.macros.carbohydrates
+                                    currentMeal.macros.proteins += meal.macros.proteins
+                                    
+                                    // Atualiza a refeição atual com os novos valores
+                                    viewModel.setTotalMeal(currentMeal)
+                                    print("Refeição atualizada com o novo alimento: \(currentMeal)")
+                                } else {
+                                    // Cria uma nova refeição com os valores do alimento selecionado
+                                    let newMeal = Meal(
+                                        mealName: "Soma Refeições", // Assegure-se de que viewModel possui uma propriedade mealName
+                                        image: "", // Use uma imagem padrão ou permita a seleção de uma imagem
+                                        totalCalories: meal.totalCalories,
+                                        macros: Macronutrients(fats: meal.macros.fats, fibers: meal.macros.fibers, carbohydrates: meal.macros.carbohydrates, proteins: meal.macros.proteins),
+                                        foodDetails: [:] // Usa o dicionário criado
+                                    )
+                                    viewModel.setTotalMeal(newMeal)
+                                    print("Nova refeição criada a partir do alimento selecionado: \(newMeal)")
+                                }
                             })
                         }
-                        .opacity(currentIndex == index ? 1.0 : 0.5)
-                        .scaleEffect(currentIndex == index ? 1.0 : 0.5)
-                        .offset(x: CGFloat(index - currentIndex) * 220 + dragOffset, y: 0)
-                        
+                        .opacity(currentIndex == MealTime.allCases.firstIndex(of: mealTime) ? 1.0 : 0.5)
+                        .scaleEffect(currentIndex == MealTime.allCases.firstIndex(of: mealTime) ? 1.0 : 0.5)
+                        .offset(x: CGFloat(MealTime.allCases.firstIndex(of: mealTime)! - currentIndex) * 220 + dragOffset, y: 0)
                     }
                 }
                 
@@ -68,7 +86,7 @@ struct MealsCarrouselHomeView: View {
     }
 }
 
-#Preview {
-    MealsCarrouselHomeView()
-}
+//#Preview {
+//    MealsCarrouselHomeView()
+//}
 

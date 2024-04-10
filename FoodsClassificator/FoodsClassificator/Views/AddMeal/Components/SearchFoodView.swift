@@ -145,6 +145,7 @@ struct SearchFoodView: View {
                             .foregroundColor(Color.laranjaMacros)
                             .font(.title3)
                             .padding()
+                            .multilineTextAlignment(.center)
                         
                         Spacer()
                     }
@@ -154,7 +155,7 @@ struct SearchFoodView: View {
                 // Lista de Resultados da Pesquisa
                 VStack {
                     ScrollView {
-                        ForEach(filteredFoods) { food in
+                        ForEach(filteredFoods) { food in 
                             let energiaKcal = food.detalhesNutricionais.first { $0.componente == "Energia" && $0.unidade == "kcal" }
                             let energiaKcalText = energiaKcal.map { "\($0.valor) Cal" } ?? "N/A"
                             

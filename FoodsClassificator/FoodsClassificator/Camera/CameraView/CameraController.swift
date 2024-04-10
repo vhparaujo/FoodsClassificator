@@ -12,13 +12,13 @@ import Vision
 class CameraController: NSObject, ObservableObject{
     
     var captureSession: AVCaptureSession?
-        private let metadataOutput = AVCaptureMetadataOutput()
-        private let videoOutput = AVCaptureVideoDataOutput()
-        private var previewLayer: AVCaptureVideoPreviewLayer?
-        private var photoOutput = AVCapturePhotoOutput()
-        private var backCamera: AVCaptureDevice?
-        @Published var isStatusBarHidden = false
-        private let modelControl = ImagePredictor()
+    private let metadataOutput = AVCaptureMetadataOutput()
+    private let videoOutput = AVCaptureVideoDataOutput()
+    private var previewLayer: AVCaptureVideoPreviewLayer?
+    private var photoOutput = AVCapturePhotoOutput()
+    private var backCamera: AVCaptureDevice?
+    @Published var isStatusBarHidden = false
+    let modelControl = ImagePredictor.shared
 
 
     private var darkOverlayLayer: CALayer?
@@ -215,10 +215,8 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
         // Convertendo UIImage para CVPixelBuffer
         guard let pixelBuffer = cgImage.toCVPixelBuffer() else { return }
         
-        // A detecção de objetos é feita aqui
         modelControl.detectObjects(in: pixelBuffer) { [weak self] results in
             
-            // Extrair e imprimir os resultados
             self?.printDetectionResults(results)
             
         }
@@ -228,7 +226,9 @@ extension CameraController: AVCapturePhotoCaptureDelegate {
         print("-----------------")
         for result in results {
             for label in result.labels where label.confidence > 0.5 {
+                
                 print("Detecção: \(label.identifier), Confiança: \(label.confidence)")
+                
             }
         }
     }
