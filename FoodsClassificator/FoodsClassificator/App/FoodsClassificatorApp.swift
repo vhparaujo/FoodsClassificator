@@ -15,7 +15,7 @@ struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                FormsPage1()
+                TutorialHomeView()
                     .preferredColorScheme(.light)
             }
             .environment(PerfilViewModel())
@@ -30,7 +30,7 @@ struct FoodsClassificatorApp: App {
 extension ModelContainer {
     @MainActor
    static let appContainer: ModelContainer = {
-        
+
         do {
             
             let container = try ModelContainer(for: PerfilModel.self)

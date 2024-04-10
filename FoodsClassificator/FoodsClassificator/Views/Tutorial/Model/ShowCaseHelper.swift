@@ -144,5 +144,5 @@ fileprivate struct HighlightAnchorKey: PreferenceKey {
 }
 
 #Preview {
-    TutorialHomeView()
+    TutorialHomeViewTeste()
 }
