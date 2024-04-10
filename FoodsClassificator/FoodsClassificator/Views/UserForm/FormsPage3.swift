@@ -12,13 +12,17 @@ struct FormsPage3: View {
     
     @Bindable private var viewModel = PerfilViewModel()
     
-    
+    @State private var showingTipKit = false
+
     
     var body: some View {
         VStack {
             FormProgressBar(percent: .constant(0.48))
             
             QuestionTextComponent(QuestionLabel: "Qual o seu sexo biológico?")
+            
+            
+        
             
             HStack{
                 ForEach(viewModel.sexos, id: \.self) { sexo in
@@ -38,7 +42,25 @@ struct FormsPage3: View {
                     }
                 }
             }
-            
+            HStack{
+                Button(action: {
+                    showingTipKit.toggle()
+                }) {
+                    HStack {
+                        Image(systemName: "questionmark.circle.fill")
+                            .foregroundStyle(Color.laranjaBrilhante)
+
+                        Text("Qual Devo Escolher?")
+                            .foregroundStyle(Color.laranjaBrilhante)
+
+                    }
+                    
+                }
+                .sheet(isPresented: $showingTipKit) {
+                    TipKitView()
+                }
+                Spacer()
+            }
             Spacer()
             
             Image("form_page3")

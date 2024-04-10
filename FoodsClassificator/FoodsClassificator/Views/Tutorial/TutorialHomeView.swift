@@ -7,7 +7,14 @@
 
 import SwiftUI
 
+enum PopoverType {
+    case standard
+    case custom 
+    case vazio // Adicione mais tipos conforme necessário
+}
+
 struct TutorialHomeView: View {
+    @State private var navigationTarget: NavigationTarget?
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var background = BackgroundShapeHeaderHomeView()
@@ -15,6 +22,7 @@ struct TutorialHomeView: View {
 
     @State private var currentIndex: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
+    @State var showStartPopover = false
     
     var body: some View {
         GeometryReader { geometry in
@@ -59,7 +67,7 @@ struct TutorialHomeView: View {
                                 .frame(width: 45, height: 45)
                                 .offset(x: 35)
                         }
-                        .showCase(order: 3,
+                        .showCase(order: 2,
                                   title: "Acompanhe seu crescimento, participe de desafios para evoluir e celebre suas vitórias! A ofensiva é ativada quando você atinge sua meta diária de água e registra pelo menos uma refeição.",
                                   cornerRadius: 10,
                                   style: .continuous)
@@ -153,7 +161,7 @@ struct TutorialHomeView: View {
                                 .padding(.horizontal)
                         }
                         .frame(width: screenWidth * 0.5)
-                        .showCase(order: 4,
+                        .showCase(order: 3,
                                   title: "Defina suas calorias e acompanhe seu objetivo diário, além de ver como está progredindo!",
                                   cornerRadius: 10,
                                   style: .continuous)
@@ -168,6 +176,8 @@ struct TutorialHomeView: View {
                     .ignoresSafeArea(edges: .all))
                 .padding(.bottom, -20)
                 
+                
+                
                 //MARK: ----------FOOTERVIEW-------------------------------------------------------
                 VStack{
                     HStack {
@@ -177,6 +187,31 @@ struct TutorialHomeView: View {
                     }
                     
                     ZStack {
+                        Rectangle()
+                            .foregroundStyle(Color.clear)
+                            .allowsHitTesting(false)
+                            .showCase(order: 4,
+                                      title: "",
+                                      cornerRadius: 0,
+                                      style: .circular,
+                                      popoverType: .vazio)
+                            .frame(width: 0, height: 0)
+                            .alert(isPresented: $showStartPopover) {
+                                Alert(
+                                    title: Text("Definir calorias"),
+                                    message: Text("Precisamos de algumas informações para melhorar sua experiência definindo as calorias, levará 5 minutos. "),
+                                    primaryButton: .default(Text("Melhorar Experiência"), action: {
+                                        navigationTarget = .improveExperience
+                                    }),
+                                    secondaryButton: .cancel(Text("Talvez Mais Tarde"), action: {
+                                        navigationTarget = .maybeLater
+                                    })
+                                )
+                            }
+                        NavigationLink(destination: FormsPage1(), isActive: .constant(navigationTarget == .improveExperience)) { EmptyView() }
+                        NavigationLink(destination: HomeView(), isActive: .constant(navigationTarget == .maybeLater)) { EmptyView() }
+                        
+                        
                         Circle()
                             .foregroundStyle(.laranjaBrilhante)
                             .overlay(content: {
@@ -202,7 +237,7 @@ struct TutorialHomeView: View {
                                 .padding()
                                 
                             })
-                            .showCase(order: 1,
+                            .showCase(order: 0,
                                       title: "Registre suas refeições facilmente! Use a câmera para alimentos ou código de barras, ou apenas pesquise. Veja as calorias e nutrientes de cada refeição enquanto registra sua alimentação.",
                                       cornerRadius: 180,
                                       style: .continuous)
@@ -261,7 +296,7 @@ struct TutorialHomeView: View {
                                 .tint(.black)
                         }
                         .padding()
-                        .showCase(order: 2,
+                        .showCase(order: 1,
                                   title: "Lembre-se de se hidratar! Personalize seu recipiente de água e a meta diária. Quando terminar sua garrafinha, não se esqueça de registrar!",
                                   cornerRadius: 10,
                                   style: .continuous)
@@ -277,13 +312,21 @@ struct TutorialHomeView: View {
                         .resizable()
                         .scaledToFill())
             }
-            .modifier(ShowCaseRoot(showHighlights: true, onFinished: {
+//            .alert
+            .modifier(ShowCaseRoot( showStartPopover: $showStartPopover, showHighlights: true, onFinished: {
                 print("Finished Tutorial")
             }))
+            
             
         }
     }
 }
+// Enum para representar o destino da navegação
+enum NavigationTarget {
+    case improveExperience, maybeLater
+}
+
+
 
 #Preview {
     TutorialHomeView()
