@@ -47,9 +47,7 @@
 		0B7F9CFF2B91745E0037B09B /* IngredientSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */; };
 		0B7F9D012B9179640037B09B /* NutritionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D002B9179640037B09B /* NutritionModalView.swift */; };
 		0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */; };
-
 		3B00FD662BC6A6AE0061479B /* EnumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B00FD652BC6A6AE0061479B /* EnumModel.swift */; };
-
 		3BE31CD72BBB373900E66F3E /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE31CD62BBB373900E66F3E /* CameraPreview.swift */; };
 		3BE31CD92BBB374D00E66F3E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE31CD82BBB374D00E66F3E /* CameraController.swift */; };
 		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
@@ -159,7 +157,6 @@
 		0B7F9CFE2B91745E0037B09B /* IngredientSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSearchResponse.swift; sourceTree = "<group>"; };
 		0B7F9D002B9179640037B09B /* NutritionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionModalView.swift; sourceTree = "<group>"; };
 		0B7F9D022B91A63C0037B09B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewModel.swift; path = FoodsClassificator/Views/ContentView/ViewModel/ContentViewModel.swift; sourceTree = SOURCE_ROOT; };
-
 		3B00FD652BC6A6AE0061479B /* EnumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumModel.swift; sourceTree = "<group>"; };
 		3BE31CD62BBB373900E66F3E /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		3BE31CD82BBB374D00E66F3E /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
@@ -841,6 +838,7 @@
 			);
 			mainGroup = 9BE179932B8A567C0086877C;
 			packageReferences = (
+				9B69E9722BC715EE00868BD3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 9BE1799D2B8A567C0086877C /* Products */;
 			projectDirPath = "";
@@ -1097,7 +1095,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FK777K42X;
+				DEVELOPMENT_TEAM = K559Z2V9Q2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
@@ -1135,7 +1133,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"FoodsClassificator/Preview Content\"";
-				DEVELOPMENT_TEAM = 6FK777K42X;
+				DEVELOPMENT_TEAM = K559Z2V9Q2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
@@ -1192,6 +1190,14 @@
 		0B63392E2BC0397E002D56E7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		9B69E9722BC715EE00868BD3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 5.9.1;

@@ -54,7 +54,7 @@ struct HeaderView: View {
             .padding(.horizontal)
                 
                 VStack {
-                    ProgressBarComponentHomeView(viewModel: viewModel)
+                    ProgressBarComponentHomeView(homeViewModel: viewModel)
                         .offset(y:40)
                         .padding(.horizontal)
                 }.frame(width: screenWidth * 0.5)

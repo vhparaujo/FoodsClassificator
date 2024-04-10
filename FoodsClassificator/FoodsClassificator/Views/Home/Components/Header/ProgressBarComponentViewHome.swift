@@ -11,7 +11,7 @@ struct ProgressBarComponentHomeView: View {
     
     @Environment(\.modelContext) var context
     @State var perfilViewModel = PerfilViewModel()
-    var viewModel: HomeViewModel
+    var homeViewModel: HomeViewModel
     
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height

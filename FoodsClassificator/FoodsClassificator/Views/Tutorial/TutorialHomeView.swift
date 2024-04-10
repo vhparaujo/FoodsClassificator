@@ -11,6 +11,8 @@ struct TutorialHomeView: View {
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var background = BackgroundShapeHeaderHomeView()
+    var viewModel =  HomeViewModel()
+
     @State private var currentIndex: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
     
@@ -69,22 +71,22 @@ struct TutorialHomeView: View {
                             VStack {
                                 
                                 MacrosComponentHomeView(macroType: "Carboidratos",
-                                                        backgroundColor: Color.amareloCarboidratos)
+                                                        backgroundColor: Color.amareloCarboidratos, macro:  viewModel.totalMeals?.macros.carbohydrates ?? 0)
                                 .padding(.vertical)
                                 
                                 MacrosComponentHomeView(macroType: "Gorduras",
-                                                        backgroundColor: Color.rosaGorduras)
+                                                        backgroundColor: Color.rosaGorduras, macro:  viewModel.totalMeals?.macros.fats ?? 0)
                                 .padding(.vertical)
                             }
                             Spacer()
                             
                             VStack {
                                 MacrosComponentHomeView(macroType: "Proteínas",
-                                                        backgroundColor: Color.rosaProteinas)
+                                                        backgroundColor: Color.rosaProteinas, macro:  viewModel.totalMeals?.macros.proteins ?? 0)
                                 .padding(.vertical)
                                 
                                 MacrosComponentHomeView(macroType: "Fibras",
-                                                        backgroundColor: Color.amareloFibras)
+                                                        backgroundColor: Color.amareloFibras, macro:  viewModel.totalMeals?.macros.fibers ?? 0)
                                 .padding(.vertical)
                             }
                             

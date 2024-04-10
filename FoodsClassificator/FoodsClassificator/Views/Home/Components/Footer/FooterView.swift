@@ -17,7 +17,7 @@ struct FooterView: View {
             HStack {
                 Spacer()
                 DatePickerComponentHomeView()
-            }
+            }.padding(.trailing)
             HStack {
                 MealsCarrouselHomeView(viewModel: viewModel)
             }.padding(.bottom)

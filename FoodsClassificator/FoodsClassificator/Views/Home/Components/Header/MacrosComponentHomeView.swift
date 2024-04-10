@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct MacrosComponentHomeView: View {
-    
-    var viewModel: HomeViewModel?
 
     @State var macroType: String = ""
     @State var backgroundColor: Color = .clear
