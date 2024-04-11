@@ -20,7 +20,6 @@
 		0B1C228B2BB20C61003C5C0E /* DatePickerComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C22872BB20C61003C5C0E /* DatePickerComponentHomeView.swift */; };
 		0B1C228D2BB20C74003C5C0E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C228C2BB20C74003C5C0E /* HomeView.swift */; };
 		0B1C228F2BB20C82003C5C0E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C228E2BB20C82003C5C0E /* HomeViewModel.swift */; };
-		0B1C22922BB35754003C5C0E /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		0B21FD0E2BC5DE4400F07054 /* EditMealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B21FD0D2BC5DE4400F07054 /* EditMealViewModel.swift */; };
 		0B21FD102BC5DEB700F07054 /* EditMealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B21FD0F2BC5DEB700F07054 /* EditMealView.swift */; };
 		0B21FD122BC70EF400F07054 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0B21FD112BC70EF400F07054 /* Alamofire */; };
@@ -224,7 +223,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B1C22922BB35754003C5C0E /* (null) in Frameworks */,
 				0B21FD122BC70EF400F07054 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
