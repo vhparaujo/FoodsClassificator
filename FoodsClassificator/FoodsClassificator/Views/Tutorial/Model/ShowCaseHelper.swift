@@ -9,6 +9,7 @@ import SwiftUI
 
 extension View {
     @ViewBuilder
+    
     func showCase(order: Int, title: String, cornerRadius: CGFloat, style: RoundedCornerStyle, scale: CGFloat = 1, popoverType: PopoverType = .standard) -> some View {
         self
             .anchorPreference(key: HighlightAnchorKey.self, value: .bounds) { anchor in
@@ -40,6 +41,8 @@ struct ShowCaseRoot: ViewModifier{
         content
             .onPreferenceChange(HighlightAnchorKey.self) { value in
                 highlightOrder = Array(value.keys).sorted()
+                //                showStartPopover = true  // Abre o popover automaticamente
+                //                        onFinished()
             }
             .overlayPreferenceValue(HighlightAnchorKey.self) { preferences in
                 if highlightOrder.indices.contains(currentHighlight), showHighlights, showView {
@@ -71,27 +74,32 @@ struct ShowCaseRoot: ViewModifier{
                 }
                 .ignoresSafeArea()
                 .onTapGesture {
-                    if currentHighlight == 4 { // Presumindo que o índice comece de
-                        showStartPopover = true
-                    } else if currentHighlight >= highlightOrder.count - 1 {
-                        withAnimation(.easeInOut(duration: 0.25)){
-                            showView = true // ou qualquer lógica que você tenha para esconder o view
-                            showStartPopover = true
-                        }
-                        onFinished() // Ou qualquer ação que você tenha ao finalizar os showcases
-                    } else {
-                        // Lógica para mover para o próximo highlight
-                        withAnimation(.interactiveSpring(response: 0.3,
-                                                         dampingFraction: 0.7,
-                                                         blendDuration: 0.7)){
+                    if currentHighlight < highlightOrder.count - 1 {
+                        withAnimation(.interactiveSpring(response: 0.3, dampingFraction: 0.7, blendDuration: 0.7)) {
                             showTitle = false
                             currentHighlight += 1
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6){
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                             showTitle = true
+                            if currentHighlight == highlightOrder.count - 1 {
+                                // Iniciar a exibição do popover automaticamente após o último showcase ser mostrado
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                    showStartPopover = true
+                                }
+                            }
                         }
+                    } else {
+                        // Ação ao finalizar o último showcase
+                        withAnimation(.easeInOut(duration: 0.25)) {
+                             // Altere conforme a lógica necessária para esconder o view
+                            showStartPopover = true
+                            showView = false
+
+                        }
+                        onFinished() // Chama ação de finalização se houver
                     }
                 }
+            
                 .onAppear {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                         showTitle = true
@@ -117,29 +125,29 @@ struct ShowCaseRoot: ViewModifier{
                     .scaleEffect(highlight.scale)
                     .scaledToFit()
                     .offset(x: highlightRect.minX - 10, y: highlightRect.minY - 10)
-
+                
             case .custom:
                 Rectangle()
                     .foregroundStyle(Color.clear)
                     .frame(width: highlightRect.width + 20, height: highlightRect.height + 20)
                     .clipShape(RoundedRectangle(cornerRadius: highlight.cornerRadius, style: highlight.style))
-//                    .popover(isPresented: $showTitle) {
-//                        CustomAlertView(
-//                            title: highlight.title,
-//                            onConfirm: {
-//                                // Aqui vai a lógica quando o usuário tocar em "Confirmar"
-//                                print("Confirmado")
-//                            },
-//                            onCancel: {
-//                                // Aqui vai a lógica quando o usuário tocar em "Cancelar"
-//                                print("Cancelado")
-//                            }
-//                        )
-//                        .frame(width: 300, height: 200) // Ajuste o tamanho conforme necessário
-//                    }
-//                    .scaleEffect(highlight.scale)
-//                    .offset(x: highlightRect.minX - 10, y: highlightRect.minY - 10)
-
+                //                    .popover(isPresented: $showTitle) {
+                //                        CustomAlertView(
+                //                            title: highlight.title,
+                //                            onConfirm: {
+                //                                // Aqui vai a lógica quando o usuário tocar em "Confirmar"
+                //                                print("Confirmado")
+                //                            },
+                //                            onCancel: {
+                //                                // Aqui vai a lógica quando o usuário tocar em "Cancelar"
+                //                                print("Cancelado")
+                //                            }
+                //                        )
+                //                        .frame(width: 300, height: 200) // Ajuste o tamanho conforme necessário
+                //                    }
+                //                    .scaleEffect(highlight.scale)
+                //                    .offset(x: highlightRect.minX - 10, y: highlightRect.minY - 10)
+                
             case .vazio:
                 RoundedRectangle(cornerRadius: 10)
                     .frame( width: 0, height: 0)
