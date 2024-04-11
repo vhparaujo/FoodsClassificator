@@ -64,6 +64,10 @@ struct FormsPage5: View {
         .onAppear{
             viewModel.modelContext = context
         }
+        
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
     
     func delete(at offsets: IndexSet) {

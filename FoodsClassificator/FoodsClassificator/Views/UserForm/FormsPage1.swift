@@ -41,6 +41,10 @@ struct FormsPage1: View {
         .onAppear(perform: {
             viewModel.modelContext = context
         })
+        
+        .onTapGesture {
+            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        }
     }
 }
 
