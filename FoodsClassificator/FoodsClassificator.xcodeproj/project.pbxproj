@@ -1103,12 +1103,15 @@
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Papaia;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permita o acesso a câmera para escanear os alimentos da sua refeição.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Permita o acesso ao microfone para pesquisa dos alimentos por voz.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Permita acesso ao reconhecimento de fala para que seja possível buscar por alimentos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1140,12 +1143,15 @@
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Papaia;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_LSSupportsOpeningDocumentsInPlace = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permita o acesso a câmera para escanear os alimentos da sua refeição.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Permita o acesso ao microfone para pesquisa dos alimentos por voz.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Permita acesso ao reconhecimento de fala para que seja possível buscar por alimentos.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportsDocumentBrowser = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
