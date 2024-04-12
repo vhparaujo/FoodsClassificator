@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FormsPage6: View {
     @Environment(\.modelContext) private var context
@@ -17,10 +18,11 @@ struct FormsPage6: View {
     @State var meta:String = ""
     var body: some View {
         VStack {
+            
             FormProgressBar(percent: .constant(0.91))
             
-            
             QuestionTextComponent(QuestionLabel: "Você possui uma meta de calorias prescrita por nutricionista?")
+                .padding(.top)
             
             HStack {
                 Button(action: {
@@ -84,5 +86,6 @@ struct FormsPage6: View {
 
 
 #Preview {
-    FormsPage6()
+    let modelContainer: ModelContainer = .appContainer
+    return FormsPage6().modelContainer(modelContainer)
 }

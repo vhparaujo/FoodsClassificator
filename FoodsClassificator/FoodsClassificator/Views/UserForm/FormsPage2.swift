@@ -5,6 +5,7 @@
 //  Created by Gabriel Ribeiro Noronha on 07/04/24.
 //
 import SwiftUI
+import SwiftData
 
 struct FormsPage2: View {
     @Environment(\.modelContext) private var context
@@ -14,32 +15,25 @@ struct FormsPage2: View {
         VStack {
             FormProgressBar(percent: .constant(0.32))
             
-            
             QuestionTextComponent(QuestionLabel: "Quantos anos você tem?")
-            TextFieldRectangleComponent(placeholder: "20", text: $viewModel.idadeAsString)
+                .padding(.top)
+            
+            TextFieldRectangleComponent(placeholder: "20", text: $viewModel.idadeAsString, textLimit: 3)
                 .keyboardType(.numberPad)
-                .onTapGesture {
-                    print(viewModel.model.idade)
-                }
             
+            QuestionTextComponent(QuestionLabel: "Qual seu peso?")
             
-            
-            QuestionTextComponent(QuestionLabel: "Qual seu Peso?")
-            TextFieldRectangleComponent(placeholder: "48kg", text: $viewModel.pesoAsString)
+            TextFieldRectangleComponent(placeholder: "48kg", text: $viewModel.pesoAsString, textLimit: 4)
                 .keyboardType(.numberPad)
-                .onTapGesture {
-                    print(viewModel.model.peso)
-                }
             
+            QuestionTextComponent(QuestionLabel: "Qual sua altura?")
             
-            QuestionTextComponent(QuestionLabel: "Qual sua Altura?")
             TextFieldRectangleComponent(placeholder: "154cm", text: $viewModel.alturaAsString)
                 .keyboardType(.numberPad)
             
-            
             Spacer()
             
-           Image("form_page2")
+            Image("form_page2")
             
             Spacer() // Empurra o conteúdo para cima e o botão para baixo
             
@@ -56,11 +50,11 @@ struct FormsPage2: View {
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+        
     }
 }
 
-
-
 #Preview {
-    FormsPage2()
+    let modelContainer: ModelContainer = .appContainer
+    return FormsPage2().modelContainer(modelContainer)
 }

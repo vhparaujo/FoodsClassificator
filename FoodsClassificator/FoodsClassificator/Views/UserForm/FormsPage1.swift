@@ -12,6 +12,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FormsPage1: View {
     @Environment(\.modelContext) private var context
@@ -23,6 +24,7 @@ struct FormsPage1: View {
             FormProgressBar(percent: .constant(0.16))
             // Conteúdo da página aqui
             QuestionTextComponent(QuestionLabel: "Como gostaria de ser chamado(a)?")
+                .padding(.top)
             
             TextFieldRectangleComponent(placeholder: "Insira seu nome", text: $viewModel.model.userName)
             
@@ -45,9 +47,12 @@ struct FormsPage1: View {
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+        
+        .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
-    FormsPage1()
+    let modelContainer: ModelContainer = .appContainer
+    return FormsPage1().modelContainer(modelContainer)
 }

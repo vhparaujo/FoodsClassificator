@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FormsPage5: View {
     @Environment(\.modelContext) private var context
@@ -17,12 +18,11 @@ struct FormsPage5: View {
     
     var body: some View {
         VStack {
-            Group {
-                FormProgressBar(percent: .constant(0.80))
-            }
             
+            FormProgressBar(percent: .constant(0.80))
             
             QuestionTextComponent(QuestionLabel: "Quais refeições você faz por dia?")
+                .padding(.top)
             
             VStack {
                 
@@ -44,17 +44,17 @@ struct FormsPage5: View {
                         .opacity(refeicao == refeicao ? 1.0 : 0.5)
                     
                 }.onMove(perform: move)
-                .onDelete(perform: delete)
-               
+                    .onDelete(perform: delete)
+                
                 TextField("Nome da refeição", text: $viewModel.textFieldName)
                     .onSubmit {
                         viewModel.model.refeicoes.append(viewModel.textFieldName)
                         viewModel.textFieldName = ""
                     }
             }
- 
+            
             Spacer()
-        
+            
             // NavigationLink para a próxima página do questionário
             NavigationLink(destination: FormsPage6()) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
@@ -81,5 +81,6 @@ struct FormsPage5: View {
 
 
 #Preview {
-    FormsPage5()
+    let modelContainer: ModelContainer = .appContainer
+    return FormsPage5().modelContainer(modelContainer)
 }

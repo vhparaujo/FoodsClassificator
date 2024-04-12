@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FormsPage4: View {
     @Environment(\.modelContext) private var context
@@ -17,58 +18,63 @@ struct FormsPage4: View {
     
     var body: some View {
         VStack {
-//            ScrollView {
-                FormProgressBar(percent: .constant(0.64))
-                
-                QuestionTextComponent(QuestionLabel: "Qual é o seu principal objetivo?")
-                
-                VStack{
-                    ForEach(viewModel.objetivos, id: \.self) { objetivo in
-                        Button(action: {
-                            viewModel.model.objetivo = objetivo
-                            print(viewModel.model.objetivo)
-                        }) {
-                            RoundedRectangle(cornerRadius: 15)
-                                .foregroundStyle(.green.opacity(0.4))
-                                .overlay {
-                                    Text(objetivo)
-                                        .tint(.black)
-                                }
-                                .frame(height: 40)
-                                .opacity(viewModel.model.objetivo == objetivo ? 1.0 : 0.5)
-                        }
+            FormProgressBar(percent: .constant(0.64))
+            
+            QuestionTextComponent(QuestionLabel: "Qual é o seu principal objetivo?")
+                .padding(.top)
+            
+            VStack {
+                ForEach(viewModel.objetivos, id: \.self) { objetivo in
+                    
+                    Button {
+                        viewModel.model.objetivo = objetivo
+                    } label: {
+                        HStack {
+                            
+                            Text(objetivo)
+                                .tint(.verdeTitle)
+                                .font(.headline)
+                            
+                            Spacer()
+                            
+                        }.padding()
+                            .background(.verdeFundo)
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                            .opacity(viewModel.model.objetivo == objetivo ? 1.0 : 0.3)
+                        
                     }
-                }.padding(.bottom)
+                    
+                }
+            }.padding(.bottom)
+            
+            QuestionTextComponent(QuestionLabel: "Qual a intensidade de atividade física?")
                 
-                
-                
-                QuestionTextComponent(QuestionLabel: "Quantas vezes na semana você pratica exercício físico?")
-                VStack(spacing: 10){
-                    ForEach(0..<viewModel.intensidades.count, id: \.self) { index in
-                        Button(action: {
-                            viewModel.selectedIntensityIndex = index
-                            viewModel.model.intensidadeDoExercicio = viewModel.intensidades[index]
-
-                            print(viewModel.model.intensidadeDoExercicio)
-
-                        }) {
-                            RoundedRectangle(cornerRadius: 15)
-                                .foregroundStyle(.green.opacity(0.4))
-                                .overlay {
-                                    Text(viewModel.intensidades[index])
-                                        .foregroundStyle(.black)
-                                }
-                                .frame(height: 40)
-                                .opacity(viewModel.model.intensidadeDoExercicio == viewModel.intensidades[index] ? 1.0 : 0.5)
-                        }
+            VStack(spacing: 10){
+                ForEach(0..<viewModel.intensidades.count, id: \.self) { index in
+                    Button(action: {
+                        viewModel.selectedIntensityIndex = index
+                        viewModel.model.intensidadeDoExercicio = viewModel.intensidades[index]
+                        
+                        print(viewModel.model.intensidadeDoExercicio)
+                        
+                    }) {
+                        RoundedRectangle(cornerRadius: 15)
+                            .foregroundStyle(.green.opacity(0.4))
+                            .overlay {
+                                Text(viewModel.intensidades[index])
+                                    .foregroundStyle(.black)
+                            }
+                            .frame(height: 40)
+                            .opacity(viewModel.model.intensidadeDoExercicio == viewModel.intensidades[index] ? 1.0 : 0.5)
                     }
                 }
-                
-                
-                Spacer()
-                
-                // NavigationLink para a próxima página do questionário
-//            }
+            }
+            
+            
+            Spacer()
+            
+            // NavigationLink para a próxima página do questionário
+            
             NavigationLink(destination: FormsPage5()) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
@@ -81,9 +87,11 @@ struct FormsPage4: View {
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+        
     }
 }
 
 #Preview {
-    FormsPage4()
+    let modelContainer: ModelContainer = .appContainer
+    return FormsPage4().modelContainer(modelContainer)
 }

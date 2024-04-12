@@ -424,10 +424,10 @@
 				4A3F74882BC37B350080C021 /* FormsPage1.swift */,
 				4A3F748C2BC3939B0080C021 /* FormsPage2.swift */,
 				4A3F749E2BC43D8B0080C021 /* FormsPage3.swift */,
-				4AD0D74A2BC719DC00DCD4B1 /* TipKitView.swift */,
 				4A3F74A02BC4471F0080C021 /* FormsPage4.swift */,
 				4A3F74A22BC44FD40080C021 /* FormsPage5.swift */,
 				4A3F74A42BC44FF80080C021 /* FormsPage6.swift */,
+				4AD0D74A2BC719DC00DCD4B1 /* TipKitView.swift */,
 			);
 			path = UserForm;
 			sourceTree = "<group>";

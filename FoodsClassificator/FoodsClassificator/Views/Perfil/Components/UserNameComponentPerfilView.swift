@@ -23,15 +23,16 @@ struct UserNameComponentPerfilView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 1))
                 .padding()
             
-                .onReceive(Just(userName)) { _ in limitText(textLimit) }
+                .onReceive(Just(userName)) { _ in limitText(textLimit)
+                }
 
         }
         
     }
     
-    func limitText(_ upper: Int) {
-        if userName.count > upper {
-            userName = String(userName.prefix(upper))
+    func limitText(_ textLimit: Int) {
+        if userName.count > textLimit {
+            userName = String(userName.prefix(textLimit))
         }
     }
     

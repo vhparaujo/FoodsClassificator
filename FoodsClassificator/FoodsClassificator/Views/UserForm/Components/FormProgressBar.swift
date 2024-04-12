@@ -19,13 +19,13 @@ struct FormProgressBar: View {
                 Capsule()
                     .fill(Color.black.opacity(0.1))
                     .frame(width: UIScreen.main.bounds.width * 0.91
-                           ,height: UIScreen.main.bounds.width * 0.02)
+                           ,height: UIScreen.main.bounds.height * 0.004)
             }
             
             Capsule()
-                .fill(Color.verdeFundo)
+                .fill(Color.laranjaEscuro)
                 .frame(width: UIScreen.main.bounds.width * percent,
-                       height: UIScreen.main.bounds.height * 0.01)
+                       height: UIScreen.main.bounds.height * 0.004)
         }
     }
 }

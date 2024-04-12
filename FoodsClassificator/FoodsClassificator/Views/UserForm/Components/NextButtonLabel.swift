@@ -16,7 +16,7 @@ struct NextButtonLabel: View {
             .font(.title2)
             .padding()
             .frame(maxWidth: .infinity)
-            .background(Color.verdeFundo)
+            .background(Color.laranjaEscuro)
             .cornerRadius(20)
     }
 }
