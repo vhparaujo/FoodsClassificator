@@ -1103,9 +1103,8 @@
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Papaia;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Este app requer acesso ao seu microfone para poder reconhecer voz.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Este app requer acesso ao reconhecimento de voz para transcrever sua fala em texto.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Permita o acesso a câmera para escanear os alimentos da sua refeição.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Permita o acesso ao microfone para pesquisa dos alimentos por voz.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1141,9 +1140,8 @@
 				INFOPLIST_FILE = FoodsClassificator/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Papaia;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Access the camera";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Este app requer acesso ao seu microfone para poder reconhecer voz.";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Este app requer acesso ao reconhecimento de voz para transcrever sua fala em texto.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Permita o acesso a câmera para escanear os alimentos da sua refeição.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Permita o acesso ao microfone para pesquisa dos alimentos por voz.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
