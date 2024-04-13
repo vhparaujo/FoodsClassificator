@@ -11,7 +11,7 @@ import SwiftData
 struct FormsPage3: View {
     @Environment(\.modelContext) private var context
     
-    @Bindable private var viewModel = PerfilViewModel()
+    @Bindable private var perfilViewModel = PerfilViewModel()
     
     @State private var showingTipKit = false
     
@@ -24,9 +24,9 @@ struct FormsPage3: View {
                 .padding(.top)
               
             HStack{
-                ForEach(viewModel.sexos, id: \.self) { sexo in
+                ForEach(perfilViewModel.sexos, id: \.self) { sexo in
                     Button(action: {
-                        viewModel.model.sexoBiologico = sexo
+                        perfilViewModel.model.sexoBiologico = sexo
                     }) {
                         Capsule()
                             .foregroundStyle(.verdeFundo)
@@ -36,7 +36,7 @@ struct FormsPage3: View {
                                     .font(.headline)
                             }
                             .frame(height: 45)
-                            .opacity(viewModel.model.sexoBiologico == sexo ? 1.0 : 0.5)
+                            .opacity(perfilViewModel.model.sexoBiologico == sexo ? 1.0 : 0.5)
                     }
                 }
             }
@@ -78,16 +78,13 @@ struct FormsPage3: View {
         
         .padding()
         .onAppear{
-            viewModel.modelContext = context
+            perfilViewModel.modelContext = context
         }
         
     }
 }
 
-
-
 #Preview {
     let modelContainer: ModelContainer = .appContainer
     return FormsPage3().modelContainer(modelContainer)
 }
-

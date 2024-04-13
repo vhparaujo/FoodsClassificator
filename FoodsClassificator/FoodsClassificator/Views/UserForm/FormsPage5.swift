@@ -11,10 +11,11 @@ import SwiftData
 struct FormsPage5: View {
     @Environment(\.modelContext) private var context
     
-    @Bindable private var viewModel = PerfilViewModel()
-    @State private var refeicao = 0
-    let refeicoes:[String] = ["Café da manhã", "Lanche da manhã", "Almoço", "Lanche da tarde", "Jantar"]
+    @Bindable private var perfilViewModel = PerfilViewModel()
     
+    @State private var refeicao = 0
+    
+    let refeicoes:[String] = ["Café da manhã", "Lanche da manhã", "Almoço", "Lanche da tarde", "Jantar"]
     
     var body: some View {
         VStack {
@@ -26,7 +27,7 @@ struct FormsPage5: View {
             
             VStack {
                 
-                ForEach(viewModel.model.refeicoes, id: \.self) { refeicao in
+                ForEach(perfilViewModel.model.refeicoes, id: \.self) { refeicao in
                     
                     RoundedRectangle(cornerRadius: 15)
                         .foregroundStyle(.green.opacity(0.4))
@@ -43,26 +44,26 @@ struct FormsPage5: View {
                         .frame(height: 50)
                         .opacity(refeicao == refeicao ? 1.0 : 0.5)
                     
-                }.onMove(perform: move)
-                    .onDelete(perform: delete)
+                }
                 
-                TextField("Nome da refeição", text: $viewModel.textFieldName)
+                TextField("Nome da refeição", text: $perfilViewModel.textFieldName)
                     .onSubmit {
-                        viewModel.model.refeicoes.append(viewModel.textFieldName)
-                        viewModel.textFieldName = ""
+                        perfilViewModel.model.refeicoes.append(perfilViewModel.textFieldName)
+                        perfilViewModel.textFieldName = ""
                     }
             }
             
             Spacer()
             
             // NavigationLink para a próxima página do questionário
-            NavigationLink(destination: FormsPage6()) {
+            NavigationLink(destination: FormsPage6(perfilViewModel: perfilViewModel)) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
+            
         }
         .padding()
         .onAppear{
-            viewModel.modelContext = context
+            perfilViewModel.modelContext = context
         }
         
         .onTapGesture {
@@ -70,15 +71,15 @@ struct FormsPage5: View {
         }
     }
     
-    func delete(at offsets: IndexSet) {
-        viewModel.model.refeicoes.remove(atOffsets: offsets)
-    }
+//    func delete(at offsets: IndexSet) {
+//        perfilViewModel.model.refeicoes.remove(atOffsets: offsets)
+//    }
+//    
+//    func move(from source: IndexSet, to destination: Int) {
+//        perfilViewModel.model.refeicoes.move(fromOffsets: source, toOffset: destination)
+//    }
     
-    func move(from source: IndexSet, to destination: Int) {
-        viewModel.model.refeicoes.move(fromOffsets: source, toOffset: destination)
-    }
 }
-
 
 #Preview {
     let modelContainer: ModelContainer = .appContainer

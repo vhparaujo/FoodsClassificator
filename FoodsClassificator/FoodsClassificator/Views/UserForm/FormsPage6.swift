@@ -10,11 +10,9 @@ import SwiftData
 
 struct FormsPage6: View {
     @Environment(\.modelContext) private var context
-    
-    @Bindable private var viewModel = PerfilViewModel()
-    @Bindable private var homeViewModel = HomeViewModel()
-    @Bindable private var perfilViewModel = PerfilViewModel()
-    
+        
+    @Bindable var perfilViewModel = PerfilViewModel()
+
     @State var meta:String = ""
     var body: some View {
         VStack {
@@ -26,7 +24,7 @@ struct FormsPage6: View {
             
             HStack {
                 Button(action: {
-                    viewModel.model.temNutricionista = false
+                    perfilViewModel.model.temNutricionista = false
                     print("nao tem Nutricionista")
                 }, label: {
                     Capsule()
@@ -37,10 +35,10 @@ struct FormsPage6: View {
                         }
                         .frame(height: 50)
                 })
-                .opacity(viewModel.model.temNutricionista ? 0.5 : 1.0)
+                .opacity(perfilViewModel.model.temNutricionista ? 0.5 : 1.0)
                 
                 Button(action: {
-                    viewModel.model.temNutricionista = true
+                    perfilViewModel.model.temNutricionista = true
                     print("Tem Nutricionista")
                     
                 }, label: {
@@ -52,11 +50,11 @@ struct FormsPage6: View {
                         }
                         .frame(height: 50)
                 })
-                .opacity(viewModel.model.temNutricionista ? 1.0 : 0.5)
+                .opacity(perfilViewModel.model.temNutricionista ? 1.0 : 0.5)
             }
             
             
-            if viewModel.model.temNutricionista  {
+            if perfilViewModel.model.temNutricionista  {
                 QuestionTextComponent(QuestionLabel: "Qual é a sua meta?")
                 TextFieldRectangleComponent(placeholder: "1800cal", text: $meta)
                     .keyboardType(.numberPad)
@@ -75,15 +73,15 @@ struct FormsPage6: View {
         }
         .padding()
         .onAppear{
-            viewModel.modelContext = context
+            perfilViewModel.modelContext = context
         }
         
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+        
     }
 }
-
 
 #Preview {
     let modelContainer: ModelContainer = .appContainer

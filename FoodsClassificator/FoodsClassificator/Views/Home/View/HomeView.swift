@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct HomeView: View {
-
+    
     var viewModel = HomeViewModel()
+    @State var perfilViewModel = PerfilViewModel()
     
     var body: some View {
         
         VStack{
-            HeaderView(viewModel: viewModel)
+            HeaderView(viewModel: viewModel, perfilViewModel: perfilViewModel)
             Spacer()
             
             FooterView(viewModel: viewModel)
@@ -24,6 +25,6 @@ struct HomeView: View {
     }
 }
 
-//#Preview {
-//        HomeView()
-//}
+#Preview {
+    HomeView()
+}

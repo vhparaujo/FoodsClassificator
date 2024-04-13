@@ -17,7 +17,7 @@ import SwiftData
 struct FormsPage1: View {
     @Environment(\.modelContext) private var context
     
-    @Bindable private var viewModel = PerfilViewModel()
+    @Bindable private var perfilViewModel = PerfilViewModel()
     
     var body: some View {
         VStack {
@@ -26,7 +26,8 @@ struct FormsPage1: View {
             QuestionTextComponent(QuestionLabel: "Como gostaria de ser chamado(a)?")
                 .padding(.top)
             
-            TextFieldRectangleComponent(placeholder: "Insira seu nome", text: $viewModel.model.userName)
+            TextFieldRectangleComponent(placeholder: "Insira seu nome", text: $perfilViewModel.model.userName)
+                
             
             Spacer()
             
@@ -38,10 +39,11 @@ struct FormsPage1: View {
             NavigationLink(destination: FormsPage2()) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
+            
         }
         .padding()
         .onAppear(perform: {
-            viewModel.modelContext = context
+            perfilViewModel.modelContext = context
         })
         
         .onTapGesture {

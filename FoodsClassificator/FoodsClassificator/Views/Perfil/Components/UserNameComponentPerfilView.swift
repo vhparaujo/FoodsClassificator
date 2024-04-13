@@ -11,21 +11,31 @@ import Combine
 struct UserNameComponentPerfilView: View {
     
     @Binding var userName: String
-
+    
     let textLimit = 12 //Your limit
     
     var body: some View {
-        HStack(alignment: .center) {
+        
+        VStack {
             TextField("Digite seu nome", text: $userName)
                 .font(.title)
                 .foregroundStyle(.verdeTitle)
-                .frame(width: 150)
-                .clipShape(RoundedRectangle(cornerRadius: 1))
+                .background(.ultraThinMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding()
             
-                .onReceive(Just(userName)) { _ in limitText(textLimit)
+                .onReceive(Just(userName)) { _ in
+                    limitText(textLimit)
                 }
-
+            
+            HStack {
+                Spacer()
+                Text("\(userName.count)/\(textLimit)")
+                    .font(.callout)
+                    .foregroundStyle(.verdeTitle)
+                    .padding(.horizontal)
+            }
+            
         }
         
     }

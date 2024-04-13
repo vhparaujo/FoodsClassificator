@@ -11,7 +11,7 @@ import SwiftData
 struct FormsPage4: View {
     @Environment(\.modelContext) private var context
     
-    @Bindable private var viewModel = PerfilViewModel()
+    @Bindable private var perfilViewModel = PerfilViewModel()
     
     @State private var activity = 0
     let activityLevels = ["Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"]
@@ -24,11 +24,12 @@ struct FormsPage4: View {
                 .padding(.top)
             
             VStack {
-                ForEach(viewModel.objetivos, id: \.self) { objetivo in
+                ForEach(perfilViewModel.objetivos, id: \.self) { objetivo in
                     
                     Button {
-                        viewModel.model.objetivo = objetivo
+                        perfilViewModel.model.objetivo = objetivo
                     } label: {
+                        
                         HStack {
                             
                             Text(objetivo)
@@ -40,7 +41,7 @@ struct FormsPage4: View {
                         }.padding()
                             .background(.verdeFundo)
                             .clipShape(RoundedRectangle(cornerRadius: 15))
-                            .opacity(viewModel.model.objetivo == objetivo ? 1.0 : 0.3)
+                            .opacity(perfilViewModel.model.objetivo == objetivo ? 1.0 : 0.3)
                         
                     }
                     
@@ -50,22 +51,21 @@ struct FormsPage4: View {
             QuestionTextComponent(QuestionLabel: "Qual a intensidade de atividade física?")
                 
             VStack(spacing: 10){
-                ForEach(0..<viewModel.intensidades.count, id: \.self) { index in
+                ForEach(0..<perfilViewModel.intensidades.count, id: \.self) { index in
                     Button(action: {
-                        viewModel.selectedIntensityIndex = index
-                        viewModel.model.intensidadeDoExercicio = viewModel.intensidades[index]
                         
-                        print(viewModel.model.intensidadeDoExercicio)
-                        
+                        perfilViewModel.selectedIntensityIndex = index
+                        perfilViewModel.model.intensidadeDoExercicio = perfilViewModel.intensidades[index]
+    
                     }) {
                         RoundedRectangle(cornerRadius: 15)
                             .foregroundStyle(.green.opacity(0.4))
                             .overlay {
-                                Text(viewModel.intensidades[index])
+                                Text(perfilViewModel.intensidades[index])
                                     .foregroundStyle(.black)
                             }
                             .frame(height: 40)
-                            .opacity(viewModel.model.intensidadeDoExercicio == viewModel.intensidades[index] ? 1.0 : 0.5)
+                            .opacity(perfilViewModel.model.intensidadeDoExercicio == perfilViewModel.intensidades[index] ? 1.0 : 0.5)
                     }
                 }
             }
@@ -81,7 +81,7 @@ struct FormsPage4: View {
         }
         .padding()
         .onAppear{
-            viewModel.modelContext = context
+            perfilViewModel.modelContext = context
         }
         
         .onTapGesture {

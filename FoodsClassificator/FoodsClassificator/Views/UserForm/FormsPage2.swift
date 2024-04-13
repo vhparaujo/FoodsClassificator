@@ -9,7 +9,7 @@ import SwiftData
 
 struct FormsPage2: View {
     @Environment(\.modelContext) private var context
-    @Bindable private var viewModel = PerfilViewModel()
+    @Bindable private var perfilViewModel = PerfilViewModel()
     
     var body: some View {
         VStack {
@@ -18,17 +18,17 @@ struct FormsPage2: View {
             QuestionTextComponent(QuestionLabel: "Quantos anos você tem?")
                 .padding(.top)
             
-            TextFieldRectangleComponent(placeholder: "20", text: $viewModel.idadeAsString, textLimit: 3)
+            TextFieldRectangleComponent(placeholder: "Digite sua idade", text: $perfilViewModel.idadeAsString, textLimit: 3)
                 .keyboardType(.numberPad)
             
             QuestionTextComponent(QuestionLabel: "Qual seu peso?")
             
-            TextFieldRectangleComponent(placeholder: "48kg", text: $viewModel.pesoAsString, textLimit: 4)
+            TextFieldRectangleComponent(placeholder: "Digite seu peso", text: $perfilViewModel.pesoAsString, textLimit: 4)
                 .keyboardType(.numberPad)
             
             QuestionTextComponent(QuestionLabel: "Qual sua altura?")
             
-            TextFieldRectangleComponent(placeholder: "154cm", text: $viewModel.alturaAsString)
+            TextFieldRectangleComponent(placeholder: "Digite sua altura", text: $perfilViewModel.alturaAsString, textLimit: 3)
                 .keyboardType(.numberPad)
             
             Spacer()
@@ -43,8 +43,8 @@ struct FormsPage2: View {
             }
         }
         .padding()
-        .onAppear{
-            viewModel.modelContext = context
+        .onAppear {
+            perfilViewModel.modelContext = context
         }
         
         .onTapGesture {
