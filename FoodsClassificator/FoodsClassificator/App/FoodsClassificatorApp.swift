@@ -11,9 +11,7 @@ import SwiftData
 @main
 @MainActor
 struct FoodsClassificatorApp: App {
-    
-    var modelContainer: ModelContainer = appContainer
-    
+        
     @AppStorage("onBoardingViewed") var onBoardingViewed = false
 
     var body: some Scene {
@@ -23,37 +21,39 @@ struct FoodsClassificatorApp: App {
                 TutorialHomeView()
                     .preferredColorScheme(.light)
             }
-        }.modelContainer(modelContainer)
+        }.modelContainer(.appContainer)
     }
 }
 
 @MainActor
-let appContainer: ModelContainer = {
-    
-    do {
+extension ModelContainer {
+    static let appContainer: ModelContainer = {
         
-        let container = try ModelContainer(for: PerfilModel.self)
-        
-        var fetchDescriptor = FetchDescriptor<PerfilModel>()
-        fetchDescriptor.fetchLimit = 1
-        
-        guard try container.mainContext.fetch(fetchDescriptor).count == 0 else { return container }
-        
-        var photo: UIImage = UIImage(named: "labelPerfil")!
-
-        // Converta a imagem em dados, por exemplo, em formato PNG
-        guard let imageData = photo.pngData() else {
-            fatalError("Não foi possível converter a imagem em dados.")
+        do {
+            
+            let container = try ModelContainer(for: PerfilModel.self)
+            
+            var fetchDescriptor = FetchDescriptor<PerfilModel>()
+            fetchDescriptor.fetchLimit = 1
+            
+            guard try container.mainContext.fetch(fetchDescriptor).count == 0 else { return container }
+            
+            var photo: UIImage = UIImage(named: "labelPerfil")!
+            
+            // Converta a imagem em dados, por exemplo, em formato PNG
+            guard let imageData = photo.pngData() else {
+                fatalError("Não foi possível converter a imagem em dados.")
+            }
+            
+            let perfil = PerfilModel(userPhoto: imageData)
+            
+            container.mainContext.insert(perfil)
+            
+            return container
+            
+        } catch {
+            fatalError("Failed to create container")
         }
         
-        let perfil = PerfilModel(userPhoto: imageData)
-        
-        container.mainContext.insert(perfil)
-        
-        return container
-        
-    } catch {
-        fatalError("Failed to create container")
-    }
-    
-}()
+    }()
+}

@@ -6,39 +6,37 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FormsPage3: View {
     @Environment(\.modelContext) private var context
     
-    @Bindable private var viewModel = PerfilViewModel()
+    @Bindable private var perfilViewModel = PerfilViewModel()
     
     @State private var showingTipKit = false
-
     
     var body: some View {
         VStack {
+            
             FormProgressBar(percent: .constant(0.48))
             
             QuestionTextComponent(QuestionLabel: "Qual o seu sexo biológico?")
-            
-            
-        
-            
+                .padding(.top)
+              
             HStack{
-                ForEach(viewModel.sexos, id: \.self) { sexo in
+                ForEach(perfilViewModel.sexos, id: \.self) { sexo in
                     Button(action: {
-                        viewModel.model.sexoBiologico = sexo
-                        print(viewModel.model.sexoBiologico)
-                        
+                        perfilViewModel.model.sexoBiologico = sexo
                     }) {
                         Capsule()
-                            .foregroundStyle(.green.opacity(0.4))
+                            .foregroundStyle(.verdeFundo)
                             .overlay {
                                 Text(sexo)
-                                    .foregroundStyle(.black)
+                                    .foregroundStyle(.verdeTitle)
+                                    .font(.headline)
                             }
-                            .frame(height: 50)
-                            .opacity(viewModel.model.sexoBiologico == sexo ? 1.0 : 0.5)
+                            .frame(height: 45)
+                            .opacity(perfilViewModel.model.sexoBiologico == sexo ? 1.0 : 0.5)
                     }
                 }
             }
@@ -48,16 +46,18 @@ struct FormsPage3: View {
                 }) {
                     HStack {
                         Image(systemName: "questionmark.circle.fill")
-                            .foregroundStyle(Color.laranjaBrilhante)
+                            .foregroundStyle(Color.laranjaEscuro)
 
                         Text("Qual Devo Escolher?")
-                            .foregroundStyle(Color.laranjaBrilhante)
-
-                    }
+                            .foregroundStyle(Color.laranjaEscuro)
+                        
+                    }.padding()
                     
                 }
                 .sheet(isPresented: $showingTipKit) {
                     TipKitView()
+                        .presentationDetents([.fraction(0.93)])
+                        .presentationDragIndicator(.visible)
                 }
                 Spacer()
             }
@@ -72,19 +72,19 @@ struct FormsPage3: View {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
         }
-        .padding()
-        .onAppear{
-            viewModel.modelContext = context
-        }
-        
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+        
+        .padding()
+        .onAppear{
+            perfilViewModel.modelContext = context
+        }
+        
     }
 }
 
-
-
 #Preview {
-    FormsPage3()
+    let modelContainer: ModelContainer = .appContainer
+    return FormsPage3().modelContainer(modelContainer)
 }

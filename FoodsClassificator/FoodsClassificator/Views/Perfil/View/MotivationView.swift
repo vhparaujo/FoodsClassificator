@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MotivationView: View {
     
-    @Bindable private var viewModel = PerfilViewModel()
+    @Bindable var perfilViewModel: PerfilViewModel
     @Environment(\.modelContext) private var context
     
     var body: some View {
@@ -17,11 +18,11 @@ struct MotivationView: View {
         VStack {
             
             NavigationLink {
-                PerfilView()
+                PerfilView(perfilViewModel: perfilViewModel)
             } label: {
                 VStack {
                     
-                    PerfilImageViewComponent(viewModel: viewModel)
+                    PerfilImageViewComponent(perfilViewModel: perfilViewModel)
                         .frame(width: 80, height: 80)
                     
                     HStack {
@@ -38,13 +39,13 @@ struct MotivationView: View {
                 ModalTitles(title: "Ofensiva")
                     .padding(.top)
                 
-                StreakComponentView(dias: $viewModel.model.streak)
+                StreakComponentView(dias: $perfilViewModel.model.streak)
                 
                 ModalTitles(title: "Desafios")
                     .padding(.top)
                 
                 ForEach(0..<4) {_ in
-                    DropDownComponentView(alimento: "chocolate", streak: viewModel.model.streak)
+                    DropDownComponentView(alimento: "chocolate", streak: perfilViewModel.model.streak)
                 }
 
                 ModalTitles(title: "Conquistas")
@@ -58,12 +59,13 @@ struct MotivationView: View {
         .background(Color.verdeFundo)
         
         .onAppear(perform: {
-            viewModel.modelContext = context
+            perfilViewModel.modelContext = context
         })
         
     }
 }
 
-//#Preview {
-//    MotivationView()
-//}
+#Preview {
+    let modelContainer: ModelContainer = .appContainer
+    return MotivationView(perfilViewModel: PerfilViewModel()).modelContainer(modelContainer)
+}

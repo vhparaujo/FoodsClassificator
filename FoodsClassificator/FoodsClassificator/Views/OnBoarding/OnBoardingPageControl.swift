@@ -9,8 +9,6 @@ import SwiftUI
 
 struct OnBoardingPageControl: View {
     
-    
-    
     var body: some View {
         TabView{
             OnboardingPage1()

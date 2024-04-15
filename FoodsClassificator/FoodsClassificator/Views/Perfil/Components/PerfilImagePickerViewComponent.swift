@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import SwiftData
 
 struct PerfilImagePickerViewComponent: View {
     
@@ -41,7 +42,6 @@ struct PerfilImagePickerViewComponent: View {
                             photo = viewModel.model.userPhoto
                         }
                         photosPickerItem = nil
-                        
                 
                     }
                 }
@@ -54,16 +54,18 @@ struct PerfilImagePickerViewComponent: View {
     }
 }
 
-//#Preview {
-//    // Supondo que você tenha uma extensão que permita inicializar uma UIImage a partir de um recurso com o nome "labelPerfil"
-//    var photo: UIImage = UIImage(named: "labelPerfil")!
-//
-//    // Converta a imagem em dados, por exemplo, em formato PNG
-//    guard let imageData = photo.pngData() else {
-//        fatalError("Não foi possível converter a imagem em dados.")
-//    }
-//
-//    // Agora você pode passar os dados da imagem para o construtor do UIImage dentro de PerfilImageViewComponent
-//    return PerfilImagePickerViewComponent(userPhoto: .constant(Data(imageData)), viewModel: .constant(PerfilViewModel()))
-//
-//}
+#Preview {
+    // Supondo que você tenha uma extensão que permita inicializar uma UIImage a partir de um recurso com o nome "labelPerfil"
+    var photo: UIImage = UIImage(named: "labelPerfil")!
+
+    // Converta a imagem em dados, por exemplo, em formato PNG
+    guard let imageData = photo.pngData() else {
+        fatalError("Não foi possível converter a imagem em dados.")
+    }
+
+    let modelContainer: ModelContainer = .appContainer
+    
+    // Agora você pode passar os dados da imagem para o construtor do UIImage dentro de PerfilImageViewComponent
+    return PerfilImagePickerViewComponent(photo: Data(imageData), viewModel: PerfilViewModel()).modelContainer(modelContainer)
+
+}
