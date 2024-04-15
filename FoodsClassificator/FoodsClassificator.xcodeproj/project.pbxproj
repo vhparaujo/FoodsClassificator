@@ -67,7 +67,6 @@
 		4A3F74A32BC44FD40080C021 /* FormsPage5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74A22BC44FD40080C021 /* FormsPage5.swift */; };
 		4A3F74A52BC44FF80080C021 /* FormsPage6.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A3F74A42BC44FF80080C021 /* FormsPage6.swift */; };
 		4A60303D2BBF2EEC00082ECA /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60303C2BBF2EEC00082ECA /* Highlight.swift */; };
-		4A60303F2BBF422900082ECA /* TutorialHomeViewTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A60303E2BBF422900082ECA /* TutorialHomeViewTeste.swift */; };
 		4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */; };
 		4AB85A342BBEFFF40075ADD9 /* ShowCaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB85A332BBEFFF40075ADD9 /* ShowCaseHelper.swift */; };
 		4AD0D74B2BC719DC00DCD4B1 /* TipKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD0D74A2BC719DC00DCD4B1 /* TipKitView.swift */; };
@@ -84,6 +83,7 @@
 		9B8904952BB49B4F0058DFDD /* UserNameComponentPerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904942BB49B4F0058DFDD /* UserNameComponentPerfilView.swift */; };
 		9B8904992BB4A1BC0058DFDD /* PerfilTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904982BB4A1BC0058DFDD /* PerfilTexts.swift */; };
 		9BAFA53D2BC46C070089454A /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA53C2BC46C070089454A /* PerfilModel.swift */; };
+		9BB1AC772BC9D21D00F5F7D3 /* TesteListMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1AC762BC9D21D00F5F7D3 /* TesteListMove.swift */; };
 		9BDAA28A2BB496CE000627F9 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDAA2892BB496CE000627F9 /* PerfilView.swift */; };
 		9BDAA28C2BB496F3000627F9 /* PerfilImagePickerViewComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDAA28B2BB496F3000627F9 /* PerfilImagePickerViewComponent.swift */; };
 		9BE179A22B8A567C0086877C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE179A12B8A567C0086877C /* ContentView.swift */; };
@@ -178,7 +178,6 @@
 		4A3F74A22BC44FD40080C021 /* FormsPage5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage5.swift; sourceTree = "<group>"; };
 		4A3F74A42BC44FF80080C021 /* FormsPage6.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormsPage6.swift; sourceTree = "<group>"; };
 		4A60303C2BBF2EEC00082ECA /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
-		4A60303E2BBF422900082ECA /* TutorialHomeViewTeste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialHomeViewTeste.swift; sourceTree = "<group>"; };
 		4AB7665A2BB312860091042D /* CalculoCaloriasOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculoCaloriasOnBoarding.swift; sourceTree = "<group>"; };
 		4AB85A332BBEFFF40075ADD9 /* ShowCaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCaseHelper.swift; sourceTree = "<group>"; };
 		4AD0D74A2BC719DC00DCD4B1 /* TipKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipKitView.swift; sourceTree = "<group>"; };
@@ -196,6 +195,7 @@
 		9B8904942BB49B4F0058DFDD /* UserNameComponentPerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameComponentPerfilView.swift; sourceTree = "<group>"; };
 		9B8904982BB4A1BC0058DFDD /* PerfilTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilTexts.swift; sourceTree = "<group>"; };
 		9BAFA53C2BC46C070089454A /* PerfilModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilModel.swift; sourceTree = "<group>"; };
+		9BB1AC762BC9D21D00F5F7D3 /* TesteListMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteListMove.swift; sourceTree = "<group>"; };
 		9BDAA2892BB496CE000627F9 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
 		9BDAA28B2BB496F3000627F9 /* PerfilImagePickerViewComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilImagePickerViewComponent.swift; sourceTree = "<group>"; };
 		9BE1799C2B8A567C0086877C /* FoodsClassificator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodsClassificator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,10 +424,11 @@
 				4A3F74882BC37B350080C021 /* FormsPage1.swift */,
 				4A3F748C2BC3939B0080C021 /* FormsPage2.swift */,
 				4A3F749E2BC43D8B0080C021 /* FormsPage3.swift */,
-				4AD0D74A2BC719DC00DCD4B1 /* TipKitView.swift */,
 				4A3F74A02BC4471F0080C021 /* FormsPage4.swift */,
 				4A3F74A22BC44FD40080C021 /* FormsPage5.swift */,
 				4A3F74A42BC44FF80080C021 /* FormsPage6.swift */,
+				4AD0D74A2BC719DC00DCD4B1 /* TipKitView.swift */,
+				9BB1AC762BC9D21D00F5F7D3 /* TesteListMove.swift */,
 			);
 			path = UserForm;
 			sourceTree = "<group>";
@@ -489,7 +490,6 @@
 			isa = PBXGroup;
 			children = (
 				4A60303B2BBF2ED800082ECA /* Model */,
-				4A60303E2BBF422900082ECA /* TutorialHomeViewTeste.swift */,
 				4AFE14092BC69F3700888C1C /* TutorialHomeView.swift */,
 			);
 			path = Tutorial;
@@ -869,7 +869,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AB7665B2BB312860091042D /* CalculoCaloriasOnBoarding.swift in Sources */,
-				4A60303F2BBF422900082ECA /* TutorialHomeViewTeste.swift in Sources */,
 				9B5E50D52BAE058000D734C8 /* DateFormatterExtension.swift in Sources */,
 				0B6339462BC43030002D56E7 /* ExpandedFoodDetailView.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
@@ -907,6 +906,7 @@
 				9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */,
 				0B73E86B2BAF62B800C6F91D /* Meal.swift in Sources */,
 				0B6339362BC03CE9002D56E7 /* AddMealViewModel.swift in Sources */,
+				9BB1AC772BC9D21D00F5F7D3 /* TesteListMove.swift in Sources */,
 				9BAFA53D2BC46C070089454A /* PerfilModel.swift in Sources */,
 				4A3F748B2BC37CC60080C021 /* NextButtonLabel.swift in Sources */,
 				0B73E8612BAF601300C6F91D /* HeaderMealView.swift in Sources */,

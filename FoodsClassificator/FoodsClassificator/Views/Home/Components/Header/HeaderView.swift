@@ -10,6 +10,7 @@ import SwiftUI
 struct HeaderView: View {
     var viewModel: HomeViewModel
     var background = BackgroundShapeHeaderHomeView()
+    var perfilViewModel: PerfilViewModel
     
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
@@ -22,7 +23,7 @@ struct HeaderView: View {
                 UserNameComponentHomeView(viewModel: viewModel)
 
                 Spacer()
-                UserPhotoAndStreakComponentHomeView(viewModel: viewModel)
+                UserPhotoAndStreakComponentHomeView(viewModel: viewModel, perfilViewModel: perfilViewModel)
             }.padding()
             
             ZStack {

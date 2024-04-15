@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 enum PopoverType {
     case standard
@@ -208,9 +209,10 @@ struct TutorialHomeView: View {
                                     })
                                 )
                             }
-                        NavigationLink(destination: FormsPage1(), isActive: .constant(navigationTarget == .improveExperience)) { EmptyView() }
-                        NavigationLink(destination: HomeView(), isActive: .constant(navigationTarget == .maybeLater)) { EmptyView() }
                         
+                        NavigationLink(destination: FormsPage1(), isActive: .constant(navigationTarget == .improveExperience)) { EmptyView() }
+                        
+                        NavigationLink(destination: HomeView(), isActive: .constant(navigationTarget == .maybeLater)) { EmptyView() }
                         
                         Circle()
                             .foregroundStyle(.laranjaBrilhante)
@@ -254,15 +256,11 @@ struct TutorialHomeView: View {
                             
                     }
                     .padding(.bottom)
-                    
-                    
-                    
-//                        Spacer()
+     
                         HStack {
                             VStack(alignment: .leading) {
                                 Text("Água")
                                     .font(.title)
-                                //                        .fontWeight(.semibold)
                                     .foregroundStyle(Color.black)
                                     .padding(.trailing)
                                     .minimumScaleFactor(0.5)
@@ -312,7 +310,7 @@ struct TutorialHomeView: View {
                         .resizable()
                         .scaledToFill())
             }
-//            .alert
+            
             .modifier(ShowCaseRoot( showStartPopover: $showStartPopover, showHighlights: true, onFinished: {
                 print("Finished Tutorial")
             }))
@@ -322,12 +320,11 @@ struct TutorialHomeView: View {
     }
 }
 // Enum para representar o destino da navegação
-enum NavigationTarget {
+enum NavigationTarget: Hashable {
     case improveExperience, maybeLater
 }
 
-
-
 #Preview {
-    TutorialHomeView()
+    let modelContainer: ModelContainer = .appContainer
+    return TutorialHomeView().modelContainer(modelContainer)
 }

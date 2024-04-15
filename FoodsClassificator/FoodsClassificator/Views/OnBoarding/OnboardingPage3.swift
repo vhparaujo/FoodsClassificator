@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OnboardingPage3: View {
+    
     var body: some View {
         VStack {
             Image("Page3")

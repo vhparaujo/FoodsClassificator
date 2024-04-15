@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct QuestionTextComponent: View {
     var QuestionLabel: String
@@ -13,7 +14,6 @@ struct QuestionTextComponent: View {
     var body: some View {
         VStack(alignment: .leading) { // Este VStack está alinhado à esquerda.
             Text(QuestionLabel)
-                .font(.system(size: 20))
                 .fontWeight(.semibold)
                 .multilineTextAlignment(.leading) // Alinha o texto à esquerda.
         }
@@ -23,4 +23,9 @@ struct QuestionTextComponent: View {
 
 #Preview {
     QuestionTextComponent(QuestionLabel: "Isso vai ser uma Pergunta?")
+}
+
+#Preview {
+    let modelContainer: ModelContainer = .appContainer
+    return FormsPage4().modelContainer(modelContainer)
 }

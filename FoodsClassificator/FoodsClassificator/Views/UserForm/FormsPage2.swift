@@ -5,41 +5,35 @@
 //  Created by Gabriel Ribeiro Noronha on 07/04/24.
 //
 import SwiftUI
+import SwiftData
 
 struct FormsPage2: View {
     @Environment(\.modelContext) private var context
-    @Bindable private var viewModel = PerfilViewModel()
+    @Bindable private var perfilViewModel = PerfilViewModel()
     
     var body: some View {
         VStack {
             FormProgressBar(percent: .constant(0.32))
             
-            
             QuestionTextComponent(QuestionLabel: "Quantos anos você tem?")
-            TextFieldRectangleComponent(placeholder: "20", text: $viewModel.idadeAsString)
-                .keyboardType(.numberPad)
-                .onTapGesture {
-                    print(viewModel.model.idade)
-                }
+                .padding(.top)
             
-            
-            
-            QuestionTextComponent(QuestionLabel: "Qual seu Peso?")
-            TextFieldRectangleComponent(placeholder: "48kg", text: $viewModel.pesoAsString)
-                .keyboardType(.numberPad)
-                .onTapGesture {
-                    print(viewModel.model.peso)
-                }
-            
-            
-            QuestionTextComponent(QuestionLabel: "Qual sua Altura?")
-            TextFieldRectangleComponent(placeholder: "154cm", text: $viewModel.alturaAsString)
+            TextFieldRectangleComponent(placeholder: "Digite sua idade", text: $perfilViewModel.idadeAsString, textLimit: 3)
                 .keyboardType(.numberPad)
             
+            QuestionTextComponent(QuestionLabel: "Qual seu peso?")
+            
+            TextFieldRectangleComponent(placeholder: "Digite seu peso", text: $perfilViewModel.pesoAsString, textLimit: 4)
+                .keyboardType(.numberPad)
+            
+            QuestionTextComponent(QuestionLabel: "Qual sua altura?")
+            
+            TextFieldRectangleComponent(placeholder: "Digite sua altura", text: $perfilViewModel.alturaAsString, textLimit: 3)
+                .keyboardType(.numberPad)
             
             Spacer()
             
-           Image("form_page2")
+            Image("form_page2")
             
             Spacer() // Empurra o conteúdo para cima e o botão para baixo
             
@@ -49,18 +43,18 @@ struct FormsPage2: View {
             }
         }
         .padding()
-        .onAppear{
-            viewModel.modelContext = context
+        .onAppear {
+            perfilViewModel.modelContext = context
         }
         
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+        
     }
 }
 
-
-
 #Preview {
-    FormsPage2()
+    let modelContainer: ModelContainer = .appContainer
+    return FormsPage2().modelContainer(modelContainer)
 }

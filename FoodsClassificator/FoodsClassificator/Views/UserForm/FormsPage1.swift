@@ -12,19 +12,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct FormsPage1: View {
     @Environment(\.modelContext) private var context
     
-    @Bindable private var viewModel = PerfilViewModel()
+    @Bindable private var perfilViewModel = PerfilViewModel()
     
     var body: some View {
         VStack {
             FormProgressBar(percent: .constant(0.16))
             // Conteúdo da página aqui
             QuestionTextComponent(QuestionLabel: "Como gostaria de ser chamado(a)?")
+                .padding(.top)
             
-            TextFieldRectangleComponent(placeholder: "Insira seu nome", text: $viewModel.model.userName)
+            TextFieldRectangleComponent(placeholder: "Insira seu nome", text: $perfilViewModel.model.userName)
+                
             
             Spacer()
             
@@ -36,18 +39,22 @@ struct FormsPage1: View {
             NavigationLink(destination: FormsPage2()) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
+            
         }
         .padding()
         .onAppear(perform: {
-            viewModel.modelContext = context
+            perfilViewModel.modelContext = context
         })
         
         .onTapGesture {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
+        
+        .navigationBarBackButtonHidden()
     }
 }
 
 #Preview {
-    FormsPage1()
+    let modelContainer: ModelContainer = .appContainer
+    return FormsPage1().modelContainer(modelContainer)
 }

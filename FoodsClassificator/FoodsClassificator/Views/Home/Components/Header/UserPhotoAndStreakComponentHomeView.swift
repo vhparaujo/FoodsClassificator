@@ -12,14 +12,14 @@ struct UserPhotoAndStreakComponentHomeView: View {
 //    @Environment(HomeViewModel.self) var viewModel: HomeViewModel
     var viewModel: HomeViewModel
     
-    @Bindable private var perfilViewModel = PerfilViewModel()
+    @Bindable var perfilViewModel: PerfilViewModel
     
     @Environment(\.modelContext) private var context
     
     var body: some View {
         
         NavigationLink {
-            MotivationView()
+            MotivationView(perfilViewModel: perfilViewModel)
         } label: {
         
         ZStack{
@@ -42,7 +42,7 @@ struct UserPhotoAndStreakComponentHomeView: View {
                     .stroke(Color.verdeTitle, lineWidth: 1)
             )
 
-            PerfilImageViewComponent(viewModel: perfilViewModel)
+            PerfilImageViewComponent(perfilViewModel: perfilViewModel)
                     .frame(width: 45, height: 45)
                     .offset(x: 35)
             
