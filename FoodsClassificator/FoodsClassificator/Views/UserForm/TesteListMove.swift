@@ -15,27 +15,33 @@ struct TesteListMove: View {
     var body: some View {
         
         List {
-            ForEach(array, id: \.self) { text in
-                HStack {
-                    Text(text)
-                        .tint(.verdeTitle)
-                        .font(.headline)
-                    Spacer()
+            Section {
+                ForEach(array, id: \.self) { text in
+                    HStack {
+                        Text(text)
+                            .tint(.verdeTitle)
+                            .font(.headline)
+                        Spacer()
+                    }
+                    .padding()
+                    .background(.verdeFundo)
+                    .clipShape(RoundedRectangle(cornerRadius: 15))
+                    .listRowSeparator(.hidden)
                 }
-                .padding()
-                .background(.verdeFundo)
-                .clipShape(RoundedRectangle(cornerRadius: 15))
-                .listRowSeparator(.hidden)
+                .onDelete(perform: delete)
+                .onMove(perform: move)
+
             }
-            .onDelete(perform: delete)
-            .onMove(perform: move)
+            .listRowBackground(Color.verdeFundo)
         }
         
-        .listRowSpacing(-11)
-        .listStyle(.inset)
+        .listRowSpacing(10)
+        .listStyle(.insetGrouped)
+        
         .toolbar {
            EditButton()
         }
+        
         
     }
     
