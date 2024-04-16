@@ -19,8 +19,10 @@ struct FoodsClassificatorApp: App {
             NavigationStack {
                 TutorialHomeView()
                     .preferredColorScheme(.light)
-            }
+                    .ignoresSafeArea(.keyboard)
+            }.ignoresSafeArea(.keyboard)
         }.modelContainer(.appContainer)
+            
     }
 }
 

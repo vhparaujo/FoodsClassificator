@@ -34,6 +34,9 @@ struct FormsPage2: View {
             Spacer()
             
             Image("form_page2")
+                .resizable()
+                .scaledToFit()
+                .padding()
             
             Spacer() // Empurra o conteúdo para cima e o botão para baixo
             
@@ -43,6 +46,7 @@ struct FormsPage2: View {
             }
             
         }
+        
         .padding()
         
         .onAppear {

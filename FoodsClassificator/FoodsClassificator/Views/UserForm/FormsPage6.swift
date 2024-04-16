@@ -21,14 +21,14 @@ struct FormsPage6: View {
             
             QuestionTextComponent(QuestionLabel: "Você possui uma meta de calorias prescrita por nutricionista?")
                 .padding(.top)
+                .font(.title3)
             
             HStack {
                 Button(action: {
                     perfilViewModel.model.temNutricionista = false
-                    print("nao tem Nutricionista")
                 }, label: {
                     Capsule()
-                        .foregroundStyle(.green.opacity(0.4))
+                        .foregroundStyle(.verdeFundo)
                         .overlay {
                             Text("Não")
                                 .tint(.black)
@@ -39,11 +39,9 @@ struct FormsPage6: View {
                 
                 Button(action: {
                     perfilViewModel.model.temNutricionista = true
-                    print("Tem Nutricionista")
-                    
                 }, label: {
                     Capsule()
-                        .foregroundStyle(.green.opacity(0.4))
+                        .foregroundStyle(.verdeFundo)
                         .overlay {
                             Text("Sim")
                                 .tint(.black)
@@ -53,10 +51,9 @@ struct FormsPage6: View {
                 .opacity(perfilViewModel.model.temNutricionista ? 1.0 : 0.5)
             }
             
-            
             if perfilViewModel.model.temNutricionista  {
                 QuestionTextComponent(QuestionLabel: "Qual é a sua meta?")
-                TextFieldRectangleComponent(placeholder: "1800cal", text: $meta)
+                TextFieldRectangleComponent(placeholder: "1800cal", text: $meta, textLimit: 4)
                     .keyboardType(.numberPad)
             }
             
