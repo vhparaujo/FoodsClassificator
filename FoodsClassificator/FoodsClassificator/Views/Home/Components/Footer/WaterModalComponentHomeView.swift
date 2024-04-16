@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct WaterModalComponentHomeView: View {
+    @Environment(\.modelContext) var context
     @Bindable var footerHomeViewModel = FooterHomeViewModel()
+
+    @State var perfilViewModel = PerfilViewModel()
     @Environment(\.dismiss) private var dismiss
     @Binding var isPresented: Bool
     
@@ -173,6 +176,10 @@ struct WaterModalComponentHomeView: View {
             dismiss()
         }
         .foregroundStyle(Color.red)
+        .onAppear{
+            perfilViewModel.modelContext = context
+        }
+
     }
 }
 
