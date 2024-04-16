@@ -9,8 +9,9 @@ import SwiftUI
 
 struct FormProgressBar: View {
     
-    @Binding var percent: CGFloat
-    
+//    @Binding var percent: CGFloat
+    var progress: Double
+
     var body: some View {
         
         
@@ -24,12 +25,14 @@ struct FormProgressBar: View {
             
             Capsule()
                 .fill(Color.laranjaEscuro)
-                .frame(width: UIScreen.main.bounds.width * percent,
+                .frame(width: UIScreen.main.bounds.width * progress,
                        height: UIScreen.main.bounds.height * 0.004)
         }
+        .animation(.linear, value: progress)
+
     }
 }
 
-#Preview {
-    FormProgressBar(percent: .constant(010))
-}
+//#Preview {
+//    FormProgressBar(percent: .constant(010))
+//}

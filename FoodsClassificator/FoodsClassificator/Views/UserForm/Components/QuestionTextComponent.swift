@@ -25,7 +25,7 @@ struct QuestionTextComponent: View {
     QuestionTextComponent(QuestionLabel: "Isso vai ser uma Pergunta?")
 }
 
-#Preview {
-    let modelContainer: ModelContainer = .appContainer
-    return FormsPage4().modelContainer(modelContainer)
-}
+//#Preview {
+//    let modelContainer: ModelContainer = .appContainer
+//    return FormsPage4().modelContainer(modelContainer)
+//}

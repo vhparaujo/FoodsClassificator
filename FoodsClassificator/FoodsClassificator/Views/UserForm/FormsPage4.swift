@@ -18,6 +18,8 @@ struct FormsPage4: View {
     
     var body: some View {
         VStack {
+            FormProgressBar(progress: perfilViewModel.progress)
+
             
             QuestionTextComponent(QuestionLabel: "Qual o seu principal objetivo?")
                 .font(.title2)
@@ -91,6 +93,8 @@ struct FormsPage4: View {
  
         .onAppear{
             perfilViewModel.modelContext = context
+            perfilViewModel.progress += 0.6
+
         }
         
     }

@@ -17,6 +17,8 @@ struct FormsPage3: View {
     
     var body: some View {
         VStack {
+            FormProgressBar(progress: perfilViewModel.progress)
+
                         
             QuestionTextComponent(QuestionLabel: "Qual o seu sexo biológico?")
                 .padding(.top)
@@ -77,6 +79,8 @@ struct FormsPage3: View {
         .padding()
         .onAppear{
             perfilViewModel.modelContext = context
+            perfilViewModel.progress += 0.4
+
         }
         
     }

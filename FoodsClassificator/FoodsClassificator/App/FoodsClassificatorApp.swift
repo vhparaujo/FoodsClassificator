@@ -18,9 +18,10 @@ struct FoodsClassificatorApp: App {
         WindowGroup {
             NavigationStack {
 //                OnBoardingPageControl()
-//                TutorialHomeView()
+                TutorialHomeView()
 //                HomeView()
-                FormsPageControl()
+//                FormsPageControl()
+//                FormsPage1()
                     .preferredColorScheme(.light)
             }
         }.modelContainer(.appContainer)

@@ -10,8 +10,9 @@ import SwiftData
 
 struct FormsPageControl: View {
     var body: some View {
+        
         VStack {
-            FormProgressBar(percent: .constant(0.16))
+            FormProgressBar(progress: 0.15)
             TabView{
                 FormsPage1()
                 FormsPage2()
@@ -22,7 +23,6 @@ struct FormsPageControl: View {
             }
             .tabViewStyle(.page(indexDisplayMode: .never))
             .indexViewStyle(.page(backgroundDisplayMode: .never))
-            
         }
     }
 }

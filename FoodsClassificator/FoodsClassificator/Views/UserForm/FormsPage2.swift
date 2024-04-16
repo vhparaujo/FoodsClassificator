@@ -13,6 +13,8 @@ struct FormsPage2: View {
     
     var body: some View {
         VStack {
+            FormProgressBar(progress: perfilViewModel.progress)
+
             QuestionTextComponent(QuestionLabel: "Quantos anos você tem?")
                 .padding(.top)
             
@@ -43,6 +45,7 @@ struct FormsPage2: View {
         .padding()
         .onAppear {
             perfilViewModel.modelContext = context
+               perfilViewModel.progress += 0.2
         }
         
         .onTapGesture {

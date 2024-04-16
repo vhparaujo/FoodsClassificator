@@ -17,7 +17,8 @@ struct FormsPage6: View {
     var body: some View {
         VStack {
             
-            
+            FormProgressBar(progress: perfilViewModel.progress)
+
             QuestionTextComponent(QuestionLabel: "Você possui uma meta de calorias prescrita por nutricionista?")
                 .padding(.top)
             
@@ -73,6 +74,8 @@ struct FormsPage6: View {
         .padding()
         .onAppear{
             perfilViewModel.modelContext = context
+            perfilViewModel.progress += 1.0
+
         }
         
         .onTapGesture {

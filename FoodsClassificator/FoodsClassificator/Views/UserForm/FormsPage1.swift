@@ -21,6 +21,8 @@ struct FormsPage1: View {
     
     var body: some View {
         VStack {
+            FormProgressBar(progress: perfilViewModel.progress)
+
             // Conteúdo da página aqui
             QuestionTextComponent(QuestionLabel: "Como gostaria de ser chamado(a)?")
                 .padding(.top)

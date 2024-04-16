@@ -49,6 +49,7 @@
 		3BE31CD72BBB373900E66F3E /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE31CD62BBB373900E66F3E /* CameraPreview.swift */; };
 		3BE31CD92BBB374D00E66F3E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE31CD82BBB374D00E66F3E /* CameraController.swift */; };
 		4A0404612BB20F1400BEDADD /* WaterModalComponentHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */; };
+		4A110CA42BCE30F6003A35B8 /* ProgressBarTeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A110CA32BCE30F6003A35B8 /* ProgressBarTeste.swift */; };
 		4A1CCCBC2BBB4A6400ED750F /* OnboardingPage1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */; };
 		4A1CCCBE2BBB4A6F00ED750F /* OnboardingPage2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */; };
 		4A1CCCC02BBB4A7A00ED750F /* OnboardingPage3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */; };
@@ -161,6 +162,7 @@
 		3BE31CD62BBB373900E66F3E /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		3BE31CD82BBB374D00E66F3E /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
 		4A0404602BB20F1400BEDADD /* WaterModalComponentHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterModalComponentHomeView.swift; sourceTree = "<group>"; };
+		4A110CA32BCE30F6003A35B8 /* ProgressBarTeste.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarTeste.swift; sourceTree = "<group>"; };
 		4A1CCCBB2BBB4A6400ED750F /* OnboardingPage1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage1.swift; sourceTree = "<group>"; };
 		4A1CCCBD2BBB4A6F00ED750F /* OnboardingPage2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage2.swift; sourceTree = "<group>"; };
 		4A1CCCBF2BBB4A7A00ED750F /* OnboardingPage3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPage3.swift; sourceTree = "<group>"; };
@@ -441,6 +443,7 @@
 				4A3F748A2BC37CC60080C021 /* NextButtonLabel.swift */,
 				4A3F74932BC39CDD0080C021 /* QuestionTextComponent.swift */,
 				4A3F74992BC3A37F0080C021 /* FormProgressBar.swift */,
+				4A110CA32BCE30F6003A35B8 /* ProgressBarTeste.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				0B6339462BC43030002D56E7 /* ExpandedFoodDetailView.swift in Sources */,
 				9BFA12562BAB7950000C0CB5 /* Model.swift in Sources */,
 				9B8904992BB4A1BC0058DFDD /* PerfilTexts.swift in Sources */,
+				4A110CA42BCE30F6003A35B8 /* ProgressBarTeste.swift in Sources */,
 				4A3F74A52BC44FF80080C021 /* FormsPage6.swift in Sources */,
 				0B1C227F2BB20C4A003C5C0E /* MacrosComponentHomeView.swift in Sources */,
 				9B8904952BB49B4F0058DFDD /* UserNameComponentPerfilView.swift in Sources */,
