@@ -45,18 +45,35 @@ import Foundation
         }
         
     }
+    
     var idadeAsString: String {
-        get { String(model.idade) }
+        get {
+            if let idade = model.idade {
+               return String(idade)
+            }
+            return ""
+
+        }
         set { model.idade = Int(newValue) ?? model.idade }
     }
     
     var pesoAsString: String {
-        get { String(model.peso) }
+        get {
+            if let peso = model.peso {
+                return String(peso)
+            }
+            return ""
+        }
         set { model.peso = Double(newValue) ?? model.peso }
     }
     
     var alturaAsString: String {
-        get { String(model.altura) }
+        get {
+            if let altura = model.altura {
+                return String(altura)
+            }
+            return ""
+        }
         set { model.altura = Int(newValue) ?? model.altura }
     }
     
@@ -64,9 +81,22 @@ import Foundation
     
     func caloriesPerDay() -> Double {
         let genderFactor = model.sexoBiologico == "Masculino" ? 5 : -161
-        let weight = model.peso
-        let height = Double(model.altura)
-        let age = Double(model.idade)
+        
+        var weight: Double = 0
+        if let peso = model.peso {
+            weight = peso
+        }
+        
+        var height: Double = 0
+        if let altura = model.altura {
+            height = Double(altura)
+        }
+        
+        var age: Double = 0
+        if let idade = model.idade {
+            age = Double(idade)
+        }
+        
         // Array de multiplicadores de atividade correspondendo a "Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"
         let activityMultipliers = [1.2, 1.375, 1.55, 1.725, 1.9]
         // Usa o selectedIndex para obter o multiplicador correto

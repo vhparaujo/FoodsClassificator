@@ -63,7 +63,7 @@ struct PerfilView: View {
                         if canEditFunc() == true {
                             TextFieldPerfilComponent(placeholder: "Idade", text: $perfilViewModel.idadeAsString, textLimit: 3)
                         } else {
-                            Text("\(perfilViewModel.model.idade) ")
+                            Text("\(perfilViewModel.model.idade ?? 0) ")
                                 .foregroundStyle(.tertiary)
                         }
                         
@@ -75,7 +75,7 @@ struct PerfilView: View {
                         if canEditFunc() == true {
                             TextFieldPerfilComponent(placeholder: "Peso", text: $perfilViewModel.pesoAsString, textLimit: 4, keyBoardType: .decimalPad)
                         } else {
-                            Text("\(perfilViewModel.model.peso, specifier: "%.2f") kg")
+                            Text("\(perfilViewModel.model.peso ?? 0, specifier: "%.2f") kg")
                                 .foregroundStyle(.tertiary)
                         }
                         
@@ -87,7 +87,7 @@ struct PerfilView: View {
                         if canEditFunc() == true {
                             TextFieldPerfilComponent(placeholder: "Altura", text: $perfilViewModel.alturaAsString, textLimit: 3)
                         } else {
-                            Text("\(perfilViewModel.model.altura) cm")
+                            Text("\(perfilViewModel.model.altura ?? 0) cm")
                                 .foregroundStyle(.tertiary)
                         }
                         
@@ -166,12 +166,15 @@ struct PerfilView: View {
                     .onDelete(perform: perfilViewModel.model.refeicoes.count > 1 ? delete : nil)
                     .onMove(perform: move)
                     
-                    TextField("Nome da refeição", text: $perfilViewModel.textFieldName)
-                        .onSubmit {
-                            perfilViewModel.model.refeicoes.append(perfilViewModel.textFieldName)
-                            perfilViewModel.textFieldName = ""
-                        }
-                        .disabled(!canEditFunc())
+                    if canEditFunc() == true {
+                        TextField("Nome da refeição", text: $perfilViewModel.textFieldName)
+                            .onSubmit {
+                                perfilViewModel.model.refeicoes.append(perfilViewModel.textFieldName)
+                                perfilViewModel.textFieldName = ""
+                            }
+                    } else {
+                        
+                    }
                     
                 }
                 

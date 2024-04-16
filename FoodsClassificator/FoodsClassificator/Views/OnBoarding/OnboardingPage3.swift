@@ -14,6 +14,7 @@ struct OnboardingPage3: View {
             Image("Page3")
                 .resizable()
                 .scaledToFit()
+                .padding()
             
             Spacer()
 
@@ -32,10 +33,10 @@ struct OnboardingPage3: View {
             NavigationLink(destination: TutorialHomeView()) {
                 NextButtonLabel(nextButtonLabel: "Iniciar tutorial")
             }.padding()
-
             
             Spacer()
         }
+        .padding()
     }
 }
 
