@@ -12,25 +12,33 @@ struct TesteListMove: View {
     @State var array = ["tsss", "wee", "ferr", "fvdgrre"]
     @State var isEditing = false
     
+    @State var selectedItems: Set<String> = [] // Conjunto para armazenar os itens selecionados
+    
     var body: some View {
         
-        List {
+        List(selection: $selectedItems) {
             Section {
                 ForEach(array, id: \.self) { text in
-                    HStack {
-                        Text(text)
-                            .tint(.verdeTitle)
-                            .font(.headline)
-                        Spacer()
+                    
+//                    Button {
+//                       print(selectedItems)
+//                    } label: {
+                        HStack {
+                            Text(text)
+                                .tint(.verdeTitle)
+                                .font(.headline)
+                            Spacer()
+                        }
+                        .padding()
+                        .background(.verdeFundo)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .listRowSeparator(.hidden)
                     }
-                    .padding()
-                    .background(.verdeFundo)
-                    .clipShape(RoundedRectangle(cornerRadius: 15))
-                    .listRowSeparator(.hidden)
-                }
+            
+//                }
                 .onDelete(perform: delete)
                 .onMove(perform: move)
-
+                
             }
             .listRowBackground(Color.verdeFundo)
         }
@@ -39,9 +47,8 @@ struct TesteListMove: View {
         .listStyle(.insetGrouped)
         
         .toolbar {
-           EditButton()
+            EditButton()
         }
-        
         
     }
     
@@ -52,6 +59,15 @@ struct TesteListMove: View {
     func move(from source: IndexSet, to destination: Int) {
         array.move(fromOffsets: source, toOffset: destination)
     }
+    
+//    func toggleSelection(for item: String) {
+//        if selectedItems.contains(item) {
+//            selectedItems.remove(item)
+//        } else {
+//            selectedItems.insert(item)
+//        }
+//    }
+    
 }
 
 

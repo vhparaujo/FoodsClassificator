@@ -22,7 +22,7 @@ struct FormsPage3: View {
                         
             QuestionTextComponent(QuestionLabel: "Qual o seu sexo biológico?")
                 .padding(.top)
-              
+            
             HStack{
                 ForEach(perfilViewModel.sexos, id: \.self) { sexo in
                     Button(action: {
@@ -47,7 +47,7 @@ struct FormsPage3: View {
                     HStack {
                         Image(systemName: "questionmark.circle.fill")
                             .foregroundStyle(Color.laranjaEscuro)
-
+                        
                         Text("Qual Devo Escolher?")
                             .foregroundStyle(Color.laranjaEscuro)
                         
@@ -71,9 +71,6 @@ struct FormsPage3: View {
             NavigationLink(destination: FormsPage4()) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
-        }
-        .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
         
         .padding()

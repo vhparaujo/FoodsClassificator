@@ -25,9 +25,7 @@ import Foundation
     let sexos: [String] = ["Masculino", "Feminino"]
     
     let objetivos: [String] = ["Perder peso", "Manter peso", "Ganhar peso", "Ganhar massa muscular", "Ter uma alimentação balanceada"]
-    
-    let refeicoesFixas: [String] = ["Café da manhã", "Almoço", "Jantar"]
-    
+        
     let intensidades: [String] = ["Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"]
     
     var textFieldName = ""

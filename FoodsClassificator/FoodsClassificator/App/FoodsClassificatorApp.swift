@@ -15,24 +15,21 @@ struct FoodsClassificatorApp: App {
     @AppStorage("onBoardingViewed") var onBoardingViewed = false
     @AppStorage("tutorialViewed") var tutorialViewed = false
     
+    var containerModel: ModelContainer = .appContainer
+    
     var body: some Scene {
         WindowGroup {
-            
             NavigationStack {
                 if onBoardingViewed == false {
                     OnBoardingPageControl()
                         .preferredColorScheme(.light)
-
                 }
                 else{
                     HomeView()
-                    //                FormsPageControl()
-                    //                FormsPage1()
-                    //                TutorialHomeView()
                         .preferredColorScheme(.light)
                 }
-            }
-        }.modelContainer(.appContainer)
+            }.ignoresSafeArea(.keyboard)
+        }.modelContainer(containerModel)
     }
 }
 

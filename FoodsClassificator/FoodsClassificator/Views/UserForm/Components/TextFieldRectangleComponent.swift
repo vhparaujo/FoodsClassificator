@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 
 struct TextFieldRectangleComponent: View {
-
+    
     var placeholder: String
     @Binding var text: String  // Modificado para usar Binding<String>
     @State var textLimit = 12 //Your limit

@@ -34,6 +34,9 @@ struct FormsPage2: View {
             Spacer()
             
             Image("form_page2")
+                .resizable()
+                .scaledToFit()
+                .padding()
             
             Spacer() // Empurra o conteúdo para cima e o botão para baixo
             
@@ -41,8 +44,11 @@ struct FormsPage2: View {
             NavigationLink(destination: FormsPage3()) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
+            
         }
+        
         .padding()
+        
         .onAppear {
             perfilViewModel.modelContext = context
                perfilViewModel.progress += 0.2

@@ -23,25 +23,26 @@ struct FormsPage1: View {
         VStack {
             FormProgressBar(progress: perfilViewModel.progress)
 
-            // Conteúdo da página aqui
             QuestionTextComponent(QuestionLabel: "Como gostaria de ser chamado(a)?")
                 .padding(.top)
             
             TextFieldRectangleComponent(placeholder: "Insira seu nome", text: $perfilViewModel.model.userName)
-                
             
             Spacer()
             
             Image("form_page1")
+                .resizable()
+                .scaledToFit()
+                .padding(.horizontal, 80)
             
-            Spacer() // Empurra o conteúdo para cima e o botão para baixo
+            Spacer()
             
-            // NavigationLink para a próxima página do questionário
             NavigationLink(destination: FormsPage2()) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
             
         }
+        
         .padding()
         .onAppear(perform: {
             perfilViewModel.modelContext = context
@@ -52,6 +53,7 @@ struct FormsPage1: View {
         }
         
         .navigationBarBackButtonHidden()
+        
     }
 }
 
