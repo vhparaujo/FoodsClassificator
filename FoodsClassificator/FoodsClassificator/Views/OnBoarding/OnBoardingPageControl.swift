@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct OnBoardingPageControl: View {
-    
+    @AppStorage("onBoardingViewed") var onBoardingViewed: Bool?
+
     var body: some View {
         TabView{
             OnboardingPage1()
             OnboardingPage2()
             OnboardingPage3()
         }
-        
         .tabViewStyle(.page(indexDisplayMode: .always))
         .indexViewStyle(.page(backgroundDisplayMode: .always))
     }

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct OnboardingPage3: View {
-    
+    @AppStorage("onBoardingViewed") var onBoardingViewed: Bool?
+
     var body: some View {
         VStack {
             Image("Page3")
@@ -31,7 +32,10 @@ struct OnboardingPage3: View {
             
             NavigationLink(destination: TutorialHomeView()) {
                 NextButtonLabel(nextButtonLabel: "Iniciar tutorial")
-            }.padding()
+            }.simultaneousGesture(TapGesture().onEnded{
+                onBoardingViewed = true
+            })
+            .padding()
 
             
             Spacer()

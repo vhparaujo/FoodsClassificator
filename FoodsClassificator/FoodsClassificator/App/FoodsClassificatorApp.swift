@@ -13,16 +13,24 @@ import SwiftData
 struct FoodsClassificatorApp: App {
     
     @AppStorage("onBoardingViewed") var onBoardingViewed = false
+    @AppStorage("tutorialViewed") var tutorialViewed = false
     
     var body: some Scene {
         WindowGroup {
+            
             NavigationStack {
-//                OnBoardingPageControl()
-                TutorialHomeView()
-//                HomeView()
-//                FormsPageControl()
-//                FormsPage1()
-                    .preferredColorScheme(.light)
+                if onBoardingViewed == false {
+                    OnBoardingPageControl()
+                        .preferredColorScheme(.light)
+
+                }
+                else{
+                    HomeView()
+                    //                FormsPageControl()
+                    //                FormsPage1()
+                    //                TutorialHomeView()
+                        .preferredColorScheme(.light)
+                }
             }
         }.modelContainer(.appContainer)
     }
