@@ -14,15 +14,17 @@ enum PopoverType {
 }
 
 struct TutorialHomeView: View {
+    @State private var showView:Bool = true
+    
     @Environment(\.dismiss) var dismiss
     @State private var navigationTarget: NavigationTarget?
     let screenWidth = UIScreen.main.bounds.size.width
     let screenHeight = UIScreen.main.bounds.size.height
     var background = BackgroundShapeHeaderHomeView()
     var viewModel =  HomeViewModel()
-
-//    var perfil = PerfilViewModel()
-
+    
+    //    var perfil = PerfilViewModel()
+    
     @State private var currentIndex: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
     @State var showStartPopover = false
@@ -31,27 +33,45 @@ struct TutorialHomeView: View {
         GeometryReader { geometry in
             ZStack {
                 HomeView()
+                
+                Rectangle()
+                    .showCase(order: 4,
+                              title: "",
+                              cornerRadius: 0,
+                              style: .continuous,
+                              popoverType: .vazio)
+                    .frame(width: 0.00001, height: 0.00001)
+                    .foregroundStyle(Color.black.opacity(0.5))
+                    .alert(isPresented: $showStartPopover) {
+                        Alert(
+                            title: Text("Definir calorias"),
+                            message: Text("Precisamos de algumas informações para melhorar sua experiência definindo as calorias, levará 5 minutos. "),
+                            primaryButton: .default(Text("Melhorar Experiência"), action: {
+                                navigationTarget = .improveExperience
+                            }),
+                            secondaryButton: .cancel(Text("Talvez Mais Tarde"), action: {
+                                showView = false
+                            })
+                        )
+                    }
+                
                 VStack{
-                    
+                    //MARK: HEADER VIEW
                     VStack {
                         HStack {
                             Text("Olá, Fulano!")
+                                .font(.title)
                                 .foregroundStyle(.clear)
-                            
                             Spacer()
+                            
                             ZStack{
                                 HStack{
                                     RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                                 }
-                                .frame(width: 80, height: 29)
+                                .frame(width: 84, height: 45)
                                 .padding(.horizontal)
                                 .background(Color.clear)
                                 
-                                
-                                Circle()
-                                    .frame(width: 45, height: 45)
-                                    .offset(x: 35)
-                                    .foregroundStyle(Color.clear)
                             }
                             .showCase(order: 2,
                                       title: "Acompanhe seu crescimento, participe de desafios para evoluir e celebre suas vitórias! A ofensiva é ativada quando você atinge sua meta diária de água e registra pelo menos uma refeição.",
@@ -61,6 +81,7 @@ struct TutorialHomeView: View {
                         .padding()
                         
                         ZStack {
+                            
                             HStack {
                                 VStack {
                                     RoundedRectangle(cornerRadius: 17, style: .continuous)
@@ -88,46 +109,27 @@ struct TutorialHomeView: View {
                                 }
                                 
                             }
-                            .padding(.bottom)
-                            .padding(.horizontal)
-                            ZStack{
-                                Rectangle()
-                                    .showCase(order: 4,
-                                              title: "",
-                                              cornerRadius: 0,
-                                              style: .circular,
-                                              popoverType: .vazio)
-                                    .frame(width: 0.01, height: 0.01)
-                                    .foregroundStyle(Color.black.opacity(0.5))
-                                    .alert(isPresented: $showStartPopover) {
-                                        Alert(
-                                            title: Text("Definir calorias"),
-                                            message: Text("Precisamos de algumas informações para melhorar sua experiência definindo as calorias, levará 5 minutos. "),
-                                            primaryButton: .default(Text("Melhorar Experiência"), action: {
-                                                navigationTarget = .improveExperience
-                                            }),
-                                            secondaryButton: .cancel(Text("Talvez Mais Tarde"), action: {
-//                                                showView = false
-                                            })
-                                        )
-                                    }
+                            .padding()
                                 
                                 
-                                    
+                                
+                                
                                 RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                                .frame(width: screenWidth * 0.5)
-                                .showCase(order: 3,
-                                          title: "Defina suas calorias e acompanhe seu objetivo diário, além de ver como está progredindo!",
-                                          cornerRadius: 10,
-                                          style: .continuous)
-                            }
+                                    .frame(width: screenWidth * 0.5,  height: screenHeight * 0.33)
+                                    .showCase(order: 3,
+                                              title: "Defina suas calorias e acompanhe seu objetivo diário, além de ver como está progredindo!",
+                                              cornerRadius: 10,
+                                              style: .continuous)
+                            
                         }
+                        
                     }
                     
-                    
+                    Spacer()
                     
                     //MARK: ----------FOOTERVIEW-------------------------------------------------------
                     VStack {
+                        
                         NavigationLink(destination: FormsPage1(), isActive: .constant(navigationTarget == .improveExperience)) { EmptyView() }
                         
                         
@@ -137,8 +139,8 @@ struct TutorialHomeView: View {
                                       cornerRadius: 180,
                                       style: .continuous
                                       ,scale: 1.15)
-//                            .frame(height: screenHeight * 0.3)
-
+                        //                            .frame(height: screenHeight * 0.3)
+                        
                         
                         
                         RoundedRectangle(cornerRadius: 25.0)
@@ -158,7 +160,7 @@ struct TutorialHomeView: View {
                 
             }
             .modifier(ShowCaseRoot( showStartPopover: $showStartPopover, showHighlights: true, onFinished: {
-                print("Finished Tutorial")}))
+                print("Finished Tutorial")}, showView: $showView))
         }
     }
 }

@@ -93,7 +93,7 @@ struct FormsPage4: View {
  
         .onAppear{
             perfilViewModel.modelContext = context
-            perfilViewModel.progress += 0.6
+            perfilViewModel.progress = 0.64
 
         }
         

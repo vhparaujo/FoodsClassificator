@@ -17,7 +17,7 @@ import Foundation
             fetchData()
         }
     }
-    var progress: Double = 0.0
+    var progress: Double = 0.16
     var variacaoDaIdade = stride(from: 0, through: 120, by: 1).map { $0 }
     var variacaoDoPeso = stride(from: 0, through: 1000, by: 1).map { $0 }
     var variacaoDaAltura = stride(from: 0, through: 250, by: 1).map { $0 }

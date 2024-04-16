@@ -71,7 +71,7 @@ struct FormsPage6: View {
         .padding()
         .onAppear{
             perfilViewModel.modelContext = context
-            perfilViewModel.progress += 1.0
+            perfilViewModel.progress = 0.96
 
         }
         

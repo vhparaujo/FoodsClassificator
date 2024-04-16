@@ -28,7 +28,8 @@ struct OnboardingPage3: View {
                 .multilineTextAlignment(.center)
                 .font(.system(size: 18))
                 .frame(alignment: .center)
-                .padding()
+                .padding(.horizontal)
+                .padding(.top)
             
             NavigationLink(destination: TutorialHomeView()) {
                 NextButtonLabel(nextButtonLabel: "Iniciar tutorial")

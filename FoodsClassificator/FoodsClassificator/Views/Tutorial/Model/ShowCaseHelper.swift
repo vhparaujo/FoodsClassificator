@@ -32,7 +32,8 @@ struct ShowCaseRoot: ViewModifier{
     ///view properties
     @State private var highlightOrder: [Int] = []
     @State private var currentHighlight: Int = 0
-    @State private var showView:Bool = true
+    @Binding var showView: Bool
+
     ///Popover
     @State private var showTitle:Bool = false
     ///Namespace ID , for smooth Shape Transition
@@ -83,7 +84,7 @@ struct ShowCaseRoot: ViewModifier{
                             showTitle = true
                             if currentHighlight == highlightOrder.count - 1 {
                                 // Iniciar a exibição do popover automaticamente após o último showcase ser mostrado
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                                     showStartPopover = true
                                 }
                             }
