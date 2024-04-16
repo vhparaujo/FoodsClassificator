@@ -20,7 +20,7 @@ struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                if onBoardingViewed == false {
+                if onBoardingViewed == true {
                     OnBoardingPageControl()
                         .preferredColorScheme(.light)
                 }
@@ -39,10 +39,11 @@ extension ModelContainer {
         
         do {
             
-            let container = try ModelContainer(for: PerfilModel.self)
+            let container = try ModelContainer(for: PerfilModel.self, FormModel.self)
             
             var fetchDescriptor = FetchDescriptor<PerfilModel>()
             fetchDescriptor.fetchLimit = 1
+            
             
             guard try container.mainContext.fetch(fetchDescriptor).count == 0 else { return container }
             

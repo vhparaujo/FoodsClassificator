@@ -60,6 +60,9 @@ struct FormsPage6: View {
             Spacer()
             
             Image("form_page6")
+                .resizable()
+                .scaledToFit()
+                .padding()
             
             Spacer()
             
