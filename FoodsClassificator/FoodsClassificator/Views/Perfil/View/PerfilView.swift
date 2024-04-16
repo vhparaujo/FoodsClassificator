@@ -20,6 +20,10 @@ struct PerfilView: View {
     @State private var showPesoPopover: Bool = false
     @State private var showAlturaPopover: Bool = false
     
+    @State private var idadeTextField = ""
+    @State private var pesoTextField = ""
+    @State private var alturaTextField = ""
+    
     var body: some View {
         
         VStack {
@@ -53,100 +57,41 @@ struct PerfilView: View {
             List {
                 Section {
                     
-                    Button {
-                        showIdadePopover.toggle()
-                    } label: {
-                        
-                        HStack {
-                            Text("Idade")
-                            Spacer()
-                            Text("\(perfilViewModel.model.idade)")
-                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
-                            if canEditFunc() {
-                                Image(systemName: "chevron.right")
-                                    .foregroundStyle(.secondary)
-                                    .imageScale(.small)
-                            }
-                            
-                        }.foregroundStyle(.black)
-                        
-                    }
-                    .disabled(!canEditFunc())
-                    .popover(isPresented: $showIdadePopover) {
-                        HStack {
-                            Picker("", selection: $perfilViewModel.model.idade) {
-                                ForEach(0..<perfilViewModel.variacaoDaIdade.count, id: \.self) {
-                                    Text("\(perfilViewModel.variacaoDaIdade[$0])").tag(perfilViewModel.variacaoDaIdade[$0])
-                                }
-                            }
-                            .pickerStyle(.wheel)
+                    HStack {
+                        Text("Idade")
+                        Spacer()
+                        if canEditFunc() == true {
+                            TextFieldPerfilComponent(placeholder: "Idade", text: $perfilViewModel.idadeAsString, textLimit: 3)
+                        } else {
+                            Text("\(perfilViewModel.model.idade ?? 0) ")
+                                .foregroundStyle(.tertiary)
                         }
-                        .frame(maxWidth: 150, maxHeight: 120)
-                        .presentationCompactAdaptation(.popover)
-                    }
+                        
+                    }.foregroundStyle(.black)
                     
-                    Button {
-                        showPesoPopover.toggle()
-                    } label: {
-                        
-                        HStack {
-                            Text("Peso")
-                            Spacer()
-                            Text("\(perfilViewModel.model.peso) kg")
-                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
-                            if canEditFunc() {
-                                Image(systemName: "chevron.right")
-                                    .foregroundStyle(.secondary)
-                                    .imageScale(.small)
-                            }
-                        }.foregroundStyle(.black)
-                        
-                    }
-                    .disabled(!canEditFunc())
-                    .popover(isPresented: $showPesoPopover) {
-                        HStack {
-                            Picker("", selection: $perfilViewModel.model.peso) {
-                                ForEach(0..<perfilViewModel.variacaoDoPeso.count, id: \.self) {
-                                    Text("\(perfilViewModel.variacaoDoPeso[$0]) kg").tag(perfilViewModel.variacaoDoPeso[$0])
-                                }
-                            }
-                            .pickerStyle(.wheel)
+                    HStack {
+                        Text("Peso")
+                        Spacer()
+                        if canEditFunc() == true {
+                            TextFieldPerfilComponent(placeholder: "Peso", text: $perfilViewModel.pesoAsString, textLimit: 4, keyBoardType: .decimalPad)
+                        } else {
+                            Text("\(perfilViewModel.model.peso ?? 0, specifier: "%.2f") kg")
+                                .foregroundStyle(.tertiary)
                         }
-                        .frame(maxWidth: 150, maxHeight: 120)
-                        .presentationCompactAdaptation(.popover)
-                    }
+                        
+                    }.foregroundStyle(.black)
                     
-                    Button {
-                        showAlturaPopover.toggle()
-                    } label: {
-                        
-                        HStack {
-                            Text("Altura")
-                            Spacer()
-                            Text("\(perfilViewModel.model.altura) cm")
-                                .foregroundStyle(canEditFunc() ? .secondary : .tertiary)
-                            if canEditFunc() {
-                                Image(systemName: "chevron.right")
-                                    .foregroundStyle(.secondary)
-                                    .imageScale(.small)
-                            }
-                        }.foregroundStyle(.black)
-                        
-                    }
-                    .disabled(!canEditFunc())
-                    .popover(isPresented: $showAlturaPopover) {
-                        HStack {
-                            
-                            Picker("", selection: $perfilViewModel.model.altura) {
-                                ForEach(0..<perfilViewModel.variacaoDaAltura.count, id: \.self) {
-                                    Text("\(perfilViewModel.variacaoDaAltura[$0]) cm").tag(perfilViewModel.variacaoDaAltura[$0])
-                                }
-                            }
-                            .pickerStyle(.wheel)
+                    HStack {
+                        Text("Altura")
+                        Spacer()
+                        if canEditFunc() == true {
+                            TextFieldPerfilComponent(placeholder: "Altura", text: $perfilViewModel.alturaAsString, textLimit: 3)
+                        } else {
+                            Text("\(perfilViewModel.model.altura ?? 0) cm")
+                                .foregroundStyle(.tertiary)
                         }
-                        .frame(maxWidth: 150, maxHeight: 120)
-                        .presentationCompactAdaptation(.popover)
-                    }
+                        
+                    }.foregroundStyle(.black)
                     
                     if canEditFunc() == true {
                         
@@ -221,18 +166,22 @@ struct PerfilView: View {
                     .onDelete(perform: perfilViewModel.model.refeicoes.count > 1 ? delete : nil)
                     .onMove(perform: move)
                     
-                    TextField("Nome da refeição", text: $perfilViewModel.textFieldName)
-                        .onSubmit {
-                            perfilViewModel.model.refeicoes.append(perfilViewModel.textFieldName)
-                            perfilViewModel.textFieldName = ""
-                        }
-                        .disabled(!canEditFunc())
+                    if canEditFunc() == true {
+                        TextField("Nome da refeição", text: $perfilViewModel.textFieldName)
+                            .onSubmit {
+                                perfilViewModel.model.refeicoes.append(perfilViewModel.textFieldName)
+                                perfilViewModel.textFieldName = ""
+                            }
+                    } else {
+                        
+                    }
                     
                 }
                 
             }.background(Color.verdeFundo)
             // permite colocar um background color na list
                 .scrollContentBackground(.hidden)
+                .scrollDismissesKeyboard(.immediately)
             
                 .toolbar {
                     EditButton()
@@ -244,9 +193,9 @@ struct PerfilView: View {
                 perfilViewModel.modelContext = context
             })
         
-            .onTapGesture {
-                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-            }
+//            .onTapGesture {
+//                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//            }
         
     }
     

@@ -18,10 +18,7 @@ import Foundation
         }
     }
     var progress: Double = 0.16
-    var variacaoDaIdade = stride(from: 0, through: 120, by: 1).map { $0 }
-    var variacaoDoPeso = stride(from: 0, through: 1000, by: 1).map { $0 }
-    var variacaoDaAltura = stride(from: 0, through: 250, by: 1).map { $0 }
-    
+
     let sexos: [String] = ["Masculino", "Feminino"]
     
     let objetivos: [String] = ["Perder peso", "Manter peso", "Ganhar peso", "Ganhar massa muscular", "Ter uma alimentação balanceada"]
@@ -49,18 +46,35 @@ import Foundation
         }
         
     }
+    
     var idadeAsString: String {
-        get { String(model.idade) }
+        get {
+            if let idade = model.idade {
+               return String(idade)
+            }
+            return ""
+
+        }
         set { model.idade = Int(newValue) ?? model.idade }
     }
     
     var pesoAsString: String {
-        get { String(model.peso) }
-        set { model.peso = Int(newValue) ?? model.peso }
+        get {
+            if let peso = model.peso {
+                return String(peso)
+            }
+            return ""
+        }
+        set { model.peso = Double(newValue) ?? model.peso }
     }
     
     var alturaAsString: String {
-        get { String(model.altura) }
+        get {
+            if let altura = model.altura {
+                return String(altura)
+            }
+            return ""
+        }
         set { model.altura = Int(newValue) ?? model.altura }
     }
     
@@ -68,9 +82,22 @@ import Foundation
     
     func caloriesPerDay() -> Double {
         let genderFactor = model.sexoBiologico == "Masculino" ? 5 : -161
-        let weight = Double(model.peso)
-        let height = Double(model.altura)
-        let age = Double(model.idade)
+        
+        var weight: Double = 0
+        if let peso = model.peso {
+            weight = peso
+        }
+        
+        var height: Double = 0
+        if let altura = model.altura {
+            height = Double(altura)
+        }
+        
+        var age: Double = 0
+        if let idade = model.idade {
+            age = Double(idade)
+        }
+        
         // Array de multiplicadores de atividade correspondendo a "Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"
         let activityMultipliers = [1.2, 1.375, 1.55, 1.725, 1.9]
         // Usa o selectedIndex para obter o multiplicador correto
@@ -80,6 +107,8 @@ import Foundation
         let calories = bmr * activityMultiplier
         print(calories)
         model.totalCalories = Int(calories)
+        
+        
         return calories
     }
     

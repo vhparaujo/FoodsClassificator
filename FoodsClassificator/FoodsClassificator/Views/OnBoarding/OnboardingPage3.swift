@@ -9,15 +9,16 @@ import SwiftUI
 
 struct OnboardingPage3: View {
     @AppStorage("onBoardingViewed") var onBoardingViewed: Bool?
-
+    
     var body: some View {
         VStack {
             Image("Page3")
                 .resizable()
                 .scaledToFit()
+                .padding()
             
             Spacer()
-
+            
             Text("Registre suas refeições num piscar de olhos")
                 .multilineTextAlignment(.center)
                 .font(.system(size: 18))
@@ -37,10 +38,10 @@ struct OnboardingPage3: View {
                 onBoardingViewed = true
             })
             .padding()
-
             
             Spacer()
         }
+        .padding()
     }
 }
 

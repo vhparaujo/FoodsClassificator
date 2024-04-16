@@ -22,7 +22,7 @@ struct CalculoCaloriasOnBoarding: View {
             Form {
                 Section(header: Text("Personal Information")) {
                     Picker("Gender", selection: $gender) {
-                        ForEach(0 ..< genders.count) {
+                        ForEach(0 ..< genders.count, id: \.self) {
                             Text(self.genders[$0])
                         }
                     }
@@ -36,7 +36,7 @@ struct CalculoCaloriasOnBoarding: View {
                 
                 Section(header: Text("Activity Level")) {
                     Picker("Activity Level", selection: $activityLevel) {
-                        ForEach(0 ..< activityLevels.count) {
+                        ForEach(0 ..< activityLevels.count, id: \.self) {
                             Text(self.activityLevels[$0])
                         }
                     }

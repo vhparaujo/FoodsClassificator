@@ -12,9 +12,9 @@ import SwiftData
     
     var userName: String
     var userPhoto: Data
-    var idade: Int
-    var peso: Int
-    var altura: Int
+    var idade: Int?
+    var peso: Double?
+    var altura: Int?
     var sexoBiologico: String
     var objetivo: String
     var intensidadeDoExercicio: String
@@ -33,7 +33,10 @@ import SwiftData
     var waterIntakeTotal: Double
     
     
-    init(userName: String = "", userPhoto: Data = Data(), idade: Int = 0, peso: Int = 0, altura: Int = 0, sexoBiologico: String = "", objetivo: String = "", intensidadeDoExercicio: String = "", refeicoes: [String] = ["Café da manhã", "Almoço", "Jantar"], streak: Int = 0, alimentos: [String] = [], temNutricionista: Bool = false, totalCalories: Int = 2000, litersSelected: Double = 2.0, milliliterSelected: Double = 0.0, capacitySelected: Double = 200.0,  waterIntakeTotal: Double = 0.0 ) {
+//    init(userName: String = "", userPhoto: Data = Data(), idade: Int = 0, peso: Int = 0, altura: Int = 0, sexoBiologico: String = "", objetivo: String = "", intensidadeDoExercicio: String = "", refeicoes: [String] = ["Café da manhã", "Almoço", "Jantar"], streak: Int = 0, alimentos: [String] = [], temNutricionista: Bool = false, totalCalories: Int = 2000, litersSelected: Double = 2.0, milliliterSelected: Double = 0.0, capacitySelected: Double = 200.0,  waterIntakeTotal: Double = 0.0 ) {
+
+    init(userName: String = "", userPhoto: Data = Data(), idade: Int? = nil, peso: Double? = nil, altura: Int? = nil, sexoBiologico: String = "Masculino", objetivo: String = "", intensidadeDoExercicio: String = "", refeicoes: [String] = ["Café da manhã", "Almoço", "Jantar"], streak: Int = 0, alimentos: [String] = [], temNutricionista: Bool = false, totalCalories: Int = 0, litersSelected: Double = 2.0, milliliterSelected: Double = 0.0, capacitySelected: Double = 200.0,  waterIntakeTotal: Double = 0.0) {
+        
         self.userName = userName
         self.userPhoto = userPhoto
         self.idade = idade

@@ -23,12 +23,12 @@ struct FormsPage2: View {
             
             QuestionTextComponent(QuestionLabel: "Qual seu peso?")
             
-            TextFieldRectangleComponent(placeholder: "Digite seu peso", text: $perfilViewModel.pesoAsString, textLimit: 4)
-                .keyboardType(.numberPad)
+            TextFieldRectangleComponent(placeholder: "kg", text: $perfilViewModel.pesoAsString, textLimit: 4)
+                .keyboardType(.decimalPad)
             
             QuestionTextComponent(QuestionLabel: "Qual sua altura?")
             
-            TextFieldRectangleComponent(placeholder: "Digite sua altura", text: $perfilViewModel.alturaAsString, textLimit: 3)
+            TextFieldRectangleComponent(placeholder: "cm", text: $perfilViewModel.alturaAsString, textLimit: 3)
                 .keyboardType(.numberPad)
             
             Spacer()
