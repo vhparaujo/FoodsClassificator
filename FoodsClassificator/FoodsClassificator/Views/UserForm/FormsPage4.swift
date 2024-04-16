@@ -19,62 +19,67 @@ struct FormsPage4: View {
     var body: some View {
         VStack {
             
-//                .padding(.top)
-//                .padding(.horizontal)
+            QuestionTextComponent(QuestionLabel: "Qual o seu principal objetivo?")
+                .font(.title2)
+                .padding(.top)
+                .padding(.horizontal)
             
-            Form {
-//                Section(content: {
-                        
-                        Picker("",selection: $perfilViewModel.model.objetivo) {
-                            ForEach(perfilViewModel.objetivos, id: \.self) {
-                                Text($0).tag($0)
-//                                    .onTapGesture {
-//                                        print(objetivo)
-//                                    }
-                            }
-                        }
-                        .pickerStyle(.inline)
-                        
-                    
-//                    .padding(1)
-//                }, header: {
-//                    QuestionTextComponent(QuestionLabel: "Qual é o seu principal objetivo?")
-//                        .font(.headline)
-//                        .foregroundStyle(.black)
-//                })
-                .listRowBackground(Color.verdeFundo)
+            HStack {
                 
-            }
-//            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
-            
-            List {
-                Section(content: {
-                        
-                        Picker(selection: $perfilViewModel.model.intensidadeDoExercicio) {
-                            ForEach(perfilViewModel.intensidades, id: \.self) { objetivo in
-                                Text(objetivo).tag(objetivo)
-                            }
-                        } label: {
-                            Text("Intensidade Exercício")
-                                .font(.headline)
-                                .foregroundStyle(.verdeTitle)
-                        }.pickerStyle(.inline)
-      
-                    .padding(1)
-                }, header: {
-                    QuestionTextComponent(QuestionLabel: "Qual a intensidade de atividade física?")
-                        .font(.headline)
-                        .foregroundStyle(.black)
-                }) {
-                    
-                   
+                Text("Objetivo")
+                    .font(.headline)
+                    .foregroundStyle(.verdeTitle)
+                
+                Spacer()
+                
+                Picker("",selection: $perfilViewModel.model.objetivo) {
+                    ForEach(perfilViewModel.objetivos, id: \.self) {
+                        Text($0).tag($0)
+                    }
                 }
-                .listRowBackground(Color.verdeFundo)
+                .pickerStyle(.menu)
                 
-            }
-            .listStyle(.insetGrouped)
-            .scrollContentBackground(.hidden)
+            }.padding()
+                .background(.verdeFundo)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .padding(.horizontal)
+            
+            QuestionTextComponent(QuestionLabel: "Qual sua intensidade de atividade física?")
+                .font(.title2)
+                .padding(.top)
+                .padding(.horizontal)
+      
+            HStack {
+                
+                Text("Intensidade")
+                    .font(.headline)
+                    .foregroundStyle(.verdeTitle)
+                
+                Spacer()
+                
+                Picker(selection: $perfilViewModel.model.intensidadeDoExercicio) {
+                    ForEach(perfilViewModel.intensidades, id: \.self) { objetivo in
+                        Text(objetivo).tag(objetivo)
+                    }
+                } label: {
+                    Text("Intensidade")
+                        .font(.headline)
+                        .foregroundStyle(.verdeTitle)
+                }.pickerStyle(.menu)
+                
+            }.padding()
+                .background(.verdeFundo)
+                .clipShape(RoundedRectangle(cornerRadius: 15))
+                .padding(.horizontal)
+            
+            Spacer()
+            
+            Image("form_page4")
+                .resizable()
+                .scaledToFit()
+                .padding()
+            
+            Spacer()
             
             // NavigationLink para a próxima página do questionário
             NavigationLink(destination: FormsPage5()) {
@@ -86,10 +91,6 @@ struct FormsPage4: View {
  
         .onAppear{
             perfilViewModel.modelContext = context
-        }
-        
-        .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
         
     }
