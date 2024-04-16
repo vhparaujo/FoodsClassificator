@@ -41,8 +41,10 @@ struct FormsPage2: View {
             NavigationLink(destination: FormsPage3()) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
+            
         }
         .padding()
+        
         .onAppear {
             perfilViewModel.modelContext = context
         }

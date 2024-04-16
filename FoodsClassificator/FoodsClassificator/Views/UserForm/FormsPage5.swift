@@ -13,75 +13,90 @@ struct FormsPage5: View {
     
     @Bindable private var perfilViewModel = PerfilViewModel()
     
-    @State private var refeicao = 0
+    @State var selectedItems: Set<String> = [] // Conjunto para armazenar os itens selecionados
     
-    let refeicoes:[String] = ["Café da manhã", "Lanche da manhã", "Almoço", "Lanche da tarde", "Jantar"]
-    
+    @State private var isEditMode = false // Definindo o estado de edição como verdadeiro
+
     var body: some View {
+        
         VStack {
             
             FormProgressBar(percent: .constant(0.80))
             
             QuestionTextComponent(QuestionLabel: "Quais refeições você faz por dia?")
                 .padding(.top)
+                .padding(.horizontal)
             
-            VStack {
-                
-                ForEach(perfilViewModel.model.refeicoes, id: \.self) { refeicao in
-                    
-                    RoundedRectangle(cornerRadius: 15)
-                        .foregroundStyle(.green.opacity(0.4))
-                        .overlay {
-                            HStack {
-                                Text(refeicao)
-                                    .tint(.black)
-                                Spacer()
-                                Image(systemName: "list.bullet")
-                                    .foregroundStyle(Color.black)
-                            }
-                            .padding(.horizontal)
+            List(selection: $selectedItems) {
+                Section {
+                    ForEach(perfilViewModel.model.refeicoes.indices, id: \.self) { index in
+                        
+                        HStack {
+                            TextField("Nome da refeição", text:  $perfilViewModel.model.refeicoes[index])
+                                .foregroundStyle(.verdeTitle)
+                                .font(.headline)
+                            Spacer()
                         }
-                        .frame(height: 50)
-                        .opacity(refeicao == refeicao ? 1.0 : 0.5)
-                    
-                }
-                
-                TextField("Nome da refeição", text: $perfilViewModel.textFieldName)
-                    .onSubmit {
-                        perfilViewModel.model.refeicoes.append(perfilViewModel.textFieldName)
-                        perfilViewModel.textFieldName = ""
+                        .padding(10)
+                        .clipShape(RoundedRectangle(cornerRadius: 15))
+                        .listRowSeparator(.hidden)
                     }
+                    .onDelete(perform: delete)
+                    .onMove(perform: move)
+                }
+                .listRowBackground(Color.verdeFundo)
             }
-            
+            .listRowSpacing(10)
+            .listStyle(.insetGrouped)
+            .scrollContentBackground(.hidden)
+    
             Spacer()
+            
+            Button(action: {
+                perfilViewModel.model.refeicoes.append(perfilViewModel.textFieldName)
+            }, label: {
+                HStack {
+                    Image(systemName: "plus.circle.fill")
+                    Text("Nova Refeição")
+                    Spacer()
+                }
+                .foregroundStyle(.laranjaEscuro)
+                .font(.title3)
+                .padding()
+            })
             
             // NavigationLink para a próxima página do questionário
             NavigationLink(destination: FormsPage6(perfilViewModel: perfilViewModel)) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
             }
+            .padding(.horizontal)
             
         }
-        .padding()
-        .onAppear{
+        
+        .toolbar(content: {
+            EditButton()
+                .foregroundStyle(.laranjaEscuro)
+        })
+        
+        .onAppear {
             perfilViewModel.modelContext = context
         }
         
-        .onTapGesture {
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        }
     }
     
-//    func delete(at offsets: IndexSet) {
-//        perfilViewModel.model.refeicoes.remove(atOffsets: offsets)
-//    }
-//    
-//    func move(from source: IndexSet, to destination: Int) {
-//        perfilViewModel.model.refeicoes.move(fromOffsets: source, toOffset: destination)
-//    }
+    func delete(at offsets: IndexSet) {
+        perfilViewModel.model.refeicoes.remove(atOffsets: offsets)
+    }
+    
+    func move(from source: IndexSet, to destination: Int) {
+        perfilViewModel.model.refeicoes.move(fromOffsets: source, toOffset: destination)
+    }
     
 }
 
 #Preview {
-    let modelContainer: ModelContainer = .appContainer
-    return FormsPage5().modelContainer(modelContainer)
+    NavigationStack{
+        let modelContainer: ModelContainer = .appContainer
+        return FormsPage5().modelContainer(modelContainer)
+    }
 }
