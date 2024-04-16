@@ -17,9 +17,7 @@ struct FormsPage3: View {
     
     var body: some View {
         VStack {
-            
-            FormProgressBar(percent: .constant(0.48))
-            
+                        
             QuestionTextComponent(QuestionLabel: "Qual o seu sexo biológico?")
                 .padding(.top)
               

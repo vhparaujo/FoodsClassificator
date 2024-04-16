@@ -8,31 +8,59 @@
 import Foundation
 import Observation
 import Combine
+import SwiftData
 
 @Observable
 class FooterHomeViewModel {
+    var model = PerfilModel()
     
+    var modelContext: ModelContext? {
+        didSet {
+            fetchData()
+        }
+    }
+    
+    func fetchData() {
+        
+        guard let modelContext = self.modelContext else { return }
+        
+        do {
+            
+            let descriptor = FetchDescriptor<PerfilModel>()
+            
+            if let fetchedModel = try modelContext.fetch(descriptor).first {
+                model = fetchedModel
+            } else {
+                fatalError("No data fetched")
+            }
+            
+        } catch {
+            fatalError("Fetch failed: \(error.localizedDescription)")
+        }
+        
+    }
     //MARK: rectangle
     var isBottleSelected = true
     
-    var litersSelected: Double = 2.0
-    var milliliterSelected: Double = 0.0
-    var capacitySelected = 200.0
+//    var litersSelected: Double = 2.0
+//    var milliliterSelected: Double = 0.0
+//    var capacitySelected = 200.0
     
-    var waterIntakeTotal: Double = 0.0
+//    var waterIntakeTotal: Double = 0.0
+    
     var waterIntakeTotalFormatted: String {
-        String(format: "%.1f", waterIntakeTotal / 1000.0)
+        String(format: "%.1f", model.waterIntakeTotal / 1000.0)
     }
     
     // Calcula o total de água selecionada em ml
     var totalWaterSelectedInML: Double {
-        (litersSelected * 1000) + milliliterSelected
+        (model.litersSelected * 1000) + model.milliliterSelected
     }
     
     // Calcula a porcentagem de água consumida em relação ao total selecionado
     var waterIntakePercentage: Double {
         guard totalWaterSelectedInML > 0 else { return 0 }
-        return (waterIntakeTotal / totalWaterSelectedInML)
+        return (model.waterIntakeTotal / totalWaterSelectedInML)
     }
     
     // Calcula quantas bolinhas preencher baseado na porcentagem de água consumida
@@ -42,7 +70,7 @@ class FooterHomeViewModel {
     }
     
     func addWaterIntake() {
-        waterIntakeTotal += Double(capacitySelected)
+        model.waterIntakeTotal += Double(model.capacitySelected)
     }
     
     //MARK: Modal
@@ -53,7 +81,7 @@ class FooterHomeViewModel {
     
     // Propriedade computada para calcular a soma de litros e mililitros
     var totalWaterInLiters: Double {
-        litersSelected + (milliliterSelected / 1000.0)
+        model.litersSelected + (model.milliliterSelected / 1000.0)
     }
     
     // Propriedade computada para formatar a soma de litros e mililitros
@@ -62,7 +90,7 @@ class FooterHomeViewModel {
     }
     
     var formattedCapacity: String {
-        String(format: "%.0f ml", capacitySelected)
+        String(format: "%.0f ml", model.capacitySelected)
     }
     
 }

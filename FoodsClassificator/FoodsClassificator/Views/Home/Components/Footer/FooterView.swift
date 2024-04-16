@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct FooterView: View {
-    
-    var footerHomeViewModel = FooterHomeViewModel()
+    @Environment(\.modelContext) private var context
+    var footerHomeViewModel: FooterHomeViewModel
     var viewModel: HomeViewModel
 
     var body: some View {
@@ -24,11 +24,14 @@ struct FooterView: View {
             
             HStack {
                 Spacer()
-                WaterRectangleComponentHomeView()
+                WaterRectangleComponentHomeView(footerHomeViewModel: footerHomeViewModel)
                 Spacer()
             }
                
         }
+        .onAppear(perform: {
+            footerHomeViewModel.modelContext = context
+        })
         
 
     }

@@ -13,8 +13,6 @@ struct FormsPage2: View {
     
     var body: some View {
         VStack {
-            FormProgressBar(percent: .constant(0.32))
-            
             QuestionTextComponent(QuestionLabel: "Quantos anos você tem?")
                 .padding(.top)
             

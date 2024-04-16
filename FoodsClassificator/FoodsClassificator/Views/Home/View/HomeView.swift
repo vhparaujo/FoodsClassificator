@@ -9,16 +9,18 @@ import SwiftUI
 
 struct HomeView: View {
     
-    var viewModel = HomeViewModel()
+    @State var homeViewModel = HomeViewModel()
     @State var perfilViewModel = PerfilViewModel()
+    @State var footerViewModel = FooterHomeViewModel()
+
     
     var body: some View {
         
         VStack{
-            HeaderView(viewModel: viewModel, perfilViewModel: perfilViewModel)
+            HeaderView(homeViewModel: homeViewModel, perfilViewModel: perfilViewModel)
             Spacer()
             
-            FooterView(viewModel: viewModel)
+            FooterView(footerHomeViewModel: footerViewModel, viewModel: homeViewModel)
                 .background(Image("backgroundHome"))
         }
         .navigationBarBackButtonHidden()

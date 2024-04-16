@@ -21,7 +21,6 @@ struct FormsPage1: View {
     
     var body: some View {
         VStack {
-            FormProgressBar(percent: .constant(0.16))
             // Conteúdo da página aqui
             QuestionTextComponent(QuestionLabel: "Como gostaria de ser chamado(a)?")
                 .padding(.top)

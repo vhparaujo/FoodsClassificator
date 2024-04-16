@@ -20,7 +20,6 @@ struct FormsPage5: View {
     var body: some View {
         VStack {
             
-            FormProgressBar(percent: .constant(0.80))
             
             QuestionTextComponent(QuestionLabel: "Quais refeições você faz por dia?")
                 .padding(.top)

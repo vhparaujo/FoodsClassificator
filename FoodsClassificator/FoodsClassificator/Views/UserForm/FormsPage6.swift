@@ -17,7 +17,6 @@ struct FormsPage6: View {
     var body: some View {
         VStack {
             
-            FormProgressBar(percent: .constant(0.91))
             
             QuestionTextComponent(QuestionLabel: "Você possui uma meta de calorias prescrita por nutricionista?")
                 .padding(.top)

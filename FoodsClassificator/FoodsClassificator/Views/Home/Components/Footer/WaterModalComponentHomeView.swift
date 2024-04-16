@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WaterModalComponentHomeView: View {
-    var footerHomeViewModel = FooterHomeViewModel()
+    @Bindable var footerHomeViewModel = FooterHomeViewModel()
     @Environment(\.dismiss) private var dismiss
     @Binding var isPresented: Bool
     
@@ -52,7 +52,7 @@ struct WaterModalComponentHomeView: View {
                                 }
                                 .pickerStyle(WheelPickerStyle())
                                 .onChange(of: selectedLitersIndex) { _, newValue in
-                                    footerHomeViewModel.litersSelected = Double(footerHomeViewModel.litersOptions[newValue])
+                                    footerHomeViewModel.model.litersSelected = Double(footerHomeViewModel.litersOptions[newValue])
                                 }
                                 
                                 Text(".")
@@ -64,7 +64,7 @@ struct WaterModalComponentHomeView: View {
                                 }
                                 .pickerStyle(WheelPickerStyle())
                                 .onChange(of: selectedMillilitersIndex) { _, newValue in
-                                    footerHomeViewModel.milliliterSelected = Double(footerHomeViewModel.milliliterOptions[newValue])
+                                    footerHomeViewModel.model.milliliterSelected = Double(footerHomeViewModel.milliliterOptions[newValue])
                                 }
                                 Text("L")
                             }
@@ -155,7 +155,7 @@ struct WaterModalComponentHomeView: View {
                                 }
                                 .pickerStyle(WheelPickerStyle())
                                 .onChange(of: selectedCapacityIndex) { _, newValue in
-                                    footerHomeViewModel.capacitySelected = Double(footerHomeViewModel.capacityOptions[newValue])
+                                    footerHomeViewModel.model.capacitySelected = Double(footerHomeViewModel.capacityOptions[newValue])
                                 }
                             }
 

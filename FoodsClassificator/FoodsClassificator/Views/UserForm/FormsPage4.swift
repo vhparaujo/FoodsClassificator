@@ -18,7 +18,6 @@ struct FormsPage4: View {
     
     var body: some View {
         VStack {
-            FormProgressBar(percent: .constant(0.64))
             
 //                .padding(.top)
 //                .padding(.horizontal)
