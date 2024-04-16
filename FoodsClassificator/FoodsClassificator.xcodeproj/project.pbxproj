@@ -81,6 +81,7 @@
 		9B8904932BB49A030058DFDD /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904922BB49A030058DFDD /* PerfilViewModel.swift */; };
 		9B8904952BB49B4F0058DFDD /* UserNameComponentPerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904942BB49B4F0058DFDD /* UserNameComponentPerfilView.swift */; };
 		9B8904992BB4A1BC0058DFDD /* PerfilTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B8904982BB4A1BC0058DFDD /* PerfilTexts.swift */; };
+		9BA1A9C12BCEF86B004FA639 /* TextFieldPerfilComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BA1A9C02BCEF86B004FA639 /* TextFieldPerfilComponent.swift */; };
 		9BAFA53D2BC46C070089454A /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAFA53C2BC46C070089454A /* PerfilModel.swift */; };
 		9BB1AC772BC9D21D00F5F7D3 /* TesteListMove.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB1AC762BC9D21D00F5F7D3 /* TesteListMove.swift */; };
 		9BDAA28A2BB496CE000627F9 /* PerfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDAA2892BB496CE000627F9 /* PerfilView.swift */; };
@@ -193,6 +194,7 @@
 		9B8904922BB49A030058DFDD /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
 		9B8904942BB49B4F0058DFDD /* UserNameComponentPerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameComponentPerfilView.swift; sourceTree = "<group>"; };
 		9B8904982BB4A1BC0058DFDD /* PerfilTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilTexts.swift; sourceTree = "<group>"; };
+		9BA1A9C02BCEF86B004FA639 /* TextFieldPerfilComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPerfilComponent.swift; sourceTree = "<group>"; };
 		9BAFA53C2BC46C070089454A /* PerfilModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilModel.swift; sourceTree = "<group>"; };
 		9BB1AC762BC9D21D00F5F7D3 /* TesteListMove.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteListMove.swift; sourceTree = "<group>"; };
 		9BDAA2892BB496CE000627F9 /* PerfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilView.swift; sourceTree = "<group>"; };
@@ -555,6 +557,7 @@
 				9BF783122BB50540008CD198 /* ModalTitles.swift */,
 				9BF783142BB5116B008CD198 /* StreakComponentView.swift */,
 				9BE934182BC20FF100E52625 /* PerfilImageViewComponent.swift */,
+				9BA1A9C02BCEF86B004FA639 /* TextFieldPerfilComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				4A3F74962BC39FD20080C021 /* FormModel.swift in Sources */,
 				0B7F9D032B91A63C0037B09B /* ContentViewModel.swift in Sources */,
 				0B73E8552BACB6F300C6F91D /* BarcodeAPIManager.swift in Sources */,
+				9BA1A9C12BCEF86B004FA639 /* TextFieldPerfilComponent.swift in Sources */,
 				9BFA12692BAB8395000C0CB5 /* ColorExtension.swift in Sources */,
 				0B1C228B2BB20C61003C5C0E /* DatePickerComponentHomeView.swift in Sources */,
 				9B0D2C0B2BC068E70046EFF5 /* BackgroundShapeHeaderHomeView.swift in Sources */,

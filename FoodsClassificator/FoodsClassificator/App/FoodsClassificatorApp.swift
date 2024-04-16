@@ -19,7 +19,7 @@ struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                HomeView()
+                OnboardingPage1()
                     .preferredColorScheme(.light)
                     .ignoresSafeArea(.keyboard)
             }.ignoresSafeArea(.keyboard)

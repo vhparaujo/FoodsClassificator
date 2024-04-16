@@ -17,11 +17,7 @@ import Foundation
             fetchData()
         }
     }
-    
-    var variacaoDaIdade = stride(from: 0, through: 120, by: 1).map { $0 }
-    var variacaoDoPeso = stride(from: 0, through: 1000, by: 1).map { $0 }
-    var variacaoDaAltura = stride(from: 0, through: 250, by: 1).map { $0 }
-    
+
     let sexos: [String] = ["Masculino", "Feminino"]
     
     let objetivos: [String] = ["Perder peso", "Manter peso", "Ganhar peso", "Ganhar massa muscular", "Ter uma alimentação balanceada"]
@@ -56,7 +52,7 @@ import Foundation
     
     var pesoAsString: String {
         get { String(model.peso) }
-        set { model.peso = Int(newValue) ?? model.peso }
+        set { model.peso = Double(newValue) ?? model.peso }
     }
     
     var alturaAsString: String {
@@ -68,7 +64,7 @@ import Foundation
     
     func caloriesPerDay() -> Double {
         let genderFactor = model.sexoBiologico == "Masculino" ? 5 : -161
-        let weight = Double(model.peso)
+        let weight = model.peso
         let height = Double(model.altura)
         let age = Double(model.idade)
         // Array de multiplicadores de atividade correspondendo a "Sedentário", "Leve", "Moderado", "Intenso", "Muito Intenso"
