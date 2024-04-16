@@ -15,6 +15,8 @@ struct FormsPage5: View {
     
     @State var selectedItems: Set<String> = [] // Conjunto para armazenar os itens selecionados
     
+    @State private var isEditMode = false // Definindo o estado de edição como verdadeiro
+
     var body: some View {
         
         VStack {
@@ -33,13 +35,13 @@ struct FormsPage5: View {
                             TextField("Nome da refeição", text:  $perfilViewModel.model.refeicoes[index])
                                 .foregroundStyle(.verdeTitle)
                                 .font(.headline)
+                            Spacer()
                         }
                         .padding(10)
                         .clipShape(RoundedRectangle(cornerRadius: 15))
                         .listRowSeparator(.hidden)
                     }
                     .onDelete(perform: perfilViewModel.model.refeicoes.count > 1 ? delete : nil)
-                    
                     .onMove(perform: move)
                 }
                 .listRowBackground(Color.verdeFundo)
@@ -66,7 +68,6 @@ struct FormsPage5: View {
             // NavigationLink para a próxima página do questionário
             NavigationLink(destination: FormsPage6(perfilViewModel: perfilViewModel)) {
                 NextButtonLabel(nextButtonLabel: "Próximo")
-                
             }
             .padding(.horizontal)
             
@@ -79,10 +80,6 @@ struct FormsPage5: View {
         
         .onAppear {
             perfilViewModel.modelContext = context
-            
-            if perfilViewModel.model.refeicoes == [] {
-                perfilViewModel.model.refeicoes.append("Almoço")
-            }
         }
         
         .onTapGesture {
@@ -92,9 +89,7 @@ struct FormsPage5: View {
     }
     
     func delete(at offsets: IndexSet) {
-        if perfilViewModel.model.refeicoes.count > 1 {
-            perfilViewModel.model.refeicoes.remove(atOffsets: offsets)
-        }
+        perfilViewModel.model.refeicoes.remove(atOffsets: offsets)
     }
     
     func move(from source: IndexSet, to destination: Int) {
@@ -109,3 +104,4 @@ struct FormsPage5: View {
         return FormsPage5().modelContainer(modelContainer)
     }
 }
+

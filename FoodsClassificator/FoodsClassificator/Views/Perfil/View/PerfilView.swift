@@ -19,7 +19,7 @@ struct PerfilView: View {
     @State private var showIdadePopover: Bool = false
     @State private var showPesoPopover: Bool = false
     @State private var showAlturaPopover: Bool = false
-        
+    
     var body: some View {
         
         VStack {
@@ -67,7 +67,7 @@ struct PerfilView: View {
                                     .foregroundStyle(.secondary)
                                     .imageScale(.small)
                             }
-  
+                            
                         }.foregroundStyle(.black)
                         
                     }
@@ -218,8 +218,8 @@ struct PerfilView: View {
                     ForEach(perfilViewModel.model.refeicoes.indices, id: \.self) { index in
                         TextField("", text: $perfilViewModel.model.refeicoes[index]).tag(perfilViewModel.model.refeicoes[index])
                     }
+                    .onDelete(perform: perfilViewModel.model.refeicoes.count > 1 ? delete : nil)
                     .onMove(perform: move)
-                    .onDelete(perform: delete)
                     
                     TextField("Nome da refeição", text: $perfilViewModel.textFieldName)
                         .onSubmit {
@@ -244,6 +244,10 @@ struct PerfilView: View {
                 perfilViewModel.modelContext = context
             })
         
+            .onTapGesture {
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
+        
     }
     
     func delete(at offsets: IndexSet) {
@@ -265,6 +269,8 @@ struct PerfilView: View {
 }
 
 #Preview {
-    let modelContainer: ModelContainer = .appContainer
-    return PerfilView(perfilViewModel: PerfilViewModel()).modelContainer(modelContainer)
+    NavigationStack {
+        let modelContainer: ModelContainer = .appContainer
+        return PerfilView(perfilViewModel: PerfilViewModel()).modelContainer(modelContainer)
+    }
 }

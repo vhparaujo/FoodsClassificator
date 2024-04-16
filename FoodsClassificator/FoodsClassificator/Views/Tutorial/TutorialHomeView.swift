@@ -20,6 +20,7 @@ struct TutorialHomeView: View {
     let screenHeight = UIScreen.main.bounds.size.height
     var background = BackgroundShapeHeaderHomeView()
     var viewModel =  HomeViewModel()
+    var perfil = PerfilViewModel()
 
     @State private var currentIndex: Int = 0
     @GestureState private var dragOffset: CGFloat = 0

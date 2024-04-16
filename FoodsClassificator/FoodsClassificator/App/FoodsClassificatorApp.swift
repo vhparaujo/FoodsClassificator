@@ -14,14 +14,16 @@ struct FoodsClassificatorApp: App {
         
     @AppStorage("onBoardingViewed") var onBoardingViewed = false
 
+    var containerModel: ModelContainer = .appContainer
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                TutorialHomeView()
+                HomeView()
                     .preferredColorScheme(.light)
                     .ignoresSafeArea(.keyboard)
             }.ignoresSafeArea(.keyboard)
-        }.modelContainer(.appContainer)
+        }.modelContainer(containerModel)
             
     }
 }
