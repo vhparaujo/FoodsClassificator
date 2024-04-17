@@ -12,7 +12,7 @@ import SwiftData
 @MainActor
 struct FoodsClassificatorApp: App {
     
-    @AppStorage("onBoardingViewed") var onBoardingViewed:Bool?
+    @AppStorage("onBoardingViewed") var onBoardingViewed = false
     @AppStorage("tutorialViewed") var tutorialViewed:Bool?
     
     var containerModel: ModelContainer = .appContainer

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OnBoardingPageControl: View {
-    @AppStorage("onBoardingViewed") var onBoardingViewed: Bool?
+    @AppStorage("onBoardingViewed") var onBoardingViewed = false
 
     var body: some View {
         TabView{
