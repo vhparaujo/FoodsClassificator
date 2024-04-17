@@ -20,7 +20,7 @@ struct FoodsClassificatorApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationStack {
-                if onBoardingViewed == true {
+                if onBoardingViewed == false {
                     OnBoardingPageControl()
                         .preferredColorScheme(.light)
                 }

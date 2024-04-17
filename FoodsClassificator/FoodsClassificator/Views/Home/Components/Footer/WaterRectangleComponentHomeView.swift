@@ -8,7 +8,12 @@
 import SwiftUI
 
 struct WaterRectangleComponentHomeView: View {
-    var footerHomeViewModel: FooterHomeViewModel
+    @Environment(\.modelContext) var context
+
+    @State var footerHomeViewModel = FooterHomeViewModel()
+    
+    
+    
     @Environment(\.dismiss) private var dismiss
     
     @State var isPresented = false
@@ -18,10 +23,10 @@ struct WaterRectangleComponentHomeView: View {
     let width = UIScreen.main.bounds.width
     
     var body: some View {
+        
         Button(action: {
             isPresented = true
         }, label: {
-            
             HStack {
                 
                 VStack(alignment: .leading) {
@@ -75,12 +80,16 @@ struct WaterRectangleComponentHomeView: View {
             .clipShape(RoundedRectangle(cornerRadius: 15))
             .padding(.horizontal, 60)
             .sheet(isPresented: $isPresented, content: {
-                WaterModalComponentHomeView(isPresented: $isPresented)
+                WaterModalComponentHomeView( footerHomeViewModel: footerHomeViewModel, isPresented: $isPresented)
                     .presentationDetents([.medium])
                     .menuIndicator(.visible)
             })
             .frame(height: height * 0.15)
         })
+        .onAppear{
+            footerHomeViewModel.modelContext = context
+        }
+
     }
     
 }

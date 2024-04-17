@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct FooterView: View {
-    @Environment(\.modelContext) private var context
+//    @Environment(\.modelContext) private var context
     var footerHomeViewModel: FooterHomeViewModel
-    var viewModel: HomeViewModel
+    var homeViewModel: HomeViewModel
+//    var perfilViewModel: PerfilViewModel
+
 
     var body: some View {
         VStack{
@@ -19,20 +21,20 @@ struct FooterView: View {
                 DatePickerComponentHomeView()
             }.padding(.trailing)
             HStack {
-                MealsCarrouselHomeView(viewModel: viewModel)
+                MealsCarrouselHomeView(viewModel: homeViewModel)
             }.padding(.bottom)
             
             HStack {
                 Spacer()
-                WaterRectangleComponentHomeView(footerHomeViewModel: footerHomeViewModel)
+                WaterRectangleComponentHomeView()
                 Spacer()
             }
                
         }
-        .onAppear(perform: {
-            footerHomeViewModel.modelContext = context
-        })
-        
+//        .onAppear(perform: {
+//            footerHomeViewModel.modelContext = context
+//        })
+//        
 
     }
     

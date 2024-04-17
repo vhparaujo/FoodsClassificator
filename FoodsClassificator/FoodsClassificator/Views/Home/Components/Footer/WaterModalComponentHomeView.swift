@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WaterModalComponentHomeView: View {
     @Environment(\.modelContext) var context
-    @Bindable var footerHomeViewModel = FooterHomeViewModel()
+    @Bindable var footerHomeViewModel: FooterHomeViewModel
 
     @State var perfilViewModel = PerfilViewModel()
     @Environment(\.dismiss) private var dismiss

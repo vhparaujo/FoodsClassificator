@@ -10,7 +10,9 @@ import SwiftUI
 struct ProgressBarComponentHomeView: View {
     
     @Environment(\.modelContext) var context
+    
     @State var perfilViewModel = PerfilViewModel()
+    
     var homeViewModel: HomeViewModel
     
     let screenWidth = UIScreen.main.bounds.size.width

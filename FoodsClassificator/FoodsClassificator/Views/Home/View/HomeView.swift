@@ -20,7 +20,7 @@ struct HomeView: View {
             HeaderView(homeViewModel: homeViewModel, perfilViewModel: perfilViewModel)
             Spacer()
             
-            FooterView(footerHomeViewModel: footerViewModel, viewModel: homeViewModel)
+            FooterView(footerHomeViewModel: footerViewModel, homeViewModel: homeViewModel)
                 .background(Image("backgroundHome"))
         }
         .navigationBarBackButtonHidden()
