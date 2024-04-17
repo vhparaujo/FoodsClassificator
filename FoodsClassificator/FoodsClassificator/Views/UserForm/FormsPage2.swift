@@ -14,7 +14,7 @@ struct FormsPage2: View {
     var body: some View {
         VStack {
             FormProgressBar(progress: perfilViewModel.progress)
-
+            
             QuestionTextComponent(QuestionLabel: "Quantos anos você tem?")
                 .padding(.top)
             
@@ -58,10 +58,14 @@ struct FormsPage2: View {
             UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         }
         
+        .navigationBarTitleDisplayMode(.inline)
+        
     }
 }
 
 #Preview {
-    let modelContainer: ModelContainer = .appContainer
-    return FormsPage2().modelContainer(modelContainer)
+    NavigationStack {
+        let modelContainer: ModelContainer = .appContainer
+        return FormsPage2().modelContainer(modelContainer)
+    }
 }

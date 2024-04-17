@@ -81,7 +81,6 @@ struct FormsPage5: View {
         .onAppear {
             perfilViewModel.modelContext = context
             perfilViewModel.progress = 0.8
-
         }
         
         .onTapGesture {
